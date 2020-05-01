@@ -1,0 +1,23 @@
+{
+  "coc.source.file.ignoreHidden": false,
+  "coc.preferences.colorSupport": true,
+  "diagnostic.errorSign": "🤬",
+  "diagnostic.warningSign": "😑",
+  "diagnostic.infoSign": "🤔",
+  "solargraph.commandPath":  "/Users/rbanda/.rbenv/shims/solargraph",
+  "solargraph.diagnostics": true,
+  "solargraph.hover": true,
+  "eslint.enable":false,
+  "emmet.includeLanguages": {"eruby": "html", "javascript": "javascriptreact"},
+  "languageserver": {
+    "metals": {
+      "command": "metals-vim",
+      "rootPatterns": ["build.sbt"],
+      "filetypes": ["scala", "sbt"]
+    },
+    "lua": {
+      "command": "lua-lsp",
+      "filetypes": ["lua"]
+    }
+  }
+}

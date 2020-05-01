@@ -1,0 +1,17 @@
+# Font configuration (changes require restart)
+env:
+  COLORTERM: truecolor
+  LC_CTYPE: en_US.UTF-8
+font:
+  size: 24
+  normal:
+    family: Hack
+    style: Regular
+
+  bold:
+    family: Hack
+    style: Bold
+
+  italic:
+    family: Hack
+    style: Italic

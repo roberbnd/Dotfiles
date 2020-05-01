@@ -1,0 +1,64 @@
+"vim-argwrap{{{===========================================================================
+" It can be used for collapsing and expanding from function calls to array and dictionary
+" definitions.:ArgWrap
+Plug 'foosoft/vim-argwrap', { 'on': 'ArgWrap' }
+"======================================================================================}}}
+
+"splitjoin{{{=============================================================================
+" switching between a single-line statement and a multi-line one.
+" gS to split a one-liner into multiple lines
+" gJ (with the cursor on the first line of a block)
+Plug 'AndrewRadev/splitjoin.vim'
+"======================================================================================}}}
+
+"sideways{{{==============================================================================
+" :SidewaysLeft <<, :SidewaysRight >>,  exchange args
+Plug 'AndrewRadev/sideways.vim'
+"======================================================================================}}}
+
+"breakit{{{===============================================================================
+" <Leader>ba, - break after comma
+" <Leader>bA, - break after comma remove space
+" <Leader>bb, - break before comma
+" <Leader>ba. - break after dot
+" <Leader>bA. - break after dot remove space
+" <Leader>bb. - break before dot
+" test, test2, test3
+" <Leader>ba,
+" test,
+"  test2,
+"  test3
+Plug 'bomgar/breakit.vim'
+"======================================================================================}}}
+
+"tabular{{{===============================================================================
+" :Tabularize /{pattern}
+Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
+"======================================================================================}}}
+
+"vim-exchange{{{==========================================================================
+" To exchange two words, place your cursor on the first word and type cxiw. Then move
+" to the second word and type cxiw again. Note: the {motion} used in the first
+" and second use of cx don't have to be the same.
+" nmap cx <Plug>(Exchange)
+" vmap X <Plug>(Exchange)
+" nmap cxc <Plug>(ExchangeClear)
+" nmap cxx <Plug>(ExchangeLine)
+Plug 'tommcdo/vim-exchange'
+"======================================================================================}}}
+
+"vim-xtract{{{============================================================================
+" vim-xtract helps you split up large files into smaller files. Great for refactoring.
+Plug 'rstacruz/vim-xtract', { 'on': 'Xtract'}
+"======================================================================================}}}
+
+"visual-split{{{==========================================================================
+" 1.Visually select the lines you want to split out
+" 2.Type :VSSplit, :VSSplitAbove or :VSSplitBelow to create the split
+" 3.A new split will be created showing the selected lines
+" <C-W>gr - resize split to visual selection (similar to :VSResize)
+" <C-W>gss - split out visual selection (similar to :VSSplit)
+" <C-W>gsa - split out visual selection above (similar to :VSSplitAbove)
+" <C-W>gsb - split out visual selection below (similar to :VSSplitBelow)
+Plug 'wellle/visual-split.vim', { 'on': 'VSSplit'}
+"======================================================================================}}}

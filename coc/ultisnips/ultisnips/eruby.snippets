@@ -1,0 +1,37 @@
+extends html
+
+snippet zz "<% code %>" wA
+<% $1 %>
+endsnippet
+
+snippet zi "<%= code %>" wA
+<%= $1 %>
+endsnippet
+
+snippet formf "form_for" w
+
+endsnippet
+
+snippet lt "link_to just link"
+link_to '${1:text}', ${3:path}
+endsnippet
+
+snippet ltc "link_to controller"
+link_to '${1:text}', controller: '${2:name}'
+endsnippet
+
+snippet ltca "link_to controller and action"
+link_to '${1:text}', { :controller=>'${2:name}', :action:=>'${3:name}'}
+endsnippet
+
+snippet lta "link_to just aciton"
+link_to '${1:text}', { :action:=>'${3:name}'}
+endsnippet
+
+snippet ltp "link_to method_path"
+link_to '${1:text}', ${2:name}_path($3)
+endsnippet
+
+snippet pi "params.inspect"
+<%= params.inspect %>
+endsnippet

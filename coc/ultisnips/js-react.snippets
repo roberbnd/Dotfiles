@@ -1,0 +1,277 @@
+snippet "(\w+)=u" "console.log" rA
+`!p snip.rv = match.group(1)`={$0}
+endsnippet
+
+snippet "(\w+)=a" "console.log" rA
+`!p snip.rv = match.group(1)`="$0"
+endsnippet
+
+snippet "(\w+)/" "tag autoclosed" r
+<`!p snip.rv = match.group(1)` $0/>
+endsnippet
+
+snippet "(\w+)//" "r/Tag" r
+<`!p snip.rv = match.group(1)`>$0</`!p snip.rv = match.group(1)`>
+endsnippet
+
+snippet "(\w+.\w+.\w+)afl" "r/anonymous function line" rw
+($2) => `!p snip.rv = match.group(1)`($3)
+endsnippet
+
+snippet "(\w+.\w+.\w+)afr" "r/anonymous function return" rw
+($2) => {
+	`!p snip.rv = match.group(1)`($3)
+}
+endsnippet
+
+snippet frag "<fragment>" b
+<$1>
+  ${2:${VISUAL}}
+</$1>
+endsnippet
+
+snippet cn "r/className" w
+className="$1"
+endsnippet
+
+snippet "(\w+)CR" "const hook" rA
+const [`!p snip.rv = match.group(1)`, $1] = $2
+endsnippet
+
+snippet "(\w+)RS" "const hook" rA
+const [`!p snip.rv = match.group(1)`, set$1] = useState($2)
+endsnippet
+snippet cnc "r/className classes" w
+className={classes.$1}
+endsnippet
+
+snippet cons "r/constructor react props" b
+constructor(props) {
+  super(props)
+	$1
+}
+endsnippet
+
+snippet uses "useState" w
+const [$1, set$1] = useState($2)
+endsnippet
+
+snippet usee "useState" w
+useEffect(() => {
+$2
+}${1:,[]})
+endsnippet
+
+snippet tp "r/this.props." w
+this.props.$1
+endsnippet
+
+snippet tpc "r/this.props.children" w
+{this.props.children}
+endsnippet
+
+snippet tst "r/this.state." w
+this.state.
+endsnippet
+
+snippet tse "r/this.state equal" w
+this.state = {
+  $1
+}
+endsnippet
+snippet tss "r/this.setState" w
+this.setState({$1})
+endsnippet
+
+snippet ren "r/render" w
+render() {
+  $1
+}
+endsnippet
+
+snippet cwm "r/componentWillMount" w
+componentWillMount() {
+  $1
+}
+endsnippet
+
+snippet cwum "r/componentWillUnmount" w
+componentWillUnmount() {
+  $1
+}
+endsnippet
+
+snippet cdm "r/componentDidMount" w
+componentDidMount() {
+  $1
+}
+endsnippet
+
+snippet cwrp "r/componentWillReceiveProps" w
+componentWillReceiveProps(nextProps) {
+  $1
+}
+endsnippet
+
+snippet scu "r/shouldComponentUpdate" w
+shouldComponentUpdate(nextProps, nextState) {
+  $1
+}
+endsnippet
+
+snippet cwu "r/componentWillUpdate" w
+componentWillUpdate(nextProps, nextState) {
+  $1
+}
+endsnippet
+
+snippet cdu "r/componentDidUpdate" w
+componentDidUpdate() {
+  $1
+}
+endsnippet
+
+snippet gdsfp "r/getDerivedStateFromProps" w
+getDerivedStateFromProps(nextProps, prevState) {
+  $1
+}
+endsnippet
+
+snippet gsbu "r/getSnapshotBeforeUpdate" w
+getSnapshotBeforeUpdate() {
+  $1
+}
+endsnippet
+
+snippet epd "event.preventDefalut" w
+event.preventDefault();
+endsnippet
+
+snippet impc "import component" b
+import $2 from './$1'
+endsnippet
+
+snippet impcl "import classes" b
+import classes from '.$0'
+endsnippet
+
+snippet impr "import react" b
+import React from 'react';
+endsnippet
+
+snippet imprc "import react Component" w
+import React, { Component } from 'react'
+endsnippet
+
+snippet imprn "import react native" b
+import { $1 } from 'react-native';
+endsnippet
+
+snippet rs "Stateless Component" b
+import React from 'react';
+
+const $1 = ${2:props} => (
+  <div>
+    $3
+  </div>
+);
+
+export default $1;
+endsnippet
+
+snippet rsr "Stateless Component return" b
+import React from 'react';
+
+const $1 = ${2:props} => {
+  return(
+	  <div>
+		  $3
+	  </div>
+	)
+};
+
+export default $1;
+endsnippet
+
+snippet rstc "stateless to class" w
+class ${1:${VISUAL}} extends Component {
+  render() {
+	  return (
+
+		)
+	}
+}
+endsnippet
+
+snippet rsca "Stateless Component anon-func" b
+import React from 'react';
+
+const $1 = $2 => {
+  $3
+};
+
+export default $1;
+endsnippet
+
+snippet rscr "Stateless Component return" b
+import React from 'react';
+
+const $1 = $2 => {
+  return ($3);
+}
+
+export default $1;
+endsnippet
+
+snippet rc "class component {Component}" w
+import React, { Component } from 'react'
+
+class $1 extends Component {
+  render() {
+    return (
+			$2
+		)
+  }
+}
+
+export default $1;
+endsnippet
+
+snippet rcp "class component proptypes" b
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+
+class $1 extends Component {
+  static propTypes = {}
+
+  render() {
+    return <div>$2</div>
+  }
+}
+
+export default $1
+endsnippet
+
+snippet rct "context" b
+const $1Context = createContext($2);
+
+class $1Provider extends Component {
+  state = {
+    $3
+  }
+
+  render() {
+    return (
+      <$1Context.Provider value={{ state: { $3 }, actions: {} }}>
+        {this.props.children}
+      </$1Context.Provider>
+    );
+  }
+}
+
+export default $1Provider;
+endsnippet
+
+snippet pc "props.children" w
+props.children
+endsnippet
