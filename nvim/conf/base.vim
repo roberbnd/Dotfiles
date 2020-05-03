@@ -31,7 +31,7 @@ Plug 'francoiscabrol/ranger.vim'
 "======================================================================================}}}
 
 Plug 'vim-test/vim-test'
-Plug 'benmills/vimux'
+" Plug 'benmills/vimux'
 "{{{======================================================================================
 " A Vim wrapper for running tests on different granularities.
 let test#strategy = "vimux"

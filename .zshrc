@@ -9,6 +9,8 @@ eval "$(fasd --init auto)"
 
 export EDITOR='nvim'
 export VISUAL='nvim'
+# Don't remove duplicate inputs
+export TERM=screen-256color
 # Go
 # export GOROOT=/usr/local/go/
 # export GOBIN=$GOROOT/workspace/go/bin
@@ -99,6 +101,7 @@ alias tn="tmux new-session"
 alias tk="tmux kill-session"
 alias tka="tmux kill-session -a"
 alias tkt="tmux kill-session -t"
+alias tks="tmux kill-server"
 
 #------------------------------------
 # Git
