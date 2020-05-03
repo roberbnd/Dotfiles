@@ -31,10 +31,10 @@ Plug 'francoiscabrol/ranger.vim'
 "======================================================================================}}}
 
 Plug 'vim-test/vim-test'
-Plug 'neomake/neomake'
+Plug 'benmills/vimux'
 "{{{======================================================================================
 " A Vim wrapper for running tests on different granularities.
-let test#strategy = "neomake"
+let test#strategy = "vimux"
 "======================================================================================}}}
 
 Plug 'puremourning/vimspector'
