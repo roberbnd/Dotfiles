@@ -14,6 +14,18 @@ let g:coc_global_extensions = [
   \ ]
 "======================================================================================}}}
 
+Plug 'dense-analysis/ale'
+"{{{======================================================================================
+let g:ale_enabled = 0
+let g:ale_linters_explicit = 1
+let g:ale_php_phpcs_standard = ''
+let g:ale_php_phpcs_options = ''
+let g:ale_php_phpcs_executable = ''
+let g:ale_linters = {
+\   'php': ['phpcs'],
+\}
+"======================================================================================}}}
+
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 "{{{======================================================================================
@@ -24,6 +36,15 @@ let g:fzf_preview_window = 'down:60%'
 let g:fzf_tags_command = '~/Downloads/ptags'
 "======================================================================================}}}
 
+Plug 'pechorin/any-jump.vim'
+"{{{======================================================================================
+let g:any_jump_preview_lines_count = 5
+let g:any_jump_window_width_ratio  = 1
+let g:any_jump_window_height_ratio = 1
+let g:any_jump_window_top_offset   = 0
+let g:any_jump_grouping_enabled = 1
+"======================================================================================}}}
+
 Plug 'rbgrouleff/bclose.vim'
 Plug 'francoiscabrol/ranger.vim'
 "{{{======================================================================================
@@ -31,7 +52,7 @@ Plug 'francoiscabrol/ranger.vim'
 "======================================================================================}}}
 
 Plug 'vim-test/vim-test'
-" Plug 'benmills/vimux'
+Plug 'benmills/vimux'
 "{{{======================================================================================
 " A Vim wrapper for running tests on different granularities.
 let test#strategy = "vimux"
@@ -64,6 +85,8 @@ Plug 'liuchengxu/vista.vim'
 " require ctags, ptags
 " Viewer & Finder for LSP symbols and tags in Vim
 " use ptags generate the tags file
+let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+let g:vista#renderer#enable_icon = 1
 let g:vista_default_executive = 'coc'
 "======================================================================================}}}
 

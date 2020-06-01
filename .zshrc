@@ -10,14 +10,12 @@ eval "$(fasd --init auto)"
 export EDITOR='nvim'
 export VISUAL='nvim'
 # Don't remove duplicate inputs
-export TERM=screen-256color
-# Go
+export TERM=xterm-256color
+# Golang
 # export GOROOT=/usr/local/go/
 # export GOBIN=$GOROOT/workspace/go/bin
 export GOPATH=~/go
 export PATH="${GOROOT}/bin:${PATH}"
-export PATH="$PATH:/Users/rbanda/Library/Python/3.7/bin"
-# export PATH="$PATH:/usr/local/Cellar/mysql/8.0.19/lib"
 
 # Rust
 export PATH="$PATH:~/.cargo/bin"
@@ -25,8 +23,6 @@ export PATH="$PATH:~/.cargo/bin"
 # Javascript
 export PATH="$PATH:~/.node_modules/bin/"
 unset npm_config_prefix
-# export npm_config_prefix=~/.node_modules
-# source /usr/share/nvm/init-nvm.sh
 
 # PHP
 export PATH="$PATH:~/.config/composer/vendor/bin"
@@ -130,19 +126,18 @@ alias gchem='git checkout master'
 alias gcheb='git checkout -b'
 alias gchema='git checkout master'
 alias gchep='git checkout --patch'
-
-alias gpulo='git pull origin'
-alias gpulom='git pull origin master'
+alias gche-='git checkout --'
 
 alias gres='git reset'
 alias gresh='git reset --hard'
+alias greshh='git reset --hard HEAD'
 alias grev='git revert'
 
 # Commit (c)
 alias gcom='git commit'
 alias gcomv='git commit --verbose'
 alias gcomva='git commit --verbose --all'
-alias gcomm='git commit --message "'
+alias gcomm='git commit --message'
 alias gcommi="git commit -m 'Initial commit'"
 alias gcf='git commit --amend --reuse-message HEAD'
 alias gcF='git commit --verbose --amend'
@@ -164,8 +159,11 @@ alias gdi='git status --porcelain --short --ignored | sed -n "s/^!! //p"'
 
 # Fetch (f)
 alias gfet='git fetch'
-alias gpul='git pull'
 alias gpulr='git pull --rebase'
+alias gpul='git pull'
+alias gpulo='git pull origin'
+alias gpulom='git pull origin master'
+alias gpulum='git pull origin master'
 
 # Grep (g)
 alias gg='git grep'
@@ -207,6 +205,7 @@ alias gmert='git mergetool'
 # Push (p)
 alias gpus='git push'
 alias gpuso='git push origin'
+alias gpusof='git push origin --force'
 alias gpusom='git push origin master'
 alias gpushm='git push heroku master'
 alias gpusf='git push --force'
@@ -224,6 +223,7 @@ alias grebi='git rebase --interactive'
 
 # Remote (R)
 alias grem='git remote'
+alias gremv='git remote -v'
 alias greml='git remote --verbose'
 alias grema='git remote add'
 alias gremx='git remote rm'
@@ -281,6 +281,7 @@ alias gCT='gCt $(gCl)'
 
 #------------------------------------
 # Python
+export PATH="$PATH:~/Library/Python/3.7/bin"
 alias python='python3'
 alias pip='pip3'
 alias p='python'
@@ -335,6 +336,8 @@ alias nrti="npm run typings install"
 alias bs='browser-sync'
 alias bss='browser-sync start --server'
 alias bssf='browser-sync start --server --files="*.*"'
+alias bssro="browser-sync start --https  --server 'build' --files 'build' --watch --no-open --port"
+alias bssro9="browser-sync start --https  --server 'build' --files 'build' --watch --no-open --port 9999"
 
 #------------------------------------
 # Laravel
@@ -548,10 +551,22 @@ dbu() { docker build -t=$1 .; }
 
 # Show all alias related docker
 dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+
+
+alias bcr='./bcloud clusters resume'
+alias bcl='./bcloud clusters list'
+alias bsc='./bcloud store create'
+alias bsl='./bcloud store list'
+alias bds='./bcloud dns setup'
+alias bsb='./bcloud ssh bcappvm'
+alias bra='./bcloud rsync auto'
+alias blb='./bcloud logs bcapp'
+alias ng='./ngrok http 3000'
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '~/google-cloud-sdk/path.zsh.inc' ]; then . '~/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/rbanda/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/rbanda/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '~/google-cloud-sdk/completion.zsh.inc' ]; then . '~/google-cloud-sdk/completion.zsh.inc'; fi
-export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+if [ -f '/Users/rbanda/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/rbanda/google-cloud-sdk/completion.zsh.inc'; fi
+export PATH="/usr/local/opt/awscli@1/bin:$PATH"

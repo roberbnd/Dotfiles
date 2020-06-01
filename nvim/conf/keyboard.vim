@@ -23,13 +23,15 @@ nnoremap <F12> :GitMessenger<cr>
 " Allow saving of files as sudo
 cnoremap w!! w !sudo tee > /dev/null %
 
-nmap ' ``
 tnoremap X <C-\><C-n><c-^>
 tnoremap Z <C-\><C-n>
-vnoremap T <esc>
+vnoremap m <esc>
+nnoremap Q <nop>
 nnoremap M :call lightline#update()<cr>
 nnoremap S :!git add .<cr><cr>
-nnoremap <leader>T :Tmuxline powerline<cr>
+nnoremap <leader>R :Tmuxline powerline<cr>
+nnoremap <leader>C :CocCommand explorer<cr>
+nnoremap U <c-R>
 
 inoremap jf <esc>f
 inoremap jF <esc>F
@@ -40,18 +42,23 @@ inoremap jj <esc>
 
 imap jh <esc>O
 imap jt <esc>o
+imap j. <esc>.
+
+nmap <leader>yr :let @+ = expand("%")<cr>
+nmap <leader>yn :let @+ = expand("%:t")<cr>
+nmap <leader>yf :let @+ = expand("%:p")<cr>
+
+nnoremap <leader>cp yip
+nnoremap <leader>w :e ~/vimwiki/index.md<cr>
 
 "Add empty lines
 nnoremap <leader>h. :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 nnoremap <leader>h, :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
 nnoremap <leader>hf :exe ':silent !firefox %'<CR>
 nnoremap <leader>hc :exe ':silent !chromium-browser %'<CR>
-nnoremap <leader>hr <c-R>
+nnoremap <leader>hr /<c-r>+
 nnoremap <leader>hj :NERDTreeToggle<cr>
 nnoremap <leader>hk :NERDTreeFind<cr>
-
-
-nnoremap <leader>cp yip
 
 nnoremap <leader>ha :nohlsearch<CR>
 nnoremap <leader>ho ~
@@ -59,6 +66,7 @@ nnoremap <leader>he b~
 nnoremap <leader>hu g~iw
 nnoremap <leader>hi cgn
 nnoremap <leader>hd :echo expand('%')<cr>
+nnoremap <leader>hD :echo expand('%:p')<cr>
 nnoremap <leader>hh :put<CR>
 nnoremap <leader>ht :e %:h/
 nnoremap <leader>hn Bdf<space>i
@@ -66,13 +74,11 @@ nnoremap <leader>hn Bdf<space>i
 nnoremap <leader>hq :e %<cr>
 nnoremap <leader>hb :e ~/.config/nvim/conf/keyboard.vim<cr>
 nnoremap <leader>hm :Vista!!<cr>
-nnoremap <leader>H :CocCommand explorer<cr>
 
 " split html elements
 vmap <leader>st :s/<[^>]*>/\r&\r/g<cr>
 vnoremap r y:%s/<c-r>"/
 vnoremap / y/<c-r>"<cr>
-nnoremap <leader>/ /<c-r>"
 
 nnoremap <leader>vu V=
 nnoremap <leader>va V
@@ -81,6 +87,7 @@ nmap <leader>vo V<s-tab><esc>
 
 nnoremap <leader>D :DeleteHiddenBuffers<cr>
 nnoremap <leader>ma :<c-u>MatchupWhereAmI?<cr>
+nnoremap <leader>cc :CopyPath<cr>
 
 imap qa <esc>:w<cr>ra
 imap q, <esc>,
@@ -88,8 +95,8 @@ inoremap qc <esc>o<cr>
 nnoremap qc o<cr>
 inoremap qn <cr><esc>O
 nnoremap qn i<cr><esc>O
-inoremap qs <esc>:w!<cr>
-nnoremap qs :w!<cr>
+inoremap qs <esc>:w<cr>
+nnoremap qs :w<cr>
 inoremap qr <esc>yyp
 nnoremap qr yyp
 inoremap qh <cr>
@@ -141,10 +148,10 @@ nnoremap rj :Ranger<cr>
 nnoremap rk :RangerWorkingDirectory<cr>
 nnoremap rh <c-^>
 nnoremap rc gf
-nmap -j *cgn
+nmap -- *cgn
 nmap -, ver
-nmap -- veS
-nmap -k yiw
+nmap -j yiw
+nmap -k ByEw
 "}}}==========================================
 
 "splits {{{===================================
@@ -187,8 +194,8 @@ nnoremap s< :vertical resize -15<cr>
 " maximum width
 nnoremap sq <c-w><bar>
 " Horizontally
-" nnoremap s+ :5winc +<cr>
-" nnoremap s- :5winc -<cr>
+nnoremap s{ :5winc +<cr>
+nnoremap s} :5winc -<cr>
 " maximum height
 nnoremap sb <c-w>_
 "}}}==========================================
@@ -203,11 +210,15 @@ vnoremap <c-c> :m '<-2<CR>gv=gv
 "}}}==========================================
 
 "Navegation {{{===============================
-nnoremap ,, ``
+nnoremap , ``
 "back cursor
-nnoremap r, <c-o>
+nnoremap <leader>e <c-o>
+nnoremap <left> <c-o>
 "forward cursor
-nnoremap r. <c-i>
+nnoremap <leader>u <c-i>
+nnoremap <right> <c-i>
+nmap <down> ga
+nmap <up> t
 "}}}==========================================
 
 "Coma {{{=====================================
@@ -341,32 +352,32 @@ nmap <leader><leader> <Plug>InsertSpace
 "}}}==========================================
 
 "easymotion{{{================================
-map ,h <Plug>(easymotion-k)
-map ,t <Plug>(easymotion-linebackward)
-map ,n <Plug>(easymotion-lineforward)
-map ,s <Plug>(easymotion-j)
+map eh <Plug>(easymotion-k)
+map et <Plug>(easymotion-linebackward)
+map en <Plug>(easymotion-lineforward)
+map es <Plug>(easymotion-j)
 nmap / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 vmap t <Plug>(easymotion-s2)
 nmap t <Plug>(easymotion-overwin-f2)
 nmap -. <Plug>(easymotion-s)
 smap <A-t> <Plug>(easymotion-s)
-nmap <leader>,h V,h
-nmap <leader>,t v,t
-nmap <leader>,n v,n
-nmap <leader>,s V,s
+nmap eH Veh
+nmap eT vet
+nmap eN ven
+nmap eS Ves
+imap jbh <esc>eH
+imap jbt <esc>eT
+imap jbn <esc>eN
+imap jbs <esc>eS
 imap jmj <esc>t
-imap jmh <esc>,h
-imap jmt <esc>,t
-imap jmn <esc>,n
-imap jms <esc>,s
+imap jmh <esc>eh
+imap jmt <esc>et
+imap jmn <esc>en
+imap jms <esc>es
 imap jm/ <esc>/
-imap jmc <esc>ra
-imap jmr <esc>rp
-imap jbh <esc><leader>,h
-imap jbt <esc><leader>,t
-imap jbn <esc><leader>,n
-imap jbs <esc><leader>,s
+imap jmc <esc><leader>t
+imap jmr <esc><leader>n
 "==========================================}}}
 
 "Rust {{{=====================================
@@ -393,7 +404,7 @@ omap ia <Plug>SidewaysArgumentTextobjI
 xmap ia <Plug>SidewaysArgumentTextobjI
 "}}}==========================================
 
-nmap + :call quickui#menu#open()<cr>
+nmap <leader>f :let watcher = filewatcher#watch(".", {x,y->execute('echo y',0)})<cr>
 
 "coc {{{======================================
 " Use tab for trigger completion with characters ahead and navigate.
@@ -429,7 +440,8 @@ nmap <silent> [c <Plug>(coc-diagnostic-prev)
 nmap <silent> ]c <Plug>(coc-diagnostic-next)
 
 nmap <silent> ga <Plug>(coc-definition)
-nmap <silent> go s+ga
+nmap <silent> g+ s+ga
+nmap <silent> g- s-ga
 
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
@@ -476,7 +488,7 @@ nnoremap re :Files<cr>
 nnoremap ru :Lines<cr>
 nnoremap ri :BLines<cr>
 nnoremap rd :Commits<cr>
-nnoremap rt :GFiles?<cr>
+nnoremap rg :GFiles?<cr>
 nnoremap rr :Rg<cr>
 nnoremap rm :Windows<cr>
 
@@ -492,3 +504,6 @@ nnoremap +, :call vimspector#Pause()<cr>
 nnoremap +. :call vimspector#Stop()<cr>
 nnoremap +; :call vimspector#Restart()<cr>
 nnoremap +a :VimspectorReset<cr>
+
+nmap <leader>t <Plug>(simple-todo-mark-switch)
+nmap <leader>n <Plug>(simple-todo-new-start-of-line)

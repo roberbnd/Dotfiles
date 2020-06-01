@@ -3,10 +3,10 @@ env:
   COLORTERM: truecolor
   LC_CTYPE: en_US.UTF-8
 font:
-  size: 24
+  size: 30
   normal:
     family: Hack
-    style: Regular
+    style: Bold
 
   bold:
     family: Hack

@@ -3,6 +3,7 @@ set autoread
 set clipboard+=unnamedplus
 set completeopt=longest,menuone
 set cursorline
+set diffopt=vertical
 set expandtab
 set encoding=utf-8
 set fileencoding=utf-8
@@ -33,7 +34,7 @@ set t_Co=256
 set sessionoptions+=tabpages,globals,buffers
 set shiftwidth=4
 set shortmess+=c   " don't give |ins-completion-menu| messages.
-set showbreak=->
+set showbreak=↳
 set signcolumn=yes
 set tabstop=4
 set termguicolors
@@ -42,7 +43,7 @@ set updatetime=300
 set undodir=~/.config/nvim/undo
 set viewoptions=cursor,folds,slash,unix
 set wildoptions=pum
-syntax on
-filetype on
+" filetype on
 filetype plugin on
+syntax on
 let mapleader="\<space>"

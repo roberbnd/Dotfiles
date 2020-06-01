@@ -9,6 +9,14 @@ Plug 'kana/vim-textobj-entire'
 " ie is similar to ae, but ie does not include leading and trailing empty lines.
 "======================================================================================}}}
 
+Plug 'kana/vim-textobj-function'
+"{{{======================================================================================
+" daf to Delete A Function, and
+" vif to Visually select the code Inside a Function.
+" yaF to Yank A Function with leading or trailing blank lines, and
+" viF to visually select a function without leading or trailing blank lines.
+"======================================================================================}}}
+
 Plug 'beloglazov/vim-textobj-punctuation'
 "{{{======================================================================================
 " vim-textobj-eunctuation is a Vim plugin providing text objects iu and au (u stands for

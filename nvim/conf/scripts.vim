@@ -47,11 +47,6 @@ function ToggleWrap()
 endfunction
 
 "lightline
-function! NearestMethodOrFunction() abort
-  return get(b:, 'vista_nearest_method_or_function', '')
-endfunction
-
-"lightline
 function! CocCurrentFunction()
     return get(b:, 'coc_current_function', '')
 endfunction
@@ -71,3 +66,17 @@ function! LightlineGitBranch() abort
   let branch = get(g:, 'coc_git_status', '')
   return winwidth(0) > 60 ? branch : ''
 endfunction
+
+function! GetRegisters()
+  redir => cout
+  silent registers
+  redir END
+  return split(cout, "\n")[1:]
+endfunction
+
+function! SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc

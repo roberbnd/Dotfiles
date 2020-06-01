@@ -62,3 +62,5 @@ Plug 'rstacruz/vim-xtract', { 'on': 'Xtract'}
 " <C-W>gsb - split out visual selection below (similar to :VSSplitBelow)
 Plug 'wellle/visual-split.vim', { 'on': 'VSSplit'}
 "======================================================================================}}}
+
+Plug 'AndrewRadev/linediff.vim'

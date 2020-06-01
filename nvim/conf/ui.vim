@@ -1,7 +1,8 @@
 Plug 'ErichDonGubler/vim-sublime-monokai'
-Plug 'ayu-theme/ayu-vim'
+Plug 'StanAngeloff/php.vim'
 "{{{======================================================================================
 " Colorscheme
+let g:php_var_selector_is_identifier = 1
 "======================================================================================}}}
 
 Plug 'ryanoasis/vim-devicons'
@@ -13,7 +14,7 @@ Plug 'itchyny/lightline.vim'
 "{{{======================================================================================
 " A light and configurable statusline/tabline plugin for Vim
 let g:lightline = {
-      \ 'colorscheme': 'ayu',
+      \ 'colorscheme': 'molokai',
       \ 'active': {
       \   'left': [
       \     [ 'mode', 'paste' ],
@@ -24,7 +25,6 @@ let g:lightline = {
       \       'readonly',
       \       'filename',
       \       'modified',
-      \       'method',
       \       'cocstatus'
       \     ]
       \   ],
@@ -33,16 +33,13 @@ let g:lightline = {
       \     [ 'blame' ]
       \   ]
       \ },
-      \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' },
       \ 'component_function': {
-      \   'method': 'NearestMethodOrFunction',
       \   'cocstatus': 'coc#status',
       \   'gitbranch': 'LightlineGitBranch',
       \   'gitstatus': 'LightlineGitStatus',
       \   'blame': 'LightlineGitBlame',
       \   'currentfunction': 'CocCurrentFunction',
-      \ }
+      \ },
 \ }
 "======================================================================================}}}
 
@@ -54,7 +51,7 @@ Plug 'gcmt/taboo.vim'
 Plug 'osyo-manga/vim-brightest'
 "{{{======================================================================================
 " bright the same words
-let g:brightest#highlight = { "group" : "ErrorMsg" }
+let g:brightest#highlight = { "group" : "EasyMotionTarget" }
 "======================================================================================}}}
 
 Plug 'ntpeters/vim-better-whitespace'
@@ -78,4 +75,3 @@ Plug 'miyakogi/seiya.vim'
 let g:seiya_auto_enable=1
 let g:seiya_target_groups = has('nvim') ? ['guibg'] : ['ctermbg']
 "======================================================================================}}}
-
