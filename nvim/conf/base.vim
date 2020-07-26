@@ -10,7 +10,7 @@ let g:coc_global_extensions = [
   \ 'coc-post', 'coc-project', 'coc-pairs', 'coc-highlight', 'coc-snippets',
   \ 'coc-marketplace', 'coc-git', 'coc-markmap', 'coc-gitignore', 'coc-yank',
   \ 'coc-todolist', 'coc-pyright', 'coc-vetur', 'coc-elixir', 'coc-diagnostic',
-  \ 'coc-emoji', 'coc-dictionary', 'coc-syntax'
+  \ 'coc-emoji', 'coc-dictionary', 'coc-syntax', 'coc-restclient'
   \ ]
 "======================================================================================}}}
 
@@ -80,7 +80,7 @@ Plug 'haya14busa/vim-asterisk'
 " asterisk.vim provides improved * motions.
 "======================================================================================}}}
 
-Plug 'liuchengxu/vista.vim'
+" Plug 'liuchengxu/vista.vim'
 "{{{======================================================================================
 " require ctags, ptags
 " Viewer & Finder for LSP symbols and tags in Vim
@@ -133,20 +133,6 @@ Plug 'andymass/vim-matchup'
 let g:matchup_matchparen_enabled = 0
 "======================================================================================}}}
 
-Plug 'scrooloose/nerdtree'
-"{{{======================================================================================
-let g:NERDTreeMapMenu = '\'
-let g:NERDTreeWinSize = 25
-let NERDTreeShowHidden=1
-" let g:Webdevicons_conceal_nerdtree_brackets = 0
-" let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
-" Disable arrow icons at the left side of folders for NERDTree.
-" let g:NERDTreeDirArrowExpandable = "\u00a0"
-" let g:NERDTreeDirArrowCollapsible = "\u00a0"
-" let NERDTreeMinimalUI = 1
-" let NERDTreeDirArrows = 1
-"======================================================================================}}}
-
 Plug 'markonm/traces.vim'
 "{{{======================================================================================
 " Preview in substitute
@@ -154,6 +140,9 @@ Plug 'markonm/traces.vim'
 
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'jasoncodes/ctrlp-modified.vim'
+Plug 'sgur/ctrlp-extensions.vim'
+Plug 'DavidEGx/ctrlp-smarttabs'
 "{{{======================================================================================
 " Add/remove bookmark at current line 	mm                : BookmarkToggle
 " Add/edit/remove annotation at current line 	mi          : BookmarkAnnotate <TEXT>
@@ -183,9 +172,22 @@ let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir', 'tmux', 'mpc', 'sma
 let g:ctrlp_working_path_mode = 'a'
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_match_window_bottom = 0
+if executable('rg')
+  " let g:ctrlp_user_command = 'rg %s --files --hidden --color=never --glob ""'
+endif
+" let g:ctrlp_buffer_func = { 'enter': 'BrightHighlightOn', 'exit':  'BrightHighlightOff', }
 "======================================================================================}}}
 
 Plug 'tpope/vim-sleuth'
 "{{{======================================================================================
 " adjusts 'shiftwidth' and 'expandtab' heuristically based on the current file
+"======================================================================================}}}
+
+Plug 'jlanzarotta/bufexplorer'
+"{{{======================================================================================
+let g:bufExplorerDisableDefaultKeyMapping=1
+let g:bufExplorerShowTabBuffer=1
+let g:bufExplorerShowRelativePath=1
 "======================================================================================}}}

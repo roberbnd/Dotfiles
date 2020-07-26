@@ -1,13 +1,17 @@
 colorscheme sublimemonokai
-hi Comment cterm=italic gui=italic
+hi clear CursorLine
+hi CursorLine gui=underline
+
+hi SublimeYellow guifg=#DDDD00
+" hi SublimePink guifg=#00FF00
+
+hi Comment gui=italic
 
 hi EasyMotionTarget gui=bold guifg=#FFFFFF guibg=#1765E3
 hi EasyMotionShade guifg=#607D8B
 
 hi Pmenu guibg=#333 guifg=#000
 hi PmenuSel guifg=#242424 guibg=#24D5EF
-
-hi CocInfoFloat guifg=#000000
 
 hi DiffAdd guibg=#181818
 hi DiffDelete guibg=#0000 guifg=#DD283C
@@ -21,6 +25,9 @@ hi link phpRegion SublimeGreen
 hi link phpIdentifier SublimeOrange
 hi link phpMethod SublimeAqua
 
+hi link typescriptParens SublimeAqua
+hi link typescriptObjectLabel SublimeOrange
+hi link typescriptOperator SublimePurple
 hi link typescriptMember SublimeAqua
 hi link typescriptConditionalParen SublimeAqua
 hi link typescriptVariable SublimePurple
@@ -40,18 +47,29 @@ hi link typescriptMember SublimeGreen
 hi link vimHiGroup SublimeOrange
 hi link vimAutoCmdSfxList SublimeOrange
 
-hi link VimwikiLink SublimeGreen
-hi link VimwikiHeader1 SublimePink
-hi link VimwikiHeader2 SublimePink
-hi link VimwikiHeader3 SublimePink
-hi link VimwikiHeader4 SublimePink
-hi link VimwikiHeader5 SublimePink
-hi link VimwikiHeader6 SublimePink
-hi link VimwikiH2Folding SublimeGreen
-
 hi link mkdInlineURL SublimeOrange
 hi link mkdNonListItemBlock SublimeAqua
 hi link mkdLink SublimeGreen
 hi link htmlH1 SublimePink
+hi link htmlH2 SublimeOrange
+
+hi link rubyRainbow_lv3_r0 SublimeAqua
+hi link rubyMethodBlock SublimeOrange
+hi link rubyPseudoVariable SublimeGreen
+
+hi link yamlKeyValueDelimiter SublimePink
+hi link yamlBlockCollectionItemStart SublimePink
+hi link yamlBlockMappingKey SublimePurple
+hi link yamlPlainScalar SublimeAqua
+hi link yamlInteger SublimeGreen
+
+hi link htmlTag SublimeGreen
+hi link twigVariable SublimeOrange
+hi link twigStatement SublimePink
+hi link twigAttribute SublimeAqua
+
+hi link jsonKeyword SublimeAqua
+
+hi link jsonString SublimeGreen
 
 hi NonText guifg=#FF0000

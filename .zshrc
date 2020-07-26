@@ -108,32 +108,36 @@ alias ga.='git add .'
 alias gst='git status'
 alias grcc='git rm -r --cached .'
 
-# Branch (b)
 alias gbra='git branch'
-alias gbral='git branch -v'
-alias gbraL='git branch -av'
+alias gbrav='git branch -v'
+alias gbravv='git branch -vv'
+alias gbraav='git branch -av'
 alias gbrad='git branch -d'
-alias gbraX='git branch -D'
+alias gbrax='git branch -D'
 alias gbram='git branch -m'
 alias gbraM='git branch -M'
-alias gshobras='git show-branch'
-alias gbraS='git show-branch -a'
+
+alias gshob='git show-branch'
+alias gshoba='git show-branch -a'
 
 alias gcam='git add . && git commit -m "'
 alias gclo='git clone'
 alias gche='git checkout'
 alias gchem='git checkout master'
 alias gcheb='git checkout -b'
+alias gchebmu='git checkout -b master upstream/master'
+alias gchebmo='git checkout -b master origin/master'
 alias gchema='git checkout master'
 alias gchep='git checkout --patch'
 alias gche-='git checkout --'
 
 alias gres='git reset'
+alias gress1='git reset --soft HEAD~1'
 alias gresh='git reset --hard'
+alias gresH='git reset HEAD'
 alias greshh='git reset --hard HEAD'
 alias grev='git revert'
 
-# Commit (c)
 alias gcom='git commit'
 alias gcomv='git commit --verbose'
 alias gcomva='git commit --verbose --all'
@@ -141,14 +145,16 @@ alias gcomm='git commit --message'
 alias gcommi="git commit -m 'Initial commit'"
 alias gcf='git commit --amend --reuse-message HEAD'
 alias gcF='git commit --verbose --amend'
-alias gcp='git cherry-pick --ff'
-alias gcP='git cherry-pick --no-commit'
-alias gcr='git revert'
-alias gcR='git reset "HEAD^"'
+
+alias gchep='git cherry-pick'
+alias gchepff='git cherry-pick --ff'
+alias gchepnc='git cherry-pick --no-commit'
+alias gchepa='git cherry-pick --abort'
+alias gchepc='git cherry-pick --continue'
+
 alias gsho='git show'
 alias gcoml='git-commit-lost'
 
-# Data (d)
 alias gd='git ls-files'
 alias gdc='git ls-files --cached'
 alias gdx='git ls-files --deleted'
@@ -157,15 +163,19 @@ alias gdu='git ls-files --other --exclude-standard'
 alias gdk='git ls-files --killed'
 alias gdi='git status --porcelain --short --ignored | sed -n "s/^!! //p"'
 
-# Fetch (f)
 alias gfet='git fetch'
+alias gfeto='git fetch origin'
+alias gfetu='git fetch upstream'
+alias gfetum='git fetch upstream master'
 alias gpulr='git pull --rebase'
 alias gpul='git pull'
 alias gpulo='git pull origin'
+alias gpulor='git pull origin --rebase'
+alias gpulur='git pull upstream --rebase'
 alias gpulom='git pull origin master'
-alias gpulum='git pull origin master'
+alias gpulomr='git pull origin master --rebase'
+alias gpulumr='git pull upstream master --rebase'
 
-# Grep (g)
 alias gg='git grep'
 alias ggi='git grep --ignore-case'
 alias ggl='git grep --files-with-matches'
@@ -173,19 +183,25 @@ alias ggL='git grep --files-without-matches'
 alias ggv='git grep --invert-match'
 alias ggw='git grep --word-regexp'
 
-# Index (i)
-alias gia='git add'
-alias giA='git add --patch'
-alias giu='git add --update'
-alias gid='git diff --no-ext-diff --cached'
-alias giD='git diff --no-ext-diff --cached --word-diff'
-alias gir='git reset'
-alias giR='git reset --patch'
-alias gix='git rm -r --cached'
-alias giX='git rm -rf --cached'
+alias gadd='git add'
+alias gaddp='git add --patch'
+alias gaddu='git add --update'
 
-# Log (l)
-alias gl='git log --topo-order --pretty=format:"${_git_log_medium_format}"'
+alias gdif='git diff'
+alias gdifns='git diff --name-status'
+alias gdifs='git diff --stat'
+alias gdifnc='git diff --no-ext-diff --cached'
+alias gdifncw='git diff --no-ext-diff --cached --word-diff'
+
+# show files modified on commit
+alias gdiftf='git diff-tree --no-commit-id --name-only -r'
+
+alias grm='git rm'
+alias grmrc='git rm -r --cached'
+alias grmrfc='git rm -rf --cached'
+
+alias gl='git log'
+alias glm='git log --topo-order --pretty=format:"${_git_log_medium_format}"'
 alias gls='git log --topo-order --stat --pretty=format:"${_git_log_medium_format}"'
 alias gld='git log --topo-order --stat --patch --full-diff --pretty=format:"${_git_log_medium_format}"'
 alias glo='git log --topo-order --pretty=format:"${_git_log_oneline_format}"'
@@ -194,7 +210,6 @@ alias glb='git log --topo-order --pretty=format:"${_git_log_brief_format}"'
 alias glc='git shortlog --summary --numbered'
 alias glt='git log --oneline --decorate --source --pretty=format:"%Cblue %h %Cgreen %ar %Cblue %an %C(yellow) %d %Creset %s" --all --graph'
 
-# Merge (m)
 alias gmer='git merge'
 alias gmernc='git merge --no-commit'
 alias gmernf='git merge --no-ff'
@@ -202,10 +217,11 @@ alias gmera='git merge --abort'
 
 alias gmert='git mergetool'
 
-# Push (p)
 alias gpus='git push'
 alias gpuso='git push origin'
 alias gpusof='git push origin --force'
+alias gpusso='git push --set-upstream origin $(git-branch-current)'
+alias gpussof='git push --set-upstream origin $(git-branch-current) --force'
 alias gpusom='git push origin master'
 alias gpushm='git push heroku master'
 alias gpusf='git push --force'
@@ -215,19 +231,23 @@ alias gpust='git push --tags'
 alias gpusc='git push --set-upstream origin "$(git-branch-current 2> /dev/null)"'
 alias gpusp='git pull origin "$(git-branch-current 2> /dev/null)" && git push origin "$(git-branch-current 2> /dev/null)"'
 
-# Rebase (r)
 alias greb='git rebase'
+alias grebm='git rebase master'
 alias greba='git rebase --abort'
 alias grebc='git rebase --continue'
 alias grebi='git rebase --interactive'
 
-# Remote (R)
 alias grem='git remote'
 alias gremv='git remote -v'
 alias greml='git remote --verbose'
 alias grema='git remote add'
+alias gremao='git remote add origin'
+alias gremau='git remote add upstream'
 alias gremx='git remote rm'
-alias gremm='git remote rename'
+alias gremr='git remote rename'
+alias gremro='git remote rename origin'
+alias gremru='git remote rename upstream'
+alias gremrou='git remote rename origin upstream'
 alias gremu='git remote update'
 alias gremp='git remote prune'
 alias gremb='git-hub-browse'
@@ -235,11 +255,11 @@ alias gremb='git-hub-browse'
 # Stash (s)
 alias gsta='git stash'
 alias gstaa='git stash apply'
-alias gstax='git stash drop'
+alias gstad='git stash drop'
 alias gstaX='git-stash-clear-interactive'
 alias gstal='git stash list'
 alias gstaL='git-stash-dropped'
-alias gstad='git stash show --patch --stat'
+alias gstasps='git stash show --patch --stat'
 alias gstap='git stash pop'
 alias gstar='git-stash-recover'
 alias gstas='git stash save --include-untracked'
@@ -258,19 +278,13 @@ alias gSs='git submodule sync'
 alias gSu='git submodule foreach git pull origin master'
 alias gSx='git-submodule-remove'
 
-# Working Copy (w)
 alias gws='git status --ignore-submodules=${_git_status_ignore_submodules} --short'
 alias gwS='git status --ignore-submodules=${_git_status_ignore_submodules}'
-alias gwd='git diff --no-ext-diff'
-alias gwD='git diff --no-ext-diff --word-diff'
-alias gwr='git reset --soft'
-alias gwR='git reset --hard'
 alias gwc='git clean -n'
 alias gwC='git clean -f'
 alias gwx='git rm -r'
 alias gwX='git rm -rf'
 
-# Conflict (C)
 alias gCl='git status | sed -n "s/^.*both [a-z]*ed: *//p"'
 alias gCa='git add $(gCl)'
 alias gCe='git mergetool $(gCl)'
@@ -305,32 +319,25 @@ alias wb='web-ext buid'
 alias ws='web-ext sign'
 alias ww="web-ext run --firefox='/home/bnd/Downloads/firefox'"
 
-# React
 alias cra="create-react-app"
 alias crna="create-react-native-app"
 
-# yarn
 alias ys='yarn start'
 alias ya='yarn add'
 alias yi='yarn install'
 
-# Node
 alias no="node"
 alias ad="adonis"
 
-# Sails
-alias sa='sails'
-alias san='sails new'
-alias sal='sails lift'
-alias sag='sails generate'
-
-# npm
 alias ns="npm start"
 alias nins="npm install"
 alias ninss="npm install --save"
 alias ninssd="npm install --save-dev"
 alias ni="npm init"
+alias nc="npm ci"
 alias nr="npm run"
+alias nrd="npm run dev"
+alias nrt="npm run test"
 alias nrti="npm run typings install"
 
 alias bs='browser-sync'
@@ -338,6 +345,7 @@ alias bss='browser-sync start --server'
 alias bssf='browser-sync start --server --files="*.*"'
 alias bssro="browser-sync start --https  --server 'build' --files 'build' --watch --no-open --port"
 alias bssro9="browser-sync start --https  --server 'build' --files 'build' --watch --no-open --port 9999"
+alias bspay="browser-sync start --https  --server 'build' --files 'build' --watch --no-open --port 3002"
 
 #------------------------------------
 # Laravel
@@ -440,9 +448,9 @@ alias hlgt='heroku logs --tail'
 
 #------------------------------------
 # Ruby
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
 # export RUBYOPT='-W:no-deprecated -W:no-experimental'
-export PATH=$PATH:$(ruby -e 'print Gem.user_dir')/bin
+# export PATH=$PATH:$(ruby -e 'print Gem.user_dir')/bin
 
 alias bi="bundle install"
 alias be="bundle exec"
@@ -549,19 +557,21 @@ dria() { docker rmi $(docker images -q); }
 # Dockerfile build, e.g., $dbu tcnksm/test
 dbu() { docker build -t=$1 .; }
 
-# Show all alias related docker
 dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
-
+alias b='./bcloud'
 alias bcr='./bcloud clusters resume'
 alias bcl='./bcloud clusters list'
+alias bcd='./bcloud clusters destroy'
 alias bsc='./bcloud store create'
 alias bsl='./bcloud store list'
 alias bds='./bcloud dns setup'
 alias bsb='./bcloud ssh bcappvm'
 alias bra='./bcloud rsync auto'
 alias blb='./bcloud logs bcapp'
+alias bn='./bcloud nuke'
+alias bp='./bcloud provision'
 alias ng='./ngrok http 3000'
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -570,3 +580,9 @@ if [ -f '/Users/rbanda/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/rbanda/g
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/rbanda/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/rbanda/google-cloud-sdk/completion.zsh.inc'; fi
 export PATH="/usr/local/opt/awscli@1/bin:$PATH"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

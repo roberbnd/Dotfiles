@@ -22,11 +22,4 @@ Plug 'mattn/calendar-vim'
 Plug 'vitalk/vim-simple-todo'
 "{{{======================================================================================
 let g:simple_todo_map_keys = 0
-" <leader>i 	Create a new todo under cursor
-" <leader>I 	Create a new todo for current line
-" <leader>o 	Create a new todo below current line
-" <leader>O 	Create a new todo above current line
-" <leader>x 	Mark todo under cursor as done
-" <leader>X 	Mark todo as undone
-" <leader>s 	Switch todo status for current line
 "======================================================================================}}}

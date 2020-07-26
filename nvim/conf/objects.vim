@@ -17,6 +17,12 @@ Plug 'kana/vim-textobj-function'
 " viF to visually select a function without leading or trailing blank lines.
 "======================================================================================}}}
 
+Plug 'thalesmello/vim-textobj-multiline-str', { 'for': 'python' }
+"{{{======================================================================================
+" aq: around multiline string. Gets the string contents and the quotes.
+" iq: inner multiline string. Gets the string contents without the quotes and immediate linebreaks.
+"======================================================================================}}}
+
 Plug 'beloglazov/vim-textobj-punctuation'
 "{{{======================================================================================
 " vim-textobj-eunctuation is a Vim plugin providing text objects iu and au (u stands for
@@ -56,12 +62,12 @@ Plug 'jeetsukumaran/vim-pythonsense', { 'for': 'python'}
 "method or function.
 "======================================================================================}}}
 
+Plug 'thalesmello/vim-textobj-methodcall', { 'for': 'javascript'}
 "{{{======================================================================================
 " am: around method call. Gets the method call of the surrounding scope.
 " im: inner method call. Gets the method call of the current scope.
 " aM: around method call chain. Gets the method call chain of the surrounding scope.
 " iM: inner method call chain. Gets the method call chain of the current scope.
-Plug 'thalesmello/vim-textobj-methodcall', { 'for': 'javascript'}
 "======================================================================================}}}
 
 Plug 'whatyouhide/vim-textobj-xmlattr', { 'for': ['javascript', 'html', 'eruby'] }

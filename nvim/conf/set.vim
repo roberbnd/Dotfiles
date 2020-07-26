@@ -20,7 +20,7 @@ set hlsearch
 set incsearch
 set inccommand="nosplit"
 set laststatus=2
-set lcs=tab:>-,eol:<,space:+,trail:-
+" set lcs=tab:>-,eol:<,space:+,trail:-
 set noautoindent
 set nobackup
 set nocompatible

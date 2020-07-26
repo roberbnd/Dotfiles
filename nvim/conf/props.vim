@@ -6,28 +6,6 @@ Plug 'vim-scripts/loremipsum', { 'on': 'Loremipsum'}
 " Replace the random text with something else or simply remove it.
 "======================================================================================}}}
 
-Plug 'segeljakt/vim-silicon'
-"{{{======================================================================================
-" require cargo install silicon bat
-" This plugin provides a command which, given a visual selection or buffer, will generate a
-" neat looking and highly customizable image of the source code.
-let g:silicon = {
-      \   'theme':              'Dracula',
-      \   'font':                  'Hack',
-      \   'background':         '#fff0',
-      \   'shadow-color':       '#555555',
-      \   'line-pad':                   2,
-      \   'pad-horiz':                 80,
-      \   'pad-vert':                 100,
-      \   'shadow-blur-radius':         0,
-      \   'shadow-offset-x':            0,
-      \   'shadow-offset-y':            0,
-      \   'line-number':           v:true,
-      \   'round-corner':          v:true,
-      \   'window-controls':       v:true,
-      \ }
-"======================================================================================}}}
-
 Plug 'kkoomen/vim-doge', { 'on': 'DogeGenerate'}
 "{{{======================================================================================
 " DoGe is a (Do)cumentation (Ge)nerator which will generate a proper documentation skeleton
@@ -54,11 +32,26 @@ Plug 'mbbill/undotree'
 "{{{======================================================================================
 "= =====================================================================================}}}
 
-" Plug 'luochen1990/rainbow'
+Plug 'da-x/name-assign.vim'
 "{{{======================================================================================
-let g:rainbow_active = 1
+" provides a Vim plugin to automate replacing expressions with assigned variables
+" in multiple programming language.
+" vmap <leader>b <Plug>NameAssign
 "======================================================================================}}}
 
-Plug 'da-x/name-assign.vim'
+Plug 'jmckiern/vim-venter', { 'on': 'VenterToggle' }
+"{{{======================================================================================
+"======================================================================================}}}
+
+Plug 'AndrewRadev/linediff.vim'
+"{{{======================================================================================
+"======================================================================================}}}
+
+Plug 'justinmk/vim-dirvish'
+"{{{======================================================================================
+"with ranger I can't see long name files
+"======================================================================================}}}
+
+Plug 'wellle/visual-split.vim'
 "{{{======================================================================================
 "======================================================================================}}}

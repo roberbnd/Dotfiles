@@ -27,11 +27,15 @@ tnoremap X <C-\><C-n><c-^>
 tnoremap Z <C-\><C-n>
 vnoremap m <esc>
 nnoremap Q <nop>
-nnoremap M :call lightline#update()<cr>
-nnoremap S :!git add .<cr><cr>
-nnoremap <leader>R :Tmuxline powerline<cr>
+nnoremap T :tabprevious<cr>
+nnoremap M :tabnext<cr>
+nnoremap S :Gwrite<cr>
 nnoremap <leader>C :CocCommand explorer<cr>
 nnoremap U <c-R>
+
+nmap yr :let @+ = expand("%")<cr>
+nmap yn :let @+ = expand("%:t")<cr>
+nmap yf :let @+ = expand("%:p")<cr>
 
 inoremap jf <esc>f
 inoremap jF <esc>F
@@ -40,13 +44,24 @@ inoremap jc <esc>cc
 cnoremap jj <esc>
 inoremap jj <esc>
 
-imap jh <esc>O
-imap jt <esc>o
-imap j. <esc>.
+inoremap jh <esc>O
+inoremap qh <cr><esc>O
+nnoremap qh i<cr><esc>O
+inoremap jt <esc>o
+inoremap qt <esc>o<cr>
+nnoremap qt o<cr>
+nnoremap qr yyp
 
-nmap <leader>yr :let @+ = expand("%")<cr>
-nmap <leader>yn :let @+ = expand("%:t")<cr>
-nmap <leader>yf :let @+ = expand("%:p")<cr>
+inoremap j. <esc>.
+imap qa <esc>:w<cr>-a
+imap q, <esc>,
+inoremap qs <esc>:w<cr>
+nnoremap qs :w<cr>
+
+nnoremap QQ :w<cr>:qa<cr>
+
+nnoremap <leader>rp :qa!<cr>
+nnoremap rp :qa<cr>
 
 nnoremap <leader>cp yip
 nnoremap <leader>w :e ~/vimwiki/index.md<cr>
@@ -54,22 +69,23 @@ nnoremap <leader>w :e ~/vimwiki/index.md<cr>
 "Add empty lines
 nnoremap <leader>h. :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 nnoremap <leader>h, :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
-nnoremap <leader>hf :exe ':silent !firefox %'<CR>
-nnoremap <leader>hc :exe ':silent !chromium-browser %'<CR>
-nnoremap <leader>hr /<c-r>+
-nnoremap <leader>hj :NERDTreeToggle<cr>
-nnoremap <leader>hk :NERDTreeFind<cr>
 
-nnoremap <leader>ha :nohlsearch<CR>
+nnoremap <leader>hf :exe ':silent !firefox %'<cr>
+nnoremap <leader>hc :exe ':silent !chromium-browser %'<cr>
+nnoremap <leader>hr /<c-r>+<cr>
+
+nnoremap <leader>ha :nohlsearch<cr>
 nnoremap <leader>ho ~
 nnoremap <leader>he b~
 nnoremap <leader>hu g~iw
 nnoremap <leader>hi cgn
 nnoremap <leader>hd :echo expand('%')<cr>
 nnoremap <leader>hD :echo expand('%:p')<cr>
-nnoremap <leader>hh :put<CR>
+nnoremap <leader>hh :put<cr>
 nnoremap <leader>ht :e %:h/
 nnoremap <leader>hn Bdf<space>i
+nnoremap <leader>hj :Dirvish %<cr>
+nnoremap <leader>hk :Dirvish<cr>
 
 nnoremap <leader>hq :e %<cr>
 nnoremap <leader>hb :e ~/.config/nvim/conf/keyboard.vim<cr>
@@ -89,56 +105,21 @@ nnoremap <leader>D :DeleteHiddenBuffers<cr>
 nnoremap <leader>ma :<c-u>MatchupWhereAmI?<cr>
 nnoremap <leader>cc :CopyPath<cr>
 
-imap qa <esc>:w<cr>ra
-imap q, <esc>,
-inoremap qc <esc>o<cr>
-nnoremap qc o<cr>
-inoremap qn <cr><esc>O
-nnoremap qn i<cr><esc>O
-inoremap qs <esc>:w<cr>
-nnoremap qs :w<cr>
-inoremap qr <esc>yyp
-nnoremap qr yyp
-inoremap qh <cr>
-nnoremap q' yi'
-nnoremap q" yi"
-nnoremap q{ yi{
-nnoremap q) yi)
-nnoremap rp :qa<cr>
-nnoremap r; :qa!<cr>
-nnoremap QQ :w<cr>:qa<cr>
-
 "Scroll {{{===================================
-nnoremap s. <c-e>
-nnoremap s, <c-y>
-nnoremap so <c-u>
-nnoremap se <c-d>
-
 nnoremap <s-tab> <c-b>
 nnoremap <tab> <c-f>
 vnoremap <s-tab> <c-b>
 vnoremap <tab> <c-f>
-
-vnoremap s. <c-e>
-vnoremap s, <c-y>
-vnoremap so <c-u>zz
-vnoremap se <c-d>zz
-
-nnoremap <leader>\t <c-w>v<c-w>l<c-f><c-w>h
-nnoremap <leader>\a <c-w>h<c-b><c-b><c-w>l<c-b><c-b><c-w>h
-nnoremap <leader>\u <c-w>h<c-f><c-f><c-w>l<c-f><c-f><c-w>h
 "}}}==========================================
 
 "Tabs {{{=====================================
 nnoremap sp :tabnew<cr>
-nnoremap s, :tabprevious<cr>
-nnoremap s. :tabnext<cr>
+nnoremap s, :tabmove -1<cr>
+nnoremap s. :tabmove +1<cr>
 nnoremap s; :tabclose<cr>
 
-nnoremap <leader>s; :tabr<cr>
-nnoremap <leader>s, :tabm +1<cr>
-nnoremap <leader>s. :tabm -1<cr>
-nnoremap <leader>sp :tabl<cr>
+nnoremap se :tabfirst<cr>
+nnoremap su :tablast<cr>
 "}}}==========================================
 
 "Buffers {{{==================================
@@ -148,6 +129,8 @@ nnoremap rj :Ranger<cr>
 nnoremap rk :RangerWorkingDirectory<cr>
 nnoremap rh <c-^>
 nnoremap rc gf
+noremap <leader>rc :e <cfile><cr>
+nnoremap <leader>rh <c-w>gf
 nmap -- *cgn
 nmap -, ver
 nmap -j yiw
@@ -166,17 +149,13 @@ nnoremap s= <c-w>=
 " split horizontally"
 nnoremap s- <c-w>s
 " go right"
-" nnoremap ss <c-w>l0
-nnoremap ss :TmuxNavigateRight<cr>
+nnoremap ss <c-w>l0
 " go up"
-" nnoremap st <c-w>k0
-nnoremap st :TmuxNavigateUp<cr>
+nnoremap st <c-w>k
 " go down"
-" nnoremap sn <c-w>j0
-nnoremap sn :TmuxNavigateDown<cr>
+nnoremap sn <c-w>j
 " go left
-" nnoremap sh <c-w>h0
-nnoremap sh :TmuxNavigateLeft<cr>
+nnoremap sh <c-w>h0
 " changes vertically to horizontally
 nnoremap sk <c-w>K
 " changes horizontally to vertically
@@ -201,12 +180,12 @@ nnoremap sb <c-w>_
 "}}}==========================================
 
 "Switching line {{{===========================
-nnoremap <c-r> :m .+1<CR>==
-inoremap <c-r> <ESC>:m .+1<CR>==gi
-vnoremap <c-r> :m '>+1<CR>gv=gv
-nnoremap <c-c> :m .-2<CR>==
-inoremap <c-c> <ESC>:m .-2<CR>==gi
-vnoremap <c-c> :m '<-2<CR>gv=gv
+nnoremap <c-r> :m .+1<cr>==
+inoremap <c-r> <ESC>:m .+1<cr>==gi
+vnoremap <c-r> :m '>+1<cr>gv=gv
+nnoremap <c-c> :m .-2<cr>==
+inoremap <c-c> <ESC>:m .-2<cr>==gi
+vnoremap <c-c> :m '<-2<cr>gv=gv
 "}}}==========================================
 
 "Navegation {{{===============================
@@ -260,7 +239,7 @@ vmap [ sa[
 vmap { sa{
 vmap ( sa(
 vmap ' sa'
-vmap " sa"
+vmap q sa"
 vmap <space><space> sa<space>
 "}}}==========================================
 
@@ -269,14 +248,15 @@ nmap d[ sd[
 nmap d{ sd{
 nmap d( sd(
 nmap d' sd'
-nmap d" sd"
+nmap dq sd"
 nmap d<space> sd<space>
 nmap d; df;
 nmap d, df,
 nmap d<space> df<space>
+nnoremap dp dap
 "}}}==========================================
 
-"Change {{{==================================
+"Change {{{===================================
 nmap c{ sr{
 nmap c( sr(
 nmap c' sr'
@@ -287,7 +267,29 @@ nmap c, cf,
 nmap c<space> cf<space>
 "}}}==========================================
 
-"semicolon {{{==================================
+"Modify {{{===================================
+nnoremap m' ci'
+nnoremap mq ci"
+nnoremap m{ ci{
+nnoremap m( ci(
+nnoremap m[ ci[
+nnoremap m; ct;
+nnoremap m<space> ct<space>
+"}}}==========================================
+
+"Yank {{{=====================================
+nnoremap y' yi'
+nnoremap yq yi"
+nnoremap y{ yi{
+nnoremap y) yi)
+nnoremap yp yap
+"}}}==========================================
+
+nnoremap -' ct'
+nnoremap -<space> ct<space>
+nnoremap -q ct"
+
+"semicolon {{{================================
 nnoremap <leader>;; A;<Esc>
 inoremap ;; <esc>A;<esc>
 inoremap ;z <esc>A;<cr>
@@ -330,7 +332,7 @@ nmap gp <Plug>(EasyAlign)
 "}}}==========================================
 
 "Align {{{====================================
-map <leader>ao =ae``
+map <leader>au =ae``
 nnoremap <leader>ag =G
 nnoremap <leader>a{ =i{``
 nnoremap <leader>a( =i(``
@@ -341,10 +343,10 @@ vnoremap <tab> >gv
 vnoremap <s-tab> <gv
 nnoremap <leader>ae :Tabularize /
 vnoremap <leader>ae :Tabularize /
-nnoremap <Leader>a= :Tabularize /=<CR>
-vnoremap <Leader>a= :Tabularize /=<CR>
-nnoremap <Leader>a: :Tabularize /:\zs<CR>
-vnoremap <Leader>a: :Tabularize /:\zs<CR>
+nnoremap <Leader>a= :Tabularize /=<cr>
+vnoremap <Leader>a= :Tabularize /=<cr>
+nnoremap <Leader>a: :Tabularize /:\zs<cr>
+vnoremap <Leader>a: :Tabularize /:\zs<cr>
 "}}}==========================================
 
 "Insertlessly {{{=============================
@@ -431,19 +433,20 @@ inoremap <silent><expr> <c-space> coc#refresh()
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
 if exists('*complete_info')
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<cr>"
 else
-  imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+  imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<cr>"
 endif
 
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
 nmap <silent> ]c <Plug>(coc-diagnostic-next)
 
 nmap <silent> ga <Plug>(coc-definition)
+nmap <silent> <leader>ga :tabnew %<cr><Plug>(coc-definition)
 nmap <silent> g+ s+ga
 nmap <silent> g- s-ga
 
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <silent> K :call <SID>show_documentation()<cr>
 function! s:show_documentation()
   if &filetype == 'vim'
     execute 'h '.expand('<cword>')
@@ -468,32 +471,45 @@ nmap gc <Plug>(coc-git-commit)
 
 imap <c-l> <Plug>(coc-snippets-expand)
 
-nnoremap -a :CocCommand todolist.create<cr>
+" nnoremap -a :CocCommand todolist.create<cr>
+nnoremap -a :CtrlPBuffer<cr>
 nnoremap -o :CocList todolist<cr>
 nnoremap -e :CocList files<cr>
 nnoremap -u :CocList lines<cr>
 nnoremap -d :CocList commits<cr>
 nnoremap -h :CocList grep<cr>
 nnoremap -t :CocList gstatus<cr>
-nnoremap -t :CocList windows<cr>
+nnoremap -n :CocList windows<cr>
 nnoremap -c :CocList diagnostics<cr>
 nnoremap -r :CocList outline<cr>
-nnoremap -- :CocList yank<cr>
 nnoremap -m :CocList symbols<cr>
+
+nnoremap <silent> <leader>y  :<C-u>CocList -A --normal yank<cr>
 "}}}==========================================
+
+" nnoremap ra :Buffers<cr>
+" nnoremap ro :GFiles<cr>
+" nnoremap re :Files<cr>
+" nnoremap ru :BLines<cr>
+" nnoremap ri :Lines<cr>
+" nnoremap rd :Commits<cr>
+" nnoremap rg :GFiles?<cr>
+" nnoremap rr :Rg<cr>
+" nnoremap rm :Windows<cr>
+" nmap <leader>ro :CtrlP<cr>
 
 nnoremap ra :Buffers<cr>
 nnoremap ro :GFiles<cr>
 nnoremap re :Files<cr>
-nnoremap ru :Lines<cr>
-nnoremap ri :BLines<cr>
+nnoremap ru :BLines<cr>
+nnoremap ri :Lines<cr>
 nnoremap rd :Commits<cr>
-nnoremap rg :GFiles?<cr>
+nnoremap rg :CtrlPModified<cr>
 nnoremap rr :Rg<cr>
-nnoremap rm :Windows<cr>
+nnoremap rm :CtrlPSmartTabs<cr>
+nnoremap ma :CtrlPBookmark<cr>
 
-nmap ma :CtrlPBookmark<cr>
-nmap <leader>ro :CtrlP<cr>
+nnoremap <leader>ra :BufExplorer<cr>
 
 nnoremap +<leader> :call vimspector#ToggleBreakpoint()<cr>
 nnoremap ++ :call vimspector#Continue()<cr>
@@ -507,3 +523,5 @@ nnoremap +a :VimspectorReset<cr>
 
 nmap <leader>t <Plug>(simple-todo-mark-switch)
 nmap <leader>n <Plug>(simple-todo-new-start-of-line)
+
+vmap <leader>B <Plug>NameAssign

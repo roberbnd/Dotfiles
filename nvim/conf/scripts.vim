@@ -80,3 +80,22 @@ function! SynStack()
   endif
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
+
+function BrightHighlightOn()
+  hi Comment gui=bold guifg=#66d9ef
+endfunction
+
+function BrightHighlightOff()
+  hi Comment gui=Italic
+endfunction
+
+" let g:jump_list = 0
+" function HighlightLastJump()
+"   let &l:new_size = getjumplist()[-2]
+"   if new_size > g:jump_list
+"     g:jump_list = new_size
+"     line = getjumplist()[-2][-1]['lnum']
+"     call matchdelete(hi)
+"     let hi = matchaddpos("MyGroup", [line])
+"   endif
+" end

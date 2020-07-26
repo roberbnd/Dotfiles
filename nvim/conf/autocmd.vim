@@ -12,8 +12,6 @@ au BufRead *Spec.js,*_spec.js set filetype=jasmine
 au BufRead *.babelrc set ft=json
 au BufRead *.handlebars,*.hbs,*.ejs set ft=html
 
-au Filetype json,vimwiki,markdown,md let g:indentLine_setConceal = 0
-
 au InsertEnter * imap ) <bs>
 au InsertEnter * inoremap ] <cr>
 au VimEnter * startinsert

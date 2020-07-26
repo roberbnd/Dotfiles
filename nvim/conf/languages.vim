@@ -94,20 +94,6 @@ Plug 'rhysd/vim-crystal', { 'for': 'crystal' }
 " spec integration Syntax check (Using Syntastic) Completion (currently for variable names)
 "======================================================================================}}}
 
-Plug 'SidOfc/mkdx', { 'for': 'markdown' }
-"{{{======================================================================================
-" mkdx.vim is a markdown plugin that aims to reduce
-" the time you spend formatting your markdown documents.
-" It does this by adding some configurable mappings for
-" files with a markdown filetype. Functions are included
-" to handle lists, checkboxes (even lists of checkboxes!),
-" fenced code blocks, shortcuts, headers and links.
-" In addition to that, this plugin provides a mapping to
-" convert a selection of CSV data to a markdown table.
-" And there's a lot more :D Visit :h mkdx or
-" :h mkdx-helptags for more information.
-"======================================================================================}}}
-
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 "{{{======================================================================================
 "======================================================================================}}}
@@ -143,6 +129,10 @@ Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 Plug 'JulesWang/css.vim', { 'for': 'css' }
 "======================================================================================}}}
 
-"{{{======================================================================================
 Plug 'uarun/vim-protobuf'
+"{{{======================================================================================
+"======================================================================================}}}
+
+Plug 'nelsyeung/twig.vim'
+"{{{======================================================================================
 "======================================================================================}}}
