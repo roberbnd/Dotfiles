@@ -9,7 +9,7 @@
 " searcher: fzf
 " debugger: vimspector
 " file manager: ranger
-" statusline: lightline
+" statusline: airline
 " motion: easymotion, asterisk
 "==============================================}}}
 

@@ -10,7 +10,7 @@ let g:coc_global_extensions = [
   \ 'coc-post', 'coc-project', 'coc-pairs', 'coc-highlight', 'coc-snippets',
   \ 'coc-marketplace', 'coc-git', 'coc-markmap', 'coc-gitignore', 'coc-yank',
   \ 'coc-todolist', 'coc-pyright', 'coc-vetur', 'coc-elixir', 'coc-diagnostic',
-  \ 'coc-emoji', 'coc-dictionary', 'coc-syntax', 'coc-restclient'
+  \ 'coc-emoji', 'coc-dictionary', 'coc-syntax', 'coc-restclient', 'coc-bookmark'
   \ ]
 "======================================================================================}}}
 
@@ -31,9 +31,7 @@ Plug 'junegunn/fzf.vim'
 "{{{======================================================================================
 " require bat
 let g:fzf_layout = { 'down': '100%' }
-let g:fzf_layout = { 'window': 'enew' }
 let g:fzf_preview_window = 'down:60%'
-let g:fzf_tags_command = '~/Downloads/ptags'
 "======================================================================================}}}
 
 Plug 'pechorin/any-jump.vim'
@@ -80,14 +78,15 @@ Plug 'haya14busa/vim-asterisk'
 " asterisk.vim provides improved * motions.
 "======================================================================================}}}
 
-" Plug 'liuchengxu/vista.vim'
+Plug 'liuchengxu/vista.vim'
 "{{{======================================================================================
 " require ctags, ptags
 " Viewer & Finder for LSP symbols and tags in Vim
 " use ptags generate the tags file
 let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
-let g:vista#renderer#enable_icon = 1
+" let g:vista#renderer#enable_icon = 1
 let g:vista_default_executive = 'coc'
+let g:vista_sidebar_width = 40
 "======================================================================================}}}
 
 Plug 'machakann/vim-sandwich'
@@ -140,9 +139,6 @@ Plug 'markonm/traces.vim'
 
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'jasoncodes/ctrlp-modified.vim'
-Plug 'sgur/ctrlp-extensions.vim'
-Plug 'DavidEGx/ctrlp-smarttabs'
 "{{{======================================================================================
 " Add/remove bookmark at current line 	mm                : BookmarkToggle
 " Add/edit/remove annotation at current line 	mi          : BookmarkAnnotate <TEXT>
@@ -185,9 +181,7 @@ Plug 'tpope/vim-sleuth'
 " adjusts 'shiftwidth' and 'expandtab' heuristically based on the current file
 "======================================================================================}}}
 
-Plug 'jlanzarotta/bufexplorer'
+Plug 'lambdalisue/fern.vim'
 "{{{======================================================================================
-let g:bufExplorerDisableDefaultKeyMapping=1
-let g:bufExplorerShowTabBuffer=1
-let g:bufExplorerShowRelativePath=1
 "======================================================================================}}}
+

@@ -16,8 +16,9 @@ let g:airline_powerline_fonts = 1
 let g:airline_section_c = '%t'
 let g:airline_section_z = '%l:%c'
 let g:airline_section_y = ''
+let g:airline_focuslost_inactive = 0
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#tab_min_count = 2
+let g:airline#extensions#tabline#tab_min_count = 1
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#fnamemod = ':t:r'
 let g:airline#extensions#tabline#left_sep = ''
@@ -64,9 +65,4 @@ Plug 'miyakogi/seiya.vim'
 "transparent background color in (transparent) terminal.
 let g:seiya_auto_enable=1
 let g:seiya_target_groups = has('nvim') ? ['guibg'] : ['ctermbg']
-"======================================================================================}}}
-
-Plug 'luochen1990/rainbow'
-"{{{======================================================================================
-let g:rainbow_active = 1
 "======================================================================================}}}

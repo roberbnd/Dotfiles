@@ -2,7 +2,8 @@ filetype plugin indent on
 set autoread
 set clipboard+=unnamedplus
 set completeopt=longest,menuone
-set cursorline
+" set cursorline
+" set cursorcolumn
 set diffopt=vertical
 set expandtab
 set encoding=utf-8
@@ -21,6 +22,7 @@ set incsearch
 set inccommand="nosplit"
 set laststatus=2
 " set lcs=tab:>-,eol:<,space:+,trail:-
+set mouse=a
 set noautoindent
 set nobackup
 set nocompatible

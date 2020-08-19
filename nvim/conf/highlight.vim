@@ -1,6 +1,7 @@
 colorscheme sublimemonokai
-hi clear CursorLine
-hi CursorLine gui=underline
+" hi clear CursorLine
+" hi CursorLine gui=underline
+hi CursorLine guibg=#4c4c4c
 
 hi SublimeYellow guifg=#DDDD00
 " hi SublimePink guifg=#00FF00
@@ -24,6 +25,8 @@ hi phpDocParam cterm=italic ctermfg=14 gui=italic guifg=#80a0ff
 hi link phpRegion SublimeGreen
 hi link phpIdentifier SublimeOrange
 hi link phpMethod SublimeAqua
+hi link phpUseClass SublimeOrange
+hi link phpMethodsVar SublimePurple
 
 hi link typescriptParens SublimeAqua
 hi link typescriptObjectLabel SublimeOrange
@@ -73,3 +76,8 @@ hi link jsonKeyword SublimeAqua
 hi link jsonString SublimeGreen
 
 hi NonText guifg=#FF0000
+
+hi link VistaTag SublimePurple
+
+au VimEnter * hi! airline_tab guibg=#0096c7 guifg=#000000
+au VimEnter * hi! airline_tabmod guibg=#e63244 guifg=#000000

@@ -135,13 +135,15 @@ alias gres='git reset'
 alias gress1='git reset --soft HEAD~1'
 alias gresh='git reset --hard'
 alias gresH='git reset HEAD'
-alias greshh='git reset --hard HEAD'
+alias greshH='git reset --hard HEAD'
 alias grev='git revert'
 
 alias gcom='git commit'
 alias gcomv='git commit --verbose'
 alias gcomva='git commit --verbose --all'
 alias gcomm='git commit --message'
+alias gcomam='git commit --amend --message'
+alias gcoma='git commit --amend'
 alias gcommi="git commit -m 'Initial commit'"
 alias gcf='git commit --amend --reuse-message HEAD'
 alias gcF='git commit --verbose --amend'
@@ -362,6 +364,7 @@ alias artimmo="php artisan make:model"
 alias artimmi="php artisan make:migration"
 alias artimse="php artisan make:seeder"
 
+alias cda='composer dump-autoload'
 #------------------------------------
 # Crystal
 alias cr='crystal'
@@ -452,6 +455,7 @@ alias hlgt='heroku logs --tail'
 # export RUBYOPT='-W:no-deprecated -W:no-experimental'
 # export PATH=$PATH:$(ruby -e 'print Gem.user_dir')/bin
 
+alias rvm5='rvm use 2.6.5'
 alias bi="bundle install"
 alias be="bundle exec"
 alias bers="bundle exec rspec"
@@ -558,31 +562,3 @@ dria() { docker rmi $(docker images -q); }
 dbu() { docker build -t=$1 .; }
 
 dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
-export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
-
-alias b='./bcloud'
-alias bcr='./bcloud clusters resume'
-alias bcl='./bcloud clusters list'
-alias bcd='./bcloud clusters destroy'
-alias bsc='./bcloud store create'
-alias bsl='./bcloud store list'
-alias bds='./bcloud dns setup'
-alias bsb='./bcloud ssh bcappvm'
-alias bra='./bcloud rsync auto'
-alias blb='./bcloud logs bcapp'
-alias bn='./bcloud nuke'
-alias bp='./bcloud provision'
-alias ng='./ngrok http 3000'
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/rbanda/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/rbanda/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/rbanda/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/rbanda/google-cloud-sdk/completion.zsh.inc'; fi
-export PATH="/usr/local/opt/awscli@1/bin:$PATH"
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

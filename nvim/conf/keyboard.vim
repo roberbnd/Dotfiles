@@ -27,10 +27,9 @@ tnoremap X <C-\><C-n><c-^>
 tnoremap Z <C-\><C-n>
 vnoremap m <esc>
 nnoremap Q <nop>
-nnoremap T :tabprevious<cr>
-nnoremap M :tabnext<cr>
+nmap <leader>t :tabprevious<cr>
+nmap <leader>n :tabnext<cr>
 nnoremap S :Gwrite<cr>
-nnoremap <leader>C :CocCommand explorer<cr>
 nnoremap U <c-R>
 
 nmap yr :let @+ = expand("%")<cr>
@@ -48,12 +47,12 @@ inoremap jh <esc>O
 inoremap qh <cr><esc>O
 nnoremap qh i<cr><esc>O
 inoremap jt <esc>o
+inoremap jn <cr>O
 inoremap qt <esc>o<cr>
 nnoremap qt o<cr>
 nnoremap qr yyp
 
 inoremap j. <esc>.
-imap qa <esc>:w<cr>-a
 imap q, <esc>,
 inoremap qs <esc>:w<cr>
 nnoremap qs :w<cr>
@@ -63,7 +62,6 @@ nnoremap QQ :w<cr>:qa<cr>
 nnoremap <leader>rp :qa!<cr>
 nnoremap rp :qa<cr>
 
-nnoremap <leader>cp yip
 nnoremap <leader>w :e ~/vimwiki/index.md<cr>
 
 "Add empty lines
@@ -84,11 +82,10 @@ nnoremap <leader>hD :echo expand('%:p')<cr>
 nnoremap <leader>hh :put<cr>
 nnoremap <leader>ht :e %:h/
 nnoremap <leader>hn Bdf<space>i
-nnoremap <leader>hj :Dirvish %<cr>
-nnoremap <leader>hk :Dirvish<cr>
+nnoremap <leader>hj :e ~/.config/nvim/conf/keyboard.vim<cr>
 
 nnoremap <leader>hq :e %<cr>
-nnoremap <leader>hb :e ~/.config/nvim/conf/keyboard.vim<cr>
+nnoremap <leader>hb :CocCommand explorer<cr>
 nnoremap <leader>hm :Vista!!<cr>
 
 " split html elements
@@ -102,8 +99,7 @@ nmap <leader>ve V<tab><esc>
 nmap <leader>vo V<s-tab><esc>
 
 nnoremap <leader>D :DeleteHiddenBuffers<cr>
-nnoremap <leader>ma :<c-u>MatchupWhereAmI?<cr>
-nnoremap <leader>cc :CopyPath<cr>
+nnoremap <leader>cc :<c-u>MatchupWhereAmI?<cr>
 
 "Scroll {{{===================================
 nnoremap <s-tab> <c-b>
@@ -132,9 +128,6 @@ nnoremap rc gf
 noremap <leader>rc :e <cfile><cr>
 nnoremap <leader>rh <c-w>gf
 nmap -- *cgn
-nmap -, ver
-nmap -j yiw
-nmap -k ByEw
 "}}}==========================================
 
 "splits {{{===================================
@@ -364,10 +357,10 @@ vmap t <Plug>(easymotion-s2)
 nmap t <Plug>(easymotion-overwin-f2)
 nmap -. <Plug>(easymotion-s)
 smap <A-t> <Plug>(easymotion-s)
-nmap eH Veh
-nmap eT vet
-nmap eN ven
-nmap eS Ves
+nmap eg Veh
+nmap ec vet
+nmap er ven
+nmap el Ves
 imap jbh <esc>eH
 imap jbt <esc>eT
 imap jbn <esc>eN
@@ -471,45 +464,32 @@ nmap gc <Plug>(coc-git-commit)
 
 imap <c-l> <Plug>(coc-snippets-expand)
 
-" nnoremap -a :CocCommand todolist.create<cr>
-nnoremap -a :CtrlPBuffer<cr>
-nnoremap -o :CocList todolist<cr>
-nnoremap -e :CocList files<cr>
-nnoremap -u :CocList lines<cr>
-nnoremap -d :CocList commits<cr>
-nnoremap -h :CocList grep<cr>
-nnoremap -t :CocList gstatus<cr>
-nnoremap -n :CocList windows<cr>
-nnoremap -c :CocList diagnostics<cr>
-nnoremap -r :CocList outline<cr>
-nnoremap -m :CocList symbols<cr>
+nnoremap <silent> <leader>p  :<C-u>CocList --auto-preview --normal yank<cr>
 
-nnoremap <silent> <leader>y  :<C-u>CocList -A --normal yank<cr>
+nnoremap <leader>ra :CocList --top buffers<cr>
+nnoremap <leader>re :CocList --auto-preview --top files<cr>
+nnoremap <leader>ru :CocList --auto-preview --top lines<cr>
+nnoremap <leader>rd :CocList --auto-preview --top commits<cr>
+nnoremap <leader>rr :CocList --auto-preview --top grep<space>
+nnoremap <leader>rg :CocList --auto-preview --top gstatus<cr>
+nnoremap rm :CocList --top windows<cr>
+nnoremap rs :CocList --auto-preview diagnostics<cr>
+
+nnoremap <leader>mm :CocCommand bookmark.toggle<cr>
+nnoremap <leader>ma :CocList --auto-preview bookmark<cr>
 "}}}==========================================
 
-" nnoremap ra :Buffers<cr>
-" nnoremap ro :GFiles<cr>
-" nnoremap re :Files<cr>
-" nnoremap ru :BLines<cr>
-" nnoremap ri :Lines<cr>
-" nnoremap rd :Commits<cr>
-" nnoremap rg :GFiles?<cr>
-" nnoremap rr :Rg<cr>
-" nnoremap rm :Windows<cr>
-" nmap <leader>ro :CtrlP<cr>
-
+" I can paste
 nnoremap ra :Buffers<cr>
 nnoremap ro :GFiles<cr>
 nnoremap re :Files<cr>
 nnoremap ru :BLines<cr>
 nnoremap ri :Lines<cr>
 nnoremap rd :Commits<cr>
-nnoremap rg :CtrlPModified<cr>
 nnoremap rr :Rg<cr>
-nnoremap rm :CtrlPSmartTabs<cr>
-nnoremap ma :CtrlPBookmark<cr>
+nnoremap rg :GFiles?<cr>
 
-nnoremap <leader>ra :BufExplorer<cr>
+nnoremap ma :CtrlPBookmark<cr>
 
 nnoremap +<leader> :call vimspector#ToggleBreakpoint()<cr>
 nnoremap ++ :call vimspector#Continue()<cr>
@@ -521,7 +501,7 @@ nnoremap +. :call vimspector#Stop()<cr>
 nnoremap +; :call vimspector#Restart()<cr>
 nnoremap +a :VimspectorReset<cr>
 
-nmap <leader>t <Plug>(simple-todo-mark-switch)
-nmap <leader>n <Plug>(simple-todo-new-start-of-line)
+nmap <leader>mo <Plug>(simple-todo-mark-switch)
+nmap <leader>me <Plug>(simple-todo-new-start-of-line)
 
 vmap <leader>B <Plug>NameAssign

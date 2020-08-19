@@ -184,3 +184,37 @@ Plug 'Yggdroot/indentLine'
 " Displaying thin vertical lines at each indentation leve
 let g:indentLine_enabled = 0
 "======================================================================================}}}
+" Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+"======================================================================================}}}
+" This project contains Vim configuration files for editing and compiling Ruby within Vim.
+" Method [m ]m, Visual am,im,aM(Class)
+"{{{======================================================================================
+
+" Plug 'tpope/vim-rails'
+"======================================================================================}}}
+" Support rails development
+"{{{======================================================================================
+
+
+" con typescript me quita el color
+" Plug 'luochen1990/rainbow'
+"{{{======================================================================================
+let g:rainbow_active = 1
+"======================================================================================}}}
+"
+Plug 'jasoncodes/ctrlp-modified.vim'
+Plug 'justinmk/vim-dirvish'
+nnoremap <leader>hj :Dirvish %<cr>
+nnoremap <leader>hk :Dirvish<cr>
+"{{{======================================================================================
+"with ranger I can't see long name files
+"======================================================================================}}}
+
+Plug 'jlanzarotta/bufexplorer'
+"{{{======================================================================================
+let g:bufExplorerDisableDefaultKeyMapping=1
+let g:bufExplorerShowTabBuffer=1
+let g:bufExplorerShowRelativePath=1
+"======================================================================================}}}
+" organized by tabs
+nnoremap <leader>rA :BufExplorer<cr>

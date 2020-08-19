@@ -39,17 +39,6 @@ Plug 'p0deje/vim-ruby-interpolation', { 'for': 'ruby' }
 " Simple Vim plugin for Ruby which automatically adds {} when you type # inside string.
 "======================================================================================}}}
 
-Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
-"======================================================================================}}}
-" This project contains Vim configuration files for editing and compiling Ruby within Vim.
-" Method [m ]m, Visual am,im,aM(Class)
-"{{{======================================================================================
-
-Plug 'tpope/vim-rails'
-"======================================================================================}}}
-" Support rails development
-"{{{======================================================================================
-
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 "{{{======================================================================================
 " This is a Vim plugin that provides Rust file detection, syntax highlighting, formatting,
