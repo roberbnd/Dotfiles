@@ -44,10 +44,9 @@ cnoremap jj <esc>
 inoremap jj <esc>
 
 inoremap jh <esc>O
-inoremap qh <cr><esc>O
-nnoremap qh i<cr><esc>O
 inoremap jt <esc>o
-inoremap jn <cr>O
+inoremap qh <cr><esc>O
+nnoremap qh i<cr><esc>O<esc>cc
 inoremap qt <esc>o<cr>
 nnoremap qt o<cr>
 nnoremap qr yyp

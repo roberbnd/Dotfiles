@@ -1,5 +1,5 @@
 "{{{==============================================
-" require hack, ranger, fzf, ctags, node, yarn
+" require hack, ranger, fzf, node, yarn
 " cargo install silicon bat ripgrep
 " gem install neovim solargraph
 " pip install --user neovim python-language-server
