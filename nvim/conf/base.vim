@@ -14,7 +14,7 @@ let g:coc_global_extensions = [
   \ ]
 "======================================================================================}}}
 
-Plug 'dense-analysis/ale'
+" Plug 'dense-analysis/ale'
 "{{{======================================================================================
 let g:ale_enabled = 0
 let g:ale_linters_explicit = 1

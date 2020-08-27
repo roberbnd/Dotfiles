@@ -1,11 +1,10 @@
 colorscheme sublimemonokai
-" hi clear CursorLine
-" hi CursorLine gui=underline
 hi CursorLine guibg=#4c4c4c
 
 hi SublimeYellow guifg=#DDDD00
 " hi SublimePink guifg=#00FF00
 
+hi Visual guibg=#056676
 hi Comment gui=italic
 
 hi EasyMotionTarget gui=bold guifg=#FFFFFF guibg=#1765E3
@@ -78,6 +77,7 @@ hi link jsonString SublimeGreen
 hi NonText guifg=#FF0000
 
 hi link VistaTag SublimePurple
+hi link luaFuncName SublimeOrange
 
 au VimEnter * hi! airline_tab guibg=#0096c7 guifg=#000000
 au VimEnter * hi! airline_tabmod guibg=#e63244 guifg=#000000

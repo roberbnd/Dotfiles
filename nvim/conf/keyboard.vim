@@ -27,8 +27,8 @@ tnoremap X <C-\><C-n><c-^>
 tnoremap Z <C-\><C-n>
 vnoremap m <esc>
 nnoremap Q <nop>
-nmap <leader>t :tabprevious<cr>
-nmap <leader>n :tabnext<cr>
+nmap <space>t :tabprevious<cr>
+nmap <space>n :tabnext<cr>
 nnoremap S :Gwrite<cr>
 nnoremap U <c-R>
 
@@ -58,47 +58,41 @@ nnoremap qs :w<cr>
 
 nnoremap QQ :w<cr>:qa<cr>
 
-nnoremap <leader>rp :qa!<cr>
+nnoremap <space>rp :qa!<cr>
 nnoremap rp :qa<cr>
 
-nnoremap <leader>w :e ~/vimwiki/index.md<cr>
+nnoremap <space>w :e ~/vimwiki/index.md<cr>
 
 "Add empty lines
-nnoremap <leader>h. :<c-u>put =repeat(nr2char(10), v:count1)<cr>
-nnoremap <leader>h, :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
+nnoremap <space><up> :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
+nnoremap <space><down> :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 
-nnoremap <leader>hf :exe ':silent !firefox %'<cr>
-nnoremap <leader>hc :exe ':silent !chromium-browser %'<cr>
-nnoremap <leader>hr /<c-r>+<cr>
+nnoremap <space>hr /<c-r>+<cr>
+nnoremap <space>/ /
 
-nnoremap <leader>ha :nohlsearch<cr>
-nnoremap <leader>ho ~
-nnoremap <leader>he b~
-nnoremap <leader>hu g~iw
-nnoremap <leader>hi cgn
-nnoremap <leader>hd :echo expand('%')<cr>
-nnoremap <leader>hD :echo expand('%:p')<cr>
-nnoremap <leader>hh :put<cr>
-nnoremap <leader>ht :e %:h/
-nnoremap <leader>hn Bdf<space>i
-nnoremap <leader>hj :e ~/.config/nvim/conf/keyboard.vim<cr>
+nnoremap <space>ha :nohlsearch<cr>
+nnoremap <space>ho ~
+nnoremap <space>he b~
+nnoremap <space>hu g~iw
+nnoremap <space>hi cgn
+nnoremap <space>hd :echo expand('%')<cr>
+nnoremap <space>hD :echo expand('%:p')<cr>
+nnoremap <space>hh :e ~/.config/nvim/conf/keyboard.vim<cr>
+nnoremap <space>ht :e %:h/
+nnoremap <space>hn Bdf<space>i
+nnoremap <space>hp :put<cr>
 
-nnoremap <leader>hq :e %<cr>
-nnoremap <leader>hb :CocCommand explorer<cr>
-nnoremap <leader>hm :Vista!!<cr>
+nnoremap <space>hq :e %<cr>
+nnoremap <space>hb :CocCommand explorer<cr>
+nnoremap <space>hm :Vista!!<cr>
 
 " split html elements
-vmap <leader>st :s/<[^>]*>/\r&\r/g<cr>
+vmap <space>sh :s/<[^>]*>/\r&\r/g<cr>
 vnoremap r y:%s/<c-r>"/
 vnoremap / y/<c-r>"<cr>
 
-nnoremap <leader>vu V=
-nnoremap <leader>va V
-nmap <leader>ve V<tab><esc>
-nmap <leader>vo V<s-tab><esc>
-
-nnoremap <leader>D :DeleteHiddenBuffers<cr>
-nnoremap <leader>cc :<c-u>MatchupWhereAmI?<cr>
+nnoremap <space>D :DeleteHiddenBuffers<cr>
+nnoremap <space>cc :<c-u>MatchupWhereAmI?<cr>
 
 "Scroll {{{===================================
 nnoremap <s-tab> <c-b>
@@ -123,17 +117,18 @@ nnoremap ck :Bclose!<cr>
 nnoremap rj :Ranger<cr>
 nnoremap rk :RangerWorkingDirectory<cr>
 nnoremap rh <c-^>
+nnoremap <space>rh <c-w>gf
 nnoremap rc gf
-noremap <leader>rc :e <cfile><cr>
-nnoremap <leader>rh <c-w>gf
+noremap <space>rc :e <cfile><cr>
 nmap -- *cgn
+vmap -- *cgn
 "}}}==========================================
 
 "splits {{{===================================
 " close
 nnoremap sc <c-w>c
 " close tab return to the buffer
-nmap <leader>sc scru<cr>
+nmap <space>sc scru<cr>
 " split vertically"
 nnoremap s+ <c-w>v
 " equal wide"
@@ -183,10 +178,10 @@ vnoremap <c-c> :m '<-2<cr>gv=gv
 "Navegation {{{===============================
 nnoremap , ``
 "back cursor
-nnoremap <leader>e <c-o>
+nnoremap <space>e <c-o>
 nnoremap <left> <c-o>
 "forward cursor
-nnoremap <leader>u <c-i>
+nnoremap <space>u <c-i>
 nnoremap <right> <c-i>
 nmap <down> ga
 nmap <up> t
@@ -221,7 +216,7 @@ inoremap ,e <esc><c-o>
 inoremap ,g <esc>t
 inoremap ,f <esc>f
 
-nnoremap <leader>,, A,<Esc>
+nnoremap <space>,, A,<Esc>
 inoremap ,, <esc>A,<Esc>
 inoremap ,z <esc>A,<cr>
 "}}}==========================================
@@ -282,22 +277,22 @@ nnoremap -<space> ct<space>
 nnoremap -q ct"
 
 "semicolon {{{================================
-nnoremap <leader>;; A;<Esc>
+nnoremap <space>;; A;<Esc>
 inoremap ;; <esc>A;<esc>
 inoremap ;z <esc>A;<cr>
 au BufEnter *.py inoremap ;; <esc>A:<esc>
-au BufEnter *.py nnoremap <leader>;; A:<esc>
-au BufEnter *.css nnoremap <leader>;; A;<Esc>
+au BufEnter *.py nnoremap <space>;; A:<esc>
+au BufEnter *.css nnoremap <space>;; A;<Esc>
 "}}}==========================================
 
 "Languages {{{==================================
 "React
 "===============================================
 "delete react attribute
-au BufEnter *.js,*.jsx nnoremap <leader>dr F<space>df}
-au BufEnter *.js,*.jsx nnoremap <leader>ls gg/state<cr>:nohlsearch<cr>
-au BufEnter *.js,*.jsx nnoremap <leader>lr gg/render<cr>:nohlsearch<cr>
-au BufEnter *.js,*.jsx nnoremap <leader>lc gg/class<cr>:nohlsearch<cr>
+au BufEnter *.js,*.jsx nnoremap <space>dr F<space>df}
+au BufEnter *.js,*.jsx nnoremap <space>ls gg/state<cr>:nohlsearch<cr>
+au BufEnter *.js,*.jsx nnoremap <space>lr gg/render<cr>:nohlsearch<cr>
+au BufEnter *.js,*.jsx nnoremap <space>lc gg/class<cr>:nohlsearch<cr>
 "}}}==========================================
 
 "============================================
@@ -324,25 +319,25 @@ nmap gp <Plug>(EasyAlign)
 "}}}==========================================
 
 "Align {{{====================================
-map <leader>au =ae``
-nnoremap <leader>ag =G
-nnoremap <leader>a{ =i{``
-nnoremap <leader>a( =i(``
-nnoremap <leader>a[ =i[``
-nnoremap <leader>at =it
+map <space>au =ae``
+nnoremap <space>ag =G
+nnoremap <space>a{ =i{``
+nnoremap <space>a( =i(``
+nnoremap <space>a[ =i[``
+nnoremap <space>at =it
 
 vnoremap <tab> >gv
 vnoremap <s-tab> <gv
-nnoremap <leader>ae :Tabularize /
-vnoremap <leader>ae :Tabularize /
-nnoremap <Leader>a= :Tabularize /=<cr>
-vnoremap <Leader>a= :Tabularize /=<cr>
-nnoremap <Leader>a: :Tabularize /:\zs<cr>
-vnoremap <Leader>a: :Tabularize /:\zs<cr>
+nnoremap <space>ae :Tabularize /
+vnoremap <space>ae :Tabularize /
+nnoremap <space>a= :Tabularize /=<cr>
+vnoremap <space>a= :Tabularize /=<cr>
+nnoremap <space>a: :Tabularize /:\zs<cr>
+vnoremap <space>a: :Tabularize /:\zs<cr>
 "}}}==========================================
 
 "Insertlessly {{{=============================
-nmap <leader><leader> <Plug>InsertSpace
+nmap <space><space> <Plug>InsertSpace
 "}}}==========================================
 
 "easymotion{{{================================
@@ -370,15 +365,15 @@ imap jmt <esc>et
 imap jmn <esc>en
 imap jms <esc>es
 imap jm/ <esc>/
-imap jmc <esc><leader>t
-imap jmr <esc><leader>n
+imap jmc <esc><space>t
+imap jmr <esc><space>n
 "==========================================}}}
 
 "Rust {{{=====================================
 au BufEnter *.rs nmap gd <Plug>(rust-def)
 au BufEnter *.rs nmap gs <Plug>(rust-def-split)
 au BufEnter *.rs nmap gx <Plug>(rust-def-vertical)
-au BufEnter *.rs nmap <leader>gd <Plug>(rust-doc)
+au BufEnter *.rs nmap <space>gd <Plug>(rust-doc)
 "}}}==========================================
 
 "Go {{{=======================================
@@ -398,7 +393,7 @@ omap ia <Plug>SidewaysArgumentTextobjI
 xmap ia <Plug>SidewaysArgumentTextobjI
 "}}}==========================================
 
-nmap <leader>f :let watcher = filewatcher#watch(".", {x,y->execute('echo y',0)})<cr>
+nmap <space>f :let watcher = filewatcher#watch(".", {x,y->execute('echo y',0)})<cr>
 
 "coc {{{======================================
 " Use tab for trigger completion with characters ahead and navigate.
@@ -434,7 +429,7 @@ nmap <silent> [c <Plug>(coc-diagnostic-prev)
 nmap <silent> ]c <Plug>(coc-diagnostic-next)
 
 nmap <silent> ga <Plug>(coc-definition)
-nmap <silent> <leader>ga :tabnew %<cr><Plug>(coc-definition)
+nmap <silent> <space>ga :tabnew %<cr><Plug>(coc-definition)
 nmap <silent> g+ s+ga
 nmap <silent> g- s-ga
 
@@ -448,14 +443,14 @@ function! s:show_documentation()
 endfunction
 
 " Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
+nmap <space>rn <Plug>(coc-rename)
 
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
 " navigate chunks of current buffer
-nmap [g <Plug>(coc-git-prevchunk)
-nmap ]g <Plug>(coc-git-nextchunk)
+nmap <space>hj <Plug>(coc-git-prevchunk)
+nmap <space>hk <Plug>(coc-git-nextchunk)
 " show chunk diff at current position
 nmap gs <Plug>(coc-git-chunkinfo)
 " show commit contains current position
@@ -463,19 +458,19 @@ nmap gc <Plug>(coc-git-commit)
 
 imap <c-l> <Plug>(coc-snippets-expand)
 
-nnoremap <silent> <leader>p  :<C-u>CocList --auto-preview --normal yank<cr>
+nnoremap <silent> <space>p  :<C-u>CocList --auto-preview --normal yank<cr>
 
-nnoremap <leader>ra :CocList --top buffers<cr>
-nnoremap <leader>re :CocList --auto-preview --top files<cr>
-nnoremap <leader>ru :CocList --auto-preview --top lines<cr>
-nnoremap <leader>rd :CocList --auto-preview --top commits<cr>
-nnoremap <leader>rr :CocList --auto-preview --top grep<space>
-nnoremap <leader>rg :CocList --auto-preview --top gstatus<cr>
+nnoremap <space>ra :CocList --top buffers<cr>
+nnoremap <space>re :CocList --auto-preview --top files<cr>
+nnoremap <space>ru :CocList --auto-preview --top lines<cr>
+nnoremap <space>rd :CocList --auto-preview --top commits<cr>
+nnoremap <space>rr :CocList --auto-preview --top grep<space>
+nnoremap <space>rg :CocList --auto-preview --top gstatus<cr>
 nnoremap rm :CocList --top windows<cr>
 nnoremap rs :CocList --auto-preview diagnostics<cr>
 
-nnoremap <leader>mm :CocCommand bookmark.toggle<cr>
-nnoremap <leader>ma :CocList --auto-preview bookmark<cr>
+nnoremap <space>mm :CocCommand bookmark.toggle<cr>
+nnoremap <space>ma :CocList --auto-preview bookmark<cr>
 "}}}==========================================
 
 " I can paste
@@ -490,7 +485,7 @@ nnoremap rg :GFiles?<cr>
 
 nnoremap ma :CtrlPBookmark<cr>
 
-nnoremap +<leader> :call vimspector#ToggleBreakpoint()<cr>
+nnoremap +<space> :call vimspector#ToggleBreakpoint()<cr>
 nnoremap ++ :call vimspector#Continue()<cr>
 nnoremap +o :call vimspector#StepOut()<cr>
 nnoremap +e :call vimspector#StepInto()<cr>
@@ -500,7 +495,4 @@ nnoremap +. :call vimspector#Stop()<cr>
 nnoremap +; :call vimspector#Restart()<cr>
 nnoremap +a :VimspectorReset<cr>
 
-nmap <leader>mo <Plug>(simple-todo-mark-switch)
-nmap <leader>me <Plug>(simple-todo-new-start-of-line)
-
-vmap <leader>B <Plug>NameAssign
+vmap <space>B <Plug>NameAssign

@@ -1,21 +1,22 @@
+Plug 'foosoft/vim-argwrap', { 'on': 'ArgWrap' }
 "vim-argwrap{{{===========================================================================
 " It can be used for collapsing and expanding from function calls to array and dictionary
 " definitions.:ArgWrap
-Plug 'foosoft/vim-argwrap', { 'on': 'ArgWrap' }
 "======================================================================================}}}
 
+Plug 'AndrewRadev/splitjoin.vim'
 "splitjoin{{{=============================================================================
 " switching between a single-line statement and a multi-line one.
 " gS to split a one-liner into multiple lines
 " gJ (with the cursor on the first line of a block)
-Plug 'AndrewRadev/splitjoin.vim'
 "======================================================================================}}}
 
+Plug 'AndrewRadev/sideways.vim'
 "sideways{{{==============================================================================
 " :SidewaysLeft <<, :SidewaysRight >>,  exchange args
-Plug 'AndrewRadev/sideways.vim'
 "======================================================================================}}}
 
+Plug 'bomgar/breakit.vim'
 "breakit{{{===============================================================================
 " <Leader>ba, - break after comma
 " <Leader>bA, - break after comma remove space
@@ -28,14 +29,14 @@ Plug 'AndrewRadev/sideways.vim'
 " test,
 "  test2,
 "  test3
-Plug 'bomgar/breakit.vim'
 "======================================================================================}}}
 
+Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
 "tabular{{{===============================================================================
 " :Tabularize /{pattern}
-Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
 "======================================================================================}}}
 
+Plug 'tommcdo/vim-exchange'
 "vim-exchange{{{==========================================================================
 " To exchange two words, place your cursor on the first word and type cxiw. Then move
 " to the second word and type cxiw again. Note: the {motion} used in the first
@@ -44,14 +45,14 @@ Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
 " vmap X <Plug>(Exchange)
 " nmap cxc <Plug>(ExchangeClear)
 " nmap cxx <Plug>(ExchangeLine)
-Plug 'tommcdo/vim-exchange'
 "======================================================================================}}}
 
+Plug 'rstacruz/vim-xtract', { 'on': 'Xtract'}
 "vim-xtract{{{============================================================================
 " vim-xtract helps you split up large files into smaller files. Great for refactoring.
-Plug 'rstacruz/vim-xtract', { 'on': 'Xtract'}
 "======================================================================================}}}
 
+Plug 'wellle/visual-split.vim', { 'on': 'VSSplit'}
 "visual-split{{{==========================================================================
 " 1.Visually select the lines you want to split out
 " 2.Type :VSSplit, :VSSplitAbove or :VSSplitBelow to create the split
@@ -60,9 +61,12 @@ Plug 'rstacruz/vim-xtract', { 'on': 'Xtract'}
 " <C-W>gss - split out visual selection (similar to :VSSplit)
 " <C-W>gsa - split out visual selection above (similar to :VSSplitAbove)
 " <C-W>gsb - split out visual selection below (similar to :VSSplitBelow)
-Plug 'wellle/visual-split.vim', { 'on': 'VSSplit'}
 "======================================================================================}}}
 
-Plug 'AndrewRadev/linediff.vim'
-"{{{==========================================================================
+Plug 'da-x/name-assign.vim'
+"{{{======================================================================================
+" provides a Vim plugin to automate replacing expressions with assigned variables
+" in multiple programming language.
+" vmap <leader>b <Plug>NameAssign
 "======================================================================================}}}
+

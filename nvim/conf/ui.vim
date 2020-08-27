@@ -1,8 +1,6 @@
 Plug 'ErichDonGubler/vim-sublime-monokai'
-Plug 'StanAngeloff/php.vim'
 "{{{======================================================================================
 " Colorscheme
-let g:php_var_selector_is_identifier = 1
 "======================================================================================}}}
 
 Plug 'ryanoasis/vim-devicons'
@@ -34,7 +32,7 @@ let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_er
 let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
 "======================================================================================}}}
 
-Plug 'gcmt/taboo.vim'
+Plug 'gcmt/taboo.vim', { 'on': 'TabooRename' }
 "{{{======================================================================================
 " Rename tabs
 "======================================================================================}}}
@@ -51,7 +49,7 @@ Plug 'ntpeters/vim-better-whitespace'
 let g:strip_only_modified_lines=1
 "======================================================================================}}}
 
-Plug 'junegunn/limelight.vim'
+Plug 'junegunn/limelight.vim', { 'on': 'Limelight' }
 "{{{======================================================================================
 " Hyperfocus-writing in Vim.
 let g:limelight_conceal_ctermfg = 'gray'
@@ -65,4 +63,18 @@ Plug 'miyakogi/seiya.vim'
 "transparent background color in (transparent) terminal.
 let g:seiya_auto_enable=1
 let g:seiya_target_groups = has('nvim') ? ['guibg'] : ['ctermbg']
+"======================================================================================}}}
+
+Plug 'edkolev/tmuxline.vim'
+"{{{======================================================================================
+" tmux statusline generator with support for powerline symbols and lightline
+let g:tmuxline_powerline_separators = 0
+let g:tmuxline_status_justify = 'left'
+let g:tmuxline_preset = {
+  \'a': '#S',
+  \'win': '#I #W',
+  \'cwin': '#I #W',
+  \'x': '%a',
+  \'y': '%R'
+\}
 "======================================================================================}}}

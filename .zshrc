@@ -137,6 +137,8 @@ alias gresh='git reset --hard'
 alias gresH='git reset HEAD'
 alias greshH='git reset --hard HEAD'
 alias grev='git revert'
+alias grest='git restore'
+alias grests='git restore --staged'
 
 alias gcom='git commit'
 alias gcomv='git commit --verbose'
@@ -563,3 +565,7 @@ dria() { docker rmi $(docker images -q); }
 dbu() { docker build -t=$1 .; }
 
 dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
+
+[ -s ~/.luaver/luaver ] && . ~/.luaver/luaver
+
+. ~/torch/install/bin/torch-activate

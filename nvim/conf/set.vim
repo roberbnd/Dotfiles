@@ -2,7 +2,7 @@ filetype plugin indent on
 set autoread
 set clipboard+=unnamedplus
 set completeopt=longest,menuone
-" set cursorline
+set cursorline
 " set cursorcolumn
 set diffopt=vertical
 set expandtab

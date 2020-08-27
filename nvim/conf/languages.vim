@@ -1,9 +1,9 @@
+Plug 'fatih/vim-go', { 'for': 'go' }
 "{{{======================================================================================
 " Go (golang) support for Vim, which comes with pre-defined sensible settings (like auto gofmt on save),
 " with autocomplete, snippet support, improved syntax highlighting, go toolchain commands, and more. If
 " needed vim-go installs all necessary binaries for providing seamless Vim integration with current commands.
 " It's highly customizable and each individual feature can be disabled/enabled easily.
-Plug 'fatih/vim-go', { 'for': 'go' }
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
@@ -17,7 +17,20 @@ let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 let g:vim_jsx_pretty_colorful_config = 1
 "======================================================================================}}}
 
-Plug 'peitalin/vim-jsx-typescript'
+Plug 'StanAngeloff/php.vim', { 'for': 'php' }
+"{{{======================================================================================
+let g:php_var_selector_is_identifier = 1
+"======================================================================================}}}
+
+Plug 'NLKNguyen/c-syntax.vim', { 'for': 'c' }
+"{{{======================================================================================
+"======================================================================================}}}
+
+Plug 'tbastos/vim-lua', { 'for': 'lua' }
+"{{{======================================================================================
+"======================================================================================}}}
+
+Plug 'peitalin/vim-jsx-typescript', { 'for': [ 'typescript', 'javascript' ] }
 "{{{======================================================================================
 "======================================================================================}}}
 
@@ -118,10 +131,11 @@ Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 Plug 'JulesWang/css.vim', { 'for': 'css' }
 "======================================================================================}}}
 
-Plug 'uarun/vim-protobuf'
+Plug 'uarun/vim-protobuf', { 'for': 'proto' }
 "{{{======================================================================================
+"Google protocol buffer
 "======================================================================================}}}
 
-Plug 'nelsyeung/twig.vim'
+Plug 'nelsyeung/twig.vim', { 'for': 'twig' }
 "{{{======================================================================================
 "======================================================================================}}}

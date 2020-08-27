@@ -218,3 +218,35 @@ let g:bufExplorerShowRelativePath=1
 "======================================================================================}}}
 " organized by tabs
 nnoremap <leader>rA :BufExplorer<cr>
+nnoremap <leader>hf :exe ':silent !firefox %'<cr>
+nnoremap <leader>hc :exe ':silent !chromium-browser %'<cr>
+nnoremap <leader>vu V=
+nnoremap <leader>va V
+nmap <leader>ve V<tab><esc>
+nmap <leader>vo V<s-tab><esc>
+
+Plug 'juniway/indent-bar'
+"{{{======================================================================================
+"======================================================================================}}}
+let g:indent_bar_set_conceal = 0
+
+
+Plug 'vitalk/vim-simple-todo'
+"{{{======================================================================================
+let g:simple_todo_map_keys = 0
+"======================================================================================}}}
+nmap <leader>mo <Plug>(simple-todo-mark-switch)
+nmap <leader>me <Plug>(simple-todo-new-start-of-line)
+
+Plug 'kristijanhusak/vim-dadbod-ui'
+"{{{======================================================================================
+" Simple UI for vim-dadbod. It allows simple navigation through databases and allows
+" saving queries for later use.
+"======================================================================================}}}
+
+Plug 'mbbill/undotree'
+"{{{======================================================================================
+"=======================================================================================}}}
+
+LUA PLUGINS
+" Plug 'nvim-treesitter/nvim-treesitter'
