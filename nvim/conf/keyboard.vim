@@ -17,6 +17,7 @@ nnoremap <F5> :CocCommand snippets.openSnippetFiles<cr>
 nnoremap <F6> :call ToggleWrap()<cr>
 nnoremap <F7> :Limelight!!<cr>
 nnoremap <F8> :TabooRename<space>
+nnoremap <F9> :Calendar<cr>
 nnoremap <F12> :GitMessenger<cr>
 "}}}==========================================
 
@@ -55,8 +56,6 @@ inoremap j. <esc>.
 imap q, <esc>,
 inoremap qs <esc>:w<cr>
 nnoremap qs :w<cr>
-
-nnoremap QQ :w<cr>:qa<cr>
 
 nnoremap <space>rp :qa!<cr>
 nnoremap rp :qa<cr>

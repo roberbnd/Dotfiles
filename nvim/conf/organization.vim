@@ -17,4 +17,5 @@ Plug 'mattn/calendar-vim', { 'on': 'Calendar' }
 " Fast mappings are provided:
 " <LocalLeader>cal: Vertically-split calendar
 " <LocalLeader>caL: Horizontally-split calendar
+let g:calendar_keys = { 'close': 'Q'}
 "======================================================================================}}}
