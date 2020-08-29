@@ -1,13 +1,13 @@
 "{{{==============================================
 " require hack, ranger, fzf, node, yarn
-" cargo install bat ripgrep
+" cargo install silicon bat ripgrep
 " gem install neovim solargraph
 " pip install --user neovim python-language-server
 " yarn add global javascript-typescript-langserver
 " font: hack
 " completion: coc
 " searcher: fzf
-" debugger: vimspector
+" debugger:
 " file manager: ranger
 " statusline: airline
 " motion: easymotion, asterisk
@@ -28,5 +28,5 @@ call plug#end()
 
 source ~/.config/nvim/conf/scripts.vim
 source ~/.config/nvim/conf/keyboard.vim
-source ~/.config/nvim/conf/highlight.vim
+source ~/.config/nvim/conf/highlight_pop_punk.vim
 source ~/.config/nvim/conf/autocmd.vim

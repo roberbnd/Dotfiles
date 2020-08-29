@@ -254,3 +254,30 @@ LUA PLUGINS
 Plug 'lambdalisue/fern.vim'
 "{{{======================================================================================
 "======================================================================================}}}
+
+" Plug 'dense-analysis/ale'
+"{{{======================================================================================
+let g:ale_enabled = 0
+let g:ale_linters_explicit = 1
+let g:ale_php_phpcs_standard = ''
+let g:ale_php_phpcs_options = ''
+let g:ale_php_phpcs_executable = ''
+let g:ale_linters = {
+\   'php': ['phpcs'],
+\}
+"======================================================================================}}}
+
+" Plug 'ntpeters/vim-better-whitespace'
+"{{{======================================================================================
+" This plugin causes all trailing whitespace characters
+let g:strip_only_modified_lines=1
+"======================================================================================}}}
+Plug 'puremourning/vimspector'
+"{{{======================================================================================
+" Debugger
+" let g:vimspector_enable_mappings = 'HUMAN'
+sign define vimspectorBP text=🔴 texthl=Normal
+sign define vimspectorBPDisabled text=🔵 texthl=Normal
+sign define vimspectorPC text=🔶 texthl=SpellBad
+"======================================================================================}}}
+

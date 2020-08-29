@@ -17,7 +17,8 @@ nnoremap <F5> :CocCommand snippets.openSnippetFiles<cr>
 nnoremap <F6> :call ToggleWrap()<cr>
 nnoremap <F7> :Limelight!!<cr>
 nnoremap <F8> :TabooRename<space>
-nnoremap <F9> :Calendar<cr>
+nnoremap <F9> :VenterToggle<cr>
+nnoremap <F10> :Calendar<cr>
 nnoremap <F12> :GitMessenger<cr>
 "}}}==========================================
 
@@ -28,13 +29,20 @@ tnoremap X <C-\><C-n><c-^>
 tnoremap Z <C-\><C-n>
 vnoremap m <esc>
 nnoremap Q <nop>
+
 nmap <space>t :tabprevious<cr>
 nmap <space>n :tabnext<cr>
+imap jmc <esc>:w<cr>:tabprevious<cr>
+imap jmr <esc>:w<cr>:tabnext<cr>
+
 nnoremap S :Gwrite<cr>
 nnoremap U <c-R>
 
-nmap yr :let @+ = expand("%")<cr>
+" copy name
 nmap yn :let @+ = expand("%:t")<cr>
+" copy relative path
+nmap yr :let @+ = expand("%")<cr>
+" copy full path
 nmap yf :let @+ = expand("%:p")<cr>
 
 inoremap jf <esc>f
@@ -79,10 +87,10 @@ nnoremap <space>hD :echo expand('%:p')<cr>
 nnoremap <space>hh :e ~/.config/nvim/conf/keyboard.vim<cr>
 nnoremap <space>ht :e %:h/
 nnoremap <space>hn Bdf<space>i
-nnoremap <space>hp :put<cr>
+nnoremap <space>p :put<cr>
 
 nnoremap <space>hq :e %<cr>
-nnoremap <space>hb :CocCommand explorer<cr>
+nnoremap <space>hb :CocCommand explorer --sources=buffer+ --width=33<cr>
 nnoremap <space>hm :Vista!!<cr>
 
 " split html elements
@@ -200,8 +208,8 @@ inoremap ,; <right>:<space>
 inoremap ,: <right>:<cr>
 
 inoremap ,( <space>(<cr>)<esc>O
-inoremap ,h <space>==<space>
-inoremap ,t <space>=<space>
+inoremap ,h <space>=<space>
+inoremap ,t <space>==<space>
 inoremap ,n <space>!==<space>
 inoremap ,s <space>=<space>[]<left>
 inoremap ,c <space>-><space>
@@ -236,10 +244,24 @@ nmap d( sd(
 nmap d' sd'
 nmap dq sd"
 nmap d<space> sd<space>
-nmap d; df;
-nmap d, df,
-nmap d<space> df<space>
+nmap d; dt;
+nmap d, dt,
+nmap d) dt)
+nmap d<space> dt<space>
 nnoremap dp dap
+"}}}==========================================
+
+"delete until {{{=============================
+nnoremap -' ct'
+nnoremap -. ct.
+nnoremap -, ct,
+nnoremap -<space> ct<space>
+nnoremap -q ct"
+nnoremap -> ct>
+nnoremap -< ct<
+nnoremap -; ct;
+nnoremap -: ct:
+nnoremap -) ct)
 "}}}==========================================
 
 "Change {{{===================================
@@ -248,8 +270,8 @@ nmap c( sr(
 nmap c' sr'
 nmap cq sr"
 nmap c[ sr[
-nmap c; cf;
-nmap c, cf,
+nmap c; ct;
+nmap c, ct,
 nmap c<space> cf<space>
 "}}}==========================================
 
@@ -261,19 +283,16 @@ nnoremap m( ci(
 nnoremap m[ ci[
 nnoremap m; ct;
 nnoremap m<space> ct<space>
+nnoremap m< ci<
 "}}}==========================================
 
 "Yank {{{=====================================
 nnoremap y' yi'
 nnoremap yq yi"
 nnoremap y{ yi{
-nnoremap y) yi)
+nnoremap y( yi(
 nnoremap yp yap
 "}}}==========================================
-
-nnoremap -' ct'
-nnoremap -<space> ct<space>
-nnoremap -q ct"
 
 "semicolon {{{================================
 nnoremap <space>;; A;<Esc>
@@ -344,28 +363,27 @@ map eh <Plug>(easymotion-k)
 map et <Plug>(easymotion-linebackward)
 map en <Plug>(easymotion-lineforward)
 map es <Plug>(easymotion-j)
+imap jmh <esc><Plug>(easymotion-k)
+imap jmt <esc><Plug>(easymotion-linebackward)
+imap jmn <esc><Plug>(easymotion-lineforward)
+imap jms <esc><Plug>(easymotion-j)
+
 nmap / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
+imap jmm <esc><Plug>(easymotion-sn)
+
 vmap t <Plug>(easymotion-s2)
+nmap T v<Plug>(easymotion-s2)
 nmap t <Plug>(easymotion-overwin-f2)
-nmap -. <Plug>(easymotion-s)
-smap <A-t> <Plug>(easymotion-s)
-nmap eg Veh
-nmap ec vet
-nmap er ven
-nmap el Ves
-imap jbh <esc>eH
-imap jbt <esc>eT
-imap jbn <esc>eN
-imap jbs <esc>eS
-imap jmj <esc>t
-imap jmh <esc>eh
-imap jmt <esc>et
-imap jmn <esc>en
-imap jms <esc>es
-imap jm/ <esc>/
-imap jmc <esc><space>t
-imap jmr <esc><space>n
+imap jmj <esc><Plug>(easymotion-overwin-f2)
+
+nmap eg V<Plug>(easymotion-k)
+nmap ec v<Plug>(easymotion-linebackward)
+nmap er v<Plug>(easymotion-lineforward)
+nmap el V<Plug>(easymotion-j)
+imap jmg <esc>V<Plug>(easymotion-j)
+imap jmc <esc>v<Plug>(easymotion-linebackward)
+imap jmr <esc>v<Plug>(easymotion-lineforward)
+imap jml <esc>V<Plug>(easymotion-j)
 "==========================================}}}
 
 "Rust {{{=====================================
@@ -457,7 +475,7 @@ nmap gc <Plug>(coc-git-commit)
 
 imap <c-l> <Plug>(coc-snippets-expand)
 
-nnoremap <silent> <space>p  :<C-u>CocList --auto-preview --normal yank<cr>
+nnoremap <silent> <space>hp  :<C-u>CocList --auto-preview --normal yank<cr>
 
 nnoremap <space>ra :CocList --top buffers<cr>
 nnoremap <space>re :CocList --auto-preview --top files<cr>

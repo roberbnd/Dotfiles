@@ -9,6 +9,7 @@
   "diagnostic.checkCurrentLine": true,
   "solargraph.hover": true,
   "eslint.enable":false,
+  "explorer.file.autoReveal":false,
   "emmet.includeLanguages": {"eruby": "html", "javascript": "javascriptreact"},
   "languageserver": {
     "metals": {

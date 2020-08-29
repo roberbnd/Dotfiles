@@ -45,6 +45,7 @@ set updatetime=300
 set undodir=~/.config/nvim/undo
 set viewoptions=cursor,folds,slash,unix
 set wildoptions=pum
+set wrap
 " filetype on
 filetype plugin on
 syntax on

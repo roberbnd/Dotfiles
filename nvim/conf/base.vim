@@ -14,18 +14,6 @@ let g:coc_global_extensions = [
   \ ]
 "======================================================================================}}}
 
-" Plug 'dense-analysis/ale'
-"{{{======================================================================================
-let g:ale_enabled = 0
-let g:ale_linters_explicit = 1
-let g:ale_php_phpcs_standard = ''
-let g:ale_php_phpcs_options = ''
-let g:ale_php_phpcs_executable = ''
-let g:ale_linters = {
-\   'php': ['phpcs'],
-\}
-"======================================================================================}}}
-
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 "{{{======================================================================================
@@ -54,15 +42,6 @@ Plug 'benmills/vimux'
 "{{{======================================================================================
 " A Vim wrapper for running tests on different granularities.
 let test#strategy = "vimux"
-"======================================================================================}}}
-
-Plug 'puremourning/vimspector'
-"{{{======================================================================================
-" Debugger
-" let g:vimspector_enable_mappings = 'HUMAN'
-sign define vimspectorBP text=🔴 texthl=Normal
-sign define vimspectorBPDisabled text=🔵 texthl=Normal
-sign define vimspectorPC text=🔶 texthl=SpellBad
 "======================================================================================}}}
 
 Plug 'easymotion/vim-easymotion'
@@ -179,4 +158,9 @@ endif
 Plug 'tpope/vim-sleuth'
 "{{{======================================================================================
 " adjusts 'shiftwidth' and 'expandtab' heuristically based on the current file
+"======================================================================================}}}
+
+Plug 'christoomey/vim-tmux-navigator'
+"{{{======================================================================================
+" I need because <c-h> is not working
 "======================================================================================}}}
