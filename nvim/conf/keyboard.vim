@@ -17,8 +17,7 @@ nnoremap <F5> :CocCommand snippets.openSnippetFiles<cr>
 nnoremap <F6> :call ToggleWrap()<cr>
 nnoremap <F7> :Limelight!!<cr>
 nnoremap <F8> :TabooRename<space>
-nnoremap <F9> :VenterToggle<cr>
-nnoremap <F10> :Calendar<cr>
+nnoremap <F9> :Calendar<cr>
 nnoremap <F12> :GitMessenger<cr>
 "}}}==========================================
 
@@ -30,8 +29,8 @@ tnoremap Z <C-\><C-n>
 vnoremap m <esc>
 nnoremap Q <nop>
 
-nmap <space>t :tabprevious<cr>
-nmap <space>n :tabnext<cr>
+nmap B :tabprevious<cr>
+nmap M :tabnext<cr>
 imap jmc <esc>:w<cr>:tabprevious<cr>
 imap jmr <esc>:w<cr>:tabnext<cr>
 
@@ -82,6 +81,8 @@ nnoremap <space>ho ~
 nnoremap <space>he b~
 nnoremap <space>hu g~iw
 nnoremap <space>hi cgn
+nnoremap <space>h* *cgn
+vnoremap <space>h* *cgn
 nnoremap <space>hd :echo expand('%')<cr>
 nnoremap <space>hD :echo expand('%:p')<cr>
 nnoremap <space>hh :e ~/.config/nvim/conf/keyboard.vim<cr>
@@ -98,6 +99,7 @@ vmap <space>sh :s/<[^>]*>/\r&\r/g<cr>
 vnoremap r y:%s/<c-r>"/
 vnoremap / y/<c-r>"<cr>
 
+vmap <space><tab> :VSSplit<cr>
 nnoremap <space>D :DeleteHiddenBuffers<cr>
 nnoremap <space>cc :<c-u>MatchupWhereAmI?<cr>
 
@@ -127,8 +129,6 @@ nnoremap rh <c-^>
 nnoremap <space>rh <c-w>gf
 nnoremap rc gf
 noremap <space>rc :e <cfile><cr>
-nmap -- *cgn
-vmap -- *cgn
 "}}}==========================================
 
 "splits {{{===================================
@@ -207,7 +207,6 @@ inoremap ,. <right><space>
 inoremap ,; <right>:<space>
 inoremap ,: <right>:<cr>
 
-inoremap ,( <space>(<cr>)<esc>O
 inoremap ,h <space>=<space>
 inoremap ,t <space>==<space>
 inoremap ,n <space>!==<space>
@@ -216,12 +215,10 @@ inoremap ,c <space>-><space>
 inoremap ,r <space>=><space>
 inoremap ,l <space>=<space>''<left>
 inoremap ,b <space><space><left>
+inoremap ,( <space>(<cr>)<esc>O
 
-inoremap ,a <esc>A<space>
-inoremap ,o <esc>A
-inoremap ,e <esc><c-o>
-inoremap ,g <esc>t
-inoremap ,f <esc>f
+inoremap ,u <esc>A<space>
+inoremap ,e <esc>A
 
 nnoremap <space>,, A,<Esc>
 inoremap ,, <esc>A,<Esc>
@@ -251,7 +248,7 @@ nmap d<space> dt<space>
 nnoremap dp dap
 "}}}==========================================
 
-"delete until {{{=============================
+"change until {{{=============================
 nnoremap -' ct'
 nnoremap -. ct.
 nnoremap -, ct,
@@ -262,9 +259,14 @@ nnoremap -< ct<
 nnoremap -; ct;
 nnoremap -: ct:
 nnoremap -) ct)
+nnoremap -( ct(
+nnoremap -{ ct{
+nnoremap -} ct}
+nnoremap -- ct-
+nnoremap -$ ct$
 "}}}==========================================
 
-"Change {{{===================================
+"Change surround {{{==========================
 nmap c{ sr{
 nmap c( sr(
 nmap c' sr'
@@ -291,6 +293,7 @@ nnoremap y' yi'
 nnoremap yq yi"
 nnoremap y{ yi{
 nnoremap y( yi(
+nnoremap y[ yi[
 nnoremap yp yap
 "}}}==========================================
 
@@ -408,6 +411,10 @@ omap aa <Plug>SidewaysArgumentTextobjA
 xmap aa <Plug>SidewaysArgumentTextobjA
 omap ia <Plug>SidewaysArgumentTextobjI
 xmap ia <Plug>SidewaysArgumentTextobjI
+nmap <leader>ki <Plug>SidewaysArgumentInsertBefore
+nmap <leader>kI <Plug>SidewaysArgumentInsertFirst
+nmap <leader>ka <Plug>SidewaysArgumentAppendAfter
+nmap <leader>kA <Plug>SidewaysArgumentAppendLast
 "}}}==========================================
 
 nmap <space>f :let watcher = filewatcher#watch(".", {x,y->execute('echo y',0)})<cr>
@@ -445,7 +452,9 @@ endif
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
 nmap <silent> ]c <Plug>(coc-diagnostic-next)
 
+nmap <silent> + <Plug>(coc-definition)
 nmap <silent> ga <Plug>(coc-definition)
+
 nmap <silent> <space>ga :tabnew %<cr><Plug>(coc-definition)
 nmap <silent> g+ s+ga
 nmap <silent> g- s-ga
@@ -487,6 +496,9 @@ nnoremap rm :CocList --top windows<cr>
 nnoremap rs :CocList --auto-preview diagnostics<cr>
 
 nnoremap <space>mm :CocCommand bookmark.toggle<cr>
+nnoremap <space>mt :CocCommand bookmark.annotate<cr>
+nnoremap <space>mz :CocCommand bookmark.clearForCurrentFile<cr>
+nnoremap <space>mx :CocCommand bookmark.clearForAllFiles<cr>
 nnoremap <space>ma :CocList --auto-preview bookmark<cr>
 "}}}==========================================
 
@@ -501,15 +513,5 @@ nnoremap rr :Rg<cr>
 nnoremap rg :GFiles?<cr>
 
 nnoremap ma :CtrlPBookmark<cr>
-
-nnoremap +<space> :call vimspector#ToggleBreakpoint()<cr>
-nnoremap ++ :call vimspector#Continue()<cr>
-nnoremap +o :call vimspector#StepOut()<cr>
-nnoremap +e :call vimspector#StepInto()<cr>
-nnoremap +u :call vimspector#StepOver()<cr>
-nnoremap +, :call vimspector#Pause()<cr>
-nnoremap +. :call vimspector#Stop()<cr>
-nnoremap +; :call vimspector#Restart()<cr>
-nnoremap +a :VimspectorReset<cr>
 
 vmap <space>B <Plug>NameAssign

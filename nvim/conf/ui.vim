@@ -12,6 +12,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 "{{{======================================================================================
 let g:airline_powerline_fonts = 1
+let g:airline_inactive_collapse=0
 let g:airline_section_c = '%t'
 let g:airline_section_z = '%l:%c'
 let g:airline_section_y = ''
@@ -79,9 +80,3 @@ let g:tmuxline_preset = {
   \'y': '%R'
 \}
 "======================================================================================}}}
-
-Plug 'jmckiern/vim-venter', { 'on': 'VenterToggle' }
-"{{{======================================================================================
-let g:venter_width=&columns/8
-"======================================================================================}}}
-

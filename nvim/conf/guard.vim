@@ -1,3 +1,56 @@
+"=========================================================================================
+"Never use
+"=========================================================================================
+
+"=========================================================================================
+"=========================================================================================
+
+"=========================================================================================
+"Nice to have but I don´t need it
+"=========================================================================================
+Plug 'puremourning/vimspector'
+"{{{======================================================================================
+" Debugger
+" let g:vimspector_enable_mappings = 'HUMAN'
+sign define vimspectorBP text=🔴 texthl=Normal
+sign define vimspectorBPDisabled text=🔵 texthl=Normal
+sign define vimspectorPC text=🔶 texthl=SpellBad
+nnoremap +<space> :call vimspector#ToggleBreakpoint()<cr>
+nnoremap ++ :call vimspector#Continue()<cr>
+nnoremap +o :call vimspector#StepOut()<cr>
+nnoremap +e :call vimspector#StepInto()<cr>
+nnoremap +u :call vimspector#StepOver()<cr>
+nnoremap +, :call vimspector#Pause()<cr>
+nnoremap +. :call vimspector#Stop()<cr>
+nnoremap +; :call vimspector#Restart()<cr>
+nnoremap +a :VimspectorReset<cr>
+"======================================================================================}}}
+
+Plug 'jmckiern/vim-venter', { 'on': 'VenterToggle' }
+"{{{======================================================================================
+let g:venter_width=&columns/8
+nnoremap <F9> :VenterToggle<cr>
+"======================================================================================}}}
+
+Plug 'lambdalisue/fern.vim'
+"{{{======================================================================================
+"======================================================================================}}}
+
+" Plug 'dense-analysis/ale'
+"{{{======================================================================================
+let g:ale_enabled = 0
+let g:ale_linters_explicit = 1
+let g:ale_php_phpcs_standard = ''
+let g:ale_php_phpcs_options = ''
+let g:ale_php_phpcs_executable = ''
+let g:ale_linters = {
+\   'php': ['phpcs'],
+\}
+"======================================================================================}}}
+
+"=========================================================================================
+"=========================================================================================
+
 Plug 'SidOfc/mkdx', { 'for': 'markdown' }
 "{{{======================================================================================
 let g:mkdx#settings     = { 'highlight': { 'enable': 1 },
@@ -251,33 +304,9 @@ Plug 'mbbill/undotree'
 LUA PLUGINS
 " Plug 'nvim-treesitter/nvim-treesitter'
 
-Plug 'lambdalisue/fern.vim'
-"{{{======================================================================================
-"======================================================================================}}}
-
-" Plug 'dense-analysis/ale'
-"{{{======================================================================================
-let g:ale_enabled = 0
-let g:ale_linters_explicit = 1
-let g:ale_php_phpcs_standard = ''
-let g:ale_php_phpcs_options = ''
-let g:ale_php_phpcs_executable = ''
-let g:ale_linters = {
-\   'php': ['phpcs'],
-\}
-"======================================================================================}}}
-
 " Plug 'ntpeters/vim-better-whitespace'
 "{{{======================================================================================
 " This plugin causes all trailing whitespace characters
 let g:strip_only_modified_lines=1
-"======================================================================================}}}
-Plug 'puremourning/vimspector'
-"{{{======================================================================================
-" Debugger
-" let g:vimspector_enable_mappings = 'HUMAN'
-sign define vimspectorBP text=🔴 texthl=Normal
-sign define vimspectorBPDisabled text=🔵 texthl=Normal
-sign define vimspectorPC text=🔶 texthl=SpellBad
 "======================================================================================}}}
 

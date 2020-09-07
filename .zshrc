@@ -130,6 +130,7 @@ alias gchebmo='git checkout -b master origin/master'
 alias gchema='git checkout master'
 alias gchep='git checkout --patch'
 alias gche-='git checkout --'
+alias gche-.='git checkout -- .'
 
 alias gres='git reset'
 alias gress1='git reset --soft HEAD~1'
