@@ -6,13 +6,6 @@ Plug 'vim-scripts/loremipsum', { 'on': 'Loremipsum'}
 " Replace the random text with something else or simply remove it.
 "======================================================================================}}}
 
-Plug 'kkoomen/vim-doge', { 'on': 'DogeGenerate'}
-"{{{======================================================================================
-" DoGe is a (Do)cumentation (Ge)nerator which will generate a proper documentation skeleton
-" based on certain expressions (mainly functions)
-let g:doge_enable_mappings = 0
-"======================================================================================}}}
-
 Plug 'AndrewRadev/tagalong.vim'
 "{{{======================================================================================
 " The plugin is designed to automatically rename closing HTML/XML tags when editing

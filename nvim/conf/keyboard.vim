@@ -11,8 +11,8 @@
 "Fs {{{=======================================
 nnoremap <F1> :e ~/.config/nvim/init.vim<cr>
 nnoremap <F2> :source ~/.config/nvim/init.vim<cr>
-nnoremap <F3> :SaveSession!<space>
-nnoremap <F4> :OpenSession<space>
+nnoremap <F3> :CocCommand session.save<cr>
+nnoremap <F4> :CocList sessions<cr>
 nnoremap <F5> :CocCommand snippets.openSnippetFiles<cr>
 nnoremap <F6> :call ToggleWrap()<cr>
 nnoremap <F7> :Limelight!!<cr>
@@ -29,6 +29,8 @@ tnoremap Z <C-\><C-n>
 vnoremap m <esc>
 nnoremap Q <nop>
 
+nmap <space>t :tabprevious<cr>
+nmap <space>n :tabnext<cr>
 nmap B :tabprevious<cr>
 nmap M :tabnext<cr>
 imap jmc <esc>:w<cr>:tabprevious<cr>
@@ -80,9 +82,9 @@ nnoremap <space>ha :nohlsearch<cr>
 nnoremap <space>ho ~
 nnoremap <space>he b~
 nnoremap <space>hu g~iw
-nnoremap <space>hi cgn
-nnoremap <space>h* *cgn
-vnoremap <space>h* *cgn
+nnoremap <space>hc cgn
+nmap <space>h* *cgn
+vmap <space>h* *cgn
 nnoremap <space>hd :echo expand('%')<cr>
 nnoremap <space>hD :echo expand('%:p')<cr>
 nnoremap <space>hh :e ~/.config/nvim/conf/keyboard.vim<cr>
@@ -289,7 +291,7 @@ nnoremap m< ci<
 "}}}==========================================
 
 "Yank {{{=====================================
-nnoremap y' yi'
+nnoremap y' "*yi'
 nnoremap yq yi"
 nnoremap y{ yi{
 nnoremap y( yi(
@@ -417,8 +419,6 @@ nmap <leader>ka <Plug>SidewaysArgumentAppendAfter
 nmap <leader>kA <Plug>SidewaysArgumentAppendLast
 "}}}==========================================
 
-nmap <space>f :let watcher = filewatcher#watch(".", {x,y->execute('echo y',0)})<cr>
-
 "coc {{{======================================
 " Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <tab>
@@ -459,28 +459,11 @@ nmap <silent> <space>ga :tabnew %<cr><Plug>(coc-definition)
 nmap <silent> g+ s+ga
 nmap <silent> g- s-ga
 
-nnoremap <silent> K :call <SID>show_documentation()<cr>
-function! s:show_documentation()
-  if &filetype == 'vim'
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-
-" Symbol renaming.
-nmap <space>rn <Plug>(coc-rename)
-
-" Add `:OR` command for organize imports of the current buffer.
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-
 " navigate chunks of current buffer
 nmap <space>hj <Plug>(coc-git-prevchunk)
 nmap <space>hk <Plug>(coc-git-nextchunk)
 " show chunk diff at current position
-nmap gs <Plug>(coc-git-chunkinfo)
-" show commit contains current position
-nmap gc <Plug>(coc-git-commit)
+nmap <space>gc <Plug>(coc-git-chunkinfo)
 
 imap <c-l> <Plug>(coc-snippets-expand)
 
@@ -496,13 +479,15 @@ nnoremap rm :CocList --top windows<cr>
 nnoremap rs :CocList --auto-preview diagnostics<cr>
 
 nnoremap <space>mm :CocCommand bookmark.toggle<cr>
+nnoremap <space>mp :CocCommand bookmark.prev<cr>
+nnoremap <space>mn :CocCommand bookmark.next<cr>
 nnoremap <space>mt :CocCommand bookmark.annotate<cr>
 nnoremap <space>mz :CocCommand bookmark.clearForCurrentFile<cr>
 nnoremap <space>mx :CocCommand bookmark.clearForAllFiles<cr>
 nnoremap <space>ma :CocList --auto-preview bookmark<cr>
 "}}}==========================================
 
-" I can paste
+" I can paste to search
 nnoremap ra :Buffers<cr>
 nnoremap ro :GFiles<cr>
 nnoremap re :Files<cr>

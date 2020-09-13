@@ -3,11 +3,25 @@
 "=========================================================================================
 
 "=========================================================================================
+"#########################################################################################
 "=========================================================================================
-
 "=========================================================================================
 "Nice to have but I don´t need it
 "=========================================================================================
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-session', { 'on': ['SaveSession', 'OpenSession'] }
+"{{{======================================================================================
+let g:session_directory='~/.config/nvim/sessions'
+let g:session_autosave='no'
+"======================================================================================}}}
+
+Plug 'kkoomen/vim-doge', { 'on': 'DogeGenerate'}
+"{{{======================================================================================
+" DoGe is a (Do)cumentation (Ge)nerator which will generate a proper documentation skeleton
+" based on certain expressions (mainly functions)
+let g:doge_enable_mappings = 0
+"======================================================================================}}}
+
 Plug 'puremourning/vimspector'
 "{{{======================================================================================
 " Debugger
@@ -49,6 +63,7 @@ let g:ale_linters = {
 "======================================================================================}}}
 
 "=========================================================================================
+"#########################################################################################
 "=========================================================================================
 
 Plug 'SidOfc/mkdx', { 'for': 'markdown' }
@@ -310,3 +325,35 @@ LUA PLUGINS
 let g:strip_only_modified_lines=1
 "======================================================================================}}}
 
+
+
+highlight MyGroup guifg=NONE guibg=green
+let g:last_jump = 0
+function HighlightLastJump()
+  " let new_size = getjumplist()[-2]
+  " if len(new_size) > g:jump_list
+    " g:jump_list = new_size
+    let line = getjumplist()[-2][-1]['lnum']
+    g:last_jump = line
+    if exists("g:hi")
+      silent call matchdelete(g:hi)
+    endif
+    let g:hi = matchaddpos("MyGroup", [line])
+  " endif
+endfunction
+" au CursorMoved * silent call HighlightLastJump()
+highlight MyGroup guifg=NONE guibg=green
+let g:last_jump = 0
+function HighlightLastJump()
+  " let new_size = getjumplist()[-2]
+  " if len(new_size) > g:jump_list
+    " g:jump_list = new_size
+    let line = getjumplist()[-2][-1]['lnum']
+    g:last_jump = line
+    if exists("g:hi")
+      silent call matchdelete(g:hi)
+    endif
+    let g:hi = matchaddpos("MyGroup", [line])
+  " endif
+endfunction
+" au CursorMoved * silent call HighlightLastJump()

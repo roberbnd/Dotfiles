@@ -4,6 +4,12 @@ Plug 'bignimbus/pop-punk.vim'
 " Colorschemes
 "======================================================================================}}}
 
+Plug 'osyo-manga/vim-brightest'
+"{{{======================================================================================
+" bright the same words
+let g:brightest#highlight = { "group" : "CocHighlightText" }
+"======================================================================================}}}
+
 Plug 'ryanoasis/vim-devicons'
 "{{{======================================================================================
 " Adds file type icons to Vim plugins such as: NERDTree, vim-airline, CtrlP and many more
@@ -39,12 +45,6 @@ Plug 'gcmt/taboo.vim', { 'on': 'TabooRename' }
 " Rename tabs
 "======================================================================================}}}
 
-Plug 'osyo-manga/vim-brightest'
-"{{{======================================================================================
-" bright the same words
-let g:brightest#highlight = { "group" : "EasyMotionTarget" }
-"======================================================================================}}}
-
 Plug 'ntpeters/vim-better-whitespace'
 "{{{======================================================================================
 " This plugin causes all trailing whitespace characters
@@ -62,7 +62,7 @@ let g:limelight_conceal_guifg = '#777777'
 
 Plug 'miyakogi/seiya.vim'
 "{{{======================================================================================
-"transparent background color in (transparent) terminal.
+"transparent background color in terminal.
 let g:seiya_auto_enable=1
 let g:seiya_target_groups = has('nvim') ? ['guibg'] : ['ctermbg']
 "======================================================================================}}}

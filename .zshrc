@@ -132,14 +132,17 @@ alias gchep='git checkout --patch'
 alias gche-='git checkout --'
 alias gche-.='git checkout -- .'
 
+alias grest='git restore'
+alias grests.='git restore --staged .'
+alias grests='git restore --staged'
+alias grest.='git restore .'
+
 alias gres='git reset'
 alias gress1='git reset --soft HEAD~1'
 alias gresh='git reset --hard'
 alias gresH='git reset HEAD'
 alias greshH='git reset --hard HEAD'
 alias grev='git revert'
-alias grest='git restore'
-alias grests='git restore --staged'
 
 alias gcom='git commit'
 alias gcomv='git commit --verbose'
@@ -567,6 +570,4 @@ dbu() { docker build -t=$1 .; }
 
 dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
 
-[ -s ~/.luaver/luaver ] && . ~/.luaver/luaver
-
-. ~/torch/install/bin/torch-activate
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
