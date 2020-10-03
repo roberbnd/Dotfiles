@@ -1,12 +1,6 @@
 "============================================
 "==== Keyboard layout DVORAK-Programmer =====
 "============================================
-" don't use <c-o>, <c-i>, <c-m>=return
-" In insert mode, pressing <c-o> switches to
-" normal mode for one command, then switches
-" back to insert mode when the command is
-" finished.
-"============================================
 
 "Fs {{{=======================================
 nnoremap <F1> :e ~/.config/nvim/init.vim<cr>
@@ -29,6 +23,10 @@ tnoremap Z <C-\><C-n>
 vnoremap m <esc>
 nnoremap Q <nop>
 
+nmap <space>x %x<c-o>x
+nnoremap <space>. "+
+vnoremap <space>. "+
+
 nmap <space>t :tabprevious<cr>
 nmap <space>n :tabnext<cr>
 nmap B :tabprevious<cr>
@@ -40,11 +38,11 @@ nnoremap S :Gwrite<cr>
 nnoremap U <c-R>
 
 " copy name
-nmap yn :let @+ = expand("%:t")<cr>
+nmap yn :let @* = expand("%:t")<cr>
 " copy relative path
-nmap yr :let @+ = expand("%")<cr>
+nmap yr :let @* = expand("%")<cr>
 " copy full path
-nmap yf :let @+ = expand("%:p")<cr>
+nmap yf :let @* = expand("%:p")<cr>
 
 inoremap jf <esc>f
 inoremap jF <esc>F
@@ -69,13 +67,13 @@ nnoremap qs :w<cr>
 nnoremap <space>rp :qa!<cr>
 nnoremap rp :qa<cr>
 
-nnoremap <space>w :e ~/vimwiki/index.md<cr>
+nnoremap <space>o :e ~/vimwiki/index.md<cr>
 
 "Add empty lines
 nnoremap <space><up> :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
 nnoremap <space><down> :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 
-nnoremap <space>hr /<c-r>+<cr>
+nnoremap <space>hr /<c-r>"<cr>
 nnoremap <space>/ /
 
 nnoremap <space>ha :nohlsearch<cr>
@@ -113,7 +111,7 @@ vnoremap <tab> <c-f>
 "}}}==========================================
 
 "Tabs {{{=====================================
-nnoremap sp :tabnew<cr>
+nnoremap sp :tabnew %<cr>
 nnoremap s, :tabmove -1<cr>
 nnoremap s. :tabmove +1<cr>
 nnoremap s; :tabclose<cr>
@@ -300,22 +298,9 @@ nnoremap yp yap
 "}}}==========================================
 
 "semicolon {{{================================
-nnoremap <space>;; A;<Esc>
+nnoremap <space>; A;<Esc>
 inoremap ;; <esc>A;<esc>
-inoremap ;z <esc>A;<cr>
-au BufEnter *.py inoremap ;; <esc>A:<esc>
-au BufEnter *.py nnoremap <space>;; A:<esc>
-au BufEnter *.css nnoremap <space>;; A;<Esc>
-"}}}==========================================
-
-"Languages {{{==================================
-"React
-"===============================================
-"delete react attribute
-au BufEnter *.js,*.jsx nnoremap <space>dr F<space>df}
-au BufEnter *.js,*.jsx nnoremap <space>ls gg/state<cr>:nohlsearch<cr>
-au BufEnter *.js,*.jsx nnoremap <space>lr gg/render<cr>:nohlsearch<cr>
-au BufEnter *.js,*.jsx nnoremap <space>lc gg/class<cr>:nohlsearch<cr>
+inoremap ;- <esc>A;<cr>
 "}}}==========================================
 
 "============================================
@@ -452,8 +437,8 @@ endif
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
 nmap <silent> ]c <Plug>(coc-diagnostic-next)
 
-nmap <silent> + <Plug>(coc-definition)
-nmap <silent> ga <Plug>(coc-definition)
+nmap <silent> + <Plug>(coc-definition)zz
+nmap ga <Plug>(coc-definition)
 
 nmap <silent> <space>ga :tabnew %<cr><Plug>(coc-definition)
 nmap <silent> g+ s+ga
@@ -465,7 +450,7 @@ nmap <space>hk <Plug>(coc-git-nextchunk)
 " show chunk diff at current position
 nmap <space>gc <Plug>(coc-git-chunkinfo)
 
-imap <c-l> <Plug>(coc-snippets-expand)
+imap <c-m> <Plug>(coc-snippets-expand)
 
 nnoremap <silent> <space>hp  :<C-u>CocList --auto-preview --normal yank<cr>
 
@@ -477,6 +462,9 @@ nnoremap <space>rr :CocList --auto-preview --top grep<space>
 nnoremap <space>rg :CocList --auto-preview --top gstatus<cr>
 nnoremap rm :CocList --top windows<cr>
 nnoremap rs :CocList --auto-preview diagnostics<cr>
+
+nmap mn <Plug>BookmarkNextzz
+nmap mp <Plug>BookmarkPrevzz
 
 nnoremap <space>mm :CocCommand bookmark.toggle<cr>
 nnoremap <space>mp :CocCommand bookmark.prev<cr>

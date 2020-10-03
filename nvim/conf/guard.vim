@@ -15,6 +15,10 @@ let g:session_directory='~/.config/nvim/sessions'
 let g:session_autosave='no'
 "======================================================================================}}}
 
+Plug 'wesQ3/vim-windowswap'
+"{{{======================================================================================
+"======================================================================================}}}
+
 Plug 'kkoomen/vim-doge', { 'on': 'DogeGenerate'}
 "{{{======================================================================================
 " DoGe is a (Do)cumentation (Ge)nerator which will generate a proper documentation skeleton

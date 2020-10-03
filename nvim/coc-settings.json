@@ -1,16 +1,16 @@
 {
-  "coc.source.file.ignoreHidden": false,
   "coc.preferences.colorSupport": true,
+  "coc.source.file.ignoreHidden": false,
+  "diagnostic.checkCurrentLine": true,
   "diagnostic.errorSign": "🤬",
   "diagnostic.warningSign": "😑",
   "diagnostic.infoSign": "🤔",
-  "solargraph.commandPath":  "solargraph",
-  "solargraph.diagnostics": true,
-  "diagnostic.checkCurrentLine": true,
-  "solargraph.hover": true,
+  "emmet.includeLanguages": {"eruby": "html", "javascript": "javascriptreact"},
   "eslint.enable":false,
   "explorer.file.autoReveal":false,
-  "emmet.includeLanguages": {"eruby": "html", "javascript": "javascriptreact"},
+  "solargraph.commandPath":  "solargraph",
+  "solargraph.diagnostics": true,
+  "solargraph.hover": true,
   "languageserver": {
     "metals": {
       "command": "metals-vim",

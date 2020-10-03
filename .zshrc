@@ -1,3 +1,6 @@
+# /usr/local/share/zsh/site-functions/git-completion.bash
+# git checkout show only local branches line 1537 --mode="heads"
+
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
@@ -105,7 +108,7 @@ alias g='git'
 alias gi='git init'
 alias ga='git add'
 alias ga.='git add .'
-alias gst='git status'
+alias gs='git status'
 alias grcc='git rm -r --cached .'
 
 alias gbra='git branch'
@@ -148,8 +151,8 @@ alias gcom='git commit'
 alias gcomv='git commit --verbose'
 alias gcomva='git commit --verbose --all'
 alias gcomm='git commit --message'
-alias gcomam='git commit --amend --message'
 alias gcoma='git commit --amend'
+alias gcomam='git commit --amend --message'
 alias gcommi="git commit -m 'Initial commit'"
 alias gcf='git commit --amend --reuse-message HEAD'
 alias gcF='git commit --verbose --amend'
@@ -163,13 +166,13 @@ alias gchepc='git cherry-pick --continue'
 alias gsho='git show'
 alias gcoml='git-commit-lost'
 
-alias gd='git ls-files'
-alias gdc='git ls-files --cached'
-alias gdx='git ls-files --deleted'
-alias gdm='git ls-files --modified'
-alias gdu='git ls-files --other --exclude-standard'
-alias gdk='git ls-files --killed'
-alias gdi='git status --porcelain --short --ignored | sed -n "s/^!! //p"'
+alias gls='git ls-files'
+alias glsc='git ls-files --cached'
+alias glsx='git ls-files --deleted'
+alias glsm='git ls-files --modified'
+alias glsu='git ls-files --other --exclude-standard'
+alias glsk='git ls-files --killed'
+alias glsi='git status --porcelain --short --ignored | sed -n "s/^!! //p"'
 
 alias gfet='git fetch'
 alias gfeto='git fetch origin'
@@ -261,7 +264,6 @@ alias gremu='git remote update'
 alias gremp='git remote prune'
 alias gremb='git-hub-browse'
 
-# Stash (s)
 alias gsta='git stash'
 alias gstaa='git stash apply'
 alias gstad='git stash drop'
@@ -274,33 +276,6 @@ alias gstar='git-stash-recover'
 alias gstas='git stash save --include-untracked'
 alias gstaS='git stash save --patch --no-keep-index'
 alias gstaw='git stash save --include-untracked --keep-index'
-
-# Submodule (S)
-alias gS='git submodule'
-alias gSa='git submodule add'
-alias gSf='git submodule foreach'
-alias gSi='git submodule init'
-alias gSI='git submodule update --init --recursive'
-alias gSl='git submodule status'
-alias gSm='git-submodule-move'
-alias gSs='git submodule sync'
-alias gSu='git submodule foreach git pull origin master'
-alias gSx='git-submodule-remove'
-
-alias gws='git status --ignore-submodules=${_git_status_ignore_submodules} --short'
-alias gwS='git status --ignore-submodules=${_git_status_ignore_submodules}'
-alias gwc='git clean -n'
-alias gwC='git clean -f'
-alias gwx='git rm -r'
-alias gwX='git rm -rf'
-
-alias gCl='git status | sed -n "s/^.*both [a-z]*ed: *//p"'
-alias gCa='git add $(gCl)'
-alias gCe='git mergetool $(gCl)'
-alias gCo='git checkout --ours --'
-alias gCO='gCo $(gCl)'
-alias gCt='git checkout --theirs --'
-alias gCT='gCt $(gCl)'
 
 #------------------------------------
 # Python
@@ -320,14 +295,6 @@ alias rh='runhaskell'
 
 #------------------------------------
 # Javascript
-
-alias tagjs="find . -type f -iregex '.*\.js$' -not -path './node_modules/*' -exec jsctags {} -f \; | sed '/^$/d' | LANG=C sort > tags"
-alias esi='eslint --init'
-alias wr='web-ext run'
-alias wb='web-ext buid'
-alias ws='web-ext sign'
-alias ww="web-ext run --firefox='/home/bnd/Downloads/firefox'"
-
 alias cra="create-react-app"
 alias crna="create-react-native-app"
 
@@ -358,7 +325,6 @@ alias bspay="browser-sync start --https  --server 'build' --files 'build' --watc
 
 #------------------------------------
 # Laravel
-
 # composer create-project laravel/laravel {directory} "~5.0.0" --prefer-dist
 alias lara="composer create-project laravel/laravel"
 alias artis="php artisan serve"

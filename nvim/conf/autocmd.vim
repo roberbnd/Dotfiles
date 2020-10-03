@@ -8,6 +8,7 @@ au FileType javascript,javascript.jsx,feature,yaml,vim,json,eruby setlocal tabst
 au FileType javascript,css,less,sass,c,cpp setlocal foldmarker={,}
 
 au BufRead *.sbt set filetype=scala
+au BufRead *spec.tsx.snap,*.tsx set filetype=typescript
 au BufRead *Spec.js,*_spec.js set filetype=jasmine
 au BufRead *.babelrc set ft=json
 au BufRead *.handlebars,*.hbs,*.ejs set ft=html
