@@ -24,8 +24,8 @@ vnoremap m <esc>
 nnoremap Q <nop>
 
 nmap <space>x %x<c-o>x
-nnoremap <space>. "+
-vnoremap <space>. "+
+nnoremap <space><space> "+
+vnoremap <space><space> "+
 
 nmap <space>t :tabprevious<cr>
 nmap <space>n :tabnext<cr>
@@ -73,7 +73,7 @@ nnoremap <space>o :e ~/vimwiki/index.md<cr>
 nnoremap <space><up> :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
 nnoremap <space><down> :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 
-nnoremap <space>hr /<c-r>"<cr>
+nnoremap <space>hr /<c-r>+<cr>
 nnoremap <space>/ /
 
 nnoremap <space>ha :nohlsearch<cr>
@@ -219,10 +219,6 @@ inoremap ,( <space>(<cr>)<esc>O
 
 inoremap ,u <esc>A<space>
 inoremap ,e <esc>A
-
-nnoremap <space>,, A,<Esc>
-inoremap ,, <esc>A,<Esc>
-inoremap ,z <esc>A,<cr>
 "}}}==========================================
 
 "Add {{{======================================
@@ -231,7 +227,7 @@ vmap { sa{
 vmap ( sa(
 vmap ' sa'
 vmap q sa"
-vmap <space><space> sa<space>
+vmap - sa<space>
 "}}}==========================================
 
 "Delete {{{===================================
@@ -297,7 +293,11 @@ nnoremap y[ yi[
 nnoremap yp yap
 "}}}==========================================
 
-"semicolon {{{================================
+"{{{==========================================
+nnoremap <space>, A,<Esc>
+inoremap ,, <esc>A,<Esc>
+inoremap ,z <esc>A,<cr>
+
 nnoremap <space>; A;<Esc>
 inoremap ;; <esc>A;<esc>
 inoremap ;- <esc>A;<cr>
@@ -345,7 +345,7 @@ vnoremap <space>a: :Tabularize /:\zs<cr>
 "}}}==========================================
 
 "Insertlessly {{{=============================
-nmap <space><space> <Plug>InsertSpace
+nmap <space>. <Plug>InsertSpace
 "}}}==========================================
 
 "easymotion{{{================================
@@ -450,11 +450,12 @@ nmap <space>hk <Plug>(coc-git-nextchunk)
 " show chunk diff at current position
 nmap <space>gc <Plug>(coc-git-chunkinfo)
 
-imap <c-m> <Plug>(coc-snippets-expand)
+imap <c-l> <Plug>(coc-snippets-expand)
 
 nnoremap <silent> <space>hp  :<C-u>CocList --auto-preview --normal yank<cr>
 
 nnoremap <space>ra :CocList --top buffers<cr>
+nnoremap <space>ro :CocList --auto-preview --top gfiles<cr>
 nnoremap <space>re :CocList --auto-preview --top files<cr>
 nnoremap <space>ru :CocList --auto-preview --top lines<cr>
 nnoremap <space>rd :CocList --auto-preview --top commits<cr>

@@ -1,4 +1,4 @@
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install', 'on': 'MarkdownPreview' }
+Plug 'iamcco/markdown-preview.nvim'
 "{{{======================================================================================
 let g:mkdp_auto_close = 0
 let g:mkdp_markdown_css = '~/.md.css'

@@ -13,6 +13,7 @@
 " motion: easymotion, asterisk
 "==============================================}}}
 
+
 source ~/.config/nvim/conf/set.vim
 
 call plug#begin('~/.config/nvim/plugged')

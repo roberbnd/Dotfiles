@@ -267,15 +267,11 @@ alias gremb='git-hub-browse'
 alias gsta='git stash'
 alias gstaa='git stash apply'
 alias gstad='git stash drop'
-alias gstaX='git-stash-clear-interactive'
+alias gstaci='git-stash-clear-interactive'
 alias gstal='git stash list'
-alias gstaL='git-stash-dropped'
-alias gstasps='git stash show --patch --stat'
+alias gstadd='git-stash-dropped'
 alias gstap='git stash pop'
 alias gstar='git-stash-recover'
-alias gstas='git stash save --include-untracked'
-alias gstaS='git stash save --patch --no-keep-index'
-alias gstaw='git stash save --include-untracked --keep-index'
 
 #------------------------------------
 # Python
