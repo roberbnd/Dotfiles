@@ -12,6 +12,7 @@ nnoremap <F6> :call ToggleWrap()<cr>
 nnoremap <F7> :Limelight!!<cr>
 nnoremap <F8> :TabooRename<space>
 nnoremap <F9> :Calendar<cr>
+nnoremap <F10> :set number!<cr>
 nnoremap <F12> :GitMessenger<cr>
 "}}}==========================================
 
@@ -26,6 +27,9 @@ nnoremap Q <nop>
 nmap <space>x %x<c-o>x
 nnoremap <space><space> "+
 vnoremap <space><space> "+
+
+nnoremap <up> "+
+vnoremap <up> "+
 
 nmap <space>t :tabprevious<cr>
 nmap <space>n :tabnext<cr>
@@ -191,7 +195,6 @@ nnoremap <left> <c-o>
 nnoremap <space>u <c-i>
 nnoremap <right> <c-i>
 nmap <down> ga
-nmap <up> t
 "}}}==========================================
 
 "Coma {{{=====================================
@@ -345,7 +348,7 @@ vnoremap <space>a: :Tabularize /:\zs<cr>
 "}}}==========================================
 
 "Insertlessly {{{=============================
-nmap <space>. <Plug>InsertSpace
+nmap <space><space> <Plug>InsertSpace
 "}}}==========================================
 
 "easymotion{{{================================
