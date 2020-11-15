@@ -1,4 +1,3 @@
-colorscheme pop-punk
 hi Visual gui=bold guibg=#085101 guifg=reverse
 hi CursorLine guibg=#4c4c4c
 
@@ -9,7 +8,10 @@ hi EasyMotionTarget gui=bold guifg=#FFFFFF guibg=#1765E3
 
 hi CocHighlightText gui=bold guifg=#FFFFFF guibg=#a901d5
 
-au VimEnter * hi! airline_tab guibg=#0096c7 guifg=#000000
-au VimEnter * hi! airline_tabmod guibg=#e63244 guifg=#000000
+au VimEnter * hi! airline_tabsel gui=bold
+au VimEnter * hi! airline_tab gui=bold guibg=#0096c7 guifg=#000000
+au VimEnter * hi! airline_tabmod gui=bold guibg=#e63244 guifg=#000000
 
 hi NonText guifg=#FF0000
+
+hi Pmenu guibg=#000000

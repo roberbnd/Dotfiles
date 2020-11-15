@@ -9,17 +9,12 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 "======================================================================================}}}
 
-Plug 'neoclide/vim-jsx-improve', { 'for': ['javascript.jsx', 'javascript'] }
+" Plug 'neoclide/vim-jsx-improve', { 'for': ['javascript.jsx', 'javascript'] }
 Plug 'glanotte/vim-jasmine', { 'for': 'jasmine' }
 "{{{======================================================================================
 " syntax
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 let g:vim_jsx_pretty_colorful_config = 1
-"======================================================================================}}}
-
-Plug 'StanAngeloff/php.vim', { 'for': 'php' }
-"{{{======================================================================================
-let g:php_var_selector_is_identifier = 1
 "======================================================================================}}}
 
 Plug 'NLKNguyen/c-syntax.vim', { 'for': 'c' }
@@ -30,7 +25,7 @@ Plug 'tbastos/vim-lua', { 'for': 'lua' }
 "{{{======================================================================================
 "======================================================================================}}}
 
-Plug 'peitalin/vim-jsx-typescript', { 'for': [ 'typescript', 'javascript' ] }
+" Plug 'peitalin/vim-jsx-typescript', { 'for': [ 'typescript', 'javascript' ] }
 "{{{======================================================================================
 "======================================================================================}}}
 
@@ -45,11 +40,6 @@ Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
 " Filetype detection for .ex, .exs, .eex and .leex files
 " Automatic indentation
 " Integration between Ecto projects and vim-dadbod for running SQL queries on defined Ecto repositories
-"======================================================================================}}}
-
-Plug 'p0deje/vim-ruby-interpolation', { 'for': 'ruby' }
-"{{{======================================================================================
-" Simple Vim plugin for Ruby which automatically adds {} when you type # inside string.
 "======================================================================================}}}
 
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
@@ -96,10 +86,6 @@ Plug 'rhysd/vim-crystal', { 'for': 'crystal' }
 " spec integration Syntax check (Using Syntastic) Completion (currently for variable names)
 "======================================================================================}}}
 
-Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-"{{{======================================================================================
-"======================================================================================}}}
-
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 "{{{======================================================================================
 " Syntax Highlighting and Indentation for Haskell and Cabal
@@ -134,8 +120,4 @@ Plug 'JulesWang/css.vim', { 'for': 'css' }
 Plug 'uarun/vim-protobuf', { 'for': 'proto' }
 "{{{======================================================================================
 "Google protocol buffer
-"======================================================================================}}}
-
-Plug 'nelsyeung/twig.vim', { 'for': 'twig' }
-"{{{======================================================================================
 "======================================================================================}}}

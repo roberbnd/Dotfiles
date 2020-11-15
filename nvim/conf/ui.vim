@@ -1,7 +1,6 @@
-" Plug 'ErichDonGubler/vim-sublime-monokai'
-Plug 'bignimbus/pop-punk.vim'
+Plug 'nvim-treesitter/nvim-treesitter'
 "{{{======================================================================================
-" Colorschemes
+" Colorscheme
 "======================================================================================}}}
 
 Plug 'osyo-manga/vim-brightest'
@@ -53,22 +52,6 @@ Plug 'ntpeters/vim-better-whitespace'
 let g:strip_only_modified_lines=1
 "======================================================================================}}}
 
-Plug 'junegunn/limelight.vim', { 'on': 'Limelight' }
-"{{{======================================================================================
-" Hyperfocus-writing in Vim.
-let g:limelight_conceal_ctermfg = 'gray'
-let g:limelight_conceal_ctermfg = 240
-let g:limelight_conceal_guifg = 'DarkGray'
-let g:limelight_conceal_guifg = '#777777'
-"======================================================================================}}}
-
-Plug 'miyakogi/seiya.vim'
-"{{{======================================================================================
-"transparent background color in terminal.
-let g:seiya_auto_enable=1
-let g:seiya_target_groups = has('nvim') ? ['guibg'] : ['ctermbg']
-"======================================================================================}}}
-
 Plug 'edkolev/tmuxline.vim'
 "{{{======================================================================================
 " tmux statusline generator with support for powerline symbols and lightline
@@ -86,4 +69,11 @@ let g:tmuxline_preset = {
 Plug 'simeji/winresizer'
 "{{{======================================================================================
 " <c-e>
+"======================================================================================}}}
+
+Plug 'miyakogi/seiya.vim'
+"{{{======================================================================================
+"transparent background color in terminal.
+let g:seiya_auto_enable=1
+let g:seiya_target_groups = has('nvim') ? ['guibg'] : ['ctermbg']
 "======================================================================================}}}

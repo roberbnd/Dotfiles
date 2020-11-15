@@ -1,10 +1,13 @@
 {
   "coc.preferences.colorSupport": true,
   "coc.source.file.ignoreHidden": false,
+  "diagnostic.messageTarget": "float",
   "diagnostic.checkCurrentLine": true,
   "diagnostic.errorSign": "🤬",
   "diagnostic.warningSign": "😑",
   "diagnostic.infoSign": "🤔",
+  "diagnostic.virtualText": false,
+  "diagnostic.virtualTextCurrentLineOnly": false,
   "emmet.includeLanguages": {"eruby": "html", "javascript": "javascriptreact"},
   "eslint.enable":false,
   "explorer.file.autoReveal":false,

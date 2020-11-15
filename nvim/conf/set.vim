@@ -1,4 +1,5 @@
 set autoread  " update the file if changed
+set autoindent
 " set clipboard+=unnamedplus  " make slow nvim with dd, x, yy etc I pefer "+
 set completeopt=longest,menuone
 set cursorline
@@ -37,7 +38,7 @@ set shiftwidth=4
 set shortmess+=c   " don't give |ins-completion-menu| messages.
 set showbreak=↳
 set signcolumn=yes
-" set number  " after signcolumn
+set number  " after signcolumn
 set tabstop=4
 set termguicolors
 set undofile

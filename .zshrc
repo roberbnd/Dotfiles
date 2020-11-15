@@ -78,8 +78,9 @@ alias stopserver="sudo systemctl stop httpd php-fpm mysqld"
 alias startmysql="/home/bnd/mysql/bin/mysqld_safe"
 
 alias v="vim"
-alias n="nvim"
+# alias n="nvim"
 alias nn="~/Downloads/nvim.appimage"
+alias n="~/Downloads/nvim-osx64/bin/nvim"
 alias del="rm -rf"
 
 alias cdd="cd -"
@@ -334,6 +335,7 @@ alias artimmi="php artisan make:migration"
 alias artimse="php artisan make:seeder"
 
 alias cda='composer dump-autoload'
+alias phpcs='~/.composer/vendor/bin/phpcs'
 #------------------------------------
 # Crystal
 alias cr='crystal'
@@ -531,5 +533,5 @@ dria() { docker rmi $(docker images -q); }
 dbu() { docker build -t=$1 .; }
 
 dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
-
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

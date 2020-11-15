@@ -89,3 +89,15 @@ endfunction
 function BrightHighlightOff()
   hi Comment gui=Italic
 endfunction
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  indent = {
+    enable = true
+  },
+  ensure_installed = "all",     -- one of "all", "language", or a list of languages
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+  },
+}
+EOF

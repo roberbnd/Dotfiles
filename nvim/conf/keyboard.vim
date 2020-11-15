@@ -9,7 +9,6 @@ nnoremap <F3> :CocCommand session.save<cr>
 nnoremap <F4> :CocList sessions<cr>
 nnoremap <F5> :CocCommand snippets.openSnippetFiles<cr>
 nnoremap <F6> :call ToggleWrap()<cr>
-nnoremap <F7> :Limelight!!<cr>
 nnoremap <F8> :TabooRename<space>
 nnoremap <F9> :Calendar<cr>
 nnoremap <F10> :set number!<cr>
@@ -28,8 +27,8 @@ nmap <space>x %x<c-o>x
 nnoremap <space><space> "+
 vnoremap <space><space> "+
 
-nnoremap <up> "+
-vnoremap <up> "+
+nnoremap <right> "+
+vnoremap <right> "+
 
 nmap <space>t :tabprevious<cr>
 nmap <space>n :tabnext<cr>
@@ -52,7 +51,6 @@ inoremap jf <esc>f
 inoremap jF <esc>F
 inoremap jc <esc>cc
 
-cnoremap jj <esc>
 inoremap jj <esc>
 
 inoremap jh <esc>O
@@ -77,7 +75,8 @@ nnoremap <space>o :e ~/vimwiki/index.md<cr>
 nnoremap <space><up> :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
 nnoremap <space><down> :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 
-nnoremap <space>hr /<c-r>+<cr>
+nnoremap <space>hr /<c-r>"<cr>
+nnoremap <space>H /<c-r>+<cr>
 nnoremap <space>/ /
 
 nnoremap <space>ha :nohlsearch<cr>
@@ -95,7 +94,6 @@ nnoremap <space>hn Bdf<space>i
 nnoremap <space>p :put<cr>
 
 nnoremap <space>hq :e %<cr>
-nnoremap <space>hb :CocCommand explorer --sources=buffer+ --width=33<cr>
 nnoremap <space>hm :Vista!!<cr>
 
 " split html elements
@@ -190,11 +188,11 @@ vnoremap <c-c> :m '<-2<cr>gv=gv
 nnoremap , ``
 "back cursor
 nnoremap <space>e <c-o>
-nnoremap <left> <c-o>
+nnoremap <up> <c-o>
 "forward cursor
 nnoremap <space>u <c-i>
-nnoremap <right> <c-i>
-nmap <down> ga
+nnoremap <down> <c-i>
+nmap <left> ga
 "}}}==========================================
 
 "Coma {{{=====================================
@@ -238,6 +236,7 @@ nmap d[ sd[
 nmap d{ sd{
 nmap d( sd(
 nmap d' sd'
+nmap d` sr`
 nmap dq sd"
 nmap d<space> sd<space>
 nmap d; dt;
@@ -269,6 +268,7 @@ nnoremap -$ ct$
 nmap c{ sr{
 nmap c( sr(
 nmap c' sr'
+nmap c` sr`
 nmap cq sr"
 nmap c[ sr[
 nmap c; ct;
@@ -463,7 +463,7 @@ nnoremap <space>re :CocList --auto-preview --top files<cr>
 nnoremap <space>ru :CocList --auto-preview --top lines<cr>
 nnoremap <space>rd :CocList --auto-preview --top commits<cr>
 nnoremap <space>rr :CocList --auto-preview --top grep<space>
-nnoremap <space>rg :CocList --auto-preview --top gstatus<cr>
+nnoremap rg :CocList --auto-preview --top gstatus<cr>
 nnoremap rm :CocList --top windows<cr>
 nnoremap rs :CocList --auto-preview diagnostics<cr>
 
@@ -479,6 +479,12 @@ nnoremap <space>mx :CocCommand bookmark.clearForAllFiles<cr>
 nnoremap <space>ma :CocList --auto-preview bookmark<cr>
 "}}}==========================================
 
+" nnoremap ra <cmd>lua require('fuzzy.builtin')(require'fuzzy.fzf').buffers{}<CR>
+" nnoremap ro <cmd>lua require('fuzzy.builtin')(require'fuzzy.fzf').git_files{}<CR>
+" nnoremap re <cmd>lua require('fuzzy.builtin')(require'fuzzy.fzf').files{}<CR>
+" nnoremap ri :CtrlPLine<cr>
+" nnoremap rr :CtrlSF<space>
+
 " I can paste to search
 nnoremap ra :Buffers<cr>
 nnoremap ro :GFiles<cr>
@@ -488,6 +494,7 @@ nnoremap ri :Lines<cr>
 nnoremap rd :Commits<cr>
 nnoremap rr :Rg<cr>
 nnoremap rg :GFiles?<cr>
+nnoremap rm :Windows<cr>
 
 nnoremap ma :CtrlPBookmark<cr>
 

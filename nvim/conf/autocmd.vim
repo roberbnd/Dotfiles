@@ -13,6 +13,12 @@ au BufRead *Spec.js,*_spec.js set filetype=jasmine
 au BufRead *.babelrc set ft=json
 au BufRead *.handlebars,*.hbs,*.ejs set ft=html
 
+augroup ReactFiletypes
+  autocmd!
+  autocmd BufRead,BufNewFile *.jsx set filetype=javascriptreact
+  autocmd BufRead,BufNewFile *.tsx set filetype=typescriptreact
+augroup END
+
 au InsertEnter * imap ) <bs>
 au InsertEnter * inoremap ] <cr>
 au VimEnter * startinsert

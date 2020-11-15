@@ -14,14 +14,6 @@ let g:coc_global_extensions = [
   \ ]
 "======================================================================================}}}
 
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
-"{{{======================================================================================
-" require bat
-let g:fzf_layout = { 'down': '100%' }
-let g:fzf_preview_window = 'down:60%'
-"======================================================================================}}}
-
 Plug 'pechorin/any-jump.vim'
 "{{{======================================================================================
 let g:any_jump_preview_lines_count = 5
@@ -35,13 +27,6 @@ Plug 'rbgrouleff/bclose.vim'
 Plug 'francoiscabrol/ranger.vim'
 "{{{======================================================================================
 " File manager
-"======================================================================================}}}
-
-Plug 'vim-test/vim-test'
-Plug 'benmills/vimux'
-"{{{======================================================================================
-" A Vim wrapper for running tests on different granularities.
-let test#strategy = "vimux"
 "======================================================================================}}}
 
 Plug 'easymotion/vim-easymotion'
@@ -74,7 +59,7 @@ Plug 'machakann/vim-sandwich'
 " surroundings of a sandwiched textobject, like (foo), "bar".
 "======================================================================================}}}
 
-Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-commentary'
 "{{{======================================================================================
 " gcc
 " <c-_>p Comment the current inner paragraph
@@ -163,4 +148,13 @@ Plug 'tpope/vim-sleuth'
 Plug 'christoomey/vim-tmux-navigator'
 "{{{======================================================================================
 " I need because <c-h> is not working
+"======================================================================================}}}
+
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+"{{{======================================================================================
+" require bat
+let g:fzf_layout = { 'down': '100%' }
+let g:fzf_preview_window = 'down:60%'
+let g:fzf_action = { 'ctrl-x': 'tab split' }
 "======================================================================================}}}
