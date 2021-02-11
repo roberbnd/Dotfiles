@@ -1,21 +1,17 @@
-Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 "{{{======================================================================================
-" Colorscheme
+" colorschema
 "======================================================================================}}}
 
 Plug 'osyo-manga/vim-brightest'
 "{{{======================================================================================
 " bright the same words
-let g:brightest#highlight = { "group" : "CocHighlightText" }
-"======================================================================================}}}
-
-Plug 'ryanoasis/vim-devicons'
-"{{{======================================================================================
-" Adds file type icons to Vim plugins such as: NERDTree, vim-airline, CtrlP and many more
+let g:brightest#highlight = { "group" : "HighlightText" }
 "======================================================================================}}}
 
 Plug 'vim-airline/vim-airline'
 "{{{======================================================================================
+" require vim-fugitive to show the branch name
 let g:airline_powerline_fonts = 1
 let g:airline_inactive_collapse=0
 let g:airline_section_c = '%t'
@@ -24,6 +20,7 @@ let g:airline_section_y = ''
 let g:airline_right_sep = ''
 let g:airline_left_sep = ''
 let g:airline_focuslost_inactive = 0
+let g:airline_inactive_collapse=0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_min_count = 1
 let g:airline#extensions#tabline#show_buffers = 0
@@ -37,19 +34,16 @@ let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#show_close_button = 0
 let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#tabline#show_tab_count = 0
-let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
-let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
 "======================================================================================}}}
 
-Plug 'gcmt/taboo.vim', { 'on': 'TabooRename' }
+Plug 'axelf4/vim-strip-trailing-whitespace'
 "{{{======================================================================================
-" Rename tabs
-"======================================================================================}}}
-
-Plug 'ntpeters/vim-better-whitespace'
-"{{{======================================================================================
-" This plugin causes all trailing whitespace characters
-let g:strip_only_modified_lines=1
+" Vim plugin that removes trailing whitespace
+" from modified lines: Should not introduce extraneous changes into the diff,
+" even when editing faulty files.  For fixing up the whole file the command
+" :StripTrailingWhitespace is provided.  on save: Lines changing under you feet breaks any
+" flow and is a compatibility hazard.  Achieved by maintaining a set of all edited lines
+" with trailing whitespace, backed by a Splay tree where children store line number offsets.
 "======================================================================================}}}
 
 Plug 'edkolev/tmuxline.vim'
@@ -66,14 +60,20 @@ let g:tmuxline_preset = {
 \}
 "======================================================================================}}}
 
-Plug 'simeji/winresizer'
-"{{{======================================================================================
-" <c-e>
-"======================================================================================}}}
-
 Plug 'miyakogi/seiya.vim'
 "{{{======================================================================================
 "transparent background color in terminal.
 let g:seiya_auto_enable=1
 let g:seiya_target_groups = has('nvim') ? ['guibg'] : ['ctermbg']
+"======================================================================================}}}
+
+Plug 'ap/vim-css-color'
+"{{{======================================================================================
+" Preview color
+"======================================================================================}}}
+
+Plug 'luochen1990/rainbow'
+"{{{======================================================================================
+" con typescript me quita el color
+let g:rainbow_active = 1
 "======================================================================================}}}

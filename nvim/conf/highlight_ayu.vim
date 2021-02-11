@@ -1,14 +1,15 @@
-colorscheme torte
+let ayucolor="dark"
+" colorscheme ayu
+colorscheme moonfly
 hi Visual gui=bold guibg=#085101 guifg=reverse
-" hi CursorLine guibg=#5F5F5F
-hi CursorLine gui=underline guibg=NONE
+hi CursorLine guibg=#4c4c4c
 
 hi Comment gui=italic
 
 hi EasyMotionShade guifg=#607D8B
 hi EasyMotionTarget gui=bold guifg=#FFFFFF guibg=#1765E3
 
-hi HighlightText gui=bold guifg=#FFFFFF guibg=#a901d5
+hi CocHighlightText gui=bold guifg=#FFFFFF guibg=#a901d5
 
 hi MatchParen gui=bold guibg=#a901d5 guifg=#FFFFFF
 

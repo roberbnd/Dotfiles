@@ -5,6 +5,7 @@ Plug 'foosoft/vim-argwrap', { 'on': 'ArgWrap' }
 "======================================================================================}}}
 
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'flwyd/vim-conjoin'
 "splitjoin{{{=============================================================================
 " switching between a single-line statement and a multi-line one.
 " gS to split a one-liner into multiple lines
@@ -14,21 +15,6 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/sideways.vim'
 "sideways{{{==============================================================================
 " :SidewaysLeft <<, :SidewaysRight >>,  exchange args
-"======================================================================================}}}
-
-Plug 'bomgar/breakit.vim'
-"breakit{{{===============================================================================
-" <Leader>ba, - break after comma
-" <Leader>bA, - break after comma remove space
-" <Leader>bb, - break before comma
-" <Leader>ba. - break after dot
-" <Leader>bA. - break after dot remove space
-" <Leader>bb. - break before dot
-" test, test2, test3
-" <Leader>ba,
-" test,
-"  test2,
-"  test3
 "======================================================================================}}}
 
 Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
@@ -69,4 +55,3 @@ Plug 'da-x/name-assign.vim'
 " in multiple programming language.
 " vmap <leader>b <Plug>NameAssign
 "======================================================================================}}}
-

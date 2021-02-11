@@ -1,32 +1,40 @@
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neovim/nvim-lspconfig'
 "{{{======================================================================================
-" require solargraph
-let g:coc_global_extensions = [
-  \ 'coc-go', 'coc-lua', 'coc-python', 'coc-solargraph', 'coc-rls',
-  \ 'coc-emmet', 'coc-html', 'coc-lit-html', 'coc-css', 'coc-cssmodules',
-  \ 'coc-tslint', 'coc-tslint-plugin', 'coc-tsserver', 'coc-eslint', 'coc-docker',
-  \ 'coc-prettier', 'coc-jest', 'coc-json', 'coc-yaml', 'coc-tailwindcss',
-  \ 'coc-lists', 'coc-word', 'coc-translator', 'coc-github', 'coc-phpls',
-  \ 'coc-post', 'coc-project', 'coc-pairs', 'coc-highlight', 'coc-snippets',
-  \ 'coc-marketplace', 'coc-git', 'coc-markmap', 'coc-gitignore', 'coc-yank',
-  \ 'coc-todolist', 'coc-pyright', 'coc-vetur', 'coc-elixir', 'coc-diagnostic',
-  \ 'coc-emoji', 'coc-dictionary', 'coc-syntax', 'coc-restclient', 'coc-bookmark'
-  \ ]
+" Collection of common configurations for Neovim's built-in language server client.
 "======================================================================================}}}
 
-Plug 'pechorin/any-jump.vim'
+Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
 "{{{======================================================================================
-let g:any_jump_preview_lines_count = 5
-let g:any_jump_window_width_ratio  = 1
-let g:any_jump_window_height_ratio = 1
-let g:any_jump_window_top_offset   = 0
-let g:any_jump_grouping_enabled = 1
+" A light-weight lsp plugin based on neovim built-in lsp with highly performance UI.
+"======================================================================================}}}
+
+Plug 'nvim-lua/completion-nvim'
+"{{{======================================================================================
+" completion-nvim is an auto completion framework that aims to provide a better
+" completion experience with neovim's built-in LSP. Other LSP functionality is
+" not supported.
+" use <c-x><c-f> path completition menu
+let g:completion_enable_snippet = 'UltiSnips'
+let g:completion_trigger_keyword_length = 1
+"======================================================================================}}}
+
+Plug 'SirVer/ultisnips'
+"{{{======================================================================================
+let g:UltiSnipsExpandTrigger="<c-h>"
+let g:UltiSnipsJumpBackwardTrigger="<c-w>"
+let g:UltiSnipsJumpForwardTrigger="<c-z>"
+"======================================================================================}}}
+
+Plug 'voldikss/vim-floaterm'
+"{{{======================================================================================
+" float terminal
+let g:floaterm_width = &columns
+let g:floaterm_height = &lines-2
+let g:floaterm_autoinsert=0
 "======================================================================================}}}
 
 Plug 'rbgrouleff/bclose.vim'
-Plug 'francoiscabrol/ranger.vim'
 "{{{======================================================================================
-" File manager
 "======================================================================================}}}
 
 Plug 'easymotion/vim-easymotion'
@@ -48,9 +56,10 @@ Plug 'liuchengxu/vista.vim'
 " Viewer & Finder for LSP symbols and tags in Vim
 " use ptags generate the tags file
 let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
-" let g:vista#renderer#enable_icon = 1
-let g:vista_default_executive = 'coc'
-let g:vista_sidebar_width = 40
+let g:vista#renderer#enable_icon = 1
+let g:vista_default_executive = 'nvim_lsp'
+let g:vista_sidebar_position = 'vertical topleft'
+let g:vista_sidebar_width='25'
 "======================================================================================}}}
 
 Plug 'machakann/vim-sandwich'
@@ -65,14 +74,6 @@ Plug 'tpope/vim-commentary'
 " <c-_>p Comment the current inner paragraph
 "======================================================================================}}}
 
-Plug 'dahu/insertlessly'
-"{{{======================================================================================
-" Enter and return in normal mode are working like insert mode
-let g:insertlessly_insert_spaces = 0
-let g:insertlessly_cleanup_trailing_ws = 0
-let g:insertlessly_cleanup_all_ws = 0
-"======================================================================================}}}
-
 Plug 'zhimsel/vim-stay'
 "{{{======================================================================================
 " vim-stay adds automated view session creation and
@@ -84,16 +85,11 @@ Plug 'zhimsel/vim-stay'
 " making the procedure painless and invisible.
 "======================================================================================}}}
 
-Plug 'arithran/vim-delete-hidden-buffers', { 'on': 'DeleteHiddenBuffers'}
-"{{{======================================================================================
-" Delete all the buffers except the currrent
-"======================================================================================}}}
-
-Plug 'andymass/vim-matchup'
+" Plug 'andymass/vim-matchup'
 "{{{======================================================================================
 " vim match-up: even better % fist_oncoming navigate and highlight matching words
 " fist_oncoming modern matchit and matchparen replacement
-let g:matchup_matchparen_enabled = 0
+" let g:matchup_matchparen_enabled = 0
 "======================================================================================}}}
 
 Plug 'markonm/traces.vim'
@@ -102,7 +98,6 @@ Plug 'markonm/traces.vim'
 "======================================================================================}}}
 
 Plug 'MattesGroeger/vim-bookmarks'
-Plug 'ctrlpvim/ctrlp.vim'
 "{{{======================================================================================
 " Add/remove bookmark at current line 	mm                : BookmarkToggle
 " Add/edit/remove annotation at current line 	mi          : BookmarkAnnotate <TEXT>
@@ -120,29 +115,7 @@ let g:bookmark_save_per_working_dir = 1
 let g:bookmark_auto_save = 1
 let g:bookmark_highlight_lines = 1
 let g:bookmark_sign = '🔥'
-"======================================================================================}}}
-
-"{{{======================================================================================
-" Run :CtrlP or :CtrlP [starting-directory] to invoke CtrlP in find file mode.
-" Run :CtrlPBuffer or :CtrlPMRU to invoke CtrlP in find buffer or find MRU file mode.
-" Run :CtrlPMixed to search in Files, Buffers and MRU files at the same time.
-let g:ctrlp_max_files=0
-let g:ctrlp_max_depth = 40
-let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir', 'tmux', 'mpc', 'smarttabs']
-let g:ctrlp_working_path_mode = 'a'
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-let g:ctrlp_match_window_reversed = 0
-let g:ctrlp_match_window_bottom = 0
-if executable('rg')
-  " let g:ctrlp_user_command = 'rg %s --files --hidden --color=never --glob ""'
-endif
-" let g:ctrlp_buffer_func = { 'enter': 'BrightHighlightOn', 'exit':  'BrightHighlightOff', }
-"======================================================================================}}}
-
-Plug 'tpope/vim-sleuth'
-"{{{======================================================================================
-" adjusts 'shiftwidth' and 'expandtab' heuristically based on the current file
+let g:bookmark_no_default_key_mappings = 1
 "======================================================================================}}}
 
 Plug 'christoomey/vim-tmux-navigator'
@@ -154,7 +127,46 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 "{{{======================================================================================
 " require bat
+" An action can be a reference to a function that processes selected lines
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+  copen
+  cc
+endfunction
 let g:fzf_layout = { 'down': '100%' }
-let g:fzf_preview_window = 'down:60%'
-let g:fzf_action = { 'ctrl-x': 'tab split' }
+" CTRL-a will toggle preview window.
+let g:fzf_preview_window = ['down:60%', 'ctrl-a']
+let g:fzf_action = {
+            \ 'ctrl-q': function('s:build_quickfix_list'),
+            \ 'ctrl-x': 'tab split' }
+let g:fzf_buffers_jump = 1
+"======================================================================================}}}
+
+Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
+
+Plug 'jlanzarotta/bufexplorer'
+"{{{======================================================================================
+let g:bufExplorerDisableDefaultKeyMapping=1
+let g:bufExplorerShowNoName=1
+let g:bufExplorerShowRelativePath=1
+"======================================================================================}}}
+
+Plug 'kevinhwang91/nvim-bqf', { 'branch': 'main' }
+"{{{======================================================================================
+"======================================================================================}}}
+
+Plug 'svermeulen/vim-yoink'
+"{{{======================================================================================
+"======================================================================================}}}
+
+Plug 'Asheq/close-buffers.vim'
+"{{{======================================================================================
+" use the plugin bufexplorer to delete one by one
+" :Bdelete other 🔥 	bdelete all buffers except the buffer in the current window
+" :Bdelete hidden 🔥 	bdelete buffers not visible in a window
+" :Bdelete all 	bdelete all buffers 	:bufdo bdelete
+" :Bdelete this 	bdelete buffer in the current window 	:bdelete
+" :Bdelete nameless 	bdelete buffers without a name: [No Name]
+" :Bdelete select 	Lets you interactively select which buffers to bdelete
+" :Bdelete menu 	Lets you interactively choose one of the other commands above
 "======================================================================================}}}

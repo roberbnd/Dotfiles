@@ -129,6 +129,8 @@ alias gclo='git clone'
 alias gche='git checkout'
 alias gchem='git checkout master'
 alias gcheb='git checkout -b'
+alias gchebc='git checkout -b $(git-branch-current)'
+alias gchebd='git checkout -b $(git-branch-current)-deploy'
 alias gchebmu='git checkout -b master upstream/master'
 alias gchebmo='git checkout -b master origin/master'
 alias gchema='git checkout master'
@@ -152,6 +154,7 @@ alias gcom='git commit'
 alias gcomv='git commit --verbose'
 alias gcomva='git commit --verbose --all'
 alias gcomm='git commit --message'
+alias gcommd='git commit --message "deploy"'
 alias gcoma='git commit --amend'
 alias gcomam='git commit --amend --message'
 alias gcommi="git commit -m 'Initial commit'"
@@ -201,7 +204,7 @@ alias gaddu='git add --update'
 
 alias gdif='git diff'
 alias gdifns='git diff --name-status'
-alias gdifs='git diff --stat'
+alias gdifs='git diff --staged'
 alias gdifnc='git diff --no-ext-diff --cached'
 alias gdifncw='git diff --no-ext-diff --cached --word-diff'
 
@@ -213,6 +216,7 @@ alias grmrc='git rm -r --cached'
 alias grmrfc='git rm -rf --cached'
 
 alias gl='git log'
+alias gll='git log --oneline'
 alias glm='git log --topo-order --pretty=format:"${_git_log_medium_format}"'
 alias gls='git log --topo-order --stat --pretty=format:"${_git_log_medium_format}"'
 alias gld='git log --topo-order --stat --patch --full-diff --pretty=format:"${_git_log_medium_format}"'
@@ -266,9 +270,11 @@ alias gremp='git remote prune'
 alias gremb='git-hub-browse'
 
 alias gsta='git stash'
+alias gstapak='git stash push . --keep-index'
+alias gstac='git stash clear'
+alias gstaci='git-stash-clear-interactive'
 alias gstaa='git stash apply'
 alias gstad='git stash drop'
-alias gstaci='git-stash-clear-interactive'
 alias gstal='git stash list'
 alias gstadd='git-stash-dropped'
 alias gstap='git stash pop'
@@ -303,11 +309,8 @@ alias no="node"
 alias ad="adonis"
 
 alias ns="npm start"
-alias nins="npm install"
 alias ninss="npm install --save"
 alias ninssd="npm install --save-dev"
-alias ni="npm init"
-alias nc="npm ci"
 alias nr="npm run"
 alias nrd="npm run dev"
 alias nrt="npm run test"
@@ -534,4 +537,3 @@ dbu() { docker build -t=$1 .; }
 
 dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -1,9 +1,3 @@
-Plug 'iamcco/markdown-preview.nvim'
-"{{{======================================================================================
-let g:mkdp_auto_close = 0
-let g:mkdp_markdown_css = '~/.md.css'
-"======================================================================================}}}
-
 Plug 'mattn/calendar-vim', { 'on': 'Calendar' }
 "{{{======================================================================================
 " :Calendar, :CalendarH, :CalendarT
@@ -11,4 +5,9 @@ Plug 'mattn/calendar-vim', { 'on': 'Calendar' }
 " <LocalLeader>cal: Vertically-split calendar
 " <LocalLeader>caL: Horizontally-split calendar
 let g:calendar_keys = { 'close': 'Q'}
+"======================================================================================}}}
+
+Plug 'vuciv/vim-bujo', { 'on': 'Todo' }
+"{{{======================================================================================
+" Todo list
 "======================================================================================}}}

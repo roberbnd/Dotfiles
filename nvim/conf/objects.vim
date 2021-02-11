@@ -44,7 +44,7 @@ Plug 'whatyouhide/vim-textobj-erb', { 'for': 'eruby'}
 " def, module, class, do, begin blocks are selected as text-objects.
 "======================================================================================}}}
 
-Plug 'jeetsukumaran/vim-pythonsense', { 'for': 'python'}
+" Plug 'jeetsukumaran/vim-pythonsense', { 'for': 'python'}
 "{{{======================================================================================
 "]]" : Move (forward) to the beginning of the next Python class.
 "][" : Move (forward) to the end of the current Python class.

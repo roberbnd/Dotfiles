@@ -35,36 +35,12 @@ function! g:BMWorkDirFileLocation()
   endif
 endfunction
 
-" Clear register
-command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor
-
 function ToggleWrap()
  if (&wrap == 1)
    set nowrap
  else
    set wrap
  endif
-endfunction
-
-"lightline
-function! CocCurrentFunction()
-    return get(b:, 'coc_current_function', '')
-endfunction
-
-function! LightlineGitBlame() abort
-  let blame = get(b:, 'coc_git_blame', '')
-  " return blame
-  return winwidth(0) > 120 ? blame : ''
-endfunction
-
-function! LightlineGitStatus() abort
-  let status = get(b:, 'coc_git_status', '')
-  return winwidth(0) > 80 ? trim(status) : ''
-endfunction
-
-function! LightlineGitBranch() abort
-  let branch = get(g:, 'coc_git_status', '')
-  return winwidth(0) > 60 ? branch : ''
 endfunction
 
 function! GetRegisters()
@@ -74,30 +50,12 @@ function! GetRegisters()
   return split(cout, "\n")[1:]
 endfunction
 
+" Clear register
+command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor
+
 function! SynStack()
   if !exists("*synstack")
     return
   endif
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
-
-" CtrlP
-function BrightHighlightOn()
-  hi Comment gui=bold guifg=#66d9ef
-endfunction
-
-function BrightHighlightOff()
-  hi Comment gui=Italic
-endfunction
-
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  indent = {
-    enable = true
-  },
-  ensure_installed = "all",     -- one of "all", "language", or a list of languages
-  highlight = {
-    enable = true,              -- false will disable the whole extension
-  },
-}
-EOF

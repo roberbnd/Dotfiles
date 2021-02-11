@@ -1,34 +1,59 @@
-"============================================
-"==== Keyboard layout DVORAK-Programmer =====
-"============================================
-
+"=============================================
+"==== Keyboard layout DVORAK-Programmer ======
+"=============================================
 "Fs {{{=======================================
-nnoremap <F1> :e ~/.config/nvim/init.vim<cr>
-nnoremap <F2> :source ~/.config/nvim/init.vim<cr>
-nnoremap <F3> :CocCommand session.save<cr>
-nnoremap <F4> :CocList sessions<cr>
-nnoremap <F5> :CocCommand snippets.openSnippetFiles<cr>
-nnoremap <F6> :call ToggleWrap()<cr>
-nnoremap <F8> :TabooRename<space>
-nnoremap <F9> :Calendar<cr>
-nnoremap <F10> :set number!<cr>
-nnoremap <F12> :GitMessenger<cr>
+nnoremap <f1> :e ~/.config/nvim/init.vim<cr>
+nnoremap <f2> :source ~/.config/nvim/init.vim<cr>
+nnoremap <f3> :mksession! ~/.config/nvim/sessions/
+nnoremap <f4> :source ~/.config/nvim/sessions/
+nnoremap <f5> :UltiSnipsEdit<cr>
+nnoremap <f6> :call ToggleWrap()<cr>
+nnoremap <f7> :set list!<cr>
+nnoremap <f8> :term<cr>a
+nnoremap <f9> :set number!<cr>
+nnoremap <f11> :Calendar<cr>
+nnoremap <f12> :Todo<cr>
 "}}}==========================================
+
+nnoremap Q <nop>
+nnoremap ZZ <nop>
 
 " Allow saving of files as sudo
 cnoremap w!! w !sudo tee > /dev/null %
 
-tnoremap X <C-\><C-n><c-^>
-tnoremap Z <C-\><C-n>
+tnoremap }h <c-\><C-n>
+tnoremap }t <c-\><C-n>:Buffers<cr>
+tnoremap }m <c-\><C-n><c-^>
+nnoremap }} :FloatermToggle<cr>
+tnoremap }} <c-\><C-n>:FloatermToggle<cr>
+nnoremap }n :FloatermNew<cr>
+tnoremap }n <c-\><C-n>:FloatermNew<cr>
+nnoremap }c :FloatermPrev<cr>
+tnoremap }c <c-\><C-n>:FloatermPrev<cr>
+nnoremap }r :FloatermNext<cr>
+tnoremap }r <c-\><C-n>:FloatermNext<cr>
+nnoremap }x :FloatermKill<cr>
+tnoremap }x <c-\><C-n>:FloatermKill<cr>
+
+" Use <Tab> and <S-Tab> to navigate through popup menu
+inoremap <expr> <Tab>   pumvisible() ? "\<c-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<c-p>" : "\<S-Tab>"
+
 vnoremap m <esc>
-nnoremap Q <nop>
+vnoremap <backspace> :StripTrailingWhitespace<cr>
 
-nmap <space>x %x<c-o>x
-nnoremap <space><space> "+
-vnoremap <space><space> "+
+vnoremap , "+
+nnoremap , "+
+nnoremap <space>j "+yy
 
-nnoremap <right> "+
-vnoremap <right> "+
+" arrows
+" navigate chunks of current buffer
+nmap <up> <plug>(signify-prev-hunk)
+nmap <down> <plug>(signify-next-hunk)
+nnoremap <left> <c-o>
+nnoremap <right> <c-i>
+nnoremap <space><space> :SignifyHunkDiff<cr>
+nnoremap <space><space> :SignifyHunkDiff<cr>
 
 nmap <space>t :tabprevious<cr>
 nmap <space>n :tabnext<cr>
@@ -46,6 +71,8 @@ nmap yn :let @* = expand("%:t")<cr>
 nmap yr :let @* = expand("%")<cr>
 " copy full path
 nmap yf :let @* = expand("%:p")<cr>
+" copy branch name
+nmap yb :let @* = gitbranch#name()<cr>
 
 inoremap jf <esc>f
 inoremap jF <esc>F
@@ -71,12 +98,11 @@ nnoremap rp :qa<cr>
 
 nnoremap <space>o :e ~/vimwiki/index.md<cr>
 
-"Add empty lines
-nnoremap <space><up> :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
-nnoremap <space><down> :<c-u>put =repeat(nr2char(10), v:count1)<cr>
-
-nnoremap <space>hr /<c-r>"<cr>
-nnoremap <space>H /<c-r>+<cr>
+" Paste neovim's clipboard
+nnoremap <space>sn /<c-r>"<cr>
+" Paste computer's clipboard
+nnoremap <space>sc /<c-r>+<cr>
+" without easymotion
 nnoremap <space>/ /
 
 nnoremap <space>ha :nohlsearch<cr>
@@ -102,7 +128,8 @@ vnoremap r y:%s/<c-r>"/
 vnoremap / y/<c-r>"<cr>
 
 vmap <space><tab> :VSSplit<cr>
-nnoremap <space>D :DeleteHiddenBuffers<cr>
+nnoremap <space>d :Bdelete menu<cr>
+nnoremap <space>D :!rm ~/.config/nvim/sessions/
 nnoremap <space>cc :<c-u>MatchupWhereAmI?<cr>
 
 "Scroll {{{===================================
@@ -125,19 +152,19 @@ nnoremap su :tablast<cr>
 "Buffers {{{==================================
 nnoremap cj :Bclose<cr>
 nnoremap ck :Bclose!<cr>
-nnoremap rj :Ranger<cr>
-nnoremap rk :RangerWorkingDirectory<cr>
+nnoremap rj :FloatermNew ranger<cr>
+nnoremap rk :FloatermNew lazygit<cr>
 nnoremap rh <c-^>
-nnoremap <space>rh <c-w>gf
 nnoremap rc gf
-noremap <space>rc :e <cfile><cr>
+nnoremap rC :e <cfile><cr>
+nnoremap <space>rc <c-w>gf
 "}}}==========================================
 
 "splits {{{===================================
 " close
 nnoremap sc <c-w>c
 " close tab return to the buffer
-nmap <space>sc scru<cr>
+" nmap <space>sc scru<cr>
 " split vertically"
 nnoremap s+ <c-w>v
 " equal wide"
@@ -185,14 +212,11 @@ vnoremap <c-c> :m '<-2<cr>gv=gv
 "}}}==========================================
 
 "Navegation {{{===============================
-nnoremap , ``
+nnoremap ' ``
 "back cursor
 nnoremap <space>e <c-o>
-nnoremap <up> <c-o>
 "forward cursor
 nnoremap <space>u <c-i>
-nnoremap <down> <c-i>
-nmap <left> ga
 "}}}==========================================
 
 "Coma {{{=====================================
@@ -222,6 +246,14 @@ inoremap ,u <esc>A<space>
 inoremap ,e <esc>A
 "}}}==========================================
 
+inoremap ( ()<left>
+inoremap { {}<left>
+inoremap [ []<left>
+inoremap ' ''<left>
+inoremap " ""<left>
+inoremap ` ``<left>
+inoremap < <><left>
+
 "Add {{{======================================
 vmap [ sa[
 vmap { sa{
@@ -229,6 +261,7 @@ vmap ( sa(
 vmap ' sa'
 vmap q sa"
 vmap - sa<space>
+vmap ` sa`
 "}}}==========================================
 
 "Delete {{{===================================
@@ -236,7 +269,7 @@ nmap d[ sd[
 nmap d{ sd{
 nmap d( sd(
 nmap d' sd'
-nmap d` sr`
+nmap d` sd`
 nmap dq sd"
 nmap d<space> sd<space>
 nmap d; dt;
@@ -260,6 +293,8 @@ nnoremap -) ct)
 nnoremap -( ct(
 nnoremap -{ ct{
 nnoremap -} ct}
+nnoremap -[ ct[
+nnoremap -] ct]
 nnoremap -- ct-
 nnoremap -$ ct$
 "}}}==========================================
@@ -297,13 +332,13 @@ nnoremap yp yap
 "}}}==========================================
 
 "{{{==========================================
-nnoremap <space>, A,<Esc>
-inoremap ,, <esc>A,<Esc>
-inoremap ,z <esc>A,<cr>
+nnoremap <space>, A,<esc>
+inoremap ,, <esc>A,<esc>
+inoremap ,<cr> <esc>A,<cr>
 
-nnoremap <space>; A;<Esc>
+nnoremap <space>; A;<esc>
 inoremap ;; <esc>A;<esc>
-inoremap ;- <esc>A;<cr>
+inoremap ;<cr> <esc>A;<cr>
 "}}}==========================================
 
 "============================================
@@ -345,10 +380,6 @@ nnoremap <space>a= :Tabularize /=<cr>
 vnoremap <space>a= :Tabularize /=<cr>
 nnoremap <space>a: :Tabularize /:\zs<cr>
 vnoremap <space>a: :Tabularize /:\zs<cr>
-"}}}==========================================
-
-"Insertlessly {{{=============================
-nmap <space><space> <Plug>InsertSpace
 "}}}==========================================
 
 "easymotion{{{================================
@@ -407,84 +438,9 @@ nmap <leader>ka <Plug>SidewaysArgumentAppendAfter
 nmap <leader>kA <Plug>SidewaysArgumentAppendLast
 "}}}==========================================
 
-"coc {{{======================================
-" Use tab for trigger completion with characters ahead and navigate.
-inoremap <silent><expr> <tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><s-tab> pumvisible() ? "\<C-p>" : "\<C-h>"
+nmap <space>ra :BufExplorer<cr><Plug>(easymotion-j)
 
-inoremap <silent><expr> <down>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><s-tab> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
-
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
-" position. Coc only does snippet and additional edit on confirm.
-if exists('*complete_info')
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<cr>"
-else
-  imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<cr>"
-endif
-
-nmap <silent> [c <Plug>(coc-diagnostic-prev)
-nmap <silent> ]c <Plug>(coc-diagnostic-next)
-
-nmap <silent> + <Plug>(coc-definition)zz
-nmap ga <Plug>(coc-definition)
-
-nmap <silent> <space>ga :tabnew %<cr><Plug>(coc-definition)
-nmap <silent> g+ s+ga
-nmap <silent> g- s-ga
-
-" navigate chunks of current buffer
-nmap <space>hj <Plug>(coc-git-prevchunk)
-nmap <space>hk <Plug>(coc-git-nextchunk)
-" show chunk diff at current position
-nmap <space>gc <Plug>(coc-git-chunkinfo)
-
-imap <c-l> <Plug>(coc-snippets-expand)
-
-nnoremap <silent> <space>hp  :<C-u>CocList --auto-preview --normal yank<cr>
-
-nnoremap <space>ra :CocList --top buffers<cr>
-nnoremap <space>ro :CocList --auto-preview --top gfiles<cr>
-nnoremap <space>re :CocList --auto-preview --top files<cr>
-nnoremap <space>ru :CocList --auto-preview --top lines<cr>
-nnoremap <space>rd :CocList --auto-preview --top commits<cr>
-nnoremap <space>rr :CocList --auto-preview --top grep<space>
-nnoremap rg :CocList --auto-preview --top gstatus<cr>
-nnoremap rm :CocList --top windows<cr>
-nnoremap rs :CocList --auto-preview diagnostics<cr>
-
-nmap mn <Plug>BookmarkNextzz
-nmap mp <Plug>BookmarkPrevzz
-
-nnoremap <space>mm :CocCommand bookmark.toggle<cr>
-nnoremap <space>mp :CocCommand bookmark.prev<cr>
-nnoremap <space>mn :CocCommand bookmark.next<cr>
-nnoremap <space>mt :CocCommand bookmark.annotate<cr>
-nnoremap <space>mz :CocCommand bookmark.clearForCurrentFile<cr>
-nnoremap <space>mx :CocCommand bookmark.clearForAllFiles<cr>
-nnoremap <space>ma :CocList --auto-preview bookmark<cr>
-"}}}==========================================
-
-" nnoremap ra <cmd>lua require('fuzzy.builtin')(require'fuzzy.fzf').buffers{}<CR>
-" nnoremap ro <cmd>lua require('fuzzy.builtin')(require'fuzzy.fzf').git_files{}<CR>
-" nnoremap re <cmd>lua require('fuzzy.builtin')(require'fuzzy.fzf').files{}<CR>
-" nnoremap ri :CtrlPLine<cr>
-" nnoremap rr :CtrlSF<space>
-
+"FZF {{{======================================
 " I can paste to search
 nnoremap ra :Buffers<cr>
 nnoremap ro :GFiles<cr>
@@ -495,7 +451,69 @@ nnoremap rd :Commits<cr>
 nnoremap rr :Rg<cr>
 nnoremap rg :GFiles?<cr>
 nnoremap rm :Windows<cr>
+nnoremap rn :Vista finder fzf<cr>
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+"}}}==========================================
 
-nnoremap ma :CtrlPBookmark<cr>
+nmap mm <Plug>BookmarkToggle
+nmap ma :BookmarkShowAll<cr>
+nmap mn <Plug>BookmarkNext
+nmap mp <Plug>BookmarkPrev
 
 vmap <space>B <Plug>NameAssign
+nnoremap <silent> ch :exe "tabn ".g:lasttab<cr>
+
+nnoremap ga :GitMessenger<cr>
+nnoremap go :Gblame<cr>
+nnoremap gu :diffget //3<cr>
+nnoremap ge :diffget //2<cr>
+nnoremap gh :G<cr><c-w>T
+nnoremap gr :SignifyHunkUndo<cr>
+
+nmap ,<up> <plug>(YoinkRotateBack)
+nmap ,<down> <plug>(YoinkRotateForward)
+nmap ,<left> <plug>(YoinkPostPasteSwapBack)
+nmap ,<right> <plug>(YoinkPostPasteSwapForward)
+nmap p <plug>(YoinkPaste_p)
+nmap P <plug>(YoinkPaste_P)
+nmap ,= <plug>(YoinkPostPasteToggleFormat)
+
+
+"Lsp {{{=================================
+" definition
+lua vim.api.nvim_set_keymap('n', 'ba', '<cmd>lua vim.lsp.buf.definition()<cr>', {})
+nmap <silent> <space>ba :tabnew %<cr>ba
+nnoremap <silent> b, :LspSagaDefPreview<cr>
+
+"references
+lua vim.api.nvim_set_keymap('n', 'bo', '<cmd>lua vim.lsp.buf.references()<cr>', {})
+
+"rename
+" lua vim.api.nvim_set_keymap('n', 'be', '<cmd>lua vim.lsp.buf.rename()<cr>', {})
+nnoremap be :LspSagaRename<cr>
+
+"formatting
+lua vim.api.nvim_set_keymap('v', 'bu', '<cmd>lua vim.lsp.buf.formatting()<cr>', {})
+
+"action
+" lua vim.api.nvim_set_keymap('n', 'bu', '<cmd>lua vim.lsp.buf.code_action()<cr>', {})
+nnoremap bu :LspSagaCodeAction<cr>
+
+"LspSaga
+nnoremap <silent> <space>ww :LspSagaShowLineDiags<cr>
+nnoremap <silent> <space><left> :LspSagaDiagJumpPrev<cr>
+nnoremap <silent> <space><right> :LspSagaDiagJumpNext<cr>
+"}}}==========================================
+
+"map <c-p> to manually trigger completion
+imap <tab> <Plug>(completion_smart_tab)
+imap <s-tab> <Plug>(completion_smart_s_tab)
+imap <silent> <c-p> <Plug>(completion_trigger)
+" inoremap <expr> <Tab>   pumvisible() ? "\<c-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<c-p>" : "\<S-Tab>"
+
+"Add empty lines
+nnoremap <silent> <space><up> :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
+nnoremap <silent> <space><down> :<c-u>put =repeat(nr2char(10), v:count1)<cr>

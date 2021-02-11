@@ -1,7 +1,8 @@
 set autoread  " update the file if changed
 set autoindent
 " set clipboard+=unnamedplus  " make slow nvim with dd, x, yy etc I pefer "+
-set completeopt=longest,menuone
+set completeopt=menuone,noinsert,noselect  " Set completeopt to have a better completion experience
+set cmdheight=1
 set cursorline
 " set cursorcolumn
 set diffopt=vertical
@@ -21,7 +22,7 @@ set hlsearch
 set incsearch
 set inccommand="nosplit"
 set laststatus=2
-" set lcs=tab:>-,eol:<,space:+,trail:-
+set listchars=tab:>-,eol:<,space:+,trail:- " show special characters"
 set mouse=a
 set noautoindent
 set nobackup

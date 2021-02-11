@@ -10,7 +10,6 @@
   "diagnostic.virtualTextCurrentLineOnly": false,
   "emmet.includeLanguages": {"eruby": "html", "javascript": "javascriptreact"},
   "eslint.enable":false,
-  "explorer.file.autoReveal":false,
   "solargraph.commandPath":  "solargraph",
   "solargraph.diagnostics": true,
   "solargraph.hover": true,

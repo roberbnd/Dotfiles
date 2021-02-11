@@ -97,3 +97,4 @@ let g:coc_global_extensions = [
   \ 'coc-todolist', 'coc-pyright', 'coc-vetur', 'coc-elixir', 'coc-diagnostic',
   \ 'coc-emoji', 'coc-dictionary', 'coc-syntax', 'coc-restclient', 'coc-bookmark'
   \ ]
+"explorer.file.autoReveal":false,

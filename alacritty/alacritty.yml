@@ -3,14 +3,14 @@ env:
   COLORTERM: truecolor
   LC_CTYPE: en_US.UTF-8
 font:
-  size: 18
+  size: 20
   normal:
-    family: Hack
+    family: Monaco
 
   bold:
-    family: Hack
+    family: Monaco
     style: Bold
 
   italic:
-    family: Hack
+    family: Monaco
     style: Italic
