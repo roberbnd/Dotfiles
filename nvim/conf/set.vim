@@ -48,7 +48,7 @@ set undodir=~/.config/nvim/undo
 set viewoptions=cursor,folds,slash,unix
 set wildoptions=pum
 set wildignorecase
-set wrap
+" set wrap
 " filetype on
 filetype plugin on
 syntax on

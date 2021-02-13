@@ -42,8 +42,8 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<c-p>" : "\<S-Tab>"
 vnoremap m <esc>
 vnoremap <backspace> :StripTrailingWhitespace<cr>
 
-vnoremap , "+
-nnoremap , "+
+vnoremap <space>y "+
+nnoremap <space>y "+
 nnoremap <space>j "+yy
 
 " arrows
@@ -54,13 +54,6 @@ nnoremap <left> <c-o>
 nnoremap <right> <c-i>
 nnoremap <space><space> :SignifyHunkDiff<cr>
 nnoremap <space><space> :SignifyHunkDiff<cr>
-
-nmap <space>t :tabprevious<cr>
-nmap <space>n :tabnext<cr>
-nmap B :tabprevious<cr>
-nmap M :tabnext<cr>
-imap jmc <esc>:w<cr>:tabprevious<cr>
-imap jmr <esc>:w<cr>:tabnext<cr>
 
 nnoremap S :Gwrite<cr>
 nnoremap U <c-R>
@@ -147,6 +140,15 @@ nnoremap s; :tabclose<cr>
 
 nnoremap se :tabfirst<cr>
 nnoremap su :tablast<cr>
+" close all the tabs to the right
+nmap <space>s; :.+1,$tabdo :q<cr>
+
+nmap <space>t :tabprevious<cr>
+nmap <space>n :tabnext<cr>
+nmap B :tabprevious<cr>
+nmap M :tabnext<cr>
+imap jmc <esc>:w<cr>:tabprevious<cr>
+imap jmr <esc>:w<cr>:tabnext<cr>
 "}}}==========================================
 
 "Buffers {{{==================================
@@ -297,6 +299,7 @@ nnoremap -[ ct[
 nnoremap -] ct]
 nnoremap -- ct-
 nnoremap -$ ct$
+nnoremap -/ ct/
 "}}}==========================================
 
 "Change surround {{{==========================
@@ -472,6 +475,7 @@ nnoremap ge :diffget //2<cr>
 nnoremap gh :G<cr><c-w>T
 nnoremap gr :SignifyHunkUndo<cr>
 
+"Paste {{{====================================
 nmap ,<up> <plug>(YoinkRotateBack)
 nmap ,<down> <plug>(YoinkRotateForward)
 nmap ,<left> <plug>(YoinkPostPasteSwapBack)
@@ -479,6 +483,7 @@ nmap ,<right> <plug>(YoinkPostPasteSwapForward)
 nmap p <plug>(YoinkPaste_p)
 nmap P <plug>(YoinkPaste_P)
 nmap ,= <plug>(YoinkPostPasteToggleFormat)
+"}}}==========================================
 
 
 "Lsp {{{=================================

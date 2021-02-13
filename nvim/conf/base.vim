@@ -30,7 +30,7 @@ Plug 'voldikss/vim-floaterm'
 " float terminal
 let g:floaterm_width = &columns
 let g:floaterm_height = &lines-2
-let g:floaterm_autoinsert=0
+" let g:floaterm_autoinsert=0
 "======================================================================================}}}
 
 Plug 'rbgrouleff/bclose.vim'

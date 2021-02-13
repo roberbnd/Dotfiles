@@ -6,7 +6,7 @@ Plug 'vim-scripts/loremipsum', { 'on': 'Loremipsum'}
 " Replace the random text with something else or simply remove it.
 "======================================================================================}}}
 
-Plug 'AndrewRadev/tagalong.vim'
+Plug 'AndrewRadev/tagalong.vim', { 'branch': 'main' }
 "{{{======================================================================================
 " The plugin is designed to automatically rename closing HTML/XML tags when editing
 " opening ones (or the other way around).

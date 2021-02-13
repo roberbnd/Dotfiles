@@ -1,9 +1,16 @@
-" Install
-" git, tmux, fzf, ranger, font: monaco
+" => Install
+" git, tmux, ranger, font: monaco, bat, ripgrep
+" fzf: https://github.com/junegunn/fzf#installation
 " nerdfonts: https://github.com/ryanoasis/nerd-fonts
 " delta: https://github.com/dandavison/delta
 " lazygit: https://github.com/jesseduffield/lazygit
 " grv: https://github.com/rgburke/grv
+" treesitter: :TSInstall all
+" pip install --user neovim
+" gem install neovim
+" npm install -g neovim
+" LSP: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md
+
 source ~/.config/nvim/conf/set.vim
 
 call plug#begin('~/.config/nvim/plugged')

@@ -4,7 +4,7 @@ Plug 'foosoft/vim-argwrap', { 'on': 'ArgWrap' }
 " definitions.:ArgWrap
 "======================================================================================}}}
 
-Plug 'AndrewRadev/splitjoin.vim'
+Plug 'AndrewRadev/splitjoin.vim', { 'branch': 'main' }
 Plug 'flwyd/vim-conjoin'
 "splitjoin{{{=============================================================================
 " switching between a single-line statement and a multi-line one.
@@ -12,7 +12,7 @@ Plug 'flwyd/vim-conjoin'
 " gJ (with the cursor on the first line of a block)
 "======================================================================================}}}
 
-Plug 'AndrewRadev/sideways.vim'
+Plug 'AndrewRadev/sideways.vim', { 'branch': 'main' }
 "sideways{{{==============================================================================
 " :SidewaysLeft <<, :SidewaysRight >>,  exchange args
 "======================================================================================}}}

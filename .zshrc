@@ -17,21 +17,21 @@ export TERM=xterm-256color
 # Golang
 # export GOROOT=/usr/local/go/
 # export GOBIN=$GOROOT/workspace/go/bin
-export GOPATH=~/go
-export PATH="${GOROOT}/bin:${PATH}"
+export GOPATH=$HOME/go
+export PATH="$GOROOT/bin:$PATH"
 
 # Rust
-export PATH="$PATH:~/.cargo/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
 
 # Javascript
-export PATH="$PATH:~/.node_modules/bin/"
+export PATH="$PATH:$HOME/.node_modules/bin/"
 unset npm_config_prefix
 
 # PHP
-export PATH="$PATH:~/.config/composer/vendor/bin"
+export PATH="$PATH:$HOME/.config/composer/vendor/bin"
 
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
-export ANDROID_HOME=~/Android/Sdk
+export ANDROID_HOME=$HOME/Android/Sdk
 
 alias 0="ta 0"
 alias al="alsamixer"
@@ -75,7 +75,7 @@ alias ssp="sudo systemctl stop"
 
 alias startserver="sudo systemctl start httpd php-fpm mysqld"
 alias stopserver="sudo systemctl stop httpd php-fpm mysqld"
-alias startmysql="/home/bnd/mysql/bin/mysqld_safe"
+alias startmysql="$HOME/mysql/bin/mysqld_safe"
 
 alias v="vim"
 # alias n="nvim"
@@ -537,3 +537,4 @@ dbu() { docker build -t=$1 .; }
 
 dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

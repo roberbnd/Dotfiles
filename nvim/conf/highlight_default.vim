@@ -1,7 +1,6 @@
 colorscheme torte
 hi Visual gui=bold guibg=#085101 guifg=reverse
-" hi CursorLine guibg=#5F5F5F
-hi CursorLine gui=underline guibg=NONE
+hi CursorLine guibg=#3F3F3F
 
 hi Comment gui=italic
 
