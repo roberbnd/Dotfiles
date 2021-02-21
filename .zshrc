@@ -270,14 +270,15 @@ alias gremp='git remote prune'
 alias gremb='git-hub-browse'
 
 alias gsta='git stash'
-alias gstapak='git stash push . --keep-index'
 alias gstac='git stash clear'
 alias gstaci='git-stash-clear-interactive'
 alias gstaa='git stash apply'
 alias gstad='git stash drop'
 alias gstal='git stash list'
 alias gstadd='git-stash-dropped'
-alias gstap='git stash pop'
+alias gstapak='git stash push . --keep-index'
+alias gstapu='git stash push'
+alias gstapo='git stash pop'
 alias gstar='git-stash-recover'
 
 #------------------------------------

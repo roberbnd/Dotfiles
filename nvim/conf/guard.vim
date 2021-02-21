@@ -92,6 +92,17 @@ autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()
 "Never use
 "=========================================================================================
 
+" Doesn't work
+Plug 'axelf4/vim-strip-trailing-whitespace'
+"{{{======================================================================================
+" Vim plugin that removes trailing whitespace
+" from modified lines: Should not introduce extraneous changes into the diff,
+" even when editing faulty files.  For fixing up the whole file the command
+" :StripTrailingWhitespace is provided.  on save: Lines changing under you feet breaks any
+" flow and is a compatibility hazard.  Achieved by maintaining a set of all edited lines
+" with trailing whitespace, backed by a Splay tree where children store line number offsets.
+"======================================================================================}}}
+
 " Issue con markdown
 "Plug 'Yggdroot/indentLine'
 "Plug 'lukas-reineke/indent-blankline.nvim'

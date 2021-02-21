@@ -464,6 +464,7 @@ nmap mm <Plug>BookmarkToggle
 nmap ma :BookmarkShowAll<cr>
 nmap mn <Plug>BookmarkNext
 nmap mp <Plug>BookmarkPrev
+nmap mx :BookmarkClearAll<cr>
 
 vmap <space>B <Plug>NameAssign
 nnoremap <silent> ch :exe "tabn ".g:lasttab<cr>
@@ -490,26 +491,26 @@ nmap ,= <plug>(YoinkPostPasteToggleFormat)
 " definition
 lua vim.api.nvim_set_keymap('n', 'ba', '<cmd>lua vim.lsp.buf.definition()<cr>', {})
 nmap <silent> <space>ba :tabnew %<cr>ba
-nnoremap <silent> b, :LspSagaDefPreview<cr>
+nnoremap <silent> b, :lua require'lspsaga.provider'.preview_definition()<cr>
 
 "references
 lua vim.api.nvim_set_keymap('n', 'bo', '<cmd>lua vim.lsp.buf.references()<cr>', {})
 
 "rename
 " lua vim.api.nvim_set_keymap('n', 'be', '<cmd>lua vim.lsp.buf.rename()<cr>', {})
-nnoremap be :LspSagaRename<cr>
+nnoremap be :lua require('lspsaga.rename').rename()<cr>
 
 "formatting
 lua vim.api.nvim_set_keymap('v', 'bu', '<cmd>lua vim.lsp.buf.formatting()<cr>', {})
 
 "action
 " lua vim.api.nvim_set_keymap('n', 'bu', '<cmd>lua vim.lsp.buf.code_action()<cr>', {})
-nnoremap bu :LspSagaCodeAction<cr>
+nnoremap bu :lua require('lspsaga.codeaction').code_action()<cr>
 
 "LspSaga
-nnoremap <silent> <space>ww :LspSagaShowLineDiags<cr>
-nnoremap <silent> <space><left> :LspSagaDiagJumpPrev<cr>
-nnoremap <silent> <space><right> :LspSagaDiagJumpNext<cr>
+nnoremap <silent> <space>ww :lua require'lspsaga.diagnostic'.show_line_diagnostics()<cr>
+nnoremap <silent> <space><left> :lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<cr>
+nnoremap <silent> <space><right> :lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<cr>
 "}}}==========================================
 
 "map <c-p> to manually trigger completion

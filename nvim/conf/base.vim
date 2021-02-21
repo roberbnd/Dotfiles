@@ -30,6 +30,7 @@ Plug 'voldikss/vim-floaterm'
 " float terminal
 let g:floaterm_width = &columns
 let g:floaterm_height = &lines-2
+let g:floaterm_opener = 'edit'
 " let g:floaterm_autoinsert=0
 "======================================================================================}}}
 
@@ -50,7 +51,7 @@ Plug 'haya14busa/vim-asterisk'
 " asterisk.vim provides improved * motions.
 "======================================================================================}}}
 
-Plug 'liuchengxu/vista.vim'
+Plug 'liuchengxu/vista.vim', { 'commit': '054e5ea86864e43e6b42dc47b43e1c08ca2d1b17' }
 "{{{======================================================================================
 " require ctags, ptags
 " Viewer & Finder for LSP symbols and tags in Vim
@@ -59,7 +60,13 @@ let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
 let g:vista#renderer#enable_icon = 1
 let g:vista_default_executive = 'nvim_lsp'
 let g:vista_sidebar_position = 'vertical topleft'
-let g:vista_sidebar_width='25'
+let g:vista_sidebar_width='30'
+
+function! NearestMethodOrFunction() abort
+  return get(b:, 'vista_nearest_method_or_function', '')
+endfunction
+set statusline+=%{NearestMethodOrFunction()}
+autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 "======================================================================================}}}
 
 Plug 'machakann/vim-sandwich'
@@ -85,7 +92,7 @@ Plug 'zhimsel/vim-stay'
 " making the procedure painless and invisible.
 "======================================================================================}}}
 
-" Plug 'andymass/vim-matchup'
+Plug 'andymass/vim-matchup'
 "{{{======================================================================================
 " vim match-up: even better % fist_oncoming navigate and highlight matching words
 " fist_oncoming modern matchit and matchparen replacement
@@ -123,6 +130,7 @@ Plug 'christoomey/vim-tmux-navigator'
 " I need because <c-h> is not working
 "======================================================================================}}}
 
+Plug 'liuchengxu/vim-clap'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 "{{{======================================================================================
@@ -135,7 +143,7 @@ function! s:build_quickfix_list(lines)
 endfunction
 let g:fzf_layout = { 'down': '100%' }
 " CTRL-a will toggle preview window.
-let g:fzf_preview_window = ['down:60%', 'ctrl-a']
+let g:fzf_preview_window = ['down:80%', 'ctrl-a']
 let g:fzf_action = {
             \ 'ctrl-q': function('s:build_quickfix_list'),
             \ 'ctrl-x': 'tab split' }
@@ -143,6 +151,9 @@ let g:fzf_buffers_jump = 1
 "======================================================================================}}}
 
 Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
+"{{{======================================================================================
+" Search with Quicklistfix
+"======================================================================================}}}
 
 Plug 'jlanzarotta/bufexplorer'
 "{{{======================================================================================
@@ -153,6 +164,7 @@ let g:bufExplorerShowRelativePath=1
 
 Plug 'kevinhwang91/nvim-bqf', { 'branch': 'main' }
 "{{{======================================================================================
+" Interactive Quicklistfix
 "======================================================================================}}}
 
 Plug 'svermeulen/vim-yoink'
