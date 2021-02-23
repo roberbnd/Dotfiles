@@ -75,9 +75,7 @@ alias stopserver="sudo systemctl stop httpd php-fpm mysqld"
 alias startmysql="$HOME/mysql/bin/mysqld_safe"
 
 alias v="vim"
-# alias n="nvim"
-alias nn="~/Downloads/nvim.appimage"
-alias n="~/Downloads/nvim-osx64/bin/nvim"
+alias n="~/Downloads/nvim/bin/nvim"
 alias del="rm -rf"
 
 alias cdd="cd -"
