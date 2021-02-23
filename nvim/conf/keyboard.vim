@@ -21,19 +21,19 @@ nnoremap ZZ <nop>
 " Allow saving of files as sudo
 cnoremap w!! w !sudo tee > /dev/null %
 
-tnoremap }h <c-\><C-n>
-tnoremap }t <c-\><C-n>:Buffers<cr>
-tnoremap }m <c-\><C-n><c-^>
+tnoremap }h <c-\><c-n>
+tnoremap }t <c-\><c-n>:Buffers<cr>
+tnoremap }m <c-\><c-n><c-^>
 nnoremap }} :FloatermToggle<cr>
-tnoremap }} <c-\><C-n>:FloatermToggle<cr>
+tnoremap }} <c-\><c-n>:FloatermToggle<cr>
 nnoremap }n :FloatermNew<cr>
-tnoremap }n <c-\><C-n>:FloatermNew<cr>
+tnoremap }n <c-\><c-n>:FloatermNew<cr>
 nnoremap }c :FloatermPrev<cr>
-tnoremap }c <c-\><C-n>:FloatermPrev<cr>
+tnoremap }c <c-\><c-n>:FloatermPrev<cr>
 nnoremap }r :FloatermNext<cr>
-tnoremap }r <c-\><C-n>:FloatermNext<cr>
+tnoremap }r <c-\><c-n>:FloatermNext<cr>
 nnoremap }x :FloatermKill<cr>
-tnoremap }x <c-\><C-n>:FloatermKill<cr>
+tnoremap }x <c-\><c-n>:FloatermKill<cr>
 
 " Use <Tab> and <S-Tab> to navigate through popup menu
 inoremap <expr> <Tab>   pumvisible() ? "\<c-n>" : "\<Tab>"
@@ -45,6 +45,7 @@ vnoremap <backspace> :StripTrailingWhitespace<cr>
 vnoremap <space>y "+
 nnoremap <space>y "+
 nnoremap <space>j "+yy
+vnoremap <space>j "+y
 
 " arrows
 " navigate chunks of current buffer
@@ -255,6 +256,8 @@ inoremap ' ''<left>
 inoremap " ""<left>
 inoremap ` ``<left>
 inoremap < <><left>
+
+tnoremap [ []<left>
 
 "Add {{{======================================
 vmap [ sa[

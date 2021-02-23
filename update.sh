@@ -1,5 +1,6 @@
 
 yes | cp ~/.zshrc .
+yes | cp ~/.zshrc_base .
 yes | cp ~/.zpreztorc .
 yes | cp ~/.tmux.conf .
 yes | cp ~/.gitconfig .

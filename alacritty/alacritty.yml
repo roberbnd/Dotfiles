@@ -3,7 +3,7 @@ env:
   COLORTERM: truecolor
   LC_CTYPE: en_US.UTF-8
 font:
-  size: 20
+  size: 22
   normal:
     family: Monaco
 
