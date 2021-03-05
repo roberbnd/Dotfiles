@@ -52,6 +52,7 @@ Plug 'haya14busa/vim-asterisk'
 "======================================================================================}}}
 
 Plug 'liuchengxu/vista.vim', { 'commit': '054e5ea86864e43e6b42dc47b43e1c08ca2d1b17' }
+" Plug 'liuchengxu/vista.vim'
 "{{{======================================================================================
 " require ctags, ptags
 " Viewer & Finder for LSP symbols and tags in Vim
@@ -162,7 +163,7 @@ let g:bufExplorerShowNoName=1
 let g:bufExplorerShowRelativePath=1
 "======================================================================================}}}
 
-Plug 'kevinhwang91/nvim-bqf', { 'branch': 'main' }
+" Plug 'kevinhwang91/nvim-bqf', { 'branch': 'main' }
 "{{{======================================================================================
 " Interactive Quicklistfix
 "======================================================================================}}}

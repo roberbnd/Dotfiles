@@ -28,7 +28,7 @@ au VimEnter * startinsert
 call feedkeys("\<esc>")
 
 " omit the path file as string to search
-command! -bang -nargs=* Rg call fzf#vim#grep(
-            \ "rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>),
-            \ 1, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}),
-            \ <bang>0 )
+" command! -bang -nargs=* Rg call fzf#vim#grep(
+"             \ "rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>),
+"             \ 1, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}),
+"             \ <bang>0 )

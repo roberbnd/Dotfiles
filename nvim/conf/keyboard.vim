@@ -12,7 +12,6 @@ nnoremap <f7> :set list!<cr>
 nnoremap <f8> :term<cr>a
 nnoremap <f9> :set number!<cr>
 nnoremap <f11> :Calendar<cr>
-nnoremap <f12> :Todo<cr>
 "}}}==========================================
 
 nnoremap Q <nop>

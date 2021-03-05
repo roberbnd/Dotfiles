@@ -16,10 +16,10 @@ export PATH="$PATH:$HOME/.cargo/bin"
 
 # => Javascript
 export PATH="$PATH:$HOME/.node_modules/bin/"
-# unset npm_config_prefix
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+unset npm_config_prefix
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # => PHP
 export PATH="$PATH:$HOME/.config/composer/vendor/bin"
@@ -30,6 +30,13 @@ export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
 # => Android
 export ANDROID_HOME="$HOME/Android/Sdk"
 
+#------------------------------------
+# Ruby
+# eval "$(rbenv init -)"
+# export RUBYOPT='-W:no-deprecated -W:no-experimental'
+# export PATH=$PATH:$(ruby -e 'print Gem.user_dir')/bin
+source ~/.rvm/scripts/rvm
+
 alias 0="ta 0"
 alias al="alsamixer"
 alias na="nautilus . &"
@@ -37,7 +44,7 @@ alias lg="lazygit"
 
 alias shu="shutdown now"
 alias re="source ~/.zshrc"
-alias op="nvim ~/.zshrc"
+alias op="~/Downloads/nvim/bin/nvim ~/.zshrc_base"
 alias mu="ncmpcpp"
 alias r="ranger"
 
@@ -124,8 +131,8 @@ alias gclo='git clone'
 alias gche='git checkout'
 alias gchem='git checkout master'
 alias gcheb='git checkout -b'
-alias gchebc='git checkout -b $(git-branch-current)'
-alias gchebd='git checkout -b $(git-branch-current)-deploy'
+alias gchebc='git checkout -b $(git branch --show-current)'
+alias gchebd='git checkout -b $(git branch --show-current)-deploy'
 alias gchebmu='git checkout -b master upstream/master'
 alias gchebmo='git checkout -b master origin/master'
 alias gchema='git checkout master'
@@ -231,16 +238,16 @@ alias gmert='git mergetool'
 alias gpus='git push'
 alias gpuso='git push origin'
 alias gpusof='git push origin --force'
-alias gpusso='git push --set-upstream origin $(git-branch-current)'
-alias gpussof='git push --set-upstream origin $(git-branch-current) --force'
+alias gpusso='git push --set-upstream origin $(git branch --show-current)'
+alias gpussof='git push --set-upstream origin $(git branch --show-current) --force'
 alias gpusom='git push origin master'
 alias gpushm='git push heroku master'
 alias gpusf='git push --force'
 alias gpusa='git push --all'
 alias gpusA='git push --all && git push --tags'
 alias gpust='git push --tags'
-alias gpusc='git push --set-upstream origin "$(git-branch-current 2> /dev/null)"'
-alias gpusp='git pull origin "$(git-branch-current 2> /dev/null)" && git push origin "$(git-branch-current 2> /dev/null)"'
+alias gpusc='git push --set-upstream origin "$(git branch --show-current 2> /dev/null)"'
+alias gpusp='git pull origin "$(git branch --show-current 2> /dev/null)" && git push origin "$(git branch --show-current 2> /dev/null)"'
 
 alias greb='git rebase'
 alias grebm='git rebase master'
@@ -419,12 +426,6 @@ alias hps='heroku ps:scale'
 alias hlg='heroku logs'
 alias hlgt='heroku logs --tail'
 
-#------------------------------------
-# Ruby
-# eval "$(rbenv init -)"
-# export RUBYOPT='-W:no-deprecated -W:no-experimental'
-# export PATH=$PATH:$(ruby -e 'print Gem.user_dir')/bin
-
 alias rvm5='rvm use 2.6.5'
 alias bi="bundle install"
 alias be="bundle exec"
@@ -534,3 +535,12 @@ dbu() { docker build -t=$1 .; }
 dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+alias bcr='./bcloud clusters resume'
+alias bcl='./bcloud clusters list'
+alias bsc='./bcloud store create'
+alias bsl='./bcloud store list'
+alias bds='./bcloud dns setup'
+alias bsb='./bcloud ssh bcappvm'
+alias bra='./bcloud rsync auto'
+alias ng='./ngrok http 3000'
