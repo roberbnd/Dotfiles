@@ -29,5 +29,5 @@ call plug#end()
 source ~/.config/nvim/conf/scripts.vim
 luafile ~/.config/nvim/conf/lua_scripts.lua
 source ~/.config/nvim/conf/keyboard.vim
-source ~/.config/nvim/conf/highlight_default.vim
+source ~/.config/nvim/conf/highlight_pop_punk.vim
 source ~/.config/nvim/conf/autocmd.vim

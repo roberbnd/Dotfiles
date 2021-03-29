@@ -58,6 +58,8 @@ nnoremap <space><space> :SignifyHunkDiff<cr>
 nnoremap S :Gwrite<cr>
 nnoremap U <c-R>
 
+" copy line number
+nmap yl :let @* = line('.')<cr>
 " copy name
 nmap yn :let @* = expand("%:t")<cr>
 " copy relative path
@@ -92,9 +94,9 @@ nnoremap rp :qa<cr>
 nnoremap <space>o :e ~/vimwiki/index.md<cr>
 
 " Paste neovim's clipboard
-nnoremap <space>sn /<c-r>"<cr>
+nnoremap mo /<c-r>"<cr>
 " Paste computer's clipboard
-nnoremap <space>sc /<c-r>+<cr>
+nnoremap me /<c-r>+<cr>
 " without easymotion
 nnoremap <space>/ /
 
@@ -471,6 +473,7 @@ nmap mx :BookmarkClearAll<cr>
 vmap <space>B <Plug>NameAssign
 nnoremap <silent> ch :exe "tabn ".g:lasttab<cr>
 
+nnoremap g<space> :Neogit<cr>
 nnoremap ga :GitMessenger<cr>
 nnoremap go :Gblame<cr>
 nnoremap gu :diffget //3<cr>

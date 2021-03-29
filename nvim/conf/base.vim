@@ -18,7 +18,7 @@ let g:completion_enable_snippet = 'UltiSnips'
 let g:completion_trigger_keyword_length = 1
 "======================================================================================}}}
 
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 "{{{======================================================================================
 let g:UltiSnipsExpandTrigger="<c-h>"
 let g:UltiSnipsJumpBackwardTrigger="<c-w>"
@@ -51,8 +51,7 @@ Plug 'haya14busa/vim-asterisk'
 " asterisk.vim provides improved * motions.
 "======================================================================================}}}
 
-Plug 'liuchengxu/vista.vim', { 'commit': '054e5ea86864e43e6b42dc47b43e1c08ca2d1b17' }
-" Plug 'liuchengxu/vista.vim'
+Plug 'liuchengxu/vista.vim'
 "{{{======================================================================================
 " require ctags, ptags
 " Viewer & Finder for LSP symbols and tags in Vim
@@ -62,6 +61,8 @@ let g:vista#renderer#enable_icon = 1
 let g:vista_default_executive = 'nvim_lsp'
 let g:vista_sidebar_position = 'vertical topleft'
 let g:vista_sidebar_width='30'
+let g:vista_close_on_fzf_select = 1
+let g:vista_blink = [0, 0]
 
 function! NearestMethodOrFunction() abort
   return get(b:, 'vista_nearest_method_or_function', '')
@@ -76,7 +77,7 @@ Plug 'machakann/vim-sandwich'
 " surroundings of a sandwiched textobject, like (foo), "bar".
 "======================================================================================}}}
 
-Plug 'tpope/vim-commentary'
+Plug 'b3nj5m1n/kommentary', { 'branch': 'main' }
 "{{{======================================================================================
 " gcc
 " <c-_>p Comment the current inner paragraph
@@ -144,7 +145,7 @@ function! s:build_quickfix_list(lines)
 endfunction
 let g:fzf_layout = { 'down': '100%' }
 " CTRL-a will toggle preview window.
-let g:fzf_preview_window = ['down:80%', 'ctrl-a']
+let g:fzf_preview_window = ['down:70%', 'ctrl-a']
 let g:fzf_action = {
             \ 'ctrl-q': function('s:build_quickfix_list'),
             \ 'ctrl-x': 'tab split' }
@@ -163,7 +164,7 @@ let g:bufExplorerShowNoName=1
 let g:bufExplorerShowRelativePath=1
 "======================================================================================}}}
 
-" Plug 'kevinhwang91/nvim-bqf', { 'branch': 'main' }
+Plug 'kevinhwang91/nvim-bqf', { 'branch': 'main' }
 "{{{======================================================================================
 " Interactive Quicklistfix
 "======================================================================================}}}

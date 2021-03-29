@@ -4,85 +4,25 @@
 "=========================================================================================
 "=========================================================================================
 
-Plug 'TimUntersberger/neogit'
-"=========================================================================================
-hi def NeogitDiffAddHighlight guibg=#404040
-hi def NeogitDiffDeleteHighlight guibg=#404040
-hi def NeogitDiffContextHighlight ctermbg=4 guibg=#333333
-hi def NeogitHunkHeader guifg=#cccccc guibg=#404040
-hi def NeogitHunkHeaderHighlight guifg=#cccccc guibg=#4d4d4d
-"=========================================================================================
+" Future changes
+Plug 'nvim-lua/plenary.nvim'
+Plug 'lewis6991/gitsigns.nvim', { 'branch': 'main' }
+au BufRead * highlight GitSignsAdd gui=NONE guibg=NONE
+au BufRead * highlight GitSignsChange gui=NONE guibg=NONE
+au BufRead * highlight GitSignsDelete gui=NONE guibg=NONE
+require('gitsigns').setup()
 
-Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
-
-" If you want to display icons, then use one of these plugins:
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'ryanoasis/vim-devicons'
-"=========================================================================================
-" new status line
-"=========================================================================================
+Plug 'akinsho/nvim-bufferline.lua'
+Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+Plug 'mfussenegger/nvim-dap'
+Plug 'phaazon/hop.nvim'
 
-https://github.com/mfussenegger/nvim-dap
-"=========================================================================================
-" nvim-dap is a Debug Adapter Protocol client implementation for Neovim (>= 0.5)
-"=========================================================================================
+""Hop{{{================================
+"nmap t :HopChar2<cr>
+"nmap eh :HopLine<cr>
+""}}}==========================================
 
-Plug 'b3nj5m1n/kommentary', { 'branch': 'main' }
-"=========================================================================================
-" comments
-"=========================================================================================
-
-https://github.com/michaelb/sniprun
-"=========================================================================================
-" Sniprun is a code runner plugin for neovim.
-"=========================================================================================
-
-Plug 'onsails/lspkind-nvim'
-"=========================================================================================
-" icons in lsp completition
-require('lspkind').init({
-    -- with_text = true,
-})
-"=========================================================================================
-
-Plug 'p00f/nvim-ts-rainbow'
-"{{{======================================================================================
-this plugin has performe issue
-" Rainbow parentheses for neovim using tree-sitter.
-require'nvim-treesitter.configs'.setup {
-  rainbow = {
-    enable = true,
-  }
-}
-"======================================================================================}}}
-
-Plug 'RishabhRD/popfix'
-Plug 'RishabhRD/nvim-lsputils'
-"{{{======================================================================================
-" This plugin focuses on making such LSP actions highly user friendly.
-" lua vim.lsp.handlers['textDocument/definition'] = require'lsputil.locations'.definition_handler
-lua <<EOF
-vim.lsp.handlers['textDocument/codeAction'] = require'lsputil.codeAction'.code_action_handler
-vim.lsp.handlers['textDocument/references'] = require'lsputil.locations'.references_handler
-vim.lsp.handlers['textDocument/definition'] = require'lsputil.locations'.definition_handler
-vim.lsp.handlers['textDocument/declaration'] = require'lsputil.locations'.declaration_handler
-vim.lsp.handlers['textDocument/typeDefinition'] = require'lsputil.locations'.typeDefinition_handler
-vim.lsp.handlers['textDocument/implementation'] = require'lsputil.locations'.implementation_handler
-vim.lsp.handlers['textDocument/documentSymbol'] = require'lsputil.symbols'.document_handler
-vim.lsp.handlers['workspace/symbol'] = require'lsputil.symbols'.workspace_handler
-EOF
-"======================================================================================}}}
-
-Plug 'kosayoda/nvim-lightbulb'
-"{{{======================================================================================
-"The plugin shows a lightbulb in the sign column whenever a textDocument/codeAction
-"is available at the current cursor position.
-autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()
-"======================================================================================}}}
-
-"{{{======================================================================================
-" Colorscheme
-"======================================================================================}}}
 
 "=========================================================================================
 "#########################################################################################
@@ -118,6 +58,12 @@ Plug 'axelf4/vim-strip-trailing-whitespace'
 "=========================================================================================
 "Nice to have but I don´t need it
 "=========================================================================================
+Plug 'tpope/vim-commentary'
+https://github.com/michaelb/sniprun
+"=========================================================================================
+" Sniprun is a code runner plugin for neovim.
+"=========================================================================================
+
 
 Plug 'simeji/winresizer'
 "{{{======================================================================================

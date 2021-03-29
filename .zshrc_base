@@ -1,7 +1,9 @@
 eval "$(fasd --init auto)"
 
-export EDITOR='nvim'
-export VISUAL='nvim'
+# export EDITOR='nvim'
+# export VISUAL='nvim'
+export EDITOR="~/Downloads/nvim/bin/nvim"
+export VISUAL="~/Downloads/nvim/bin/nvim"
 # Don't remove duplicate inputs
 export TERM=xterm-256color
 
@@ -23,6 +25,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # => PHP
 export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+export PHP="/usr/local/etc/php"
 
 # => Java
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
@@ -118,7 +121,7 @@ alias gbra='git branch'
 alias gbrav='git branch -v'
 alias gbravv='git branch -vv'
 alias gbraav='git branch -av'
-alias gbrad='git branch -d'
+alias gbrad='git branch -d -f'
 alias gbrax='git branch -D'
 alias gbram='git branch -m'
 alias gbraM='git branch -M'
@@ -140,6 +143,10 @@ alias gchep='git checkout --patch'
 alias gche-='git checkout --'
 alias gche-.='git checkout -- .'
 
+alias gsw='git switch'
+alias gswm='git switch master'
+alias gswc='git switch -c'
+
 alias grest='git restore'
 alias grests.='git restore --staged .'
 alias grests='git restore --staged'
@@ -150,6 +157,7 @@ alias gress1='git reset --soft HEAD~1'
 alias gresh='git reset --hard'
 alias gresH='git reset HEAD'
 alias greshH='git reset --hard HEAD'
+alias gresh1='git reset --hard HEAD~1'
 alias grev='git revert'
 
 alias gcom='git commit'

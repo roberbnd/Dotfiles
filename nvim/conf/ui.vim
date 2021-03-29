@@ -1,11 +1,21 @@
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'bignimbus/pop-punk.vim'
 "{{{======================================================================================
 " colorschema
+"======================================================================================}}}
+
+Plug 'phanviet/vim-monokai-pro'
+"{{{======================================================================================
 "======================================================================================}}}
 
 Plug 'ryanoasis/vim-devicons'
 "=========================================================================================
 " icons
+"=========================================================================================
+
+Plug 'onsails/lspkind-nvim'
+"=========================================================================================
+" icons lsp
 "=========================================================================================
 
 Plug 'osyo-manga/vim-brightest'
@@ -21,9 +31,9 @@ let g:airline_powerline_fonts = 1
 let g:airline_inactive_collapse=0
 let g:airline_section_c = '%t'
 let g:airline_section_z = '%l:%c'
-let g:airline_section_y = ''
-let g:airline_right_sep = ''
-let g:airline_left_sep = ''
+" let g:airline_section_y = ''
+" let g:airline_right_sep = ''
+" let g:airline_left_sep = '�'
 let g:airline_focuslost_inactive = 0
 let g:airline_inactive_collapse=0
 let g:airline#extensions#tabline#enabled = 1
@@ -70,10 +80,4 @@ let g:seiya_target_groups = has('nvim') ? ['guibg'] : ['ctermbg']
 Plug 'ap/vim-css-color'
 "{{{======================================================================================
 " Preview color
-"======================================================================================}}}
-
-Plug 'luochen1990/rainbow'
-"{{{======================================================================================
-" con typescript me quita el color
-let g:rainbow_active = 1
 "======================================================================================}}}

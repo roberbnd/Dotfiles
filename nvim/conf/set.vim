@@ -23,7 +23,8 @@ set incsearch
 set inccommand="nosplit"
 set laststatus=2
 set listchars=tab:>-,eol:<,space:+,trail:- " show special characters"
-set mouse=a
+set mouse=
+" set mouse=a
 set noautoindent
 set nobackup
 set nocompatible
@@ -39,7 +40,8 @@ set shiftwidth=4
 set shortmess+=c   " don't give |ins-completion-menu| messages.
 set showbreak=↳
 set signcolumn=yes
-set number  " after signcolumn
+" set signcolumn=auto:2
+" set number  " after signcolumn
 set tabstop=4
 set termguicolors
 set undofile
@@ -48,7 +50,7 @@ set undodir=~/.config/nvim/undo
 set viewoptions=cursor,folds,slash,unix
 set wildoptions=pum
 set wildignorecase
-" set wrap
+set wrap
 " filetype on
 filetype plugin on
 syntax on

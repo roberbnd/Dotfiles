@@ -1,8 +1,9 @@
-colorscheme pop-punk
+colorscheme snazzy
 hi Visual gui=bold guibg=#085101 guifg=reverse
 hi CursorLine guibg=#3F3F3F
 
 hi Comment gui=italic guifg=#1765E3
+hi LineNr guifg=#FFFFFF
 
 hi EasyMotionShade guifg=#607D8B
 hi EasyMotionTarget gui=bold guifg=#FFFFFF guibg=#1765E3

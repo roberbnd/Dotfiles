@@ -1,15 +1,11 @@
-colorscheme pop-punk
-hi Visual gui=bold guibg=#085101 guifg=reverse
-hi CursorLine guibg=#3F3F3F
+colorscheme monokai_pro
+hi Visual gui=bold guibg=#004444 guifg=reverse
+hi CursorLine guibg=#4C4C4C
 
-hi Comment gui=italic guifg=#1765E3
+hi Comment gui=italic
 
 hi EasyMotionShade guifg=#607D8B
 hi EasyMotionTarget gui=bold guifg=#FFFFFF guibg=#1765E3
-
-hi HopNextKey gui=bold guifg=#FFFFFF guibg=#1765E3
-hi HopNextKey1 gui=bold guifg=#FFFFFF guibg=#1765E3
-hi HopNextKey2 gui=bold guifg=#FFFFFF guibg=#1765E3
 
 hi HighlightText gui=bold guifg=#FFFFFF guibg=#a901d5
 
