@@ -16,9 +16,12 @@ log3 = log --graph --decorate --oneline
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 [delta]
-    plus-color = "#012800"
-    minus-color = "#340001"
-    syntax-theme = Monokai Extended
-
+    minus-style = "#FFFFFF" bold ul "#d44000"
+    plus-style = "#FFFFFF" bold ul "#1e6f5c"
+    features = decorations
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    hunk-header-decoration-style = yellow box
 [interactive]
     diffFilter = delta --color-only

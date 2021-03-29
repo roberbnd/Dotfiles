@@ -15,6 +15,7 @@ hi HighlightText gui=bold guifg=#FFFFFF guibg=#a901d5
 au VimEnter * hi! airline_tab guibg=#0096c7 guifg=#000000
 au VimEnter * hi! airline_tabmod guibg=#e63244 guifg=#000000
 
+hi Search guifg=black guibg=yellow
 hi NonText guifg=#FF0000
 
 hi diffRemoved guifg=yellow
