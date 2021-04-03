@@ -64,6 +64,7 @@ https://github.com/michaelb/sniprun
 " Sniprun is a code runner plugin for neovim.
 "=========================================================================================
 
+" Plug 'ap/vim-css-color'
 
 Plug 'simeji/winresizer'
 "{{{======================================================================================

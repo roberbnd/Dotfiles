@@ -21,3 +21,5 @@ saga.init_lsp_saga {
 }
 
 require('lspkind').init({})
+
+require'colorizer'.setup()

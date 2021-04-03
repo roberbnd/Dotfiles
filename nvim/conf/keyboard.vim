@@ -11,6 +11,7 @@ nnoremap <f6> :call ToggleWrap()<cr>
 nnoremap <f7> :set list!<cr>
 nnoremap <f8> :term<cr>a
 nnoremap <f9> :set number!<cr>
+nnoremap <f10> :UltiSnipsEdit<cr>
 nnoremap <f11> :Calendar<cr>
 "}}}==========================================
 
@@ -94,9 +95,9 @@ nnoremap rp :qa<cr>
 nnoremap <space>o :e ~/vimwiki/index.md<cr>
 
 " Paste neovim's clipboard
-nnoremap mo /<c-r>"<cr>
+nnoremap <space>N /<c-r>"<cr>
 " Paste computer's clipboard
-nnoremap me /<c-r>+<cr>
+nnoremap <space>C /<c-r>+<cr>
 " without easymotion
 nnoremap <space>/ /
 
@@ -462,6 +463,12 @@ nnoremap rn :Vista finder fzf<cr>
 imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-l> <plug>(fzf-complete-line)
+
+" omit the path file as string to search
+command! -bang -nargs=* Rg call fzf#vim#grep(
+            \ "rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>),
+            \ 1, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}),
+            \ <bang>0 )
 "}}}==========================================
 
 nmap mm <Plug>BookmarkToggle

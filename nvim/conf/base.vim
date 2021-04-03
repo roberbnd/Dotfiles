@@ -18,7 +18,13 @@ let g:completion_enable_snippet = 'UltiSnips'
 let g:completion_trigger_keyword_length = 1
 "======================================================================================}}}
 
-" Plug 'SirVer/ultisnips'
+Plug 'steelsojka/completion-buffers'
+"{{{======================================================================================
+let g:completion_chain_complete_list = [{'complete_items': ['lsp', 'snippet', 'buffer']}]
+let g:completion_sorting='none'
+"======================================================================================}}}
+
+Plug 'SirVer/ultisnips'
 "{{{======================================================================================
 let g:UltiSnipsExpandTrigger="<c-h>"
 let g:UltiSnipsJumpBackwardTrigger="<c-w>"
