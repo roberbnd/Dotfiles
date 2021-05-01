@@ -3,7 +3,8 @@ local custom_attach = function(client)
     require'folding'.on_attach()
     require"lsp_signature".on_attach({
       bind = true,
-      handler_opts = {border = "single"}
+      handler_opts = {border = "single"},
+      decorator = {"`", "`"}
     })
 end
 

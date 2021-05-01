@@ -25,7 +25,6 @@ set laststatus=2
 set listchars=tab:>-,eol:<,space:+,trail:- " show special characters"
 set mouse=
 " set mouse=a
-set noautoindent
 set nobackup
 set nocompatible
 set noerrorbells
@@ -41,7 +40,7 @@ set shortmess+=c   " don't give |ins-completion-menu| messages.
 set showbreak=↳
 set signcolumn=yes
 " set signcolumn=auto:2
-" set number  " after signcolumn
+set number  " after signcolumn
 set tabstop=4
 set termguicolors
 set undofile

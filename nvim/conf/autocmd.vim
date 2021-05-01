@@ -2,8 +2,8 @@
 au WinEnter,TabEnter,FocusGained * checktime
 
 " folds
-au FileType python,html setlocal foldmethod=indent
-au FileType javascript,css,less,sass,c,cpp setlocal foldmarker={,}
+" au FileType python,html setlocal foldmethod=indent
+" au FileType javascript,css,less,sass,c,cpp setlocal foldmarker={,}
 
 " Types
 au BufRead *.sbt set filetype=scala
@@ -27,3 +27,6 @@ au InsertEnter * inoremap ] <cr>
 au InsertEnter * tnoremap ] <cr>
 au VimEnter * startinsert
 call feedkeys("\<esc>")
+
+
+set autoindent

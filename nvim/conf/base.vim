@@ -4,7 +4,7 @@ Plug 'neovim/nvim-lspconfig'
 "======================================================================================}}}
 
 " check the error
-" Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
+Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
 "{{{======================================================================================
 " A light-weight lsp plugin based on neovim built-in lsp with highly performance UI.
 "======================================================================================}}}

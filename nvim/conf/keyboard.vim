@@ -397,6 +397,9 @@ nnoremap <space>a: :Tabularize /:\zs<cr>
 vnoremap <space>a: :Tabularize /:\zs<cr>
 "}}}==========================================
 
+" php is not indenting
+nnoremap <space>aa :set autoindent<cr>
+
 "easymotion{{{================================
 " map eh <Plug>(easymotion-k)
 map et <Plug>(easymotion-linebackward)

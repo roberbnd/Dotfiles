@@ -12,7 +12,6 @@
 " LSP: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md
 
 source ~/.config/nvim/conf/set.vim
-
 call plug#begin('~/.config/nvim/plugged')
 
 source ~/.config/nvim/conf/ui.vim
