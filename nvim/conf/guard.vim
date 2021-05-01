@@ -3,7 +3,31 @@
 " Neovim plugins lua
 "=========================================================================================
 "=========================================================================================
+" never use it makes slow the editor
+" Plug 'nvim-lua/plenary.nvim'
+"{{{======================================================================================
+" neogit requirement
+"======================================================================================}}}
+Plug 'TimUntersberger/neogit'
+"{{{======================================================================================
+hi NeogitDiffDelete guifg=yellow
+hi NeogitDiffAdd guifg=orange
+"======================================================================================}}}
 
+
+" I don't understand how use it
+Plug 'lewis6991/spellsitter.nvim'
+"{{{======================================================================================
+"======================================================================================}}}
+require'spellsitter'.setup({
+  hl = 'SpellBad',
+  captures = {'comment'},
+})
+
+
+Plug 'folke/lsp-colors.nvim'
+Plug 'kdav5758/TrueZen.nvim'
+Plug 'kevinhwang91/nvim-hlslens'
 " Future changes
 Plug 'nvim-lua/plenary.nvim'
 Plug 'lewis6991/gitsigns.nvim', { 'branch': 'main' }
@@ -23,7 +47,14 @@ Plug 'phaazon/hop.nvim'
 "nmap eh :HopLine<cr>
 ""}}}==========================================
 
+Plug 'kyazdani42/nvim-web-devicons'
+" Plug 'romgrk/barbar.nvim'
+Plug 'hoob3rt/lualine.nvim'
 
+
+require('lualine').setup({
+    options = {theme = 'auto'}
+})
 "=========================================================================================
 "#########################################################################################
 "=========================================================================================
@@ -58,11 +89,18 @@ Plug 'axelf4/vim-strip-trailing-whitespace'
 "=========================================================================================
 "Nice to have but I don´t need it
 "=========================================================================================
-Plug 'tpope/vim-commentary'
+
 https://github.com/michaelb/sniprun
 "=========================================================================================
 " Sniprun is a code runner plugin for neovim.
 "=========================================================================================
+
+Plug 'andymass/vim-matchup'
+"{{{======================================================================================
+" vim match-up: even better % fist_oncoming navigate and highlight matching words
+" fist_oncoming modern matchit and matchparen replacement
+" let g:matchup_matchparen_enabled = 0
+"======================================================================================}}}
 
 " Plug 'ap/vim-css-color'
 
@@ -349,12 +387,6 @@ nnoremap +; :call vimspector#Restart()<cr>
 nnoremap +a :VimspectorReset<cr>
 "======================================================================================}}}
 
-Plug 'jmckiern/vim-venter', { 'on': 'VenterToggle' }
-"{{{======================================================================================
-let g:venter_width=&columns/8
-nnoremap <F9> :VenterToggle<cr>
-"======================================================================================}}}
-
 Plug 'lambdalisue/fern.vim'
 "{{{======================================================================================
 "======================================================================================}}}
@@ -577,17 +609,6 @@ Plug 'gcmt/taboo.vim', { 'on': 'TabooRename' }
 " Rename tabs
 "======================================================================================}}}
 
-"no compatible con markdown
-" au Filetype json,vimwiki,markdown,md let g:indentLine_setConceal = 0
-" au FileType markdown,notes,vimwiki let b:indentLine_enabled = 0
-" autocmd BufEnter *.markdown,*.md,*.vimwiki IndentLinesDisable
-Plug 'Yggdroot/indentLine'
-" Plug 'lukas-reineke/indent-blankline.nvim'
-"{{{======================================================================================
-" Displaying thin vertical lines at each indentation leve
-let g:indentLine_enabled = 0
-"======================================================================================}}}
-
 " Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 "======================================================================================}}}
 " This project contains Vim configuration files for editing and compiling Ruby within Vim.
@@ -646,6 +667,11 @@ Plug 'mbbill/undotree'
 "{{{======================================================================================
 "=======================================================================================}}}
 
+Plug 'vuciv/vim-bujo', { 'on': 'Todo' }
+"{{{======================================================================================
+" Todo list
+"======================================================================================}}}
+
 " Plug 'ntpeters/vim-better-whitespace'
 "{{{======================================================================================
 " This plugin causes all trailing whitespace characters
@@ -684,3 +710,14 @@ function HighlightLastJump()
   " endif
 endfunction
 " au CursorMoved * silent call HighlightLastJump()
+
+" Now using pears plugin
+" inoremap ( ()<left>
+" inoremap { {}<left>
+" inoremap [ []<left>
+" inoremap ' ''<left>
+" inoremap " ""<left>
+" inoremap ` ``<left>
+" inoremap < <><left>
+
+" tnoremap [ []<left>

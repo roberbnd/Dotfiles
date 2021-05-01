@@ -3,11 +3,18 @@ Plug 'neovim/nvim-lspconfig'
 " Collection of common configurations for Neovim's built-in language server client.
 "======================================================================================}}}
 
-Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
+" check the error
+" Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
 "{{{======================================================================================
 " A light-weight lsp plugin based on neovim built-in lsp with highly performance UI.
 "======================================================================================}}}
 
+Plug 'steelsojka/pears.nvim'
+"{{{======================================================================================
+" Pairs characters
+"======================================================================================}}}
+
+Plug 'ray-x/lsp_signature.nvim'
 Plug 'nvim-lua/completion-nvim'
 "{{{======================================================================================
 " completion-nvim is an auto completion framework that aims to provide a better
@@ -16,6 +23,10 @@ Plug 'nvim-lua/completion-nvim'
 " use <c-x><c-f> path completition menu
 let g:completion_enable_snippet = 'UltiSnips'
 let g:completion_trigger_keyword_length = 1
+"======================================================================================}}}
+
+Plug 'folke/lsp-trouble.nvim', { 'branch': 'main'}
+"{{{======================================================================================
 "======================================================================================}}}
 
 Plug 'steelsojka/completion-buffers'
@@ -44,6 +55,7 @@ Plug 'rbgrouleff/bclose.vim'
 "{{{======================================================================================
 "======================================================================================}}}
 
+Plug 'phaazon/hop.nvim'
 Plug 'easymotion/vim-easymotion'
 "{{{======================================================================================
 " EasyMotion provides a much simpler way to use some motions in vim
@@ -57,17 +69,19 @@ Plug 'haya14busa/vim-asterisk'
 " asterisk.vim provides improved * motions.
 "======================================================================================}}}
 
+Plug 'simrat39/symbols-outline.nvim'
+
 Plug 'liuchengxu/vista.vim'
 "{{{======================================================================================
 " require ctags, ptags
 " Viewer & Finder for LSP symbols and tags in Vim
 " use ptags generate the tags file
+let g:vista_fzf_preview = ['right:65%']
 let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
 let g:vista#renderer#enable_icon = 1
 let g:vista_default_executive = 'nvim_lsp'
 let g:vista_sidebar_position = 'vertical topleft'
-let g:vista_sidebar_width='30'
-let g:vista_close_on_fzf_select = 1
+let g:vista_sidebar_width='35'
 let g:vista_blink = [0, 0]
 
 function! NearestMethodOrFunction() abort
@@ -84,6 +98,7 @@ Plug 'machakann/vim-sandwich'
 "======================================================================================}}}
 
 Plug 'b3nj5m1n/kommentary', { 'branch': 'main' }
+" Plug 'tpope/vim-commentary'
 "{{{======================================================================================
 " gcc
 " <c-_>p Comment the current inner paragraph
@@ -98,13 +113,6 @@ Plug 'zhimsel/vim-stay'
 " buffers (via argdo, bufdo et al.). It is smart about
 " which buffers should be persisted and which should not,
 " making the procedure painless and invisible.
-"======================================================================================}}}
-
-Plug 'andymass/vim-matchup'
-"{{{======================================================================================
-" vim match-up: even better % fist_oncoming navigate and highlight matching words
-" fist_oncoming modern matchit and matchparen replacement
-" let g:matchup_matchparen_enabled = 0
 "======================================================================================}}}
 
 Plug 'markonm/traces.vim'
@@ -156,6 +164,11 @@ let g:fzf_action = {
             \ 'ctrl-q': function('s:build_quickfix_list'),
             \ 'ctrl-x': 'tab split' }
 let g:fzf_buffers_jump = 1
+"======================================================================================}}}
+
+Plug 'gfanto/fzf-lsp.nvim', { 'branch': 'main' }
+"{{{======================================================================================
+let g:fzf_lsp_preview_window = ['right:60%', 'ctrl-a']
 "======================================================================================}}}
 
 Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }

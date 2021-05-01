@@ -8,7 +8,6 @@ au FileType javascript,css,less,sass,c,cpp setlocal foldmarker={,}
 " Types
 au BufRead *.sbt set filetype=scala
 au BufRead *spec.tsx.snap,*.tsx set filetype=typescript
-au BufRead *Spec.js,*_spec.js set filetype=jasmine
 au BufRead *.babelrc set ft=json
 au BufRead *.handlebars,*.hbs,*.ejs set ft=html
 augroup ReactFiletypes
@@ -16,6 +15,8 @@ augroup ReactFiletypes
   autocmd BufRead,BufNewFile *.jsx set filetype=javascriptreact
   autocmd BufRead,BufNewFile *.tsx set filetype=typescriptreact
 augroup END
+
+au FileType lua set sw=2 ts=2
 
 " create keymap to last tab active = ch
 au TabLeave * let g:lasttab = tabpagenr()

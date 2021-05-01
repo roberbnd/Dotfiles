@@ -11,8 +11,8 @@ nnoremap <f6> :call ToggleWrap()<cr>
 nnoremap <f7> :set list!<cr>
 nnoremap <f8> :term<cr>a
 nnoremap <f9> :set number!<cr>
-nnoremap <f10> :UltiSnipsEdit<cr>
 nnoremap <f11> :Calendar<cr>
+nnoremap <F12> :VenterToggle<cr>
 "}}}==========================================
 
 nnoremap Q <nop>
@@ -42,10 +42,11 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<c-p>" : "\<S-Tab>"
 vnoremap m <esc>
 vnoremap <backspace> :StripTrailingWhitespace<cr>
 
-vnoremap <space>y "+
-nnoremap <space>y "+
+vnoremap <space>. "+
+nnoremap <space>. "+
 nnoremap <space>j "+yy
-vnoremap <space>j "+y
+nnoremap <space>y "+
+vnoremap , "+y
 
 " arrows
 " navigate chunks of current buffer
@@ -53,8 +54,20 @@ nmap <up> <plug>(signify-prev-hunk)
 nmap <down> <plug>(signify-next-hunk)
 nnoremap <left> <c-o>
 nnoremap <right> <c-i>
+nnoremap <space><up> :ConflictMarkerPrevHunk<cr>
+nnoremap <space><down> :ConflictMarkerNextHunk<cr>
+" your code
+nnoremap <space>bb :ConflictMarkerOurselves<cr>
+" my code
+nnoremap <space>bm :ConflictMarkerThemselves<cr>
 nnoremap <space><space> :SignifyHunkDiff<cr>
 nnoremap <space><space> :SignifyHunkDiff<cr>
+
+" hunk text object
+omap ic <plug>(signify-motion-inner-pending)
+xmap ic <plug>(signify-motion-inner-visual)
+omap ac <plug>(signify-motion-outer-pending)
+xmap ac <plug>(signify-motion-outer-visual)
 
 nnoremap S :Gwrite<cr>
 nnoremap U <c-R>
@@ -88,6 +101,8 @@ inoremap j. <esc>.
 imap q, <esc>,
 inoremap qs <esc>:w<cr>
 nnoremap qs :w<cr>
+nnoremap qS :w!<cr>
+vnoremap qs <esc>:w<cr>
 
 nnoremap <space>rp :qa!<cr>
 nnoremap rp :qa<cr>
@@ -126,7 +141,12 @@ vnoremap / y/<c-r>"<cr>
 vmap <space><tab> :VSSplit<cr>
 nnoremap <space>d :Bdelete menu<cr>
 nnoremap <space>D :!rm ~/.config/nvim/sessions/
-nnoremap <space>cc :<c-u>MatchupWhereAmI?<cr>
+nnoremap <space>? :<c-u>MatchupWhereAmI?<cr>
+
+
+"Add empty lines
+nnoremap <silent> <space>k :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
+nnoremap <silent> <space>m :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 
 "Scroll {{{===================================
 nnoremap <s-tab> <c-b>
@@ -148,10 +168,8 @@ nmap <space>s; :.+1,$tabdo :q<cr>
 
 nmap <space>t :tabprevious<cr>
 nmap <space>n :tabnext<cr>
-nmap B :tabprevious<cr>
-nmap M :tabnext<cr>
-imap jmc <esc>:w<cr>:tabprevious<cr>
-imap jmr <esc>:w<cr>:tabnext<cr>
+" nmap B :tabprevious<cr>
+" nmap M :tabnext<cr>
 "}}}==========================================
 
 "Buffers {{{==================================
@@ -228,7 +246,7 @@ nnoremap <space>u <c-i>
 inoremap ,+ <right><space>+<space>
 inoremap ,= <right><space>=<space>
 inoremap ,> <right><space>=><space>
-inoremap ,} <right>,<space>{}<left>
+inoremap ,{ <right>,<space>{}<left>
 inoremap ,[ <right>,<space>[]<left>
 inoremap ,' <right>,<space>''<left>
 inoremap ," <right>,<space>""<left>
@@ -243,30 +261,17 @@ inoremap ,n <space>!==<space>
 inoremap ,s <space>=<space>[]<left>
 inoremap ,c <space>-><space>
 inoremap ,r <space>=><space>
-inoremap ,l <space>=<space>''<left>
 inoremap ,b <space><space><left>
-inoremap ,( <space>(<cr>)<esc>O
 
-inoremap ,u <esc>A<space>
-inoremap ,e <esc>A
+inoremap ,s <esc>A
 "}}}==========================================
-
-inoremap ( ()<left>
-inoremap { {}<left>
-inoremap [ []<left>
-inoremap ' ''<left>
-inoremap " ""<left>
-inoremap ` ``<left>
-inoremap < <><left>
-
-tnoremap [ []<left>
 
 "Add {{{======================================
 vmap [ sa[
 vmap { sa{
 vmap ( sa(
 vmap ' sa'
-vmap q sa"
+vmap ! sa"
 vmap - sa<space>
 vmap ` sa`
 "}}}==========================================
@@ -278,6 +283,7 @@ nmap d( sd(
 nmap d' sd'
 nmap d` sd`
 nmap dq sd"
+nmap d< sd<
 nmap d<space> sd<space>
 nmap d; dt;
 nmap d, dt,
@@ -288,6 +294,7 @@ nnoremap dp dap
 
 "change until {{{=============================
 nnoremap -' ct'
+nnoremap -_ ct_
 nnoremap -. ct.
 nnoremap -, ct,
 nnoremap -<space> ct<space>
@@ -391,31 +398,48 @@ vnoremap <space>a: :Tabularize /:\zs<cr>
 "}}}==========================================
 
 "easymotion{{{================================
-map eh <Plug>(easymotion-k)
+" map eh <Plug>(easymotion-k)
 map et <Plug>(easymotion-linebackward)
 map en <Plug>(easymotion-lineforward)
-map es <Plug>(easymotion-j)
-imap jmh <esc><Plug>(easymotion-k)
+" map es <Plug>(easymotion-j)
+" imap jmh <esc><Plug>(easymotion-k)
 imap jmt <esc><Plug>(easymotion-linebackward)
 imap jmn <esc><Plug>(easymotion-lineforward)
-imap jms <esc><Plug>(easymotion-j)
+" imap jms <esc><Plug>(easymotion-j)
+
 
 nmap / <Plug>(easymotion-sn)
-imap jmm <esc><Plug>(easymotion-sn)
+" imap jmm <esc><Plug>(easymotion-sn)
 
-vmap t <Plug>(easymotion-s2)
-nmap T v<Plug>(easymotion-s2)
-nmap t <Plug>(easymotion-overwin-f2)
-imap jmj <esc><Plug>(easymotion-overwin-f2)
+" vmap t <Plug>(easymotion-s2)
+" nmap T v<Plug>(easymotion-s2)
+" nmap t <Plug>(easymotion-overwin-f2)
+" imap jmj <esc><Plug>(easymotion-overwin-f2)
 
 nmap eg V<Plug>(easymotion-k)
 nmap ec v<Plug>(easymotion-linebackward)
 nmap er v<Plug>(easymotion-lineforward)
 nmap el V<Plug>(easymotion-j)
-imap jmg <esc>V<Plug>(easymotion-j)
-imap jmc <esc>v<Plug>(easymotion-linebackward)
-imap jmr <esc>v<Plug>(easymotion-lineforward)
-imap jml <esc>V<Plug>(easymotion-j)
+" imap jmg <esc>V<Plug>(easymotion-j)
+" imap jmc <esc>v<Plug>(easymotion-linebackward)
+" imap jmr <esc>v<Plug>(easymotion-lineforward)
+" imap jml <esc>V<Plug>(easymotion-j)
+"==========================================}}}
+
+"hop{{{=======================================
+nnoremap t :HopChar2<cr>
+nnoremap w :HopLine<cr>
+nnoremap ee :HopLine<cr>
+nnoremap M v<cmd>lua require'hop'.hint_char2()<cr>
+nnoremap B v<cmd>lua require'hop'.hint_lines()<cr>
+
+vnoremap t :lua require'hop'.hint_char2()<cr>
+vnoremap e :lua require'hop'.hint_lines()<cr>
+
+inoremap jmm <esc>:HopChar2<cr>
+inoremap jb <esc>:HopLine<cr>
+inoremap jM <esc>v<cmd>lua require'hop'.hint_char2()<cr>
+inoremap jB <esc>v<cmd>lua require'hop'.hint_lines()<cr>
 "==========================================}}}
 
 "Rust {{{=====================================
@@ -440,10 +464,10 @@ omap aa <Plug>SidewaysArgumentTextobjA
 xmap aa <Plug>SidewaysArgumentTextobjA
 omap ia <Plug>SidewaysArgumentTextobjI
 xmap ia <Plug>SidewaysArgumentTextobjI
-nmap <leader>ki <Plug>SidewaysArgumentInsertBefore
-nmap <leader>kI <Plug>SidewaysArgumentInsertFirst
-nmap <leader>ka <Plug>SidewaysArgumentAppendAfter
-nmap <leader>kA <Plug>SidewaysArgumentAppendLast
+" nmap <leader>ki <Plug>SidewaysArgumentInsertBefore
+" nmap <leader>kI <Plug>SidewaysArgumentInsertFirst
+" nmap <leader>ka <Plug>SidewaysArgumentAppendAfter
+" nmap <leader>kA <Plug>SidewaysArgumentAppendLast
 "}}}==========================================
 
 nmap <space>ra :BufExplorer<cr><Plug>(easymotion-j)
@@ -456,16 +480,17 @@ nnoremap re :Files<cr>
 nnoremap ru :BLines<cr>
 nnoremap ri :Lines<cr>
 nnoremap rd :Commits<cr>
-nnoremap rr :Rg<cr>
+nnoremap rr :Rg2<cr>
 nnoremap rg :GFiles?<cr>
 nnoremap rm :Windows<cr>
-nnoremap rn :Vista finder fzf<cr>
+" nnoremap rn :Vista finder fzf<cr>
+nnoremap rn :DocumentSymbol<cr>
 imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
 " omit the path file as string to search
-command! -bang -nargs=* Rg call fzf#vim#grep(
+command! -bang -nargs=* Rg2 call fzf#vim#grep(
             \ "rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>),
             \ 1, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}),
             \ <bang>0 )
@@ -498,6 +523,7 @@ nmap P <plug>(YoinkPaste_P)
 nmap ,= <plug>(YoinkPostPasteToggleFormat)
 "}}}==========================================
 
+nmap ,<space> :LspTroubleDocumentToggle<cr>
 
 "Lsp {{{=================================
 " definition
@@ -520,7 +546,7 @@ lua vim.api.nvim_set_keymap('v', 'bu', '<cmd>lua vim.lsp.buf.formatting()<cr>', 
 nnoremap bu :lua require('lspsaga.codeaction').code_action()<cr>
 
 "LspSaga
-nnoremap <silent> <space>ww :lua require'lspsaga.diagnostic'.show_line_diagnostics()<cr>
+nnoremap <silent> <space>w :lua require'lspsaga.diagnostic'.show_line_diagnostics()<cr>
 nnoremap <silent> <space><left> :lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<cr>
 nnoremap <silent> <space><right> :lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<cr>
 "}}}==========================================
@@ -531,7 +557,3 @@ imap <s-tab> <Plug>(completion_smart_s_tab)
 imap <silent> <c-p> <Plug>(completion_trigger)
 " inoremap <expr> <Tab>   pumvisible() ? "\<c-n>" : "\<Tab>"
 " inoremap <expr> <S-Tab> pumvisible() ? "\<c-p>" : "\<S-Tab>"
-
-"Add empty lines
-nnoremap <silent> <space><up> :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
-nnoremap <silent> <space><down> :<c-u>put =repeat(nr2char(10), v:count1)<cr>

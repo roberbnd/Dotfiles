@@ -1,4 +1,7 @@
 eval "$(fasd --init auto)"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
 # export EDITOR='nvim'
 # export VISUAL='nvim'
@@ -541,14 +544,3 @@ dria() { docker rmi $(docker images -q); }
 dbu() { docker build -t=$1 .; }
 
 dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
-export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-alias bcr='./bcloud clusters resume'
-alias bcl='./bcloud clusters list'
-alias bsc='./bcloud store create'
-alias bsl='./bcloud store list'
-alias bds='./bcloud dns setup'
-alias bsb='./bcloud ssh bcappvm'
-alias bra='./bcloud rsync auto'
-alias ng='./ngrok http 3000'

@@ -8,6 +8,9 @@ Plug 'phanviet/vim-monokai-pro'
 "{{{======================================================================================
 "======================================================================================}}}
 
+Plug 'p00f/nvim-ts-rainbow'
+Plug 'folke/lsp-colors.nvim', { 'branch': 'main' }
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ryanoasis/vim-devicons'
 "=========================================================================================
 " icons
@@ -31,9 +34,7 @@ let g:airline_powerline_fonts = 1
 let g:airline_inactive_collapse=0
 let g:airline_section_c = '%t'
 let g:airline_section_z = '%l:%c'
-" let g:airline_section_y = ''
-" let g:airline_right_sep = ''
-" let g:airline_left_sep = '�'
+let g:airline_section_y = ''
 let g:airline_focuslost_inactive = 0
 let g:airline_inactive_collapse=0
 let g:airline#extensions#tabline#enabled = 1
@@ -81,3 +82,9 @@ Plug 'norcalli/nvim-colorizer.lua'
 "{{{======================================================================================
 " Preview color
 "======================================================================================}}}
+
+Plug 'jmckiern/vim-venter', { 'on': 'VenterToggle' }
+"{{{======================================================================================
+let g:venter_width=&columns/6
+"======================================================================================}}}
+

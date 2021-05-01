@@ -27,7 +27,8 @@ source ~/.config/nvim/conf/props.vim
 call plug#end()
 
 source ~/.config/nvim/conf/scripts.vim
+source ~/.config/nvim/conf/highlight.vim
+source ~/.config/nvim/conf/highlight_torte.vim
 luafile ~/.config/nvim/conf/lua_scripts.lua
 source ~/.config/nvim/conf/keyboard.vim
-source ~/.config/nvim/conf/highlight_pop_punk.vim
 source ~/.config/nvim/conf/autocmd.vim

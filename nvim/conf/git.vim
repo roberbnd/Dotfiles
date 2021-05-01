@@ -10,6 +10,7 @@ Plug 'rhysd/git-messenger.vim', { 'on': 'GitMessenger' }
 
 Plug 'rhysd/conflict-marker.vim'
 "{{{======================================================================================
+let g:conflict_marker_enable_mappings = 0
 " <<<<<<< HEAD
 " ourselves
 " =======
@@ -32,8 +33,7 @@ Plug 'itchyny/vim-gitbranch'
 " get branch name
 "======================================================================================}}}
 
-Plug 'TimUntersberger/neogit'
+Plug 'roberbnd/nvim-git-files-commit', { 'branch': 'main'}
 "{{{======================================================================================
-hi NeogitDiffDelete guifg=yellow
-hi NeogitDiffAdd guifg=orange
+" show files of previous commit
 "======================================================================================}}}
