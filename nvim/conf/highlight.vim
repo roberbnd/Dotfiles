@@ -1,4 +1,4 @@
-colorscheme torte
+colorscheme monokai_pro
 
 " base highlight
 hi Visual gui=bold guibg=#085101 guifg=reverse

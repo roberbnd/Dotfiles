@@ -1,5 +1,6 @@
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'bignimbus/pop-punk.vim'
+" Plug 'bignimbus/pop-punk.vim'
+Plug 'phanviet/vim-monokai-pro'
 "{{{======================================================================================
 " colorschema
 "======================================================================================}}}
