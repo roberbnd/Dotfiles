@@ -17,6 +17,7 @@ let g:tagalong_filetypes = ['html', 'xml', 'jsx', 'eruby', 'ejs', 'eco', 'php', 
 
 Plug 'mattn/emmet-vim'
 "{{{======================================================================================
+let g:user_emmet_leader_key='<c-z>'
 "======================================================================================}}}
 
 Plug 'mbbill/undotree'
@@ -36,7 +37,8 @@ Plug 'p0deje/vim-ruby-interpolation', { 'for': 'ruby' }
 " Simple Vim plugin for Ruby which automatically adds {} when you type # inside string.
 "======================================================================================}}}
 
-Plug 'danro/rename.vim'
+Plug 'tpope/vim-eunuch'
+" Plug 'danro/rename.vim'
 "{{{======================================================================================
 "======================================================================================}}}
 
@@ -50,5 +52,6 @@ Plug 'kkoomen/vim-doge'
 let g:doge_enable_mappings = 0
 "======================================================================================}}}
 
-Plug 'pierreglaser/folding-nvim'
-Plug 'mhartington/formatter.nvim'
+" Plug 'kevinhwang91/nvim-hlslens', { 'branch': 'main' }
+"{{{======================================================================================
+"======================================================================================}}}

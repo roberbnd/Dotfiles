@@ -1,8 +1,12 @@
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Plug 'bignimbus/pop-punk.vim'
-Plug 'phanviet/vim-monokai-pro'
+" Plug 'phanviet/vim-monokai-pro'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 "{{{======================================================================================
 " colorschema
+lua vim.g.tokyonight_dark_sidebar = false
+lua vim.g.tokyonight_dark_float = false
+lua vim.g.tokyonight_transparent = true
 "======================================================================================}}}
 
 Plug 'phanviet/vim-monokai-pro'
@@ -10,7 +14,16 @@ Plug 'phanviet/vim-monokai-pro'
 "======================================================================================}}}
 
 Plug 'p00f/nvim-ts-rainbow'
+"{{{======================================================================================
+" Rainbow parentheses for neovim using tree-sitter. Needs nvim-treesitter.
+"======================================================================================}}}
+
 Plug 'folke/lsp-colors.nvim', { 'branch': 'main' }
+"{{{======================================================================================
+" Automatically creates missing LSP diagnostics highlight groups for color schemes that
+" don't yet support the Neovim 0.5 builtin lsp client.
+"======================================================================================}}}
+
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ryanoasis/vim-devicons'
 "=========================================================================================
@@ -28,29 +41,8 @@ Plug 'osyo-manga/vim-brightest'
 let g:brightest#highlight = { "group" : "HighlightText" }
 "======================================================================================}}}
 
-Plug 'vim-airline/vim-airline'
+Plug 'hoob3rt/lualine.nvim'
 "{{{======================================================================================
-" require vim-fugitive to show the branch name
-let g:airline_powerline_fonts = 1
-let g:airline_inactive_collapse=0
-let g:airline_section_c = '%t'
-let g:airline_section_z = '%l:%c'
-let g:airline_section_y = ''
-let g:airline_focuslost_inactive = 0
-let g:airline_inactive_collapse=0
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#tab_min_count = 1
-let g:airline#extensions#tabline#show_buffers = 0
-let g:airline#extensions#tabline#fnamemod = ':t:r'
-let g:airline#extensions#tabline#left_sep = ''
-let g:airline#extensions#tabline#right_sep = ''
-let g:airline#extensions#tabline#left_alt_sep = ''
-let g:airline#extensions#tabline#right_alt_sep = ''
-let g:airline#extensions#tabline#show_tab_nr = 0
-let g:airline#extensions#tabline#show_tab_type = 0
-let g:airline#extensions#tabline#show_close_button = 0
-let g:airline#extensions#tabline#show_splits = 0
-let g:airline#extensions#tabline#show_tab_count = 0
 "======================================================================================}}}
 
 Plug 'ntpeters/vim-better-whitespace'
@@ -88,4 +80,3 @@ Plug 'jmckiern/vim-venter', { 'on': 'VenterToggle' }
 "{{{======================================================================================
 let g:venter_width=&columns/6
 "======================================================================================}}}
-

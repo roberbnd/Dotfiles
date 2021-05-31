@@ -7,16 +7,16 @@ nnoremap <f2> :source ~/.config/nvim/init.vim<cr>
 nnoremap <f3> :mksession! ~/.config/nvim/sessions/
 nnoremap <f4> :source ~/.config/nvim/sessions/
 nnoremap <f5> :UltiSnipsEdit<cr>
-nnoremap <f6> :call ToggleWrap()<cr>
+nnoremap <f6> :IndentBlanklineToggle<cr>
 nnoremap <f7> :set list!<cr>
-nnoremap <f8> :term<cr>a
+nnoremap <f8> :call ToggleWrap()<cr>
 nnoremap <f9> :set number!<cr>
 nnoremap <f11> :Calendar<cr>
 nnoremap <F12> :VenterToggle<cr>
 "}}}==========================================
 
 nnoremap Q <nop>
-nnoremap ZZ <nop>
+  nnoremap ZZ <nop>
 
 " Allow saving of files as sudo
 cnoremap w!! w !sudo tee > /dev/null %
@@ -44,8 +44,9 @@ vnoremap <backspace> :StripTrailingWhitespace<cr>
 
 vnoremap <space>. "+
 nnoremap <space>. "+
-nnoremap <space>j "+yy
+nnoremap <space>m "+yy
 nnoremap <space>y "+
+nnoremap <space>' "+yi'
 vnoremap , "+y
 
 " arrows
@@ -56,10 +57,11 @@ nnoremap <left> <c-o>
 nnoremap <right> <c-i>
 nnoremap <space><up> :ConflictMarkerPrevHunk<cr>
 nnoremap <space><down> :ConflictMarkerNextHunk<cr>
-" your code
+" my code (current branch)
 nnoremap <space>bb :ConflictMarkerOurselves<cr>
-" my code
+" your code (the commit I want to merge)
 nnoremap <space>bm :ConflictMarkerThemselves<cr>
+nnoremap <space>bo :ConflictMarkerBoth<cr>
 nnoremap <space><space> :SignifyHunkDiff<cr>
 nnoremap <space><space> :SignifyHunkDiff<cr>
 
@@ -131,7 +133,8 @@ nnoremap <space>hn Bdf<space>i
 nnoremap <space>p :put<cr>
 
 nnoremap <space>hq :e %<cr>
-nnoremap <space>hm :Vista!!<cr>
+nnoremap <space>hm :SymbolsOutline<cr>
+nnoremap <space>hb :Vista!!<cr>
 
 " split html elements
 vmap <space>sh :s/<[^>]*>/\r&\r/g<cr>
@@ -145,8 +148,8 @@ nnoremap <space>? :<c-u>MatchupWhereAmI?<cr>
 
 
 "Add empty lines
-nnoremap <silent> <space>k :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
-nnoremap <silent> <space>m :<c-u>put =repeat(nr2char(10), v:count1)<cr>
+nnoremap <silent> <space>j :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
+nnoremap <silent> <space>k :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 
 "Scroll {{{===================================
 nnoremap <s-tab> <c-b>
@@ -164,12 +167,12 @@ nnoremap s; :tabclose<cr>
 nnoremap se :tabfirst<cr>
 nnoremap su :tablast<cr>
 " close all the tabs to the right
-nmap <space>s; :.+1,$tabdo :q<cr>
+nmap sC <cmd>.+1,$tabdo :q<cr>
 
 nmap <space>t :tabprevious<cr>
 nmap <space>n :tabnext<cr>
-" nmap B :tabprevious<cr>
-" nmap M :tabnext<cr>
+nmap B :tabprevious<cr>
+nmap M :tabnext<cr>
 "}}}==========================================
 
 "Buffers {{{==================================
@@ -276,6 +279,14 @@ vmap - sa<space>
 vmap ` sa`
 "}}}==========================================
 
+inoremap ( ()<left>
+inoremap { {}<left>
+inoremap [ []<left>
+inoremap ' ''<left>
+inoremap " ""<left>
+inoremap ` ``<left>
+inoremap < <><left>
+
 "Delete {{{===================================
 nmap d[ sd[
 nmap d{ sd{
@@ -312,6 +323,7 @@ nnoremap -] ct]
 nnoremap -- ct-
 nnoremap -$ ct$
 nnoremap -/ ct/
+nnoremap -<bar> ct<bar>
 "}}}==========================================
 
 "Change surround {{{==========================
@@ -365,6 +377,10 @@ map *  <Plug>(asterisk-z*)
 map #  <Plug>(asterisk-z#)
 map g* <Plug>(asterisk-gz*)
 map g# <Plug>(asterisk-gz#)
+" map *  <Plug>(asterisk-z*)<Cmd>lua require('hlslens').start()<CR>
+" map #  <Plug>(asterisk-z#)<Cmd>lua require('hlslens').start()<CR>
+" map g* <Plug>(asterisk-gz*)<Cmd>lua require('hlslens').start()<CR>
+" map g# <Plug>(asterisk-gz#)<Cmd>lua require('hlslens').start()<CR>
 "}}}==========================================
 
 "vim-textobj-punctuation{{{===================
@@ -410,19 +426,18 @@ imap jmt <esc><Plug>(easymotion-linebackward)
 imap jmn <esc><Plug>(easymotion-lineforward)
 " imap jms <esc><Plug>(easymotion-j)
 
-
 nmap / <Plug>(easymotion-sn)
 " imap jmm <esc><Plug>(easymotion-sn)
 
 " vmap t <Plug>(easymotion-s2)
 " nmap T v<Plug>(easymotion-s2)
-" nmap t <Plug>(easymotion-overwin-f2)
+nmap t <Plug>(easymotion-overwin-f2)
 " imap jmj <esc><Plug>(easymotion-overwin-f2)
 
-nmap eg V<Plug>(easymotion-k)
+" nmap eg V<Plug>(easymotion-k)
 nmap ec v<Plug>(easymotion-linebackward)
 nmap er v<Plug>(easymotion-lineforward)
-nmap el V<Plug>(easymotion-j)
+" nmap el V<Plug>(easymotion-j)
 " imap jmg <esc>V<Plug>(easymotion-j)
 " imap jmc <esc>v<Plug>(easymotion-linebackward)
 " imap jmr <esc>v<Plug>(easymotion-lineforward)
@@ -430,19 +445,12 @@ nmap el V<Plug>(easymotion-j)
 "==========================================}}}
 
 "hop{{{=======================================
-nnoremap t :HopChar2<cr>
-nnoremap w :HopLine<cr>
-nnoremap ee :HopLine<cr>
-nnoremap M v<cmd>lua require'hop'.hint_char2()<cr>
-nnoremap B v<cmd>lua require'hop'.hint_lines()<cr>
+nnoremap w <cmd>HopLine<cr>
+vnoremap w <cmd>HopLine<cr>
+nnoremap ew V<cmd>HopLine<cr>
 
-vnoremap t :lua require'hop'.hint_char2()<cr>
-vnoremap e :lua require'hop'.hint_lines()<cr>
-
-inoremap jmm <esc>:HopChar2<cr>
-inoremap jb <esc>:HopLine<cr>
-inoremap jM <esc>v<cmd>lua require'hop'.hint_char2()<cr>
-inoremap jB <esc>v<cmd>lua require'hop'.hint_lines()<cr>
+inoremap jmm <esc><cmd>HopChar2<cr>
+inoremap jmb <esc><cmd>HopLine<cr>
 "==========================================}}}
 
 "Rust {{{=====================================
@@ -508,7 +516,7 @@ nmap mx :BookmarkClearAll<cr>
 vmap <space>B <Plug>NameAssign
 nnoremap <silent> ch :exe "tabn ".g:lasttab<cr>
 
-nnoremap g<space> :Neogit<cr>
+nnoremap g<space> :Gstatus<cr>
 nnoremap ga :GitMessenger<cr>
 nnoremap go :Gblame<cr>
 nnoremap gu :diffget //3<cr>
@@ -554,6 +562,7 @@ nnoremap <silent> <space><left> :lua require'lspsaga.diagnostic'.lsp_jump_diagno
 nnoremap <silent> <space><right> :lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<cr>
 "}}}==========================================
 
+" Completition
 "map <c-p> to manually trigger completion
 imap <tab> <Plug>(completion_smart_tab)
 imap <s-tab> <Plug>(completion_smart_s_tab)

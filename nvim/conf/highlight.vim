@@ -1,4 +1,5 @@
 colorscheme monokai_pro
+" colorscheme tokyonight
 
 " base highlight
 hi Visual gui=bold guibg=#085101 guifg=reverse
@@ -6,7 +7,9 @@ hi CursorLine gui=NONE guibg=NONE
 hi Comment gui=italic guifg=#1765E3
 hi LineNr guifg=#FFFFFF
 hi Search guifg=black guibg=yellow
-hi NonText guifg=#FF0000
+"listchars colors; :h listchars"
+" hi NonText guifg=#FF0000
+hi NonText guifg=#666666
 hi diffRemoved guifg=yellow
 hi diffAdded guifg=orange
 hi Pmenu guibg=#000000
@@ -31,3 +34,4 @@ au VimEnter * hi! airline_tabsel gui=bold
 au VimEnter * hi! airline_tab gui=bold guibg=#0096c7 guifg=#000000
 au VimEnter * hi! airline_tabmod gui=bold guibg=#e63244 guifg=#000000
 
+hi Comment gui=italic guifg=#00CCFF

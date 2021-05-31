@@ -9,9 +9,8 @@ Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
 " A light-weight lsp plugin based on neovim built-in lsp with highly performance UI.
 "======================================================================================}}}
 
-Plug 'steelsojka/pears.nvim'
+Plug 'tpope/vim-endwise'
 "{{{======================================================================================
-" Pairs characters
 "======================================================================================}}}
 
 Plug 'ray-x/lsp_signature.nvim'
@@ -27,6 +26,7 @@ let g:completion_trigger_keyword_length = 1
 
 Plug 'folke/lsp-trouble.nvim', { 'branch': 'main'}
 "{{{======================================================================================
+"A pretty diagnostics list to help you solve all the trouble your code is causing.
 "======================================================================================}}}
 
 Plug 'steelsojka/completion-buffers'
@@ -70,6 +70,9 @@ Plug 'haya14busa/vim-asterisk'
 "======================================================================================}}}
 
 Plug 'simrat39/symbols-outline.nvim'
+"{{{======================================================================================
+" :SymbolsOutline
+"======================================================================================}}}
 
 Plug 'liuchengxu/vista.vim'
 "{{{======================================================================================
@@ -97,8 +100,8 @@ Plug 'machakann/vim-sandwich'
 " surroundings of a sandwiched textobject, like (foo), "bar".
 "======================================================================================}}}
 
-Plug 'b3nj5m1n/kommentary', { 'branch': 'main' }
-" Plug 'tpope/vim-commentary'
+" Plug 'b3nj5m1n/kommentary', { 'branch': 'main' }
+Plug 'tpope/vim-commentary'
 "{{{======================================================================================
 " gcc
 " <c-_>p Comment the current inner paragraph
@@ -146,7 +149,6 @@ Plug 'christoomey/vim-tmux-navigator'
 " I need because <c-h> is not working
 "======================================================================================}}}
 
-Plug 'liuchengxu/vim-clap'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 "{{{======================================================================================
@@ -157,7 +159,8 @@ function! s:build_quickfix_list(lines)
   copen
   cc
 endfunction
-let g:fzf_layout = { 'down': '100%' }
+" let g:fzf_layout = { 'down': '100%' }
+let g:fzf_layout = { 'window': '-tabnew' }
 " CTRL-a will toggle preview window.
 let g:fzf_preview_window = ['down:70%', 'ctrl-a']
 let g:fzf_action = {
@@ -168,7 +171,7 @@ let g:fzf_buffers_jump = 1
 
 Plug 'gfanto/fzf-lsp.nvim', { 'branch': 'main' }
 "{{{======================================================================================
-let g:fzf_lsp_preview_window = ['right:60%', 'ctrl-a']
+" let g:fzf_lsp_preview_window = ['down:60%', 'ctrl-a']
 "======================================================================================}}}
 
 Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
@@ -203,3 +206,12 @@ Plug 'Asheq/close-buffers.vim'
 " :Bdelete select 	Lets you interactively select which buffers to bdelete
 " :Bdelete menu 	Lets you interactively choose one of the other commands above
 "======================================================================================}}}
+
+Plug 'andymass/vim-matchup'
+"{{{======================================================================================
+" nnoremap <space>? :<c-u>MatchupWhereAmI?<cr>
+" vim match-up: even better % fist_oncoming navigate and highlight matching words
+" fist_oncoming modern matchit and matchparen replacement
+" let g:matchup_matchparen_enabled = 0
+"======================================================================================}}}
+

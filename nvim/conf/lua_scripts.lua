@@ -1,6 +1,5 @@
 local custom_attach = function(client)
     require'completion'.on_attach(client)
-    require'folding'.on_attach()
     require"lsp_signature".on_attach({
       bind = true,
       handler_opts = {border = "single"},
@@ -9,15 +8,29 @@ local custom_attach = function(client)
 end
 
 -- Lsp server
-require'lspconfig'.intelephense.setup{on_attach = custom_attach}
+require'lspconfig'.intelephense.setup{
+  on_attach = custom_attach,
+  diagnostics = true,
+}
+require'lspconfig'.jsonls.setup{on_attach = custom_attach}
 require'lspconfig'.pyls.setup{on_attach = custom_attach}
 require'lspconfig'.solargraph.setup{
-    on_attach = custom_attach,
-    diagnostics = true,
-    useBundler = true,
+  on_attach = custom_attach,
+  diagnostics = true,
+  useBundler = true,
 }
 require'lspconfig'.tsserver.setup{on_attach = custom_attach}
 require'lspconfig'.vimls.setup{on_attach = custom_attach}
+
+--Enable (broadcasting) snippet capability for completion
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+require'lspconfig'.html.setup {
+  capabilities = capabilities,
+}
+require'lspconfig'.cssls.setup {
+  capabilities = capabilities,
+}
 
 -- LSP Icons
 require'lspkind'.init()
@@ -25,6 +38,9 @@ require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained",
   highlight = {
     enable = true,
+  },
+  indent = {
+    enable = true
   },
   rainbow = {
     enable = true,
@@ -37,19 +53,23 @@ require'hop'.setup({
 })
 require'fzf_lsp'.setup()
 require'colorizer'.setup()
--- Pairs
-require'pears'.setup()
 require'trouble'.setup({
   height = 5
 })
--- require'lspsaga'.init_lsp_saga()
---[[ require'lspsaga'.init_lsp_saga {
+
+require'lspsaga'.init_lsp_saga {
     code_action_icon = '💡',
     infor_sign = 'ℹ️',
     warn_sign = '⚠️',
     error_sign = '❌',
     hint_sign = '🔍',
-} ]]
+    code_action_prompt = {
+      enable = false,
+      sign = true,
+      sign_priority = 20,
+      virtual_text = true,
+    },
+}
 
 -- Lua
 local cb = require'diffview.config'.diffview_callback
@@ -84,3 +104,15 @@ require'diffview'.setup {
     }
   }
 }
+
+require('lualine').setup({
+  options = {theme = 'material'},
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'branch'},
+    lualine_c = {'filename'},
+    lualine_x = {'filetype'},
+    lualine_y = {},
+    lualine_z = {'location'}
+  },
+})

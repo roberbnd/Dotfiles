@@ -18,6 +18,8 @@ augroup END
 
 au FileType lua set sw=2 ts=2
 
+au FileType html :EmmetInstall
+
 " create keymap to last tab active = ch
 au TabLeave * let g:lasttab = tabpagenr()
 

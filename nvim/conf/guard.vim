@@ -3,58 +3,25 @@
 " Neovim plugins lua
 "=========================================================================================
 "=========================================================================================
-" never use it makes slow the editor
-" Plug 'nvim-lua/plenary.nvim'
+Plug 'JoosepAlviste/nvim-ts-context-commentstring'
+
+Plug 'pierreglaser/folding-nvim'
+    " require'folding'.on_attach()
+" -- Pairs
+" -- require'pears'.setup()
+" Plug 'steelsojka/pears.nvim'
 "{{{======================================================================================
-" neogit requirement
+" Pairs characters
 "======================================================================================}}}
-Plug 'TimUntersberger/neogit'
+
+Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'lua' }
 "{{{======================================================================================
-hi NeogitDiffDelete guifg=yellow
-hi NeogitDiffAdd guifg=orange
+let g:indent_blankline_enabled = v:false
 "======================================================================================}}}
 
-
-" I don't understand how use it
-Plug 'lewis6991/spellsitter.nvim'
 "{{{======================================================================================
 "======================================================================================}}}
-require'spellsitter'.setup({
-  hl = 'SpellBad',
-  captures = {'comment'},
-})
 
-
-Plug 'folke/lsp-colors.nvim'
-Plug 'kdav5758/TrueZen.nvim'
-Plug 'kevinhwang91/nvim-hlslens'
-" Future changes
-Plug 'nvim-lua/plenary.nvim'
-Plug 'lewis6991/gitsigns.nvim', { 'branch': 'main' }
-au BufRead * highlight GitSignsAdd gui=NONE guibg=NONE
-au BufRead * highlight GitSignsChange gui=NONE guibg=NONE
-au BufRead * highlight GitSignsDelete gui=NONE guibg=NONE
-require('gitsigns').setup()
-
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'akinsho/nvim-bufferline.lua'
-Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
-Plug 'mfussenegger/nvim-dap'
-Plug 'phaazon/hop.nvim'
-
-""Hop{{{================================
-"nmap t :HopChar2<cr>
-"nmap eh :HopLine<cr>
-""}}}==========================================
-
-Plug 'kyazdani42/nvim-web-devicons'
-" Plug 'romgrk/barbar.nvim'
-Plug 'hoob3rt/lualine.nvim'
-
-
-require('lualine').setup({
-    options = {theme = 'auto'}
-})
 "=========================================================================================
 "#########################################################################################
 "=========================================================================================
@@ -94,13 +61,6 @@ https://github.com/michaelb/sniprun
 "=========================================================================================
 " Sniprun is a code runner plugin for neovim.
 "=========================================================================================
-
-Plug 'andymass/vim-matchup'
-"{{{======================================================================================
-" vim match-up: even better % fist_oncoming navigate and highlight matching words
-" fist_oncoming modern matchit and matchparen replacement
-" let g:matchup_matchparen_enabled = 0
-"======================================================================================}}}
 
 " Plug 'ap/vim-css-color'
 
@@ -183,6 +143,7 @@ Plug 'junegunn/gv.vim'
 " Needs fugitive
 "======================================================================================}}}
 
+Plug 'liuchengxu/vim-clap'
 Plug 'vim-airline/vim-airline-themes'
 "I never use
 Plug 'bomgar/breakit.vim'
@@ -604,10 +565,6 @@ nnoremap <leader>hk :NERDTreeFind<cr>
 
 
 nnoremap <F3> :TabooRename<space>
-Plug 'gcmt/taboo.vim', { 'on': 'TabooRename' }
-"{{{======================================================================================
-" Rename tabs
-"======================================================================================}}}
 
 " Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 "======================================================================================}}}
@@ -671,6 +628,30 @@ Plug 'vuciv/vim-bujo', { 'on': 'Todo' }
 "{{{======================================================================================
 " Todo list
 "======================================================================================}}}
+" Plug 'vim-airline/vim-airline'
+"{{{======================================================================================
+" require vim-fugitive to show the branch name
+let g:airline_powerline_fonts = 1
+let g:airline_inactive_collapse=0
+let g:airline_section_c = '%t'
+let g:airline_section_z = '%l:%c'
+let g:airline_section_y = ''
+let g:airline_focuslost_inactive = 0
+let g:airline_inactive_collapse=0
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#tab_min_count = 2
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#fnamemod = ':t:r'
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#right_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline#extensions#tabline#right_alt_sep = ''
+let g:airline#extensions#tabline#show_tab_nr = 0
+let g:airline#extensions#tabline#show_tab_type = 0
+let g:airline#extensions#tabline#show_close_button = 0
+let g:airline#extensions#tabline#show_splits = 0
+let g:airline#extensions#tabline#show_tab_count = 0
+"======================================================================================}}}
 
 " Plug 'ntpeters/vim-better-whitespace'
 "{{{======================================================================================
@@ -712,12 +693,5 @@ endfunction
 " au CursorMoved * silent call HighlightLastJump()
 
 " Now using pears plugin
-" inoremap ( ()<left>
-" inoremap { {}<left>
-" inoremap [ []<left>
-" inoremap ' ''<left>
-" inoremap " ""<left>
-" inoremap ` ``<left>
-" inoremap < <><left>
 
 " tnoremap [ []<left>
