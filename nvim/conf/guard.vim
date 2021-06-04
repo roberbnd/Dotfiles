@@ -5,6 +5,12 @@
 "=========================================================================================
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 
+Plug 'nvim-lua/plenary.nvim'
+Plug 'lewis6991/gitsigns.nvim'
+
+Plug 'nvim-lua/plenary.nvim'
+Plug 'NTBBloodbath/rest.nvim', { 'branch': 'main' }
+
 Plug 'pierreglaser/folding-nvim'
     " require'folding'.on_attach()
 " -- Pairs

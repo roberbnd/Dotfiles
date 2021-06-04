@@ -43,7 +43,7 @@ set showbreak=↳
 set showtabline=0
 set signcolumn=yes
 set signcolumn=auto:2
-" set number  " after signcolumn
+set number  " after signcolumn
 set tabstop=4
 set termguicolors
 set undofile
