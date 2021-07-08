@@ -215,3 +215,6 @@ Plug 'andymass/vim-matchup'
 " let g:matchup_matchparen_enabled = 0
 "======================================================================================}}}
 
+Plug 'mfussenegger/nvim-dap'
+" https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation
+Plug 'vim-test/vim-test'

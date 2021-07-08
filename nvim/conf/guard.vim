@@ -10,6 +10,7 @@ Plug 'lewis6991/gitsigns.nvim'
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'NTBBloodbath/rest.nvim', { 'branch': 'main' }
+Plug 'stevearc/aerial.nvim'
 
 Plug 'pierreglaser/folding-nvim'
     " require'folding'.on_attach()

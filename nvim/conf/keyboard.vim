@@ -112,9 +112,9 @@ nnoremap rp :qa<cr>
 nnoremap <space>o :e ~/vimwiki/index.md<cr>
 
 " Paste neovim's clipboard
-nnoremap <space>N /<c-r>"<cr>
+nnoremap <space>g /<c-r>"<cr>
 " Paste computer's clipboard
-nnoremap <space>C /<c-r>+<cr>
+nnoremap <space>c /<c-r>+<cr>
 " without easymotion
 nnoremap <space>/ /
 
