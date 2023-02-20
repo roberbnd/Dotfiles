@@ -1,0 +1,46 @@
+" refresh if file changed
+" au WinEnter,TabEnter,FocusGained * checktime
+au BufEnter,FocusGained * checktime
+
+au! BufRead,BufNewFile *.sbt set filetype=scala
+au! BufRead,BufNewFile *.pryrc set filetype=ruby
+au! BufRead,BufNewFile *spec.tsx.snap set filetype=typescript
+au! BufRead,BufNewFile *.babelrc set ft=json
+au! BufRead,BufNewFile *.handlebars,*.hbs,*.ejs set ft=html
+au! BufRead,BufNewFile *.proto set filetype=proto
+au! BufRead,BufNewFile *.md set filetype=markdown
+au BufRead *.log set filetype=json
+
+augroup ReactFiletypes
+  autocmd!
+  " autocmd BufRead,BufNewFile *.jsx set filetype=javascriptreact
+  " autocmd BufRead,BufNewFile *.tsx set filetype=typescriptreact
+  autocmd BufRead,BufNewFile *.jsx,*.js set filetype=javascriptreact
+  autocmd BufRead,BufNewFile *.tsx,*.ts set filetype=typescriptreact
+augroup END
+
+au FileType http,ruby,html,lua,json,javascriptreact,typescript,typescriptreact set tabstop=2 shiftwidth=2
+au FileType css,scss set tabstop=2 shiftwidth=2
+au FileType php,proto set tabstop=4 shiftwidth=4
+au FileType javascript set tabstop=2 shiftwidth=2
+
+au FileType html :EmmetInstall
+
+" create keymap to last tab active = ch
+au TabLeave * let g:lasttab = tabpagenr()
+
+" Keep border color in tmux panel
+silent exec "!tmux set -g pane-active-border-style 'fg=blue,bg=blue'"
+
+au FileType markdown,vimwiki set conceallevel=0
+
+" https://github.com/voldikss/vim-floaterm/issues/191
+autocmd VimEnter * FloatermNew --silent
+
+au InsertEnter * imap ] <bs>
+au InsertEnter * tmap ] <bs>
+au InsertEnter * imap ) <esc>
+" au InsertEnter * inoremap ] <cr>
+" au InsertEnter * tnoremap ] <cr>
+au VimEnter * startinsert
+call feedkeys("\<esc>")

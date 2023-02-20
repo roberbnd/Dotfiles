@@ -1,0 +1,42 @@
+[alias]
+        log1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+        log2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+        log3 = log --graph --decorate --oneline
+        checkoutr = checkout
+[core]
+        ; pager=less
+	editor = nvim
+        pager = LESS=-X delta
+	; pager = less -F -X
+[show]
+        pager = delta
+; [pager]
+;             log     = delta
+[delta]
+        light = true
+        minus-style = "#FFFFFF" bold ul "#d44000"
+        plus-style = "#FFFFFF" bold ul "#1e6f5c"
+        features = decorations
+[delta "decorations"]
+        commit-decoration-style = bold yellow box ul
+        file-style = bold yellow ul
+        hunk-header-decoration-style = yellow box
+; [delta "my-light-mode"]
+;         light = true
+;         syntax-theme = GitHub
+; [delta "my-dark-mode"]
+;         dark = true
+;         syntax-theme = Dracula
+[filter "lfs"]
+        process = git-lfs filter-process
+        required = true
+        clean = git-lfs clean -- %f
+        smudge = git-lfs smudge -- %f
+[interactive]
+        diffFilter = delta --color-only
+[user]
+	email = banda1915@gmail.com
+	user = roberbnd
+	name = Roberto
+[init]
+	defaultBranch = master

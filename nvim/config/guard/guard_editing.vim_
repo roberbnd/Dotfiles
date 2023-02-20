@@ -1,0 +1,9 @@
+
+Plug 'weilbith/nvim-code-action-menu'
+Plug 'SirVer/ultisnips'
+"{{{======================================================================================
+let g:UltiSnipsExpandTrigger="<c-h>"
+let g:UltiSnipsJumpBackwardTrigger="<c-w>"
+let g:UltiSnipsJumpForwardTrigger="<c-z>"
+let g:UltiSnipsSnippetDirectories="~/.config/nvim"
+"======================================================================================}}}

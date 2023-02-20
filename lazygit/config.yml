@@ -1,0 +1,9 @@
+reporting: "off"
+startuppopupversion: 1
+gui:
+  mouseEvents: true
+  theme:
+    selectedLineBgColor:
+      - reverse
+os:
+  editCommand: "nvim"

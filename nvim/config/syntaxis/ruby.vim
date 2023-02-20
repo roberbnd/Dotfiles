@@ -1,0 +1,1 @@
+Plug 'iftheshoefritz/solargraph-rails'
