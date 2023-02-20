@@ -8,13 +8,6 @@ vmap <space><space> sa<space>
 vmap ` sa`
 vmap t sat
 
-nnoremap <space>, A,<esc>
-inoremap <c-l>, <esc>A,<esc>
-inoremap <c-l><cr> <esc>A,<cr>
-
-nnoremap <space>; A;<esc>
-inoremap <c-l>; <esc>A;<esc>
-inoremap <c-l><cr> <esc>A;<cr>
 "}}}==========================================
 
 "Delete {{{===================================

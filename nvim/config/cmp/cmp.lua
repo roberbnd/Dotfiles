@@ -44,6 +44,7 @@ end
 
 local cmp = require'cmp'
 cmp.setup({
+  -- preselect = cmp.PreselectMode.Item,
   -- preselect = cmp.PreselectMode.None,
   -- completion = {
   --   autocomplete = true
@@ -65,11 +66,6 @@ cmp.setup({
     documentation = cmp.config.window.bordered(),
 
   },
-  config = {
-    experimental = {
-      ghost_text = true
-    }
-  },
   snippet = {
     expand = function(args)
       -- luasnip.lsp_expand(args.body)
@@ -85,6 +81,8 @@ cmp.setup({
     -- { name = 'nvim_lsp_signature_help' }
   },
   mapping = cmp.mapping.preset.insert({
+    ['<M-b>'] = cmp.mapping.abort(),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
     ["<Tab>"] = cmp.mapping.select_next_item(),
     ["<S-Tab>"] = cmp.mapping.select_prev_item(),
     -- only snippy
@@ -167,7 +165,5 @@ cmp.setup({
     --     fallback()
     --   end
     -- end, {"i", "s"}),
-    ['<M-b>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true })
   }),
 })

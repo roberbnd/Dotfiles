@@ -34,3 +34,7 @@ Plug 'vim-scripts/loremipsum', { 'on': 'Loremipsum'}
 " Replace the random text with something else or simply remove it.
 "======================================================================================}}}
 
+" Plug 'tpope/vim-dadbod'
+" Plug 'kristijanhusak/vim-dadbod-ui'
+"{{{======================================================================================
+"======================================================================================}}}

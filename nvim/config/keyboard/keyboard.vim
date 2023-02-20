@@ -11,7 +11,6 @@ source ~/.config/nvim/config/keyboard/keyboard_motion.vim
 source ~/.config/nvim/config/keyboard/keyboard_surround.vim
 source ~/.config/nvim/config/keyboard/keyboard_split.vim
 source ~/.config/nvim/config/keyboard/keyboard_bookmarks.vim
-source ~/.config/nvim/config/keyboard/keyboard_insert.vim
 source ~/.config/nvim/config/keyboard/insert.vim
 
 nmap T :TestNearest<cr>
@@ -31,11 +30,6 @@ nnoremap <space>on :e ~/vimwiki/index.md<cr>
 nnoremap <space>ok :e ~/.config/nvim/config/keyboard/keyboard.vim<cr>
 nnoremap <space>oo :Other<cr>
 nnoremap <space>U :PlugUpdate<cr>
-
-inoremap qs <esc>:w<cr>
-nnoremap qs :update<cr>
-nnoremap qS :w!<cr>
-vnoremap qs <esc>:w<cr>
 
 nnoremap rp :qa<cr>
 nnoremap <space>rp :qa!<cr>
