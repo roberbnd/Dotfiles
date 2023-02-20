@@ -1,0 +1,13 @@
+priority -50
+
+snippet snip "Snippet definition" bA
+`!p snip.rv ="snippet"` ${1:kk} "${2:Description}" ${3:w}
+$4
+`!p snip.rv = "endsnippet"`
+endsnippet
+
+snippet global "Global snippet" w
+`!p snip.rv` = "global" !p
+$0
+`!p snip.rv = "endglobal"`
+endsnippet

@@ -1,0 +1,50 @@
+snippet new "new file" b
+FROM $1
+MAINTAINER roberbnd <banda1915@gmail.com>
+endsnippet
+
+snippet newu "Description" w
+FROM $1
+MAINTAINER roberbnd <banda1915@gmail.com>
+
+# Prevent dpkg errors
+ENV TERM=xterm-256color
+# Default bash
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+
+RUN \
+    apt-get update && \
+    apt-get install -y \
+    -o APT::Install-Recommend=false -o APT::Install-Suggests=false \
+		$2
+endsnippet
+
+snippet vol "VOLUME" b
+VOLUME $1
+endsnippet
+
+snippet wor "WORKDIR" b
+WORKDIR $1
+endsnippet
+
+snippet fro "FROM" b
+FROM $1
+endsnippet
+
+snippet main "MAINTAINER" b
+MAINTAINER roberbnd <banda1915@gmail.com>
+endsnippet
+
+snippet ent "ENTRYPOINT" b
+ENTRYPOINT $1
+endsnippet
+
+snippet r "RUN" b
+RUN $1
+endsnippet
+
+snippet entscr "entrypoint" b
+ADD scripts/entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
+ENTRYPOINT ["entrypoint.sh"]
+endsnippet

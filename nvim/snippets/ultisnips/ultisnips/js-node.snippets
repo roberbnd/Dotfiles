@@ -1,0 +1,83 @@
+priority -50
+
+snippet node "shebang/node" b
+#!/usr/bin/env node
+endsnippet
+
+snippet mex "module.exports/node" b
+module.exports = $1
+endsnippet
+
+snippet hcs "http.createServer" b
+http.createServer($1).listen($2)
+endsnippet
+
+snippet nncs "net.createServer" b
+net.createServer(function(${1:socket}){
+	$1.on('data', function(${3:data}){
+		$4
+	});
+	$1.on('end', function(){
+		$5
+	});
+}).listen(${6:8124});
+endsnippet
+
+snippet pipe "pipe"
+pipe(${1:stream})$2
+endsnippet
+
+# Express snippets
+
+snippet aget "express GET/node" w
+${1:app}.get('$2', $3);
+endsnippet
+
+snippet apost "express POST/node" w
+${1:app}.post('$2', $3);
+endsnippet
+
+snippet aput "express PUT" w
+${1:app}.put('$2', $3);
+endsnippet
+
+snippet adel "express DELETE" w
+${1:app}.delete('$2', $3);
+endsnippet
+
+snippet nreq "const-require/node" b
+const ${2:$1} = require('$1')
+endsnippet
+
+snippet rrr "req res/node" w
+(req, res$1) => {
+  $2
+}
+endsnippet
+
+snippet rrn "req res next/node" w
+(req, res, next) => {
+  $2
+}
+endsnippet
+
+snippet rse "res.send" b
+res.send($1)
+endsnippet
+
+# process snippets
+snippet ppo "port" w
+process.env.PORT || $1
+endsnippet
+
+snippet putn "stdout/node" w
+process.stdout
+endsnippet
+
+snippet pin "stdin/node" w
+process.stdin
+endsnippet
+
+snippet prrn "stderr/node" wA
+process.stderr
+endsnippet

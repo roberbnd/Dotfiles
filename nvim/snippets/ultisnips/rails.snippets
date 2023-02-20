@@ -1,0 +1,45 @@
+snippet ren "render" b
+render('$1')
+endsnippet
+
+snippet rcode "ruby in html"
+<%$1%>
+endsnippet
+
+snippet chrome "extension" b
+gem 'meta_request'
+endsnippet
+
+# redirect_to(:controller=>'${1:name}', :action=>'${2:index}')
+snippet redir "redirect_to"
+redirect_to
+endsnippet
+
+#Model
+snippet haso "has_one"
+has_one :$1
+endsnippet
+
+snippet hasm "has_many"
+has_many :$1
+endsnippet
+
+snippet hasa "has_and_belongs_to_many" b
+has_and_belongs_to_many :$1, :join_table => "$2"
+endsnippet
+
+snippet belo "belongs_to"
+belongs_to :${1:foreignkey}
+endsnippet
+
+snippet add "add_column"
+add_column :$1
+endsnippet
+
+snippet vali "validates_presence_of"
+validates_presence_of :$1
+endsnippet
+
+snippet bef "before_action"
+before_action :$1
+endsnippet

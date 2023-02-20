@@ -1,0 +1,129 @@
+extends html
+
+snippet info "phpinfo" b
+<?php phpinfo(); ?>
+endsnippet
+
+snippet php "Tag php" b
+<?php
+	$0
+?>
+endsnippet
+
+snippet if "if..." b
+if($1){
+    ${2:code}
+}
+endsnippet
+
+snippet ifelse "if...else" b
+if($1){
+    ${2:code}
+}else{
+    ${3:code}
+}
+endsnippet
+
+
+snippet php2 "Tag php line"
+<?php $0 ?>
+endsnippet
+
+snippet con "connection" b
+<?php
+$servername = "localhost";
+$username = "${1:root}";
+$password = "$2";
+$dbname = "$3";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+echo "Connected successfully";
+?>
+endsnippet
+
+snippet insert "query insert" b
+$sql = "INSERT INTO $1 ($2) VALUES ('$3')";
+endsnippet
+
+snippet close "close connection" b
+mysqli_close($conn);
+endsnippet
+
+snippet fu "Function" b
+function $1($2)
+{
+  $3
+}
+endsnippet
+
+snippet pf "Public Function" b
+public function $1($2) {
+    ${3:code}
+}
+endsnippet
+
+snippet try "try...catch" b
+try{
+    ${1:code}
+}catch($2 $${3:e}){
+    ${4:code}
+}
+endsnippet
+
+
+
+
+
+############################################
+# Laravel 5
+
+snippet Routeresouce "Route::resource()" b
+Route::resource('$1','$2');
+endsnippet
+snippet Routeget "Route::get()" b
+Route::get('$1','$2');
+endsnippet
+
+snippet Routepost "Route::post()" b
+Route::post('$1','$2');
+endsnippet
+
+snippet Routeput "Route::put()" b
+Route::put('$1','$2');
+endsnippet
+
+snippet Routedel "Route::delete()" b
+Route::delete('$1/{id}','$2');
+endsnippet
+
+snippet illuminateFacade "Form for html app.php" b
+'Form'     => 'Illuminate\Html\FormFacade',
+'Html'     => 'Illuminate\Html\HtmlFacade',
+endsnippet
+
+snippet rview "Return view" b
+return view('$1');
+endsnippet
+
+snippet rviewc "Return view Compact" b
+return view('$1', compact('$2'));
+endsnippet
+
+
+snippet hasmany "hasMany" b
+return $this->hasMany('$1');
+endsnippet
+
+snippet belongsto "return belongsto" b
+return $this->belongsTo('$1');
+endsnippet
+
+
+
+

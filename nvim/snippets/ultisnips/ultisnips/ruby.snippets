@@ -1,0 +1,100 @@
+extends rails
+
+snippet ruby "#!" b
+#!/usr/bin/env ruby
+
+$1
+endsnippet
+
+snippet rq "require" b
+require '$0'
+endsnippet
+
+snippet rr "require_relative" b
+require_relative '$0'
+endsnippet
+
+snippet att " " b
+attr_accessor :$0
+endsnippet
+
+snippet dd "function" bA
+def $1
+end
+endsnippet
+
+snippet cc "class" bA
+class $1
+end
+endsnippet
+
+snippet dod "do" bA
+${1:element} do $2
+end
+endsnippet
+
+snippet mm "Description" bA
+module $1
+end
+endsnippet
+
+snippet ini "initialize" b
+def initialize$1
+end
+endsnippet
+
+snippet if "if else" w
+if $1
+else
+end
+endsnippet
+
+snippet iff "if elsif" wA
+if ${1:condi}
+elsif
+end
+endsnippet
+
+snippet des "describe" w
+describe '$1' do
+  $2
+end
+endsnippet
+
+snippet desi "describe" w
+describe '$1' do
+  it '$2' do
+	  $3
+	end
+end
+
+endsnippet
+snippet it "it test" w
+it '$1' do
+  $2
+end
+endsnippet
+
+snippet et "expect to" b
+expect($1).to $2
+endsnippet
+
+snippet ete "expect to eq" b
+expect($1).to eq($2)
+endsnippet
+
+snippet en "expect not" b
+expect($1).not_to $2
+endsnippet
+
+snippet con "context" b
+context '$1' do
+  $2
+end
+endsnippet
+
+snippet times "times bucle" w
+$1.times do |$2|
+  $3
+end
+endsnippet

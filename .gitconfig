@@ -32,6 +32,9 @@
         required = true
         clean = git-lfs clean -- %f
         smudge = git-lfs smudge -- %f
+[github]
+	user = roberbnd
+	packages-token = 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
 [interactive]
         diffFilter = delta --color-only
 [user]

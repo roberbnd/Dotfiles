@@ -1,0 +1,15 @@
+snippet bash "#!.." b
+#!/bin/bash
+
+$0
+endsnippet
+
+snippet echo "echo" b
+echo "$1"
+endsnippet
+
+snippet entry "entrypoint" wA
+#!/bin/bash
+set -e
+exec $@
+endsnippet
