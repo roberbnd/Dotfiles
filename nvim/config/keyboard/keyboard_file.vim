@@ -1,25 +1,23 @@
 nnoremap <space>fD :Delete!<cr>
 nnoremap <space>fv :FloatermNew vifm<cr>
 nnoremap rj :FloatermNew ranger<cr>
-" nnoremap <space>fR :FloatermNew ranger .<cr>
-nnoremap rJ :FloatermNew ranger .<cr>
-nnoremap <space>ffR :let @" = expand("%:t")<cr>:Rename<space><c-r>"
+nnoremap <space>fr :let @" = expand("%:t")<cr>:Rename<space><c-r>"
 
 nnoremap rc gf
-" nnoremap rC :e <cfile><cr>
 noremap rC :call CreateFile(expand("<cfile>"))<CR>
 nnoremap <space>rc <c-w>gf
-" Rename file
-" nnoremap gR :let @" = expand("%:t")<cr>:GMove<space><c-r>"
 
 nnoremap <space>ff :Files<cr>
-" nnoremap re :FzfLua files<cr>
 
+nnoremap <space>nt :NeoTreeShowToggle<cr>
+nnoremap <space>nt :NeoTreeFocusToggle<cr>
 
-" nnoremap <space><space>j :NvimTreeToggle<cr>
-" nnoremap <space><space>J :NvimTreeFindFile<cr>
-nnoremap <space>tt :NeoTreeShowToggle<cr>
-nnoremap <space>tt :NeoTreeFocusToggle<cr>
+nnoremap <space>nrr :NeoTreeReveal<cr>
+nnoremap <space>nrt :NeoTreeRevealToggle<cr>
 
-nnoremap <space>trr :NeoTreeReveal<cr>
-nnoremap <space>trt :NeoTreeRevealToggle<cr>
+nnoremap <space>fa :nohlsearch<cr>
+nnoremap <space>ft :e %:h/
+nnoremap <space>fq :edit<cr>
+nnoremap <space>fQ :edit!<cr>
+nnoremap <space>fc :copen<cr>
+nnoremap <space>fs :e ~/.config/nvim/snippets/snippy/

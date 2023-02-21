@@ -1,26 +1,14 @@
 require('fixer').setup{}
-require('octo').setup{}
 require('neogit').setup{}
 
---  require('git-conflict').setup({
---   default_mappings = false, -- disable buffer local mapping created by this plugin
---   disable_diagnostics = false, -- This will disable the diagnostics in a buffer whilst it is conflicted
---   highlights = { -- They must have background color, otherwise the default color will be used
---     incoming = 'DiffText',
---     current = 'DiffAdd',
---   }
--- })
-
-
-require'git-conflict'.setup()
--- require'git-conflict'.setup({
-  -- default_mappings = false, -- disable buffer local mapping created by this plugin
-  -- disable_diagnostics = false, -- This will disable the diagnostics in a buffer whilst it is conflicted
-  -- highlights = { -- They must have background color, otherwise the default color will be used
-  --   incoming = 'DiffDelete',
-  --   current = 'DiffAdd',
-  -- }
--- })
+ require('git-conflict').setup({
+  default_mappings = false, -- disable buffer local mapping created by this plugin
+  disable_diagnostics = false, -- This will disable the diagnostics in a buffer whilst it is conflicted
+  highlights = { -- They must have background color, otherwise the default color will be used
+    incoming = 'DiffText',
+    current = 'DiffAdd',
+  }
+})
 
 -- TODO: requires telescope, create a PR to support fzflua
 -- require'octo'.setup({
@@ -40,7 +28,6 @@ require("diffview").setup({
    }
 })
 
---===========================================================================================================
 require'gitsigns'.setup{
   signs = {
     add          = {hl = 'GitSignsAdd'   , text = '│', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},

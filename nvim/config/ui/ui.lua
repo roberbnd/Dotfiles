@@ -18,6 +18,7 @@ wk.register({g={name='Git'}}, { prefix = "<leader>" })
 wk.register({s={name='Split'}}, { prefix = "<leader>" })
 wk.register({R={name='Rest'}}, { prefix = "<leader>" })
 wk.register({t={name='Tab'}}, { prefix = "<leader>" })
+wk.register({n={name='Neotree'}}, { prefix = "<leader>" })
 
 local function filename()
    return vim.fn.expand('%')

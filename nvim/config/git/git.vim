@@ -19,7 +19,7 @@ Plug 'kdheepak/lazygit.nvim'
 " to see lazygit config path
 "======================================================================================}}}
 
-Plug 'pwntester/octo.nvim'
+" Plug 'pwntester/octo.nvim'
 "{{{======================================================================================
 " Install GitHub CLI
 " Install plenary.nvim
@@ -68,11 +68,6 @@ Plug 'sindrets/diffview.nvim', { 'branch': 'main' }
 Plug 'AndrewRadev/linediff.vim', { 'on': 'Linediff' }
 Plug 'statox/vim-compare-lines', { 'on': 'CL' }
 
-" Plug 'braxtons12/blame_line.nvim'
-
-" Plug 'ldelossa/litee.nvim'
-" Plug 'ldelossa/gh.nvim'
-
 Plug 'LhKipp/nvim-git-fixer'
 "{{{======================================================================================
 "-- Create a `fixup!` commit only with the contents of the hunk under the cursor
@@ -88,5 +83,3 @@ Plug 'LhKipp/nvim-git-fixer'
 " -- For convenience:  Create a 'normal' commit with the contents of the hunk under the cursor
 " require('fixer').commit_hunk()
 "======================================================================================}}}
-
-" https://github.com/ruanyl/vim-gh-line

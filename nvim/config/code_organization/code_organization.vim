@@ -4,7 +4,11 @@ Plug 'foosoft/vim-argwrap', { 'on': 'ArgWrap' }
 " definitions.:ArgWrap
 "======================================================================================}}}
 
+
+Plug 'ThePrimeagen/refactoring.nvim'
+
 " Plug 'Wansmer/treesj'
+Plug 'bennypowers/splitjoin.nvim'
 Plug 'AndrewRadev/splitjoin.vim', { 'branch': 'main' }
 "splitjoin{{{=============================================================================
 " switching between a single-line statement and a multi-line one.

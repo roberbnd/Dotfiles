@@ -9,30 +9,6 @@ zero.preset('recommended')
 zero.nvim_workspace()
 zero.setup()
 
-require('glance').setup({
-  height = 28, -- Height of the window
-  border = {
-    enable = true, -- Show window borders. Only horizontal borders allowed
-    top_char = '-',
-    bottom_char = '-',
-  }
-})
-
-
--- require("symbols-outline").setup({
--- auto_preview = true
--- })
-
--- require('aerial').setup({
---   -- optionally use on_attach to set keymaps when aerial has attached to a buffer
---   on_attach = function(bufnr)
---     -- Jump forwards/backwards with '{' and '}'
---     -- vim.keymap.set('n', '{', '<cmd>AerialPrev<CR>', {buffer = bufnr})
---     -- vim.keymap.set('n', '}', '<cmd>AerialNext<CR>', {buffer = bufnr})
---   end,
---   backends = { "treesitter", "lsp", "markdown", "man" },
--- })
-
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 local lsp = require'lspconfig'
 local navic = require("nvim-navic")

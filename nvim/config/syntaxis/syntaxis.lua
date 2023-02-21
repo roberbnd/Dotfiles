@@ -1,4 +1,4 @@
--- require'hlargs'.setup()
+vim.cmd('source ~/.config/nvim/config/theme/dark_theme.vim')
 
 require'nvim-treesitter.configs'.setup {
   autotag = {

@@ -1,5 +1,4 @@
 " refresh if file changed
-" au WinEnter,TabEnter,FocusGained * checktime
 au BufEnter,FocusGained * checktime
 
 au! BufRead,BufNewFile *.sbt set filetype=scala
@@ -13,8 +12,6 @@ au BufRead *.log set filetype=json
 
 augroup ReactFiletypes
   autocmd!
-  " autocmd BufRead,BufNewFile *.jsx set filetype=javascriptreact
-  " autocmd BufRead,BufNewFile *.tsx set filetype=typescriptreact
   autocmd BufRead,BufNewFile *.jsx,*.js set filetype=javascriptreact
   autocmd BufRead,BufNewFile *.tsx,*.ts set filetype=typescriptreact
 augroup END
@@ -40,7 +37,5 @@ autocmd VimEnter * FloatermNew --silent
 au InsertEnter * imap ] <bs>
 au InsertEnter * tmap ] <bs>
 au InsertEnter * imap ) <esc>
-" au InsertEnter * inoremap ] <cr>
-" au InsertEnter * tnoremap ] <cr>
 au VimEnter * startinsert
 call feedkeys("\<esc>")

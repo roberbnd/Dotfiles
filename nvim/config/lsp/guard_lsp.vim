@@ -26,3 +26,4 @@ let g:vista_fzf_preview = ['right:50%']
 "" set statusline+=%{NearestMethodOrFunction()}
 "" autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 ""======================================================================================}}}
+Plug 'DNLHC/glance.nvim'

@@ -4,8 +4,6 @@ Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v1.x'}
 
-Plug 'DNLHC/glance.nvim'
-
 Plug 'j-hui/fidget.nvim'
 "{{{======================================================================================
 " Standalone UI for nvim-lsp progress.
@@ -19,4 +17,3 @@ Plug 'ray-x/lsp_signature.nvim'
 " Extends the built-in Neovim LSP signature helper handler to add additional functionality,
 " focussing on enhancements for method overloads.
 "======================================================================================}}}
-

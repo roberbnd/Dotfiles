@@ -1,5 +1,3 @@
-Plug 'dbinagi/nomodoro'
-
 Plug 'mattn/calendar-vim', { 'on': 'Calendar' }
 "{{{======================================================================================
 " :Calendar, :CalendarH, :CalendarT

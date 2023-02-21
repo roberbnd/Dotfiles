@@ -12,8 +12,6 @@ let g:tmuxline_preset = {
 \}
 "======================================================================================}}}
 
-" Plug 'vimpostor/vim-tpipeline'
-
 Plug 'christoomey/vim-tmux-navigator'
 "{{{======================================================================================
 " I need because <c-h> is not working

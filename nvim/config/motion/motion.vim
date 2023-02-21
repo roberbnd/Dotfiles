@@ -16,4 +16,3 @@ Plug 'haya14busa/vim-asterisk'
 
 Plug 'kevinhwang91/promise-async'
 Plug 'Weissle/easy-action'
-

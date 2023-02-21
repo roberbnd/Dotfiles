@@ -61,5 +61,3 @@ Plug 'xolox/vim-session', { 'on': ['SaveSession', 'OpenSession'] }
 let g:session_directory='~/.config/nvim/sessions'
 let g:session_autosave='no'
 "======================================================================================}}}
-" nnoremap <F3> :SaveSession<space>
-" nnoremap <F4> :OpenSession<cr>

@@ -1,7 +1,3 @@
--- require("nvim-tree").setup({
---   -- updates the root directory of the tree on `DirChanged` (when your run `:cd` usually)
---   update_cwd = false
--- })
 require'window-picker'.setup({
       -- the foreground (text) color of the picker
     fg_color = '#ededed',
@@ -24,7 +20,6 @@ require('neo-tree').setup({
   }
 })
 
---===========================================================================================================
 local actions = require "fzf-lua.actions"
 require'fzf-lua'.setup({
    winopts = {
@@ -59,51 +54,3 @@ require'fzf-lua'.setup({
      }
    }
 })
-
---===========================================================================================================
-local telescope = require "telescope"
-local actions = require "telescope.actions"
-telescope.setup{
-  defaults = {
-    -- layout_strategy = 'vertical',
-    layout_strategy = 'center',
-    mappings = {
-      i = {
-        ["<c-x>"] = actions.select_tab,
-        ["<c-d>"] = actions.select_horizontal
-      }
-    },
-    border = {},
-    borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
-    -- borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
-    selection_caret = "  ",
-    entry_prefix = "  ",
-  },
-  extensions ={
-    bookmarks = {
-      -- Available: 'brave', 'google_chrome', 'safari', 'firefox', 'firefox_dev'
-      selected_browser = 'google_chrome',
-
-      -- Either provide a shell command to open the URL
-      url_open_command = 'open',
-    },
-  }
-}
-
-telescope.load_extension('neoclip')
-telescope.load_extension('workspaces')
--- require('telescope').load_extension('bookmarks')
--- require('telescope').load_extension('fzf')
--- require('telescope').load_extension('hop')
--- require('telescope').load_extension('vim_bookmarks')
-
--- require('reach').setup({
---   notifications = true,
--- })
-
---  local options = {
---   auto_handles = require('reach.buffers.constant').auto_handles,
---   auto_exclude_handles = {'1', '2', '3', '4', '5', '6', '7', '8', '9'},
---   handle = 'auto'
--- }
--- require('reach').buffers(options)
