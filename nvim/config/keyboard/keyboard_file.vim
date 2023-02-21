@@ -18,5 +18,8 @@ nnoremap <space>ff :Files<cr>
 
 " nnoremap <space><space>j :NvimTreeToggle<cr>
 " nnoremap <space><space>J :NvimTreeFindFile<cr>
-nnoremap <space><space>j :NeoTreeShowToggle<cr>
-nnoremap <space><space>J :NeoTreeFocusToggle<cr>
+nnoremap <space>tt :NeoTreeShowToggle<cr>
+nnoremap <space>tt :NeoTreeFocusToggle<cr>
+
+nnoremap <space>trr :NeoTreeReveal<cr>
+nnoremap <space>trt :NeoTreeRevealToggle<cr>

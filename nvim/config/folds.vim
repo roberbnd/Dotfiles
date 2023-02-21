@@ -39,9 +39,3 @@ endfunction
 "   autocmd BufEnter *.lua,*.php,*.ruby,*.tsx,*.ts,*.js,*.jsx silent! loadview
 "   autocmd BufHidden *.lua,*.php,*.ruby,*.tsx,*.ts,*.js,*.jsx mkview
 " augroup END
-
-augroup remember_folds
-  autocmd!
-  au BufLeave ?* mkview 1
-  au BufEnter ?* silent! loadview 1
-augroup END
