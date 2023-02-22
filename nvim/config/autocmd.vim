@@ -32,7 +32,7 @@ silent exec "!tmux set -g pane-active-border-style 'fg=blue,bg=blue'"
 au FileType markdown,vimwiki set conceallevel=0
 
 " https://github.com/voldikss/vim-floaterm/issues/191
-autocmd VimEnter * FloatermNew --silent
+" autocmd VimEnter * FloatermNew --silent
 
 au InsertEnter * imap ] <bs>
 au InsertEnter * tmap ] <bs>

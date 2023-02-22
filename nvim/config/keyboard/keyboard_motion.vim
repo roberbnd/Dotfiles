@@ -21,7 +21,7 @@ vmap er <Plug>(easymotion-lineforward)
 "hop{{{=======================================
 nnoremap w <cmd>HopLine<cr>
 vnoremap w <cmd>HopLine<cr>
-noremap <space>l <cmd>HopLine<cr>
+nnoremap W <cmd>HopLine<cr>
 nnoremap ew V<cmd>HopLine<cr>
 
 inoremap jmm <esc><cmd>HopChar2<cr>

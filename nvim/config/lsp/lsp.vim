@@ -1,5 +1,10 @@
 " https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 
+Plug 'neovim/nvim-lspconfig'
+"{{{======================================================================================
+" Collection of common configurations for Neovim's built-in language server client.
+"======================================================================================}}}
+
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v1.x'}

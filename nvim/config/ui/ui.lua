@@ -1,7 +1,6 @@
 require('todo-comments').setup()
 require('colorizer').setup()
 require('twilight').setup()
-require('true-zen').setup()
 require('maximize').setup()
 
 require('bufferline').setup{
@@ -76,7 +75,7 @@ navic.setup {
 
 require('lualine').setup({
   options = {
-    theme = 'tokyodark',
+    theme = 'tokyonight',
   },
   sections = {
     lualine_c = {workspace_filename},

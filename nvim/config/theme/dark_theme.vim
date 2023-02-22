@@ -11,8 +11,7 @@ hi HopNextKey gui=bold guifg=#FFFFFF guibg=#a901d5
 hi HopNextKey1 gui=bold guifg=#FFFFFF guibg=#a901d5
 hi HopNextKey2 gui=bold guifg=#FFFFFF guibg=#a901d5
 
-hi EasyMotionTarget gui=bold guifg=#DDDDDD guibg=#a901d5
+hi EasyMotionTarget gui=bold guifg=#DDDDDD guibg=#256D85
 hi EasyMotionShade ctermbg=none ctermfg=blue
 hi EasyMotionIncSearch gui=bold guifg=white guibg=#a901d5
 hi EasyMotionIncSearch gui=bold guifg=white guibg=#a901d5
-
