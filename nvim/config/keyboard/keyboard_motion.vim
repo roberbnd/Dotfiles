@@ -9,8 +9,6 @@ nnoremap <down> <c-f>
 "easymotion{{{================================
 nmap / <Plug>(easymotion-sn)
 nmap t <Plug>(easymotion-overwin-f2)
-"neotree
-nmap gt <Plug>(easymotion-overwin-f2)
 
 nmap ec v<Plug>(easymotion-linebackward)
 vmap ec <Plug>(easymotion-linebackward)

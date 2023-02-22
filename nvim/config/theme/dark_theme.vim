@@ -15,3 +15,5 @@ hi EasyMotionTarget gui=bold guifg=#DDDDDD guibg=#256D85
 hi EasyMotionShade ctermbg=none ctermfg=blue
 hi EasyMotionIncSearch gui=bold guifg=white guibg=#a901d5
 hi EasyMotionIncSearch gui=bold guifg=white guibg=#a901d5
+
+hi visual guibg=#2e2f4a
