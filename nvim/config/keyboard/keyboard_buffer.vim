@@ -4,8 +4,6 @@ nnoremap <space>bdm :Bdelete menu<cr>
 " nnoremap <space>bp <c-^>
 " nnoremap <space>bp :b#<cr>
 nnoremap rh :b#<cr>
-" add border
-nnoremap <space>bb :NoNeckPain<cr>
 
 " buffer search
 " I can paste to search and showed it in the tab opened
@@ -31,4 +29,6 @@ nnoremap <space>bl :FzfLua blines<cr>
 nnoremap <space>bL :FzfLua lines<cr>
 nnoremap <space>bm :MaximizerToggle<cr>
 
-nnoremap <space>bw :StripWhitespaceOnChangedLines<cr>
+nnoremap <space>bs :StripWhitespaceOnChangedLines<cr>
+
+nnoremap <space>bh :nohlsearch<cr>

@@ -6,7 +6,7 @@ Plug 'shortcuts/no-neck-pain.nvim'
 " Plug 'petertriho/nvim-scrollbar'
 Plug 'catppuccin/nvim'
 Plug 'bluz71/vim-nightfly-colors'
-Plug 'tiagovla/tokyodark.nvim'
+Plug 'folke/tokyonight.nvim'
 
 " Plug 'ryanoasis/vim-devicons'
 " Plug 'lukas-reineke/indent-blankline.nvim'

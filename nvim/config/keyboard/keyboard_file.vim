@@ -15,7 +15,6 @@ nnoremap <space>nt :NeoTreeFocusToggle<cr>
 nnoremap <space>nrr :NeoTreeReveal<cr>
 nnoremap <space>nrt :NeoTreeRevealToggle<cr>
 
-nnoremap <space>fa :nohlsearch<cr>
 nnoremap <space>ft :e %:h/
 nnoremap <space>fq :edit<cr>
 nnoremap <space>fQ :edit!<cr>

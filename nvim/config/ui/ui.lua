@@ -75,7 +75,7 @@ navic.setup {
 
 require('lualine').setup({
   options = {
-    theme = 'tokyonight',
+    theme = 'tokyodark',
   },
   sections = {
     lualine_c = {workspace_filename},

@@ -2,7 +2,7 @@
 " font: hack
 " bat: https://github.com/sharkdp/bat
 
-Plug 'folke/tokyonight.nvim'
+Plug 'tiagovla/tokyodark.nvim'
 
 Plug 'kyazdani42/nvim-web-devicons'
 "=========================================================================================
