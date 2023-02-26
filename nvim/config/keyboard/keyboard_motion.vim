@@ -22,8 +22,11 @@ vnoremap w <cmd>HopLine<cr>
 nnoremap W <cmd>HopLine<cr>
 nnoremap ew V<cmd>HopLine<cr>
 
-inoremap jmm <esc><cmd>HopChar2<cr>
-inoremap jmb <esc><cmd>HopLine<cr>
+inoremap jm <esc><cmd>HopChar2<cr>
+inoremap jb <esc><cmd>HopLine<cr>
+imap jf <esc>f
+imap jF <esc>f
+imap jj <esc>
 nnoremap <silent> em :lua require'tsht'.nodes()<cr>
 vnoremap <silent> m :lua require'tsht'.nodes()<cr>
 "==========================================}}}

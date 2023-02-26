@@ -12,3 +12,5 @@ Plug 'vim-scripts/loremipsum', { 'on': 'Loremipsum'}
 " :Loreplace [REPLACEMENT] [PREFIX] [POSTFIX]
 " Replace the random text with something else or simply remove it.
 "======================================================================================}}}
+
+Plug 'cameron-wags/rainbow_csv.nvim'

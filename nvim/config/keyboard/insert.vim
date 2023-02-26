@@ -1,14 +1,15 @@
-inoremap <c-l>+ <right><space>+<space>
-inoremap <c-l>= <right><space>=<space>
-inoremap <c-l>> <right><space>=><space>
-inoremap <c-l>{ <right>,<space>{}<left>
-inoremap <c-l>[ <right>,<space>[]<left>
-inoremap <c-l>' <right>,<space>''<left>
-inoremap <c-l>" <right>,<space>""<left>
-inoremap <c-l>- <right>,<space>
-inoremap <c-l>. <right><space>
-inoremap <c-l>; <right>:<space>
-inoremap <c-l>: <right>:<cr>
+inoremap <c-b>+ <right><space>+<space>
+inoremap <c-b>= <right><space>=<space>
+inoremap <c-b>> <right><space>=><space>
+inoremap <c-b>{ <right>,<space>{}<left>
+inoremap <c-b>[ <right>,<space>[]<left>
+inoremap <c-b>' <right>,<space>''<left>
+inoremap <c-b>" <right>,<space>""<left>
+inoremap <c-b>- <right>,<space>
+inoremap <c-b>. <right><space>
+inoremap <c-b>; <right>:<space>
+inoremap <c-b>: <right>:<cr>
+inoremap <c-b><space> <right><space>
 inoremap <c-b>h <space>=<space>
 inoremap <c-b>t <space>==<space>
 inoremap <c-b>n <space>!==<space>
@@ -16,21 +17,30 @@ inoremap <c-b>s <space>=<space>[]<left>
 inoremap <c-b>c <space>-><space>
 inoremap <c-b>r <space>=><space>
 inoremap <c-b>b <space><space><left>
-inoremap <c-l>s <esc>A
-inoremap <c-b><space> <right><space>
+inoremap <c-b><c-b> <esc>A
+imap <c-b><cr> <esc>A<space>{<cr>
 
-inoremap jj <esc>
+nnoremap <c-l>, A,<esc>
+inoremap <c-l>, <esc>A,<esc>
+nnoremap <c-l>c A,<cr>
+inoremap <c-l>c <esc>A,<cr>
+
+nnoremap <c-l>; A;<esc>
+inoremap <c-l>; <esc>A;<esc>
+nnoremap <c-l>r A;<cr>
+inoremap <c-l>r <esc>A;<cr>
+
 "Switching line {{{===========================
-nnoremap <c-r> :m .+1<cr>==
-inoremap <c-r> <ESC>:m .+1<cr>==gi
-vnoremap <c-r> :m '>+1<cr>gv=gv
-nnoremap <c-c> :m .-2<cr>==
-inoremap <c-c> <ESC>:m .-2<cr>==gi
-vnoremap <c-c> :m '<-2<cr>gv=gv
+nnoremap <c-down> :m .+1<cr>==
+inoremap <c-down> <ESC>:m .+1<cr>==gi
+vnoremap <c-down> :m '>+1<cr>gv=gv
+nnoremap <c-up> :m .-2<cr>==
+inoremap <c-up> <ESC>:m .-2<cr>==gi
+vnoremap <c-up> :m '<-2<cr>gv=gv
 "}}}==========================================
 
-inoremap jh <esc>O
-inoremap jt <esc>o
+inoremap <c-left> <esc>O
+inoremap <c-right> <esc>o
 
 " from: {}
 " to: {
@@ -39,7 +49,6 @@ inoremap jt <esc>o
 inoremap qh <cr><esc>O
 nnoremap qh i<cr><esc>O<esc>cc
 
-" jump one line and insert mode
 inoremap qt <esc>o<cr>
 nnoremap qt o<cr>
 
@@ -50,12 +59,5 @@ nnoremap qs :update<cr>
 nnoremap qS :w!<cr>
 vnoremap qs <esc>:w<cr>
 
-nnoremap <c-b>c A,<esc>
-inoremap <c-b>c <esc>A,<esc>
-nnoremap <m-b>c A,<cr>
-inoremap <m-b>c <esc>A,<cr>
-
-nnoremap <c-b>r A;<esc>
-inoremap <c-b>r <esc>A;<esc>
-nnoremap <m-b>r A;<cr>
-inoremap <m-b>r <esc>A;<cr>
+vmap C *cgn
+nmap <space>* *cgn

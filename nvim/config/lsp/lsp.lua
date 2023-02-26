@@ -1,5 +1,6 @@
 require"fidget".setup{}
 require"lsp_signature".setup()
+require('glance').setup()
 
 -- <F2> esta mappeado
 -- require'mason'.setup()
@@ -24,7 +25,7 @@ local on_attach = function(client, bufnr)
   -- end
 end
 
--- npm install -g typescript-language-server
+-- bun add -g intelephense
 lsp.intelephense.setup({
   capabilities = capabilities,
   on_attach = on_attach
@@ -41,7 +42,7 @@ lsp.lua_ls.setup({
   on_attach = on_attach
 })
 
--- npm install -g jsonls
+-- bun add -g jsonls
 lsp.jsonls.setup({
   capabilities = capabilities,
   on_attach = on_attach,
@@ -242,24 +243,26 @@ lsp.solargraph.setup({
 --   on_attach = on_attach
 -- })
 
--- npm i -g vscode-langservers-extracted
+-- bun i -g vscode-langservers-extracted
 lsp.html.setup({
   capabilities = capabilities,
   diagnostics = true,
   on_attach = on_attach
  })
 
--- npm install -g emmet-ls
-require'lspconfig'.emmet_ls.setup{}
+-- bun add -g emmet-ls
+require'lspconfig'.emmet_ls.setup({
+  autostart = false
+})
 
--- npm i -g vscode-langservers-extracted
+-- bun add -g vscode-langservers-extracted
 lsp.cssls.setup({
   capabilities = capabilities,
   diagnostics = true,
   on_attach = on_attach
  })
 
--- npm install -g neovim intelephense
+-- bun add -g typescript-language-server
 lsp.tsserver.setup({
   capabilities = capabilities,
   on_attach = on_attach

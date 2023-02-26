@@ -1,17 +1,16 @@
 nnoremap cj :Bclose<cr>
 nnoremap ck :Bclose!<cr>
-nnoremap <space>bdm :Bdelete menu<cr>
+nnoremap <space>bd :Bdelete menu<cr>
 " nnoremap <space>bp <c-^>
 " nnoremap <space>bp :b#<cr>
 nnoremap rh :b#<cr>
 
 " buffer search
 " I can paste to search and showed it in the tab opened
-" nnoremap <space>be :Buffers<cr>
 " nnoremap ra :Buffers<cr>
 " jump buffer in same tab without jump
-nnoremap ra :FzfLua buffers<cr>
-nnoremap <space>be :FzfLua buffers<cr>
+nnoremap b :FzfLua buffers<cr>
+
 " copy line number
 nmap yl :let @+ = line('.')<cr>
 " copy name

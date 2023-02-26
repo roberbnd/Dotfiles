@@ -1,3 +1,5 @@
+vim.cmd('source ~/.config/nvim/config/theme/dark_theme.vim')
+
 require('todo-comments').setup()
 require('colorizer').setup()
 require('twilight').setup()
@@ -92,7 +94,7 @@ require('lualine').setup({
     },
   },
   inactive_winbar = {
-    lualine_c = { 'filename' },
+    lualine_c = { scrollbind, 'filename' },
     lualine_x = {
       {navic.get_location, cond = navic.is_available}
     }

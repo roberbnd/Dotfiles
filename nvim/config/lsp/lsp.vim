@@ -1,9 +1,12 @@
 " https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+" bun add -g neovim
 
 Plug 'neovim/nvim-lspconfig'
 "{{{======================================================================================
 " Collection of common configurations for Neovim's built-in language server client.
 "======================================================================================}}}
+
+Plug 'DNLHC/glance.nvim'
 
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'

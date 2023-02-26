@@ -1,9 +1,10 @@
+source ~/.config/nvim/config/git/git_mapping.vim
+source ~/.config/nvim/config/lsp/lsp_mapping.vim
+source ~/.config/nvim/config/testing/testing_mapping.vim
 source ~/.config/nvim/config/keyboard/keyboard_fs.vim
-source ~/.config/nvim/config/keyboard/keyboard_git.vim
 source ~/.config/nvim/config/keyboard/keyboard_window.vim
 source ~/.config/nvim/config/keyboard/keyboard_rest.vim
 source ~/.config/nvim/config/keyboard/keyboard_project.vim
-source ~/.config/nvim/config/keyboard/keyboard_lsp.vim
 source ~/.config/nvim/config/keyboard/keyboard_buffer.vim
 source ~/.config/nvim/config/keyboard/keyboard_file.vim
 source ~/.config/nvim/config/keyboard/keyboard_terminal.vim
@@ -13,19 +14,17 @@ source ~/.config/nvim/config/keyboard/keyboard_split.vim
 source ~/.config/nvim/config/keyboard/keyboard_bookmarks.vim
 source ~/.config/nvim/config/keyboard/insert.vim
 
-nmap T :TestNearest<cr>
-nmap <space>T :TestFile<cr>
-
 nnoremap Q <nop>
 nnoremap ZZ <nop>
 
 nnoremap U <c-R>
 
-smap ) <esc>
-vnoremap ) <esc>
-
-nnoremap <space>on :e ~/vimwiki/index.md<cr>
-nnoremap <space>ok :e ~/.config/nvim/config/keyboard/keyboard.vim<cr>
+smap <cr> <esc>
+au FileType * imap ] <bs>
+au FileType * tmap ] <bs>
+au FileType * imap ) <esc>
+au FileType * smap ) <esc>
+au FileType * vmap ) <esc>
 
 nnoremap <space>U :PlugUpdate<cr>
 
@@ -47,7 +46,7 @@ nnoremap <silent> <space>j :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
 nnoremap <silent> <space>k :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 
 "Paste {{{====================================
-nnoremap <space>* /<c-r>+<cr>
+nnoremap <space>+ /<c-r>+<cr>
 nnoremap P :lua require('neoclip.fzf')()<cr>
 "}}}==========================================
 

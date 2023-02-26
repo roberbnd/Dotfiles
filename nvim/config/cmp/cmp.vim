@@ -1,3 +1,5 @@
+" https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
+
 Plug 'onsails/lspkind-nvim'
 "=========================================================================================
 " icons

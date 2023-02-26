@@ -1,6 +1,7 @@
 " run the request under the cursor
-nnoremap <space>rr <Plug>RestNvim
+au FileType http nnoremap <buffer> rr <Plug>RestNvim
+au FileType http nnoremap <buffer> <cr> <Plug>RestNvim
 " preview the request cURL command
-nnoremap <space>rw <Plug>RestNvimPreview
+au FileType http nnoremap <buffer> rw <Plug>RestNvimPreview
 " re-run the last request
-nnoremap <space>rl <Plug>RestNvimLast
+au FileType http nnoremap <buffer> rl <Plug>RestNvimLast

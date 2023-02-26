@@ -21,8 +21,6 @@ au FileType css,scss set tabstop=2 shiftwidth=2
 au FileType php,proto set tabstop=4 shiftwidth=4
 au FileType javascript set tabstop=2 shiftwidth=2
 
-au FileType html :EmmetInstall
-
 " create keymap to last tab active = ch
 au TabLeave * let g:lasttab = tabpagenr()
 
@@ -30,12 +28,3 @@ au TabLeave * let g:lasttab = tabpagenr()
 silent exec "!tmux set -g pane-active-border-style 'fg=blue,bg=blue'"
 
 au FileType markdown,vimwiki set conceallevel=0
-
-" https://github.com/voldikss/vim-floaterm/issues/191
-" autocmd VimEnter * FloatermNew --silent
-
-au InsertEnter * imap ] <bs>
-au InsertEnter * tmap ] <bs>
-au InsertEnter * imap ) <esc>
-au VimEnter * startinsert
-call feedkeys("\<esc>")

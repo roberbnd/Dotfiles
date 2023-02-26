@@ -1,9 +1,7 @@
-vim.cmd('source ~/.config/nvim/config/theme/dark_theme.vim')
-
 require'nvim-treesitter.configs'.setup {
-  -- autotag = {
-  --   enable = true,
-  -- },
+  autotag = {
+    enable = true,
+  },
 
   tree_setter = {
     enable = true

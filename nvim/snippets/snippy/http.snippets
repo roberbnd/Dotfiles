@@ -1,0 +1,16 @@
+snippet po "async function" b
+  POST http://localhost:${1:3000}/${2}
+  content-type: ${3:application/json}
+
+snippet pa "async function" b
+  PATCH http://localhost:${1:3000}/${2}
+  content-type: ${3:application/json}
+
+snippet g "async function" b
+  GET http://localhost:${1:3000}/
+
+snippet d "async function" b
+  DELETE http://localhost:${1:3000}/
+
+snippet ct "Content-type" b
+  content-type: ${1:application/json}

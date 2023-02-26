@@ -1,13 +1,13 @@
 require('fixer').setup{}
 require('neogit').setup{}
 
- require('git-conflict').setup({
+require('git-conflict').setup({
   default_mappings = false, -- disable buffer local mapping created by this plugin
   disable_diagnostics = false, -- This will disable the diagnostics in a buffer whilst it is conflicted
-  highlights = { -- They must have background color, otherwise the default color will be used
-    incoming = 'DiffText',
-    current = 'DiffAdd',
-  }
+  -- highlights = { -- They must have background color, otherwise the default color will be used
+  --   incoming = 'DiffText',
+  --   current = 'DiffAdd',
+  -- }
 })
 
 -- TODO: requires telescope, create a PR to support fzflua
@@ -23,6 +23,7 @@ require('neogit').setup{}
 --  })
 
 require("diffview").setup({
+  enhanced_diff_hl = true,
    win_config = {
      width = 50,
    }

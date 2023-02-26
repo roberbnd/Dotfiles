@@ -1,7 +1,8 @@
 Plug 'rbgrouleff/bclose.vim'
 "{{{======================================================================================
 " let g:no_plugin_maps = true
-let g:bclose_no_plugin_maps = 'true'
+let g:bclose_no_plugin_maps = 1
+let g:no_plugin_maps = 1
 "======================================================================================}}}
 
 Plug 'Asheq/close-buffers.vim', { 'on': 'Bdelete' }

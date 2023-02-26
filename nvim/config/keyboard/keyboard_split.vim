@@ -38,5 +38,3 @@ nnoremap <space>sm :lua require('maximize').toggle()<cr>
 nnoremap <space>sr :WinResizerStartResize<cr>
 nnoremap <space>sl :call LongScroll()<cr>
 vnoremap <space>S :VSSplit<cr>
-"center adding border
-nnoremap <space>sc :NoNeckPain<cr>

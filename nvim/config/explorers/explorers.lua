@@ -28,7 +28,7 @@ require'fzf-lua'.setup({
      preview = {
        layout = 'vertical',
        vertical = 'down:60%',
-       -- hidden = 'hidden',
+       hidden = 'hidden',
      }
    },
    previewers = {

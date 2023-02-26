@@ -15,7 +15,7 @@ source ~/.config/nvim/config/search_replace.vim
 source ~/.config/nvim/config/buffers.vim
 source ~/.config/nvim/config/cmp/cmp.vim
 source ~/.config/nvim/config/explorers/explorers.vim
-source ~/.config/nvim/config/testing.vim
+source ~/.config/nvim/config/testing/testing.vim
 source ~/.config/nvim/config/debugging/debugging.vim
 source ~/.config/nvim/config/git/git.vim
 source ~/.config/nvim/config/tmux.vim
@@ -38,5 +38,5 @@ source ~/.config/nvim/config/debugging/debugging.lua
 source ~/.config/nvim/config/git/git.lua
 source ~/.config/nvim/config/tools/tools.lua
 
-source ~/.config/nvim/config/keyboard/keyboard.vim
 source ~/.config/nvim/config/autocmd.vim
+source ~/.config/nvim/config/keyboard/keyboard.vim

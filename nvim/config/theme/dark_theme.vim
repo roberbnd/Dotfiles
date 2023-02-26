@@ -4,6 +4,7 @@
 " export BAT_THEME="DarkNeon"
 
 colorscheme tokyodark
+hi visual guibg=#2D313A
 hi WinSeparator guifg=#3FA796 guibg=none
 hi HighlightText guifg=white guibg=#362FD9
 
@@ -16,4 +17,9 @@ hi EasyMotionShade ctermbg=none ctermfg=blue
 hi EasyMotionIncSearch gui=bold guifg=white guibg=#a901d5
 hi EasyMotionIncSearch gui=bold guifg=white guibg=#a901d5
 
-hi visual guibg=#2e2f4a
+"Vscode colors
+hi DiffAdd      gui=none guifg=none guibg=#25394b
+hi DiffChange   gui=none guifg=none guibg=#4b592b
+hi DiffDelete   gui=none guifg=none guibg=#4b1818
+hi DiffText     gui=none guifg=none guibg=#6f1313
+

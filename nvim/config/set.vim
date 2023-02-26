@@ -25,6 +25,8 @@ set nobackup
 set nocompatible
 set noerrorbells
 set noswapfile
+" scroll vertically while keeping cursor position
+set nostartofline
 set nowritebackup
 set noshowmode   " disable cmd message --INSERT--
 set t_Co=256
@@ -43,3 +45,5 @@ set viewoptions=cursor,folds,slash,unix
 set wildignorecase
 set wrap
 let mapleader="\<space>"
+" time in mappings
+set timeoutlen=220
