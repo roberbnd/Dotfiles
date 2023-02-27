@@ -8,7 +8,7 @@ nnoremap <down> <c-f>
 
 "easymotion{{{================================
 nmap / <Plug>(easymotion-sn)
-nmap t <Plug>(easymotion-overwin-f2)
+nmap t <Plug>(easymotion-overwin-f)
 
 nmap w <Plug>(easymotion-overwin-line)
 vmap w <Plug>(easymotion-bd-jk)

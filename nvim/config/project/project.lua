@@ -7,13 +7,6 @@ require'workspaces'.setup({
     }
 })
 
-require("harpoon").setup({
-  menu = {
-    width = 120
-    -- width = vim.api.nvim_win_get_width(0) - 4,
-  }
-})
-
 require'trouble'.setup({
   height = 15,
   auto_preview = false

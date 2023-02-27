@@ -53,7 +53,7 @@ endfunction
 "======================================================================================}}}
 
 Plug 'cbochs/grapple.nvim'
-Plug 'ThePrimeagen/harpoon'
+
 Plug 'folke/trouble.nvim', { 'branch': 'main'}
 "{{{======================================================================================
 "A pretty diagnostics list to help you solve all the trouble your code is causing.

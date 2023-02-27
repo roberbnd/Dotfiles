@@ -28,3 +28,25 @@ au TabLeave * let g:lasttab = tabpagenr()
 silent exec "!tmux set -g pane-active-border-style 'fg=blue,bg=blue'"
 
 au FileType markdown,vimwiki set conceallevel=0
+
+augroup SaveWindowViewGroup
+  autocmd! BufWinLeave * let b:winview = winsaveview()
+  autocmd! BufWinEnter * if exists('b:winview') | call winrestview(b:winview) | unlet b:winview
+augroup END
+
+" Put these in an autocmd group, so that you can revert them with:
+" ":augroup vimStartup | au! | augroup END"
+augroup vimStartup
+  au!
+
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it when the position is invalid, when inside an event handler
+  " (happens when dropping a file on gvim) and for a commit message (it's
+  " likely a different one than last time).
+  autocmd BufReadPost *
+       \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+    \ |   exe "normal! g`\""
+    \ |   exe "hi TSComment gui=italic guifg=#00AAAA"
+    \ | endif
+
+augroup END

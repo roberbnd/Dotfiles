@@ -5,3 +5,4 @@ au FileType http nnoremap <buffer> <cr> <Plug>RestNvim
 au FileType http nnoremap <buffer> rw <Plug>RestNvimPreview
 " re-run the last request
 au FileType http nnoremap <buffer> rl <Plug>RestNvimLast
+au FileType httpResult nnoremap <buffer> <cr> <Plug>RestNvimLast

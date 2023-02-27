@@ -9,6 +9,7 @@ nnoremap <space>nt :NeoTreeFocusToggle<cr>
 nnoremap <space>nrr :NeoTreeReveal<cr>
 nnoremap <space>nrt :NeoTreeRevealToggle<cr>
 
+nnoremap <space>fp :echo expand("%")<cr>
 nnoremap <space>fr :let @" = expand("%:t")<cr>:Rename<space><c-r>"
 nnoremap <space>fD :Delete!<cr>
 nnoremap <space>fv :FloatermNew vifm<cr>

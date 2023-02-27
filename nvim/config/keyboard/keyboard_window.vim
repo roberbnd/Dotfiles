@@ -12,6 +12,7 @@ nnoremap <space>wC <cmd>.+1,$tabdo :q<cr>
 
 nmap B :tabprevious<cr>
 nmap M :tabnext<cr>
+nmap <space>t :BufferLinePick<cr>
 
 nnoremap <silent> ch :exe "tabn ".g:lasttab<cr>
 

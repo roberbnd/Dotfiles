@@ -41,23 +41,6 @@ endfunction
 " Clear register
 command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor
 
-" Put these in an autocmd group, so that you can revert them with:
-" ":augroup vimStartup | au! | augroup END"
-augroup vimStartup
-  au!
-
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid, when inside an event handler
-  " (happens when dropping a file on gvim) and for a commit message (it's
-  " likely a different one than last time).
-  autocmd BufReadPost *
-       \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
-    \ |   exe "normal! g`\""
-    \ |   exe "hi TSComment gui=italic guifg=#00AAAA"
-    \ | endif
-
-augroup END
-
 " When using `dd` in the quickfix list, remove the item from the quickfix list.
 function! RemoveQFItem()
   let curqfidx = line('.') - 1
