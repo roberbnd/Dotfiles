@@ -19,7 +19,6 @@ let g:tagalong_filetypes = ['html', 'xml', 'jsx', 'eruby', 'ejs', 'eco', 'php', 
 
 Plug 'echasnovski/mini.nvim'
 "{{{======================================================================================
-require'mini.ai'.setup()
 " modules
 " -> mini.ai
 " Extend and create a/i textobjects (like in di( or va").
