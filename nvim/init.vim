@@ -25,7 +25,6 @@ source ~/.config/nvim/config/tools/tools.vim
 source ~/.config/nvim/config/git/git.vim
 
 call plug#end()
-lua require('aerial').setup()
 
 source ~/.config/nvim/config/ui/ui.lua
 source ~/.config/nvim/config/syntaxis/syntaxis.lua

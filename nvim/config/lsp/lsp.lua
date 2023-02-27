@@ -1,5 +1,6 @@
 require"fidget".setup{}
 require"lsp_signature".setup()
+require('aerial').setup()
 require('glance').setup()
 
 -- <F2> esta mappeado
