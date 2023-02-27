@@ -17,7 +17,6 @@ source ~/.config/nvim/config/explorers/explorers.vim
 source ~/.config/nvim/config/testing/testing.vim
 source ~/.config/nvim/config/debugging/debugging.vim
 source ~/.config/nvim/config/git/git.vim
-source ~/.config/nvim/config/tmux.vim
 source ~/.config/nvim/config/tools/tools.vim
 
 call plug#end()
