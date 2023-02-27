@@ -30,8 +30,3 @@ Plug 'machakann/vim-sandwich'
 " sandwich.vim is a set of operator and textobject plugins to add/delete/replace
 " surroundings of a sandwiched textobject, like (foo), "bar".
 "======================================================================================}}}
-
-Plug 'tpope/vim-surround'
-"{{{======================================================================================
-" delete tags dst
-"======================================================================================}}}
