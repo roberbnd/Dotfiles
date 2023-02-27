@@ -10,10 +10,10 @@ nnoremap rk :FloatermNew lazygit<cr>
 nnoremap g<space> :Neogit<cr>
 nnoremap <space>gs :FloatermNew tig status<cr>
 " nnoremap <space>gss :FzfLua git_status<cr>
-nnoremap rg :FzfLua git_status<cr>
 
-nnoremap gs :Gwrite<cr>
-nnoremap eh :FzfLua git_status<cr>
+nnoremap gs :Gitsigns stage_buffer<cr>
+nnoremap eh :FzfLua git_files<cr>
+nnoremap es :FzfLua git_status<cr>
 
 nnoremap <space>gm :GitMessenger<cr>
 " nnoremap <space>g<space> :G<cr><c-w>T
