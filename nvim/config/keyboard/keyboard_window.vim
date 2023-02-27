@@ -15,8 +15,6 @@ nmap M :tabnext<cr>
 
 nnoremap <silent> ch :exe "tabn ".g:lasttab<cr>
 
-nnoremap rw :Windows<cr>
-
 lua <<EOF
 vim.keymap.set("n", "<leader>ww", function()
   local picked_window_id = require("window-picker").pick_window() or vim.api.nvim_get_current_win()
