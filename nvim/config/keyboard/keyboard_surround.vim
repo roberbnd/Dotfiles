@@ -1,12 +1,13 @@
 "Add {{{======================================
-vmap [ S[
-vmap { S{
-vmap ( S(
-vmap ' S'
-vmap " S"
-vmap <space><space> S<space>
-vmap ` S`
-vmap t St
+vmap [ sa[
+vmap { sa{
+vmap ( sa(
+vmap ' sa'
+vmap " sa"
+vmap <space><space> sa<space>
+vmap ` sa`
+vmap t sat
+
 "}}}==========================================
 
 "Delete {{{===================================
