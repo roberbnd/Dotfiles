@@ -12,17 +12,10 @@ zero.setup()
 
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 local lsp = require'lspconfig'
-local navic = require("nvim-navic")
--- local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local on_attach = function(client, bufnr)
   client.server_capabilities.document_formatting = false
-  navic.attach(client, bufnr)
-  --- Guard against servers without the signatureHelper capability
-  -- if client.server_capabilities.signatureHelpProvider then
-  --   require('lsp-overloads').setup(client, { })
-  -- end
 end
 
 -- bun add -g intelephense
@@ -269,37 +262,35 @@ lsp.tsserver.setup({
  })
 
 lsp['yamlls'].setup{
-        on_attach = on_attach,
-        filetypes = { "yaml", "yml" },
-        flags = { debounce_test_changes = 150 },
-        settings = {
-            yaml = {
-                format = {
-                    enable = true,
-                    singleQuote = true,
-                    printWidth = 120,
-                },
-                hover = true,
-                completion = true,
-                validate = true,
-                schemas = {
-                    ["https://raw.githubusercontent.com/awslabs/goformation/v6.10.0/schema/cloudformation.schema.json"] = {
-                        "/cloudformation.yml",
-                        "/cloudformation.yaml",
-                        "/*.cf.yml",
-                        "/cf.yaml",
-                    },
-                    ["https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json"] = {
-                        "/.gitlab-ci.yml",
-                        "/.gitlab-ci.yaml",
-                    },
-                },
-                schemaStore = {
-                    enable = true,
-                    url = "https://www.schemastore.org/json",
-                },
-            },
+  on_attach = on_attach,
+  filetypes = { "yaml", "yml" },
+  flags = { debounce_test_changes = 150 },
+  settings = {
+    yaml = {
+      format = {
+        enable = true,
+        singleQuote = true,
+        printWidth = 120,
+      },
+      hover = true,
+      completion = true,
+      validate = true,
+      schemas = {
+        ["https://raw.githubusercontent.com/awslabs/goformation/v6.10.0/schema/cloudformation.schema.json"] = {
+          "/cloudformation.yml",
+          "/cloudformation.yaml",
+          "/*.cf.yml",
+          "/cf.yaml",
         },
+        ["https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json"] = {
+          "/.gitlab-ci.yml",
+          "/.gitlab-ci.yaml",
+        },
+      },
+      schemaStore = {
+        enable = true,
+        url = "https://www.schemastore.org/json",
+      },
+    },
+  },
 }
-
--- lsp["null-ls"].setup({})

@@ -1,5 +1,4 @@
 " Plug 'simrat39/symbols-outline.nvim'
-" Plug 'stevearc/aerial.nvim'
 " Plug 'liuchengxu/vista.vim'
 ""{{{======================================================================================
 "" require ctags, ptags
@@ -27,3 +26,4 @@ let g:vista_fzf_preview = ['right:50%']
 "" autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 ""======================================================================================}}}
 Plug 'DNLHC/glance.nvim'
+

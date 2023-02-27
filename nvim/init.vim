@@ -11,7 +11,6 @@ source ~/.config/nvim/config/code_organization/code_organization.vim
 source ~/.config/nvim/config/objects.vim
 source ~/.config/nvim/config/motion/motion.vim
 source ~/.config/nvim/config/project/project.vim
-source ~/.config/nvim/config/search_replace.vim
 source ~/.config/nvim/config/buffers.vim
 source ~/.config/nvim/config/cmp/cmp.vim
 source ~/.config/nvim/config/explorers/explorers.vim
@@ -22,7 +21,7 @@ source ~/.config/nvim/config/tmux.vim
 source ~/.config/nvim/config/tools/tools.vim
 
 call plug#end()
-
+lua require('aerial').setup()
 source ~/.config/nvim/config/scripts.vim
 
 source ~/.config/nvim/config/ui/ui.lua
@@ -30,7 +29,6 @@ source ~/.config/nvim/config/syntaxis/syntaxis.lua
 source ~/.config/nvim/config/editing/editing.lua
 source ~/.config/nvim/config/lsp/lsp.lua
 source ~/.config/nvim/config/code_organization/code_organization.lua
-source ~/.config/nvim/config/motion/motion.lua
 source ~/.config/nvim/config/project/project.lua
 source ~/.config/nvim/config/cmp/cmp.lua
 source ~/.config/nvim/config/explorers/explorers.lua

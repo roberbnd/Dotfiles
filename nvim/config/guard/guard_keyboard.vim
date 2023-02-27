@@ -83,3 +83,25 @@ imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
+"Change surround {{{==========================
+nmap c{ sr{
+nmap c( sr(
+nmap c' sr'"
+nmap c` sr`
+nmap cq sr"'
+nmap c" sr"'
+nmap c[ sr[
+nmap c; ct;
+nmap c, ct,
+nmap c<space> cf<space>
+"}}}==========================================
+"Add {{{======================================
+vmap [ sa[
+vmap { sa{
+vmap ( sa(
+vmap ' sa'
+vmap " sa"
+vmap <space><space> sa<space>
+vmap ` sa`
+vmap t sat
+"}}}==========================================

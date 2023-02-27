@@ -20,15 +20,15 @@ inoremap <c-b>b <space><space><left>
 inoremap <c-b><c-b> <esc>A
 imap <c-b><cr> <esc>A<space>{<cr>
 
-nnoremap <c-l>, A,<esc>
-inoremap <c-l>, <esc>A,<esc>
-nnoremap <c-l>c A,<cr>
-inoremap <c-l>c <esc>A,<cr>
+nnoremap <c-x>, A,<esc>
+inoremap <c-x>, <esc>A,<esc>
+nnoremap <c-x>c A,<cr>
+inoremap <c-x>c <esc>A,<cr>
 
-nnoremap <c-l>; A;<esc>
-inoremap <c-l>; <esc>A;<esc>
-nnoremap <c-l>r A;<cr>
-inoremap <c-l>r <esc>A;<cr>
+nnoremap <c-x>; A;<esc>
+inoremap <c-x>; <esc>A;<esc>
+nnoremap <c-x>r A;<cr>
+inoremap <c-x>r <esc>A;<cr>
 
 "Switching line {{{===========================
 nnoremap <c-down> :m .+1<cr>==

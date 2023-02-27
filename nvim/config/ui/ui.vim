@@ -3,17 +3,11 @@
 " bat: https://github.com/sharkdp/bat
 
 Plug 'tiagovla/tokyodark.nvim'
-Plug 'folke/tokyonight.nvim'
 
 Plug 'kyazdani42/nvim-web-devicons'
 "=========================================================================================
 " icons
 "=========================================================================================
-
-Plug 'SmiteshP/nvim-navic'
-"{{{======================================================================================
-"shows context of the current cursor position in file.
-"======================================================================================}}}
 
 Plug 'akinsho/bufferline.nvim'
 

@@ -10,25 +10,20 @@ nnoremap <down> <c-f>
 nmap / <Plug>(easymotion-sn)
 nmap t <Plug>(easymotion-overwin-f2)
 
+nmap w <Plug>(easymotion-overwin-line)
+vmap w <Plug>(easymotion-bd-jk)
+nmap ew Vw
+
+imap jm <esc>t
+imap jb <esc>w
+
+imap jf <esc>f
+imap jj <esc>
+
 nmap ec v<Plug>(easymotion-linebackward)
 vmap ec <Plug>(easymotion-linebackward)
 nmap er v<Plug>(easymotion-lineforward)
 vmap er <Plug>(easymotion-lineforward)
-"==========================================}}}
-
-"hop{{{=======================================
-nnoremap w <cmd>HopLine<cr>
-vnoremap w <cmd>HopLine<cr>
-nnoremap W <cmd>HopLine<cr>
-nnoremap ew V<cmd>HopLine<cr>
-
-inoremap jm <esc><cmd>HopChar2<cr>
-inoremap jb <esc><cmd>HopLine<cr>
-imap jf <esc>f
-imap jF <esc>f
-imap jj <esc>
-nnoremap <silent> em :lua require'tsht'.nodes()<cr>
-vnoremap <silent> m :lua require'tsht'.nodes()<cr>
 "==========================================}}}
 
 "asterisk{{===================================

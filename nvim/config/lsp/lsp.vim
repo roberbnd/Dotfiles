@@ -25,3 +25,5 @@ Plug 'ray-x/lsp_signature.nvim'
 " Extends the built-in Neovim LSP signature helper handler to add additional functionality,
 " focussing on enhancements for method overloads.
 "======================================================================================}}}
+
+Plug 'stevearc/aerial.nvim'

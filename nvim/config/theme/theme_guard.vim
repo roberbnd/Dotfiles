@@ -31,3 +31,9 @@
 " hi ColorColumn ctermbg=1 guibg=#090910
 " " hi Comment gui=italic guifg=#00AAAA
 " hi MatchParen gui=bold guifg=#FFFFFF guibg=#a901d5
+
+" hi EasyMotionShade ctermbg=none ctermfg=blue
+" hi HopNextKey gui=bold guifg=#FFFFFF guibg=#a901d5
+" hi HopNextKey1 gui=bold guifg=#FFFFFF guibg=#a901d5
+" hi HopNextKey2 gui=bold guifg=#FFFFFF guibg=#a901d5
+

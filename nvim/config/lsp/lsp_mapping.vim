@@ -16,3 +16,4 @@ nnoremap  ,c :lua vim.lsp.buf.code_action()<cr>
 
 nnoremap ,s :FzfLua lsp_document_symbols<cr>
 
+nnoremap ,l :AerialToggle<cr>

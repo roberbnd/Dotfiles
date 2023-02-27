@@ -43,14 +43,14 @@ cmp.setup({
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
     ["<Tab>"] = cmp.mapping.select_next_item(),
     ["<S-Tab>"] = cmp.mapping.select_prev_item(),
-    ["<left>"] = cmp.mapping(function(fallback)
+    ["<m-c>"] = cmp.mapping(function(fallback)
          if vim.fn['snippy#can_jump'](-1) then
            snippy.previous()
          else
            fallback()
          end
        end, { "i", "s" }),
-     ["<right>"] = cmp.mapping(function(fallback)
+     ["<m-r>"] = cmp.mapping(function(fallback)
          if vim.fn['snippy#can_jump'](1) then
            snippy.next()
          else

@@ -1,6 +1,3 @@
-"select the node threesitter (keyboard: em, visual:m)
-Plug 'mfussenegger/nvim-treehopper'
-Plug 'phaazon/hop.nvim'
 Plug 'easymotion/vim-easymotion'
 "{{{======================================================================================
 " EasyMotion provides a much simpler way to use some motions in vim
@@ -13,6 +10,3 @@ Plug 'haya14busa/vim-asterisk'
 "{{{======================================================================================
 " asterisk.vim provides improved * motions.
 "======================================================================================}}}
-
-Plug 'kevinhwang91/promise-async'
-Plug 'Weissle/easy-action'

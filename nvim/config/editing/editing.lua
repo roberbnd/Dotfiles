@@ -1,5 +1,5 @@
 require'neoclip'.setup()
-require'mini.ai'.setup()
+require("nvim-surround").setup({})
 
 require('Comment').setup()
 local ft = require('Comment.ft')

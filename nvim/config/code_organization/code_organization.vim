@@ -4,10 +4,14 @@ Plug 'foosoft/vim-argwrap', { 'on': 'ArgWrap' }
 " definitions.:ArgWrap
 "======================================================================================}}}
 
-
 Plug 'ThePrimeagen/refactoring.nvim'
 
-" Plug 'Wansmer/treesj'
+Plug 'rstacruz/vim-xtract', { 'on': 'Xtract'}
+"vim-xtract{{{============================================================================
+" vim-xtract helps you split up large files into smaller files. Great for refactoring.
+"======================================================================================}}}
+
+
 Plug 'bennypowers/splitjoin.nvim'
 Plug 'AndrewRadev/splitjoin.vim', { 'branch': 'main' }
 "splitjoin{{{=============================================================================
@@ -25,11 +29,6 @@ Plug 'Wansmer/sibling-swap.nvim'
 " requires nvim-treesitter
 "======================================================================================}}}
 
-Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
-"tabular{{{===============================================================================
-" :Tabularize /{pattern}
-"======================================================================================}}}
-
 Plug 'tommcdo/vim-exchange'
 "vim-exchange{{{==========================================================================
 " To exchange two words, place your cursor on the first word and type cxiw. Then move
@@ -39,11 +38,6 @@ Plug 'tommcdo/vim-exchange'
 " vmap X <Plug>(Exchange)
 " nmap cxc <Plug>(ExchangeClear)
 " nmap cxx <Plug>(ExchangeLine)
-"======================================================================================}}}
-
-Plug 'rstacruz/vim-xtract', { 'on': 'Xtract'}
-"vim-xtract{{{============================================================================
-" vim-xtract helps you split up large files into smaller files. Great for refactoring.
 "======================================================================================}}}
 
 Plug 'chrisbra/NrrwRgn'

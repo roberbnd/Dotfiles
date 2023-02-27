@@ -1,13 +1,12 @@
 "Add {{{======================================
-vmap [ sa[
-vmap { sa{
-vmap ( sa(
-vmap ' sa'
-vmap " sa"
-vmap <space><space> sa<space>
-vmap ` sa`
-vmap t sat
-
+vmap [ S[
+vmap { S{
+vmap ( S(
+vmap ' S'
+vmap " S"
+vmap <space><space> S<space>
+vmap ` S`
+vmap t St
 "}}}==========================================
 
 "Delete {{{===================================
@@ -51,13 +50,13 @@ nnoremap -<bar> ct<bar>
 "}}}==========================================
 
 "Change surround {{{==========================
-nmap c{ sr{
-nmap c( sr(
-nmap c' sr'"
-nmap c` sr`
-nmap cq sr"'
-nmap c" sr"'
-nmap c[ sr[
+nmap c{ cs{
+nmap c( cs(
+nmap c' cs'"
+nmap c` cs`
+nmap cq cs"'
+nmap c" cs"'
+nmap c[ cs[
 nmap c; ct;
 nmap c, ct,
 nmap c<space> cf<space>

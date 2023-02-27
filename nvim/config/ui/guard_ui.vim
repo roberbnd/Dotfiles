@@ -33,3 +33,15 @@ Plug 'Pocco81/true-zen.nvim'
 "{{{======================================================================================
 " color in focused split
 "======================================================================================}}}
+
+Plug 'SmiteshP/nvim-navic'
+"{{{======================================================================================
+"shows context of the current cursor position in file.
+on_attach:
+  --navic.attach(client, bufnr)
+  --- Guard against servers without the signatureHelper capability
+  -- if client.server_capabilities.signatureHelpProvider then
+  --   require('lsp-overloads').setup(client, { })
+  -- end
+"======================================================================================}}}
+Plug 'folke/tokyonight.nvim'
