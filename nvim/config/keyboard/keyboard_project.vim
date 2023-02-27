@@ -6,4 +6,4 @@ nnoremap ea :lua require("harpoon.mark").add_file()<cr>
 nnoremap <space><space>t :GrappleToggle<cr>
 nnoremap <space><space>m :GrapplePopup tags<cr>
 
-nnoremap rr :FzfLua grep_project<cr>
+nnoremap rr :FzfLua live_grep<cr>
