@@ -9,7 +9,7 @@ Plug 'kana/vim-textobj-entire'
 " ie is similar to ae, but ie does not include leading and trailing empty lines.
 "======================================================================================}}}
 
-Plug 'kana/vim-textobj-function'
+" Plug 'kana/vim-textobj-function'
 "{{{======================================================================================
 " daf to Delete A Function, and
 " vif to Visually select the code Inside a Function.
@@ -23,7 +23,7 @@ Plug 'thalesmello/vim-textobj-multiline-str', { 'for': 'python' }
 " iq: inner multiline string. Gets the string contents without the quotes and immediate linebreaks.
 "======================================================================================}}}
 
-Plug 'beloglazov/vim-textobj-punctuation'
+" Plug 'beloglazov/vim-textobj-punctuation'
 "{{{======================================================================================
 " vim-textobj-eunctuation is a Vim plugin providing text objects iu and au (u stands for
 " pUnctuation, as p is already taken for paragraphs) for capturing the text between the current
@@ -36,8 +36,8 @@ Plug 'beloglazov/vim-textobj-punctuation'
 " omap u iu
 "{{{======================================================================================
 
-Plug 'rhysd/vim-textobj-ruby', { 'for': 'ruby'}
-Plug 'whatyouhide/vim-textobj-erb', { 'for': 'eruby'}
+" Plug 'rhysd/vim-textobj-ruby', { 'for': 'ruby'}
+" Plug 'whatyouhide/vim-textobj-erb', { 'for': 'eruby'}
 "{{{======================================================================================
 " Simple one operator-pending mapping r Operator-pending mapping r is added. dir, yar
 " and other mappings are available like diw, yi'.  if, unless, case, while, until, for,
@@ -77,12 +77,12 @@ Plug 'whatyouhide/vim-textobj-xmlattr', { 'for': ['javascript', 'html', 'eruby']
 " It's based on (and requires) vim-textobj-user.
 "======================================================================================}}}
 
-Plug 'AndrewRadev/dsf.vim'
+" Plug 'AndrewRadev/dsf.vim'
 "{{{======================================================================================
 " By pressing dsf (which stands for "delete surrounding function call")
 "======================================================================================}}}
 
-Plug 'michaeljsmith/vim-indent-object'
+" Plug 'michaeljsmith/vim-indent-object'
 "{{{======================================================================================
 " This plugin defines two new text objects. These are very similar - they differ only in
 " whether they include the line below the block or not.
