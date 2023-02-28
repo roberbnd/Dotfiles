@@ -1,3 +1,8 @@
+require('colorizer').setup({
+  user_default_options = {
+    tailwind = true
+  }
+})
 require'nvim-treesitter.configs'.setup {
   autotag = {
     enable = true,

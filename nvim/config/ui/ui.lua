@@ -1,7 +1,6 @@
 vim.cmd('source ~/.config/nvim/config/theme/dark_theme.vim')
 
 require('todo-comments').setup()
-require('colorizer').setup()
 require('twilight').setup()
 require('maximize').setup()
 

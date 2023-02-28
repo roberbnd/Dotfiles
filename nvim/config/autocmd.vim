@@ -30,6 +30,7 @@ silent exec "!tmux set -g pane-active-border-style 'fg=blue,bg=blue'"
 au FileType markdown,vimwiki set conceallevel=0
 
 " https://www.reddit.com/r/neovim/comments/11dmaed/keep_buffer_view_when_you_return_to_file/
+" set jumpoptions+=view
 augroup SaveWindowViewGroup
   autocmd! BufWinLeave * let b:winview = winsaveview()
   autocmd! BufWinEnter * if exists('b:winview') | call winrestview(b:winview) | unlet b:winview
@@ -39,7 +40,6 @@ augroup END
 " ":augroup vimStartup | au! | augroup END"
 augroup vimStartup
   au!
-
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid, when inside an event handler
   " (happens when dropping a file on gvim) and for a commit message (it's

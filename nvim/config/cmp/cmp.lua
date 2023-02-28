@@ -11,6 +11,10 @@ snippy.setup({
 local lspkind = require('lspkind')
 lspkind.init()
 
+require("tailwindcss-colorizer-cmp").setup({
+  color_square_width = 2,
+})
+
 local cmp = require'cmp'
 cmp.setup({
   formatting = {
