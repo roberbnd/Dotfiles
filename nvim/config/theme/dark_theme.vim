@@ -3,7 +3,9 @@
 " bat --theme=DarkNeon
 " export BAT_THEME="DarkNeon"
 
-colorscheme tokyodark
+" colorscheme tokyodark
+colorscheme catppuccin-mocha
+
 hi visual guibg=#2D313A
 hi WinSeparator guifg=#3FA796 guibg=none
 hi HighlightText guifg=white guibg=#362FD9

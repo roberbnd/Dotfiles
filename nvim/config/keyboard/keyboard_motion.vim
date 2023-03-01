@@ -11,6 +11,7 @@ nmap / <Plug>(easymotion-sn)
 nmap t <Plug>(easymotion-overwin-f)
 
 nmap w <Plug>(easymotion-overwin-line)
+nmap W <Plug>(easymotion-overwin-line)
 vmap w <Plug>(easymotion-bd-jk)
 nmap ew Vw
 

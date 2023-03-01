@@ -2,6 +2,7 @@
 " font: hack
 " bat: https://github.com/sharkdp/bat
 
+Plug 'catppuccin/nvim'
 Plug 'tiagovla/tokyodark.nvim'
 
 Plug 'kyazdani42/nvim-web-devicons'
