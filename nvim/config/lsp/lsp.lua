@@ -259,7 +259,7 @@ lsp.cssls.setup({
 lsp.tailwindcss.setup({
   capabilities = capabilities,
   on_attach = on_attach,
-  -- autostart = false,
+  autostart = false,
 })
 
 -- bun add -g typescript-language-server
