@@ -75,10 +75,9 @@ end
 -- }
 
 require('lualine').setup({
-  -- options = {
-    -- theme = 'tokyodark',
-    -- theme = 'catppuccin-mocha',
-  -- },
+  options = {
+    theme = 'vscode',
+  },
   sections = {
     lualine_c = {workspace_filename},
   },

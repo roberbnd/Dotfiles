@@ -4,7 +4,8 @@
 " export BAT_THEME="DarkNeon"
 
 " colorscheme tokyodark
-colorscheme catppuccin-mocha
+" colorscheme catppuccin-mocha
+colorscheme vscode
 
 hi visual guibg=#2D313A
 hi WinSeparator guifg=#3FA796 guibg=none

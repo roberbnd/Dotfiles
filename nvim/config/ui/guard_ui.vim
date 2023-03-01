@@ -7,6 +7,7 @@ Plug 'shortcuts/no-neck-pain.nvim'
 Plug 'catppuccin/nvim'
 Plug 'bluz71/vim-nightfly-colors'
 Plug 'folke/tokyonight.nvim'
+Plug 'tiagovla/tokyodark.nvim'
 
 " Plug 'ryanoasis/vim-devicons'
 " Plug 'lukas-reineke/indent-blankline.nvim'
