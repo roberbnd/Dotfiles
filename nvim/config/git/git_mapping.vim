@@ -12,7 +12,7 @@ nnoremap <space>gs :FloatermNew tig status<cr>
 " nnoremap <space>gss :FzfLua git_status<cr>
 
 nnoremap gs :Gitsigns stage_buffer<cr>
-nnoremap eh :FzfLua git_files<cr>
+nnoremap et :FzfLua git_files<cr>
 nnoremap es :FzfLua git_status<cr>
 
 nnoremap <space>gm :GitMessenger<cr>
