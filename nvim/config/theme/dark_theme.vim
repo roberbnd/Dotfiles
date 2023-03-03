@@ -5,9 +5,11 @@
 
 " colorscheme tokyodark
 " colorscheme catppuccin-mocha
+" hi visual guibg=#2D313A
+
+" colorscheme monokai-pro
 colorscheme vscode
 
-hi visual guibg=#2D313A
 hi WinSeparator guifg=#3FA796 guibg=none
 hi HighlightText guifg=white guibg=#362FD9
 

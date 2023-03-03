@@ -1,3 +1,5 @@
+require("telescope").load_extension("advanced_git_search")
+
 require'window-picker'.setup({
       -- the foreground (text) color of the picker
     fg_color = '#ededed',

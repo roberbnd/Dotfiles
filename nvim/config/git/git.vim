@@ -5,6 +5,8 @@
 " tig: https://github.com/jonas/tig
 "manage git with lazygit/tig and floatterm
 
+Plug 'tpope/vim-fugitive'
+
 Plug 'TimUntersberger/neogit'
 "{{{======================================================================================
 "======================================================================================}}}

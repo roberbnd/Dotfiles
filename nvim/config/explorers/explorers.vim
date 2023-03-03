@@ -1,5 +1,8 @@
 " fzf: https://github.com/junegunn/fzf#installation
 
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'aaronhallaert/ts-advanced-git-search.nvim'
+
 Plug 'MunifTanjim/nui.nvim'
 Plug 's1n7ax/nvim-window-picker'
 Plug 'nvim-neo-tree/neo-tree.nvim'

@@ -1,6 +1,7 @@
 source ~/.config/nvim/config/set.vim
 
 call plug#begin('~/.config/nvim/plugged')
+Plug 'loctvl842/monokai-pro.nvim'
 
 source ~/.config/nvim/config/base/base.vim
 source ~/.config/nvim/config/ui/ui.vim

@@ -76,7 +76,8 @@ end
 
 require('lualine').setup({
   options = {
-    theme = 'vscode',
+    -- theme = 'vscode',
+    theme = 'monokai-pro',
   },
   sections = {
     lualine_c = {workspace_filename},
