@@ -14,3 +14,4 @@ source ~/.config/nvim/config/syntaxis/ruby.vim
 source ~/.config/nvim/config/syntaxis/front.vim
 source ~/.config/nvim/config/syntaxis/yaml.vim
 source ~/.config/nvim/config/syntaxis/markdown.vim
+source ~/.config/nvim/config/syntaxis/python.vim

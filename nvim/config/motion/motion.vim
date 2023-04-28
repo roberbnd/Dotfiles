@@ -1,3 +1,4 @@
+Plug 'phaazon/hop.nvim'
 Plug 'easymotion/vim-easymotion'
 "{{{======================================================================================
 " EasyMotion provides a much simpler way to use some motions in vim

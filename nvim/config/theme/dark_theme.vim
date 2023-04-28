@@ -20,6 +20,10 @@ hi EasyMotionShade guibg=none guifg=#4a5057
 hi EasyMotionIncSearch gui=bold guifg=white guibg=#a901d5
 hi EasyMotionIncSearch gui=bold guifg=white guibg=#a901d5
 
+hi HopNextKey gui=bold guifg=#FFFFFF guibg=#a901d5
+hi HopNextKey1 gui=bold guifg=#FFFFFF guibg=#a901d5
+hi HopNextKey2 gui=bold guifg=#FFFFFF guibg=#a901d5
+
 hi DiffAdd      gui=none guifg=none guibg=#25394b
 hi DiffChange   gui=none guifg=none guibg=#4b592b
 hi DiffDelete   gui=none guifg=none guibg=#4b1818

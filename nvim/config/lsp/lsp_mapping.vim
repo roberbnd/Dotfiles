@@ -1,6 +1,6 @@
 nnoremap ,d :lua vim.lsp.buf.definition()<cr>
 nnoremap ,D :split<cr>:lua vim.lsp.buf.definition()<cr>
-nnoremap ,<space> :lua vim.lsp.buf.hover()<cr>
+nnoremap ,h :lua vim.lsp.buf.hover()<cr>
 nnoremap ,r :lua vim.lsp.buf.references()<cr>
 " nnoremap ,r :FzfLua lsp_references<cr>
 nnoremap ,R :lua vim.lsp.buf.rename()<cr>

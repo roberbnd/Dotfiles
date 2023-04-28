@@ -1,5 +1,6 @@
 vim.cmd('source ~/.config/nvim/config/theme/dark_theme.vim')
 
+require("statuscol").setup({})
 require('todo-comments').setup()
 require('twilight').setup()
 require('maximize').setup()
@@ -76,8 +77,8 @@ end
 
 require('lualine').setup({
   options = {
-    -- theme = 'vscode',
-    theme = 'monokai-pro',
+    theme = 'vscode',
+    -- theme = 'monokai-pro',
   },
   sections = {
     lualine_c = {workspace_filename},

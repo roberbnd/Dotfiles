@@ -2,6 +2,7 @@
 " font: hack
 " bat: https://github.com/sharkdp/bat
 
+" Plug 'loctvl842/monokai-pro.nvim'
 Plug 'Mofiqul/vscode.nvim'
 
 Plug 'kyazdani42/nvim-web-devicons'
@@ -10,6 +11,9 @@ Plug 'kyazdani42/nvim-web-devicons'
 "=========================================================================================
 
 Plug 'akinsho/bufferline.nvim'
+
+Plug 'luukvbaal/statuscol.nvim'
+
 
 Plug 'osyo-manga/vim-brightest'
 "{{{======================================================================================
@@ -68,6 +72,7 @@ Plug 'folke/twilight.nvim'
 " The plugin was heavily inspired by Limelight, but uses TreeSitter for better dimming.
 "======================================================================================}}}
 
+" Plug 'HiPhish/nvim-ts-rainbow2'
 Plug 'mrjones2014/nvim-ts-rainbow'
 "{{{======================================================================================
 " Rainbow parentheses for neovim using tree-sitter

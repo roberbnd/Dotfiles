@@ -18,6 +18,7 @@ inoremap <c-b>c <space>-><space>
 inoremap <c-b>r <space>=><space>
 inoremap <c-b>b <space><space><left>
 inoremap <c-b><c-b> <esc>A
+
 imap <c-b><cr> <esc>A<space>{<cr>
 
 nnoremap <c-x>, A,<esc>

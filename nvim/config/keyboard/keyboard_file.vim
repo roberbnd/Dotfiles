@@ -5,7 +5,7 @@ nnoremap <space>rc <c-w>gf
 
 
 nnoremap <space>nt :NeoTreeShowToggle<cr>
-nnoremap <space>nt :NeoTreeFocusToggle<cr>
+" nnoremap <space>nt :NeoTreeFocusToggle<cr>
 nnoremap <space>nrr :NeoTreeReveal<cr>
 nnoremap <space>nrt :NeoTreeRevealToggle<cr>
 

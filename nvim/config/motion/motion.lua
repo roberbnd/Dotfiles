@@ -1,2 +1,2 @@
 require'hop'.setup()
-require("easy-action").setup({})
+-- require("easy-action").setup({})

@@ -80,3 +80,5 @@ Plug 'LhKipp/nvim-git-fixer'
 " -- For convenience:  Create a 'normal' commit with the contents of the hunk under the cursor
 " require('fixer').commit_hunk()
 "======================================================================================}}}
+
+Plug 'wintermute-cell/gitignore.nvim'
