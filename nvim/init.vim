@@ -2,6 +2,7 @@ source ~/.config/nvim/config/set.vim
 
 call plug#begin('~/.config/nvim/plugged')
 
+
 source ~/.config/nvim/config/base/base.vim
 source ~/.config/nvim/config/ui/ui.vim
 source ~/.config/nvim/config/syntaxis/syntaxis.vim
