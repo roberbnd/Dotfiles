@@ -11,3 +11,6 @@ Plug 'haya14busa/vim-asterisk'
 "{{{======================================================================================
 " asterisk.vim provides improved * motions.
 "======================================================================================}}}
+
+Plug 'kevinhwang91/promise-async'
+Plug 'kevinhwang91/nvim-ufo'

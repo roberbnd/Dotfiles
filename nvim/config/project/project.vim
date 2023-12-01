@@ -54,25 +54,9 @@ endfunction
 
 Plug 'cbochs/grapple.nvim'
 
-Plug 'folke/trouble.nvim', { 'branch': 'main'}
-"{{{======================================================================================
-"A pretty diagnostics list to help you solve all the trouble your code is causing.
-"======================================================================================}}}
-
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session', { 'on': ['SaveSession', 'OpenSession'] }
 "{{{======================================================================================
 let g:session_directory='~/.config/nvim/sessions'
 let g:session_autosave='no'
 "======================================================================================}}}
-
-" Replace search is using qf.nvim
-"   with the pattern highlighted :cdo s//new_text/gc
-Plug 'windwp/nvim-spectre'
-"{{{======================================================================================
-" requires gnu-sed
-"======================================================================================}}}
-"search and replace
-Plug 'dyng/ctrlsf.vim'
-
-Plug 'brooth/far.vim'

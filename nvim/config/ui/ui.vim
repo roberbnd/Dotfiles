@@ -1,10 +1,22 @@
+Plug 'nvim-lua/plenary.nvim'
+Plug 'stevearc/dressing.nvim'
+"{{{======================================================================================
+"======================================================================================}}}
+
+Plug 'anuvyklack/hydra.nvim'
+"{{{======================================================================================
+" Submodes
+"======================================================================================}}}
+
 " nerdfonts: https://github.com/ryanoasis/nerd-fonts
 " font: hack
 " bat: https://github.com/sharkdp/bat
 
 " Plug 'loctvl842/monokai-pro.nvim'
+Plug 'folke/tokyonight.nvim'
 Plug 'Mofiqul/vscode.nvim'
 
+Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
 "=========================================================================================
 " icons
@@ -12,20 +24,44 @@ Plug 'kyazdani42/nvim-web-devicons'
 
 Plug 'akinsho/bufferline.nvim'
 
-Plug 'luukvbaal/statuscol.nvim'
+" Plug 'gcmt/taboo.vim'
+" Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" "{{{======================================================================================
+" " Allows rename tab with the taboo plugin
+" " require vim-fugitive to show the branch name
+" " file autocommands, section_c on autocmd.vim
+" let g:airline_powerline_fonts = 1
+" let g:airline_inactive_collapse=0
+" " let g:airline_section_c = '%:p:h:t' . '|' . '%t'
+" " let g:airline_section_c = substitute(getcwd(),$HOME,'~','') . '|' . '%t'
+" " let g:airline_section_c = '%{s:cwdd()}'
+" " let g:airline_section_c = airline#section#create(["%{substitute(getcwd(),$HOME,'~','')}"])
+" let g:airline_section_z = '%l:%c'
+" let g:airline_section_y = ''
+" let g:airline_focuslost_inactive = 0
+" let g:airline_inactive_collapse=0
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#tab_min_count = 1
+" let g:airline#extensions#tabline#show_buffers = 0
+" let g:airline#extensions#tabline#fnamemod = ':t:r'
+" let g:airline#extensions#tabline#left_sep = ''
+" let g:airline#extensions#tabline#right_sep = ''
+" let g:airline#extensions#tabline#left_alt_sep = ''
+" let g:airline#extensions#tabline#right_alt_sep = ''
+" let g:airline#extensions#tabline#show_tab_nr = 0
+" let g:airline#extensions#tabline#show_tab_type = 0
+" let g:airline#extensions#tabline#show_close_button = 0
+" let g:airline#extensions#tabline#show_splits = 0
+" let g:airline#extensions#tabline#show_tab_count = 0
+" " ======================================================================================}}}
 
+Plug 'luukvbaal/statuscol.nvim'
 
 Plug 'osyo-manga/vim-brightest'
 "{{{======================================================================================
 " bright the same words
 let g:brightest#highlight = { "group" : "HighlightText" }
-"======================================================================================}}}
-
-Plug 'ntpeters/vim-better-whitespace'
-"{{{======================================================================================
-" all trailing whitespace characters (see Supported Whitespace Characters below) to be highlighted.
-" :StripWhitespace
-" :StripWhitespaceOnChangedLines
 "======================================================================================}}}
 
 Plug 'nvim-lualine/lualine.nvim'
@@ -72,12 +108,6 @@ Plug 'folke/twilight.nvim'
 " The plugin was heavily inspired by Limelight, but uses TreeSitter for better dimming.
 "======================================================================================}}}
 
-" Plug 'HiPhish/nvim-ts-rainbow2'
-Plug 'mrjones2014/nvim-ts-rainbow'
-"{{{======================================================================================
-" Rainbow parentheses for neovim using tree-sitter
-"======================================================================================}}}
-
 Plug 'rcarriga/nvim-notify'
 "{{{======================================================================================
 "======================================================================================}}}
@@ -85,16 +115,10 @@ Plug 'rcarriga/nvim-notify'
 Plug 'voldikss/vim-floaterm'
 "{{{======================================================================================
 " float terminal
-let g:floaterm_width = &columns
-let g:floaterm_height = &lines-2
+" let g:floaterm_width = &columns
+" let g:floaterm_height = &lines-2
 let g:floaterm_opener = 'edit'
 let g:floaterm_autoinsert=1
-"======================================================================================}}}
-
-Plug 'kevinhwang91/nvim-bqf', {'branch': 'main'}
-Plug 'https://gitlab.com/yorickpeterse/nvim-pqf.git', {'branch': 'main'}
-"{{{======================================================================================
-" Interactive Quicklistfix
 "======================================================================================}}}
 
 Plug 'declancm/maximize.nvim'
@@ -113,4 +137,17 @@ let g:tmuxline_preset = {
   \'x': '%a',
   \'y': '%R'
 \}
+"======================================================================================}}}
+
+" Plug 'miyakogi/seiya.vim'
+"{{{======================================================================================
+"transparent background color in terminal.
+let g:seiya_auto_enable=1
+let g:seiya_target_groups = has('nvim') ? ['guibg'] : ['ctermbg']
+"======================================================================================}}}
+
+Plug 'shortcuts/no-neck-pain.nvim'
+"{{{======================================================================================
+" Dead simple plugin to center the currently focused buffer to the middle of the screen.
+":NoNeckPain Toggle the enabled state
 "======================================================================================}}}

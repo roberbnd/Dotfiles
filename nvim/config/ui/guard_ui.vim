@@ -1,7 +1,10 @@
-Plug 'shortcuts/no-neck-pain.nvim'
+Plug 'miyakogi/seiya.vim'
 "{{{======================================================================================
-":NoNeckPain Toggle the enabled state
+"transparent background color in terminal.
+let g:seiya_auto_enable=1
+let g:seiya_target_groups = has('nvim') ? ['guibg'] : ['ctermbg']
 "======================================================================================}}}
+
 
 " Plug 'petertriho/nvim-scrollbar'
 Plug 'catppuccin/nvim'
@@ -46,3 +49,9 @@ on_attach:
   -- end
 "======================================================================================}}}
 Plug 'folke/tokyonight.nvim'
+" Plug 'HiPhish/nvim-ts-rainbow2'
+" Plug 'mrjones2014/nvim-ts-rainbow'
+"{{{======================================================================================
+" Rainbow parentheses for neovim using tree-sitter
+"======================================================================================}}}
+

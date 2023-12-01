@@ -11,18 +11,19 @@ Plug 'rstacruz/vim-xtract', { 'on': 'Xtract'}
 " vim-xtract helps you split up large files into smaller files. Great for refactoring.
 "======================================================================================}}}
 
-Plug 'AndrewRadev/splitjoin.vim', { 'branch': 'main' }
+Plug 'Wansmer/treesj'
+" Plug 'AndrewRadev/splitjoin.vim', { 'branch': 'main' }
 "splitjoin{{{=============================================================================
 " switching between a single-line statement and a multi-line one.
 " gS to split a one-liner into multiple lines
 " gJ (with the cursor on the first line of a block)
 "======================================================================================}}}
 
-Plug 'mizlan/iswap.nvim'
+" Plug 'mizlan/iswap.nvim'
 "{{{======================================================================================
 "======================================================================================}}}
 
-Plug 'Wansmer/sibling-swap.nvim'
+" Plug 'Wansmer/sibling-swap.nvim'
 "tabular{{{===============================================================================
 " requires nvim-treesitter
 "======================================================================================}}}

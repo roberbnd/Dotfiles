@@ -1,10 +1,5 @@
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-Plug 'jose-elias-alvarez/null-ls.nvim'
-"{{{======================================================================================
-"Format and linitng
-"======================================================================================}}}
-
 Plug 'windwp/nvim-ts-autotag'
 
 Plug 'cameron-wags/rainbow_csv.nvim'

@@ -1,4 +1,4 @@
-Plug 'JoosepAlviste/nvim-ts-context-commentstring'
+" Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 Plug 'numToStr/Comment.nvim'
 "{{{======================================================================================
 " gcc
@@ -11,7 +11,7 @@ Plug 'cohama/lexima.vim'
 
 Plug 'kylechui/nvim-surround'
 
-Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
+" Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 "{{{======================================================================================
 " or :call doge#install()
 " wget https://phpdoc.org/phpDocumentor.phar
@@ -37,10 +37,4 @@ Plug 'isomoar/vim-css-to-inline'
 let g:csstoinline_no_mapping = 1
 " tis - transform to inline styles
 " fis - transform from inline styles to css
-"======================================================================================}}}
-
-Plug 'kkharji/sqlite.lua'
-Plug 'AckslD/nvim-neoclip.lua'
-"{{{======================================================================================
-" Paste
 "======================================================================================}}}

@@ -1,7 +1,5 @@
 require"fidget".setup{}
 require"lsp_signature".setup()
-require('aerial').setup()
-require('glance').setup()
 
 -- <F2> esta mappeado
 -- require'mason'.setup()
@@ -11,6 +9,11 @@ zero.preset('recommended')
 zero.nvim_workspace()
 zero.setup()
 
+require'trouble'.setup({
+  height = 10,
+  auto_preview = false
+})
+
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 local lsp = require'lspconfig'
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -18,6 +21,18 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local on_attach = function(client, bufnr)
   client.server_capabilities.document_formatting = false
 end
+
+-- require'lspconfig'.eslint.setup{}
+lsp.eslint.setup({
+  capabilities = capabilities,
+  on_attach = on_attach
+  -- on_attach = function(client, bufnr)
+  --   vim.api.nvim_create_autocmd("BufWritePre", {
+  --     buffer = bufnr,
+  --     command = "EslintFixAll",
+  --   })
+  -- end,
+})
 
 -- bun add -g intelephense
 lsp.intelephense.setup({

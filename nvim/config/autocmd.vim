@@ -1,6 +1,11 @@
 " refresh if file changed
 au BufEnter,FocusGained * checktime
 
+au BufEnter * hi! airline_tabsel gui=bold guibg=#76BA99
+au BufEnter * hi airline_tabfill guibg=black
+au BufEnter * hi! airline_tab gui=bold guibg=#0096c7 guifg=#000000
+au BufEnter * hi! airline_tabmod gui=bold guibg=#e63244 guifg=#000000
+
 au! BufRead,BufNewFile *.sbt set filetype=scala
 au! BufRead,BufNewFile *.pryrc set filetype=ruby
 au! BufRead,BufNewFile *spec.tsx.snap set filetype=typescript

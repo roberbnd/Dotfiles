@@ -6,13 +6,16 @@ Plug 'neovim/nvim-lspconfig'
 " Collection of common configurations for Neovim's built-in language server client.
 "======================================================================================}}}
 
-Plug 'DNLHC/glance.nvim'
+Plug 'folke/trouble.nvim', { 'branch': 'main'}
+"{{{======================================================================================
+"A pretty diagnostics list to help you solve all the trouble your code is causing.
+"======================================================================================}}}
 
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v1.x'}
 
-Plug 'j-hui/fidget.nvim'
+Plug 'j-hui/fidget.nvim', { 'tag': 'legacy' }
 "{{{======================================================================================
 " Standalone UI for nvim-lsp progress.
 "======================================================================================}}}
@@ -25,5 +28,3 @@ Plug 'ray-x/lsp_signature.nvim'
 " Extends the built-in Neovim LSP signature helper handler to add additional functionality,
 " focussing on enhancements for method overloads.
 "======================================================================================}}}
-
-Plug 'stevearc/aerial.nvim'

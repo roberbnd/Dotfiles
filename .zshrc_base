@@ -1,3 +1,4 @@
+# Add in .zprofile file .zshrc_xmonad
 eval "$(fasd --init auto)"
 #
 # #ctrl r
