@@ -22,7 +22,6 @@ local on_attach = function(client, bufnr)
   client.server_capabilities.document_formatting = false
 end
 
--- require'lspconfig'.eslint.setup{}
 lsp.eslint.setup({
   capabilities = capabilities,
   on_attach = on_attach
@@ -33,6 +32,13 @@ lsp.eslint.setup({
   --   })
   -- end,
 })
+
+-- bun add -g typescript-language-server
+lsp.tsserver.setup({
+  capabilities = capabilities,
+  on_attach = on_attach
+ })
+
 
 -- bun add -g intelephense
 lsp.intelephense.setup({
@@ -276,12 +282,6 @@ lsp.tailwindcss.setup({
   on_attach = on_attach,
   autostart = false,
 })
-
--- bun add -g typescript-language-server
-lsp.tsserver.setup({
-  capabilities = capabilities,
-  on_attach = on_attach
- })
 
 lsp['yamlls'].setup{
   on_attach = on_attach,

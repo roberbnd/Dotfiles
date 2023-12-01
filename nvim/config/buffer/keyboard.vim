@@ -49,7 +49,7 @@ nnoremap <space>bW :StripWhitespace<cr>
 nnoremap <space>bh :nohlsearch<cr>
 
 nnoremap <space>br :let @" = expand("%:t")<cr>:Rename<space><c-r>"
-nnoremap <space>bk :e ~/.config/nvim/config/keyboard/keyboard.vim<cr>
+nnoremap <space>bk :e ~/.config/nvim/config/base/keyboard.vim<cr>
 nnoremap <space>bo :e %:h/
 nnoremap <space>be :edit<cr>
 nnoremap <space>bE :edit!<cr>
