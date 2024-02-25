@@ -18,6 +18,8 @@ require'trouble'.setup({
 local lsp = require'lspconfig'
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+require("neodev").setup()
+
 local on_attach = function(client, bufnr)
   client.server_capabilities.document_formatting = false
 end
@@ -39,6 +41,10 @@ lsp.tsserver.setup({
   on_attach = on_attach
  })
 
+lsp.emmet_language_server.setup({
+  capabilities = capabilities,
+  on_attach = on_attach
+ })
 
 -- bun add -g intelephense
 lsp.intelephense.setup({
@@ -52,10 +58,21 @@ lsp.pylsp.setup({
   on_attach = on_attach
 })
 
+
 lsp.lua_ls.setup({
   capabilities = capabilities,
   on_attach = on_attach
 })
+
+ lsp.golangci_lint_ls.setup({
+   capabilities = capabilities,
+   on_attach = on_attach
+ })
+
+ lsp.gopls.setup({
+   capabilities = capabilities,
+   on_attach = on_attach
+ })
 
 -- bun add -g jsonls
 lsp.jsonls.setup({
@@ -274,13 +291,19 @@ require'lspconfig'.emmet_ls.setup({
 lsp.cssls.setup({
   capabilities = capabilities,
   diagnostics = true,
-  on_attach = on_attach
+  on_attach = on_attach,
+  css = {
+    validate = true,
+    lint = {
+      unknownAtRules = "ignore"
+    }
+  },
  })
 
 lsp.tailwindcss.setup({
   capabilities = capabilities,
   on_attach = on_attach,
-  autostart = false,
+  autostart = true,
 })
 
 lsp['yamlls'].setup{

@@ -11,7 +11,7 @@
 " colorscheme vscode
 colorscheme tokyonight-night
 
-hi WinSeparator guifg=#3FA796 guibg=none
+" hi WinSeparator guifg=#3FA796 guibg=none
 hi HighlightText guifg=white guibg=#362FD9
 
 hi EasyMotionTarget gui=bold guifg=#FFFFFF guibg=#a901d5

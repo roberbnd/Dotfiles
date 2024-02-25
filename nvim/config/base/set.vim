@@ -32,6 +32,7 @@ set noswapfile
 
 set nowritebackup
 set noshowmode   " disable cmd message --INSERT--
+" set number
 set t_Co=256
 set redrawtime=10000  " syntax on big files
 set sessionoptions+=tabpages,globals,buffers

@@ -23,6 +23,7 @@ nmap d, dt,
 nmap d) dt)
 nmap d<space> dt<space>
 nnoremap dp dap
+nmap -" dt"
 "}}}==========================================
 
 "change until {{{=============================
@@ -72,3 +73,5 @@ nnoremap m; ct;
 nnoremap m<space> ct<space>
 nnoremap m< ci<
 "}}}==========================================
+
+imap ,= <space>=<space>

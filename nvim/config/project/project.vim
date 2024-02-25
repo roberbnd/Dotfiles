@@ -1,18 +1,11 @@
 Plug 'natecraddock/workspaces.nvim'
-"{{{======================================================================================
-"======================================================================================}}}
 
 Plug 'editorconfig/editorconfig-vim'
-"{{{======================================================================================
-"======================================================================================}}}
 
 Plug 'windwp/nvim-projectconfig'
-"{{{======================================================================================
-"======================================================================================}}}
 
 Plug 'tom-anders/telescope-vim-bookmarks.nvim'
 Plug 'MattesGroeger/vim-bookmarks'
-"{{{======================================================================================
 " Add/remove bookmark at current line 	mm                : BookmarkToggle
 " Add/edit/remove annotation at current line 	mi          : BookmarkAnnotate <TEXT>
 " Jump to next bookmark in buffer 	mn                    : BookmarkNext
@@ -50,13 +43,10 @@ function! g:BMWorkDirFileLocation()
     return getcwd().'/.'.filename
   endif
 endfunction
-"======================================================================================}}}
 
 Plug 'cbochs/grapple.nvim'
 
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session', { 'on': ['SaveSession', 'OpenSession'] }
-"{{{======================================================================================
 let g:session_directory='~/.config/nvim/sessions'
 let g:session_autosave='no'
-"======================================================================================}}}

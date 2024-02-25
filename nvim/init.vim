@@ -52,5 +52,3 @@ source ~/.config/nvim/config/git/git.lua
 source ~/.config/nvim/config/scripts.vim
 source ~/.config/nvim/config/autocmd.vim
 source ~/.config/nvim/config/base/keyboard.vim
-
-nmap gS :TSJToggle<cr>

@@ -1,5 +1,5 @@
 nnoremap cj :Bclose<cr>
-nnoremap ck :Bclose!<cr>
+nnoremap cJ :Bclose!<cr>
 nnoremap rj :FloatermNew ranger<cr>
 nnoremap rc gf
 noremap rC :call CreateFile(expand("<cfile>"))<CR>
@@ -53,5 +53,6 @@ nnoremap <space>bk :e ~/.config/nvim/config/base/keyboard.vim<cr>
 nnoremap <space>bo :e %:h/
 nnoremap <space>be :edit<cr>
 nnoremap <space>bE :edit!<cr>
-nnoremap <space>bC :copen<cr>
+" nnoremap <space>bC :copen<cr>
+nnoremap <space>bC :Bclose!<cr>
 nnoremap <space>bs :e ~/.config/nvim/snippets/snippy/

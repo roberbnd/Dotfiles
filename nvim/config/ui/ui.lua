@@ -4,8 +4,8 @@ require("statuscol").setup({})
 require('todo-comments').setup()
 require('twilight').setup()
 require('maximize').setup()
+require('rainbow-delimiters.setup').setup()
 
-require("no-neck-pain").setup()
 require('bufferline').setup{
   options = {
     mode = 'tabs'
@@ -77,11 +77,11 @@ end
 -- }
 
 require('lualine').setup({
-  options = {
-    theme = 'vscode',
+  -- options = {
+    -- theme = 'vscode',
     -- theme = 'monokai-pro',
     -- theme = 'tokyonight-night',
-  },
+  -- },
   sections = {
     lualine_c = {workspace_filename},
   },

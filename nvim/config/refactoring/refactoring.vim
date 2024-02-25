@@ -1,35 +1,22 @@
 Plug 'foosoft/vim-argwrap', { 'on': 'ArgWrap' }
-"vim-argwrap{{{===========================================================================
 " It can be used for collapsing and expanding from function calls to array and dictionary
 " definitions.:ArgWrap
-"======================================================================================}}}
 
 Plug 'ThePrimeagen/refactoring.nvim'
 
-Plug 'rstacruz/vim-xtract', { 'on': 'Xtract'}
-"vim-xtract{{{============================================================================
 " vim-xtract helps you split up large files into smaller files. Great for refactoring.
-"======================================================================================}}}
+Plug 'rstacruz/vim-xtract', { 'on': 'Xtract'}
 
-Plug 'Wansmer/treesj'
-" Plug 'AndrewRadev/splitjoin.vim', { 'branch': 'main' }
-"splitjoin{{{=============================================================================
 " switching between a single-line statement and a multi-line one.
 " gS to split a one-liner into multiple lines
 " gJ (with the cursor on the first line of a block)
-"======================================================================================}}}
+Plug 'AndrewRadev/splitjoin.vim', { 'branch': 'main' }
 
-" Plug 'mizlan/iswap.nvim'
-"{{{======================================================================================
-"======================================================================================}}}
 
-" Plug 'Wansmer/sibling-swap.nvim'
-"tabular{{{===============================================================================
+Plug 'mizlan/iswap.nvim'
 " requires nvim-treesitter
-"======================================================================================}}}
+Plug 'Wansmer/sibling-swap.nvim'
 
-Plug 'tommcdo/vim-exchange'
-"vim-exchange{{{==========================================================================
 " To exchange two words, place your cursor on the first word and type cxiw. Then move
 " to the second word and type cxiw again. Note: the {motion} used in the first
 " and second use of cx don't have to be the same.
@@ -37,10 +24,8 @@ Plug 'tommcdo/vim-exchange'
 " vmap X <Plug>(Exchange)
 " nmap cxc <Plug>(ExchangeClear)
 " nmap cxx <Plug>(ExchangeLine)
-"======================================================================================}}}
+Plug 'tommcdo/vim-exchange'
 
-Plug 'chrisbra/NrrwRgn'
-"{{{======================================================================================
 "" This plugin is inspired by the Narrowing feature
 " of Emacs and means to focus on a selected region
 " while making the rest inaccessible. You simply
@@ -60,12 +45,10 @@ Plug 'chrisbra/NrrwRgn'
 " :NRS     - Enable Syncing the buffer content back (default on)
 " :NRN     - Disable Syncing the buffer content back
 " :NRL     - Reselect the last selected region and open it again in a narrowed window
+Plug 'chrisbra/NrrwRgn'
 let g:nrrw_rgn_nomap_nr = 1
 let g:nrrw_rgn_nomap_Nr = 1
-"======================================================================================}}}
 
-Plug 'wellle/visual-split.vim', { 'on': 'VSSplit'}
-"visual-split{{{==========================================================================
 " 1.Visually select the lines you want to split out
 " 2.Type :VSSplit, :VSSplitAbove or :VSSplitBelow to create the split
 " 3.A new split will be created showing the selected lines
@@ -73,4 +56,4 @@ Plug 'wellle/visual-split.vim', { 'on': 'VSSplit'}
 " <C-W>gss - split out visual selection (similar to :VSSplit)
 " <C-W>gsa - split out visual selection above (similar to :VSSplitAbove)
 " <C-W>gsb - split out visual selection below (similar to :VSSplitBelow)
-"======================================================================================}}}
+Plug 'wellle/visual-split.vim', { 'on': 'VSSplit'}

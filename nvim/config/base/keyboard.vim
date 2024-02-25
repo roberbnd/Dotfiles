@@ -12,6 +12,8 @@ source ~/.config/nvim/config/testing/keyboard.vim
 
 source ~/.config/nvim/config/project/keyboard.vim
 
+nmap gS :TSJToggle<cr>
+
 source ~/.config/nvim/config/tools/keyboard_rest.vim
 source ~/.config/nvim/config/git/keyboard.vim
 

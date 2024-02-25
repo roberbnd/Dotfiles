@@ -23,7 +23,7 @@ augroup END
 
 au FileType http,ruby,html,lua,json,javascriptreact,typescript,typescriptreact set tabstop=2 shiftwidth=2
 au FileType css,scss set tabstop=2 shiftwidth=2
-au FileType php,proto set tabstop=4 shiftwidth=4
+au FileType php,proto,go set tabstop=4 shiftwidth=4
 au FileType javascript set tabstop=2 shiftwidth=2
 
 " create keymap to last tab active = ch
